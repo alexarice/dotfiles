@@ -12,6 +12,35 @@
 
 (package-install-selected-packages)
 
+
+	  
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(LaTeX-item-indent 0)
+ '(TeX-electric-sub-and-superscript nil)
+ '(TeX-save-query nil)
+ '(TeX-source-correlate-mode t)
+ '(TeX-source-correlate-start-server t)
+ '(TeX-view-evince-keep-focus t)
+ '(custom-enabled-themes (quote (dracula)))
+ '(custom-safe-themes
+   (quote
+    ("eecacf3fb8efc90e6f7478f6143fd168342bbfa261654a754c7d47761cec07c8" default)))
+ '(latex-run-command "pdflatex")
+ '(package-selected-packages
+   (quote
+    (flycheck-haskell company-cabal company-reftex company-ghc company-ghci dracula-theme haskell-mode company-auctex company-bibtex auctex company company-math adaptive-wrap))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+
 ;; Turn off unneeded stuff
 (menu-bar-mode -1)
 (tool-bar-mode -1)
@@ -71,32 +100,3 @@
 		  "::[ \t]*Content-[Tt]ype:[ 	]*text/mmlquery"
 		  mmlquery-decode nil nil mmlquery-mode))
 format-alist))
-	  
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(LaTeX-item-indent 0)
- '(TeX-electric-sub-and-superscript nil)
- '(TeX-save-query nil)
- '(TeX-source-correlate-mode t)
- '(TeX-source-correlate-start-server t)
- '(TeX-view-evince-keep-focus t)
- '(custom-enabled-themes (quote (dracula)))
- '(custom-safe-themes
-   (quote
-    ("eecacf3fb8efc90e6f7478f6143fd168342bbfa261654a754c7d47761cec07c8" default)))
- '(latex-run-command "pdflatex")
- '(package-selected-packages
-   (quote
-    (flycheck-haskell company-cabal company-reftex company-ghc company-ghci dracula-theme haskell-mode company-auctex company-bibtex auctex company company-math adaptive-wrap))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-
-
-
