@@ -10,6 +10,8 @@
     (add-to-list 'package-archives '("gnu" . (concat proto "://elpa.gnu.org/packages/")))))
 (package-initialize)
 
+(package-install-selected-packages)
+
 ;; Turn off unneeded stuff
 (menu-bar-mode -1)
 (tool-bar-mode -1)
