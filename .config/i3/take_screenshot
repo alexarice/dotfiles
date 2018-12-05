@@ -1,0 +1,11 @@
+#!/bin/bash
+
+filestart="$HOME/Pictures/screenshot"
+number=0
+while test -e "$filestart$number.jpg"; do
+	(( ++number))
+done
+
+fname="$filestart$number.jpg"
+
+import -window root $fname
