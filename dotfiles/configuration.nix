@@ -99,18 +99,16 @@
       dunst
       imagemagick
       redshift
-      steam
+
+steam
       dropbox
 
+
+      screenfetch
 
       adapta-gtk-theme
       gnome3.adwaita-icon-theme
     ];
-  };
-
-  services.flatpak = {
-    enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
   fonts = {
