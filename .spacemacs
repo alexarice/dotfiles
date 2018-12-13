@@ -1,1 +1,0 @@
-/nix/store/n4qkys8qbrd5gq523a8mq8hrkzm76hfj-home-manager-files/.spacemacs
