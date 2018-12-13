@@ -20,6 +20,10 @@
     }
   ];
 
+  security.sudo.enable = true;
+  security.sudo.extraConfig = "Defaults pwfeedback";
+
+
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
