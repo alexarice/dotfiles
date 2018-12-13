@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 filestart="$HOME/Pictures/screenshot"
 number=0
