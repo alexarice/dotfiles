@@ -99,6 +99,8 @@
       dunst
       imagemagick
       redshift
+      steam
+      dropbox
 
       adapta-gtk-theme
       gnome3.adwaita-icon-theme
