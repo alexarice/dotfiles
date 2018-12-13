@@ -16,46 +16,65 @@ in
       enable = true;
       allowBold = true;
       audibleBell = false;
-      backgroundColor = "#363636";
       clickableUrl = true;
-      cursorBlink = "system";
-      cursorColor = "#dcdccc";
-      cursorForegroundColor = "#dcdccc";
-      cursorShape = "block";
-      colorsExtra = ''
-        color0 = #3f3f3f
-        color1 = #8080ff
-        color2 = #00bf00
-        color3 = #dfaf8f
-        color4 = #506070
-        color5 = #dc8cc3
-        color6 = #8cd0d3
-        color7 = #dcdccc
-        color8 = #709080
-        color9 = #dca3a3
-        color10 = #c3bf9f
-        color11 = #f0dfaf
-        color12 = #94bff3
-        color13 = #ec93d3
-        color14 = #93e0e3
-        color15 = #ffffff
-        '';
       dynamicTitle = true;
       filterUnmatchedUrls = true;
-      font = "Source Code Pro 10";
-      foregroundColor = "#dcdccc";
-      foregroundBoldColor = "#ffffff";
       fullscreen = false;
-      highlightColor = "#808080";
       scrollOnOutput = false;
       scrollOnKeystroke = true;
       searchWrap = false;
       urgentOnBell = true;
+      font = "Source Code Pro for Powerline 10";
+      cursorBlink = "system";
+      cursorColor = "#81c1e4";
+      cursorForegroundColor = "#81c1e4";
+      cursorShape = "block";
+      backgroundColor = "#282a36";
+      foregroundColor = "#f8f8f2";
+      foregroundBoldColor = "#f8f8f2";
+      highlightColor = "#ccccc7";
+      colorsExtra = ''
+        color0 = #000000
+        color1 = #ff5555
+        color2 = #50fa7b
+        color3 = #f1fa8c
+        color4 = #bd93f9
+        color5 = #ff79c6
+        color6 = #8be9fd
+        color7 = #bbbbbb
+        color8 = #555555
+        color9 = #ff5555
+        color10 = #50fa7b
+        color11 = #f1fa8c
+        color12 = #bd93f9
+        color13 = #ff79c6
+        color14 = #8be9fd
+        color15 = #ffffff
+        '';
     };
     zsh = {
+      enable = true;
       enableAutosuggestions = true;
       history = {
         ignoreDups = true;
+      };
+      initExtra = ''
+                export DEFAULT_USER=\"alex\"
+                prompt_context(){}
+                '';
+      oh-my-zsh = {
+        enable = true;
+        plugins = [
+          "git"
+          "sudo"
+          "fasd"
+          "scala"
+          "cabal"
+          "extract"
+          "systemd"
+          "web-search"
+        ];
+        theme = "agnoster";
       };
     };
   };
