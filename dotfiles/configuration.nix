@@ -7,7 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      /etc/nixos/hardware-configuration.nix
     ];
   
   boot.plymouth.enable = true;
@@ -118,6 +118,7 @@
       ubuntu_font_family
       google-fonts
       source-code-pro
+      powerline-fonts
     ];
     fontconfig = {
       enable = true;
