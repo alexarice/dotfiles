@@ -56,7 +56,6 @@
   time.timeZone = "Europe/London";
 
   nixpkgs.config.allowUnfree = true;
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment = {
@@ -68,7 +67,10 @@
       thunderbird
       bup
       termite
-      polybar
+#      (polybar.override {
+#        i3Support = true;
+#        pulseSupport = true;
+#      })
       git
       texlive.combined.scheme-full
       ghc
@@ -90,7 +92,6 @@
       python
       scrot
       evince
-      dropbox
       spotify
       libreoffice
       discord
@@ -100,9 +101,8 @@
       imagemagick
       redshift
 
-steam
-      dropbox
-
+      steam
+      dropbox-cli
 
       screenfetch
 
@@ -152,11 +152,6 @@ steam
     desktopManager.xfce = {
       enable = true;
       noDesktop = true;
-      thunarPlugins = with pkgs.xfce; [
-        thunar-dropbox-plugin
-	      thunar-archive-plugin
-	      thunar_volman
-      ];
     };
     windowManager.default = "i3";
     windowManager.i3.enable = true;

@@ -325,6 +325,7 @@ you should place your code here."
 (with-eval-after-load 'org
   (setq org-refile-targets '((org-agenda-files . (:maxlevel . 6)))))
 )
+(setq org-bullets-bullet-list '("■" "◆" "▲" "▶"))
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 (custom-set-variables

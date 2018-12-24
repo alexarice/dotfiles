@@ -92,6 +92,10 @@ in
   services = {
     polybar = {
       enable = true;
+      package = pkgs.polybar.override {
+              i3Support = true;
+              pulseSupport = true;
+              };
       config = "${dots}/polybar";
       script = "${scripts}/polybarLaunch";
     };
