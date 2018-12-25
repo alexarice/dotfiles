@@ -99,6 +99,16 @@ in
       config = "${dots}/polybar";
       script = "${scripts}/polybarLaunch";
     };
+    dunst = {
+      enable = true;
+      iconTheme.package = pkgs.gnome3.adwaita-icon-theme;
+      iconTheme.name = "Adwaita";
+      iconTheme.size = "32x32";
+    };
+    compton = {
+      enable = true;
+      inactiveOpacity = "0.8";
+    };
   };
   home.file.".spacemacs".source = "${dots}/spacemacs";
   xsession.windowManager.i3 = {
@@ -125,6 +135,7 @@ in
           background = "#333333";
           text = "#999999";
           indicator = "#292d2e";
+
           childBorder = "#333333";
         };
         urgent = {
@@ -140,7 +151,7 @@ in
       keybindings = lib.mkOptionDefault {
         "${i3mod}+Shift+a" = "exec \"setxkbmap -layout gb\"";
         "${i3mod}+Shift+d" = "exec \"setxkbmap -layout gb -variant dvorak\"";
-         "${i3mod}+n" = "exec thunar";
+         "${i3mod}+n" = "exec pcmanfm";
          "${i3mod}+m" = "exec thunderbird";
          "${i3mod}+b" = "exec emacs";
          "${i3mod}+Return" = "exec termite";

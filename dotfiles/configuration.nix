@@ -52,6 +52,8 @@
     opengl.driSupport32Bit = true;
   };
 
+  programs.dconf.enable = true;
+  services.dbus.packages = [ pkgs.gnome3.dconf ];
   # Set your time zone.
   time.timeZone = "Europe/London";
 
@@ -67,10 +69,11 @@
       thunderbird
       bup
       termite
-#      (polybar.override {
-#        i3Support = true;
-#        pulseSupport = true;
-#      })
+      lxappearance
+      pcmanfm
+      lxmenu-data
+      shared_mime_info
+      gvfs
       git
       texlive.combined.scheme-full
       ghc
@@ -100,6 +103,7 @@
       dunst
       imagemagick
       redshift
+      gnome3.baobab
 
       steam
       dropbox-cli
@@ -141,6 +145,8 @@
   # Enable sound.
   sound.enable = true;
 
+environment.variables.GIO_EXTRA_MODULES = [ "{pkgs.gvfs}/lix/gio/modules" ];
+
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
@@ -149,14 +155,13 @@
       enable = true;
       user = "alex";
     };
-    desktopManager.xfce = {
-      enable = true;
-      noDesktop = true;
-    };
+    desktopManager.default = "none";
     windowManager.default = "i3";
     windowManager.i3.enable = true;
     libinput = {
       enable = true;
+      naturalScrolling = true;
+      disableWhileTyping = true;
       tapping = true;
     };
   };
