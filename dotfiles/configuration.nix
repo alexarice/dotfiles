@@ -115,6 +115,9 @@
 
       adapta-gtk-theme
       gnome3.adwaita-icon-theme
+
+      networkmanagerapplet
+      xclip
     ];
   };
 
