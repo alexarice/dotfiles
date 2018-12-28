@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 export BUP_DIR=/run/media/alex/EXT_HDR/backups
 

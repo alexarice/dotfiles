@@ -20,6 +20,8 @@
     }
   ];
 
+  boot.supportedFilesystems = [ "ntfs" ];
+
   security.sudo.enable = true;
   security.sudo.extraConfig = "Defaults pwfeedback";
 
@@ -73,7 +75,6 @@
       pcmanfm
       lxmenu-data
       shared_mime_info
-      gvfs
       git
       texlive.combined.scheme-full
       ghc
@@ -91,6 +92,7 @@
       gimp
       blueman
       pavucontrol
+      libnotify
       nodejs
       python
       scrot
@@ -98,6 +100,7 @@
       spotify
       libreoffice
       discord
+
       j4-dmenu-desktop
       mkpasswd
       dunst
@@ -141,11 +144,9 @@
     };
   };
   services.nixosManual.showManual = true;
-
+  
   # Enable sound.
   sound.enable = true;
-
-environment.variables.GIO_EXTRA_MODULES = [ "{pkgs.gvfs}/lix/gio/modules" ];
 
   # Enable the X11 windowing system.
   services.xserver = {

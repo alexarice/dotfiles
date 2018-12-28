@@ -82,14 +82,36 @@ in
     enable = true;
     theme = {
       package = pkgs.adapta-gtk-theme;
-      name = "Adapta-Nokta-Eta";
+      name = "Adapta-Nokto-Eta";
     };
     iconTheme = {
       package = pkgs.gnome3.adwaita-icon-theme;
       name = "Adwaita";
     };
+    font = {
+      package = pkgs.source-code-pro;
+      name = "Source Code Pro 10";
+    };
+    gtk3.extraConfig = {
+      gtk-cursor-theme-size=0;
+      gtk-toolbar-style="GTK_TOOLBAR_BOTH";
+      gtk-toolbar-icon-size="GTK_ICON_SIZE_LARGE_TOOLBAR";
+      gtk-button-images=1;
+      gtk-menu-images=1;
+      gtk-enable-event-sounds=1;
+      gtk-enable-input-feedback-sounds=1;
+      gtk-xft-antialias=1;
+      gtk-xft-hinting=1;
+      gtk-xft-hintstyle="hintslight";
+      gtk-xft-rgba="rgb";
+    };
   };
   services = {
+    udiskie = {
+      enable = true;
+      automount = true;
+      notify = true;
+    };
     polybar = {
       enable = true;
       package = pkgs.polybar.override {
