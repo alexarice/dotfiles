@@ -83,6 +83,7 @@
       lxmenu-data
       shared_mime_info
 
+
       texlive.combined.scheme-full
 
       ghc
@@ -174,7 +175,7 @@
       enable = true;
       naturalScrolling = true;
       disableWhileTyping = true;
-      tapping = true;
+      tapping = false;
     };
   };
 

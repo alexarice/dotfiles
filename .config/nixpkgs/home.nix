@@ -197,6 +197,7 @@ in
          { command = "nm-applet"; always = false; notification = false;}
          { command = "xset -dpms"; always = false; notification = false;}
          { command = "xset s off"; always = false; notification = false;}
+         { command = "dropbox start"; always = false; notification = false;}
        ];
        window = {
          border = 1;
