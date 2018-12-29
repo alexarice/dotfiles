@@ -129,7 +129,7 @@ in
     };
     compton = {
       enable = true;
-      inactiveOpacity = "0.8";
+      inactiveOpacity = "1";
     };
   };
   home.file.".spacemacs".source = "${dots}/spacemacs";
@@ -173,6 +173,10 @@ in
       keybindings = lib.mkOptionDefault {
         "${i3mod}+Shift+a" = "exec \"setxkbmap -layout gb\"";
         "${i3mod}+Shift+d" = "exec \"setxkbmap -layout gb -variant dvorak\"";
+        "${i3mod}+Shift+Left" = "move left";
+        "${i3mod}+Shift+Right" = "move right";
+        "${i3mod}+Shift+Up" = "move up";
+        "${i3mod}+Shift+Down" = "move down";
          "${i3mod}+n" = "exec pcmanfm";
          "${i3mod}+m" = "exec thunderbird";
          "${i3mod}+b" = "exec emacsclient --create-frame";
