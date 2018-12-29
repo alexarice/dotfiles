@@ -11,7 +11,7 @@ if [ "$EUID" -ne 0 ]; then
     exit
 fi
 echo backing up root
-bup index --exclude /var/run --exclude /var/cache --exclude /var/tmp /var /srv /etc /root /usr/local /opt
+bup index --exclude /var/run/media --exclude /var/cache --exclude /var/tmp /var /srv /etc /root /usr/local /opt
 bup save -n backup_root /var /srv /etc /root /usr/local /opt
 echo backing up home
 bup index /home/alex
