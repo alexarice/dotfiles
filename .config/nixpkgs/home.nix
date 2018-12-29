@@ -175,7 +175,7 @@ in
         "${i3mod}+Shift+d" = "exec \"setxkbmap -layout gb -variant dvorak\"";
          "${i3mod}+n" = "exec pcmanfm";
          "${i3mod}+m" = "exec thunderbird";
-         "${i3mod}+b" = "exec emacs";
+         "${i3mod}+b" = "exec emacsclient --create-frame";
          "${i3mod}+Return" = "exec termite";
          "${i3mod}+c" = "exec firefox";
          "${i3mod}+Shift+q" = "kill";
@@ -194,6 +194,8 @@ in
          { command = "systemctl --user restart polybar"; always = true; notification = false;}
          { command = "redshift -l 51.2092712:0.2556012999999666"; always = false; notification = false;}
          { command = "blueman-applet"; always = false; notification = false;}
+         { command = "nm-applet"; always = false; notification = false;}
+         { command = "xset -dpms"; always = false; notification = false;}
        ];
        window = {
          border = 1;

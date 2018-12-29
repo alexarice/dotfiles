@@ -65,11 +65,11 @@
   environment = {
     systemPackages = with pkgs; [
       home-manager
-      
+
+      wine
       emacs
       firefox
       thunderbird
-      bup
       termite
       lxappearance
       pcmanfm
@@ -79,6 +79,7 @@
       texlive.combined.scheme-full
       ghc
       haskellPackages.Agda
+      bup
       tree
       wget
       gnupg
@@ -111,7 +112,7 @@
       steam
       dropbox-cli
 
-      screenfetch
+      neofetch
 
       adapta-gtk-theme
       gnome3.adwaita-icon-theme
@@ -147,6 +148,8 @@
     };
   };
   services.nixosManual.showManual = true;
+  services.emacs.enable = true;
+  services.emacs.defaultEditor = true;
   
   # Enable sound.
   sound.enable = true;
@@ -154,6 +157,7 @@
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
+    exportConfiguration = true;
     layout = "gb";
     displayManager.auto = {
       enable = true;
