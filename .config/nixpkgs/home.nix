@@ -196,6 +196,7 @@ in
          { command = "blueman-applet"; always = false; notification = false;}
          { command = "nm-applet"; always = false; notification = false;}
          { command = "xset -dpms"; always = false; notification = false;}
+         { command = "xset s off"; always = false; notification = false;}
        ];
        window = {
          border = 1;
