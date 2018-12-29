@@ -66,59 +66,63 @@
     systemPackages = with pkgs; [
       home-manager
 
-      wine
       emacs
       firefox
       thunderbird
-      termite
-      lxappearance
-      pcmanfm
-      lxmenu-data
-      shared_mime_info
-      git
-      texlive.combined.scheme-full
-      ghc
-      haskellPackages.Agda
-      bup
-      tree
-      wget
-      gnupg
-      curl
-      aspell
-      aspellDicts.en
       vlc
-      xorg.xbacklight
-      psmisc
-      gparted
       gimp
-      blueman
-      pavucontrol
-      libnotify
-      nodejs
-      python
-      scrot
       evince
       spotify
       libreoffice
       discord
+      gnome3.baobab
+      steam
+
+      lxappearance
+      pcmanfm
+      lxmenu-data
+      shared_mime_info
+
+      texlive.combined.scheme-full
+
+      ghc
+      haskellPackages.Agda
+      nodejs
+      python
+
+      termite
+      wine
+      git
+      bup
+      neofetch
+      tree
+      wget
+      gnupg
+      curl
+      psmisc
+      gparted
+      mkpasswd
+
+      aspell
+      aspellDicts.en
+
+      xorg.xbacklight
+      libnotify
+      xclip
+
+      blueman
+      pavucontrol
+      dunst
+      scrot
 
       j4-dmenu-desktop
-      mkpasswd
-      dunst
       imagemagick
       redshift
-      gnome3.baobab
-
-      steam
+      networkmanagerapplet
       dropbox-cli
-
-      neofetch
 
       adapta-gtk-theme
       gnome3.adwaita-icon-theme
-
-      networkmanagerapplet
-      xclip
     ];
   };
 
