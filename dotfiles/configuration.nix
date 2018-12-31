@@ -78,6 +78,8 @@
       gnome3.baobab
       steam
 
+      gpicview
+      lxtask
       lxappearance
       pcmanfm
       lxmenu-data
