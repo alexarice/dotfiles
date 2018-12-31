@@ -127,10 +127,6 @@ in
       iconTheme.name = "Adwaita";
       iconTheme.size = "32x32";
     };
-    compton = {
-      enable = true;
-      inactiveOpacity = "1";
-    };
   };
   home.file.".spacemacs".source = "${dots}/spacemacs";
   xsession.windowManager.i3 = {
