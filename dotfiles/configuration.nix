@@ -75,7 +75,6 @@
       spotify
       libreoffice
       discord
-      gnome3.baobab
       steam
 
       gpicview
@@ -84,7 +83,6 @@
       pcmanfm
       lxmenu-data
       shared_mime_info
-
 
       texlive.combined.scheme-full
 
@@ -131,7 +129,6 @@
 
   fonts = {
     enableFontDir = true;
-    enableGhostscriptFonts = true;
     fonts = with pkgs; [
       inconsolata
       terminus_font_ttf
