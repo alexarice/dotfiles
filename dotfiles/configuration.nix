@@ -62,6 +62,7 @@
     systemPackages = with pkgs; [
       home-manager
 
+      # Programs
       emacs
       firefox
       thunderbird
@@ -73,6 +74,7 @@
       discord
       steam
 
+      # LXDE
       gpicview
       lxtask
       lxappearance
@@ -80,13 +82,16 @@
       lxmenu-data
       shared_mime_info
 
+      # LaTeX
       texlive.combined.scheme-full
 
+      # Programming
       (haskellPackages.ghcWithPackages (pkgs : [pkgs.lens]))
       haskellPackages.Agda
       nodejs
       python
 
+      # CLI Programs
       termite
       wine
       git
@@ -100,29 +105,35 @@
       gparted
       mkpasswd
 
+      # Dictionaries
       aspell
       aspellDicts.en
 
+      # X Server tools
       xorg.xbacklight
       libnotify
       xclip
 
+      # Utilities
       blueman
       pavucontrol
       dunst
       scrot
 
+      # Things in I3 config
       j4-dmenu-desktop
       imagemagick
       redshift
       networkmanagerapplet
       dropbox-cli
 
+      # GTK
       adapta-gtk-theme
       gnome3.adwaita-icon-theme
     ];
   };
 
+  # Load fonts
   fonts = {
     enableFontDir = true;
     fonts = with pkgs; [
@@ -147,7 +158,11 @@
       };
     };
   };
+
+  # Save manual
   services.nixosManual.showManual = true;
+
+  # Start emacs server
   services.emacs.enable = true;
   services.emacs.defaultEditor = true;
   
@@ -174,7 +189,10 @@
     };
   };
 
+  # Use Zsh
   programs.zsh.enable = true;
+
+  # Set up immutable users
   users = {
     mutableUsers = false;
     users.root = {
@@ -195,5 +213,4 @@
   # servers. You should change this only after NixOS release notes say you
   # should.
   system.stateVersion = "18.09"; # Did you read the comment?
-
 }
