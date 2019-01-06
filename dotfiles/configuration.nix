@@ -33,10 +33,6 @@
   networking.hostName = "Alex_Nixos"; # Define your hostname.
   networking.networkmanager.enable = true;
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
   # Select internationalisation properties.
   i18n = {
     consoleFont = "Lat2-Terminus16";
@@ -56,12 +52,12 @@
 
   programs.dconf.enable = true;
   services.dbus.packages = [ pkgs.gnome3.dconf ];
+
   # Set your time zone.
   time.timeZone = "Europe/London";
 
   nixpkgs.config.allowUnfree = true;
   # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment = {
     systemPackages = with pkgs; [
       home-manager
@@ -86,7 +82,7 @@
 
       texlive.combined.scheme-full
 
-      ghc
+      (haskellPackages.ghcWithPackages (pkgs : [pkgs.lens]))
       haskellPackages.Agda
       nodejs
       python
