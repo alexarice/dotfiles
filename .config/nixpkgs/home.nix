@@ -129,6 +129,7 @@ in
     };
   };
   home.file.".spacemacs".source = "${dots}/spacemacs";
+  home.file.".ghc/ghci.conf".source = "${dots}/ghci.conf";
   xsession.windowManager.i3 = {
     enable = true;
     config = {

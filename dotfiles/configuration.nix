@@ -86,7 +86,12 @@
       texlive.combined.scheme-full
 
       # Programming
-      (haskellPackages.ghcWithPackages (pkgs : [pkgs.lens]))
+      (haskellPackages.ghcWithHoogle
+        (haskellPackages: with haskellPackages; [
+          lens
+          arrows
+          process
+          ]))
       haskellPackages.Agda
       nodejs
       python
