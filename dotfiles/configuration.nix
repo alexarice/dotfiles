@@ -92,6 +92,9 @@
           arrows
           process
           ]))
+      cabal-install
+      nix-prefetch-git
+      cabal2nix
       haskellPackages.Agda
       nodejs
       python
