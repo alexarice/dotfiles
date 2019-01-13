@@ -97,6 +97,7 @@
       cabal-install
       nix-prefetch-git
       cabal2nix
+      stack
       haskellPackages.Agda
       nodejs
       python
