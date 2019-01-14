@@ -93,11 +93,12 @@
           lens
           arrows
           process
+          containers
+          parsec
           ]))
       cabal-install
       nix-prefetch-git
       cabal2nix
-      stack
       haskellPackages.Agda
       nodejs
       python
