@@ -57,8 +57,7 @@
   time.timeZone = "Europe/London";
 
   nixpkgs.config.allowUnfree = true;
-  nix.binaryCaches = [ "https://cache.nixos.org/" "https://nixcache.reflex-frp.org" ];
-  nix.binaryCachePublicKeys = [ "ryantrinkle.com-1:JJiAKaRv9mWgpVAz8dwewnZe0AzzEAzPkagE9SP5NWI=" ];
+
   # List packages installed in system profile. To search, run:
   environment = {
     systemPackages = with pkgs; [
@@ -73,9 +72,8 @@
       evince
       spotify
       libreoffice
-      discord
       steam
-
+     
       # LXDE
       gpicview
       lxtask
