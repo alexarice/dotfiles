@@ -60,7 +60,13 @@
 
   # List packages installed in system profile. To search, run:
   environment = {
-    systemPackages = with pkgs; [
+    systemPackages = (with pkgs.haskellPackages; [
+      Agda
+      apply-refact
+      hlint
+      stylish-haskell
+      hoogle
+    ]) ++ (with pkgs; [
       home-manager
 
       # Programs
@@ -97,7 +103,6 @@
       cabal-install
       nix-prefetch-git
       cabal2nix
-      haskellPackages.Agda
       nodejs
       python
       nodePackages.tern
@@ -141,7 +146,7 @@
       # GTK
       adapta-gtk-theme
       gnome3.adwaita-icon-theme
-    ];
+    ]);
   };
 
   # Load fonts
