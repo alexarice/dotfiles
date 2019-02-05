@@ -57,7 +57,6 @@
   time.timeZone = "Europe/London";
 
   nixpkgs.config.allowUnfree = true;
-
   nix.extraOptions = "keep-outputs = true";
 
   # List packages installed in system profile. To search, run:
@@ -81,6 +80,7 @@
       spotify
       libreoffice
       steam
+      discord
      
       # LXDE
       gpicview
@@ -183,7 +183,7 @@
   # Start emacs server
   services.emacs.enable = true;
   services.emacs.defaultEditor = true;
-  
+
   # Enable sound.
   sound.enable = true;
 
