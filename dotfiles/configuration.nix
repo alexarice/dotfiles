@@ -79,9 +79,8 @@
       evince
       spotify
       libreoffice
-      steam
       discord
-     
+
       # LXDE
       gpicview
       lxtask
