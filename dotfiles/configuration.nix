@@ -161,7 +161,6 @@
     fonts = with pkgs; [
       inconsolata
       terminus_font_ttf
-      unifont
       siji
       fira-mono
       ubuntu_font_family
