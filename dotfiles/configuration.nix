@@ -121,6 +121,11 @@
       psmisc
       gparted
       mkpasswd
+      file
+      binutils
+      imagemagick
+      unzip
+      python36Packages.binwalk
 
       # Dictionaries
       aspell
