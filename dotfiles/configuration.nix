@@ -66,13 +66,13 @@
       apply-refact
       hlint
       stylish-haskell
-      hoogle
     ]) ++ (with pkgs; [
       home-manager
 
       # Programs
       emacs
       firefox
+      chromium
       thunderbird
       vlc
       gimp

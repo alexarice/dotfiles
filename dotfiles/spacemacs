@@ -61,7 +61,9 @@ values."
             TeX-view-program-selection '((output-pdf "Evince"))
             TeX-electric-math nil
             latex-enable-auto-fill nil
-            latex-enable-folding t)
+            latex-enable-folding t
+            reftex-bibliography-commands '("bibliography" "nobibliography" "addbibresource")
+            reftex-default-bibliography '("references.bib"))
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
