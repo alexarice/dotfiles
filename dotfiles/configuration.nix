@@ -57,7 +57,6 @@
   time.timeZone = "Europe/London";
 
   nixpkgs.config.allowUnfree = true;
-  nix.extraOptions = "keep-outputs = true";
 
   # List packages installed in system profile. To search, run:
   environment = {
@@ -99,7 +98,8 @@
           arrows
           process
           containers
-          parsec
+
+parsec
           ]))
       cabal-install
       nix-prefetch-git
@@ -126,6 +126,7 @@
       imagemagick
       unzip
       python36Packages.binwalk
+      zip
 
       # Dictionaries
       aspell
