@@ -62,7 +62,6 @@
   # List packages installed in system profile. To search, run:
   environment = {
     systemPackages = (with pkgs.haskellPackages; [
-      Agda
       apply-refact
       hlint
       stylish-haskell
@@ -99,8 +98,7 @@
           arrows
           process
           containers
-
-parsec
+          parsec
           ]))
       cabal-install
       nix-prefetch-git
@@ -126,7 +124,6 @@ parsec
       binutils
       imagemagick
       unzip
-      python36Packages.binwalk
       zip
 
       # Dictionaries
