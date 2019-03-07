@@ -140,6 +140,7 @@
       pavucontrol
       dunst
       scrot
+      gnome3.gnome-power-manager
 
       # Things in I3 config
       j4-dmenu-desktop
@@ -185,6 +186,8 @@
   # Start emacs server
   services.emacs.enable = true;
   services.emacs.defaultEditor = true;
+
+  services.upower.enable = true;
 
   # Enable sound.
   sound.enable = true;
