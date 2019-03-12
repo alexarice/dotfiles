@@ -141,6 +141,7 @@
       dunst
       scrot
       gnome3.gnome-power-manager
+      piper
 
       # Things in I3 config
       j4-dmenu-desktop
@@ -188,6 +189,8 @@
   services.emacs.defaultEditor = true;
 
   services.upower.enable = true;
+
+  services.ratbagd.enable = true;
 
   # Enable sound.
   sound.enable = true;
