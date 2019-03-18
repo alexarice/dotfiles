@@ -34,7 +34,7 @@ in
       cursorColor = "#81c1e4";
       cursorForegroundColor = "#81c1e4";
       cursorShape = "block";
-      backgroundColor = "rgba(40,42,54,0.8)";
+      backgroundColor = "rgba(40,42,54,0.6)";
       foregroundColor = "#f8f8f2";
       foregroundBoldColor = "#f8f8f2";
       highlightColor = "#ccccc7";
