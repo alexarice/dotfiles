@@ -79,6 +79,7 @@
       spotify
       libreoffice
       discord
+      steam
 
       # LXDE
       gpicview
