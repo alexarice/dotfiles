@@ -101,7 +101,7 @@ output "*" background "~/dotfiles/background-image.png" fill
 
 
 exec --no-startup-id redshift -l 51.2092712:0.2556012999999666
-
+exec --no-startup-id mako
 exec --no-startup-id blueman-applet
 
 exec --no-startup-id nm-applet
