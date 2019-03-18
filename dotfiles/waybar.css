@@ -2,7 +2,7 @@
     border: none;
     border-radius: 0;
     font-family: "Source Code Pro";
-    font-size: 12px;
+    font-size: 13px;
     min-height: 0;
 }
 
@@ -29,7 +29,7 @@ window#waybar {
     border-bottom: 3px solid #ffffff;
 }
 
-#clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-spotify, #tray, #mode, #idle_inhibitor {
+#clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-spotify, #tray, #mode, #idle_inhibitor, #custom-root, #custom-home {
     padding: 0 10px;
     margin: 0 5px;
 }
@@ -40,7 +40,6 @@ window#waybar {
 
 #battery {
     background-color: #ffffff;
-    color: #000000;
 }
 
 #battery.charging {
@@ -66,12 +65,7 @@ window#waybar {
 }
 
 #cpu {
-    background: #2ecc71;
-    color: #000000;
-}
-
-#memory {
-    background: #9b59b6;
+    background: #000000;
 }
 
 #backlight {
@@ -87,18 +81,15 @@ window#waybar {
 }
 
 #pulseaudio {
-    background: #f1c40f;
-    color: #000000;
+    background: #4c561b;
 }
 
 #pulseaudio.muted {
-    background: #90b1b1;
-    color: #2a5c45;
+    background: #1f4249;
 }
 
 #custom-spotify {
     background: #66cc99;
-    color: #2a5c45;
 }
 
 #temperature {
@@ -111,6 +102,14 @@ window#waybar {
 
 #tray {
     background-color: #2980b9;
+}
+
+#custom-root {
+    background-color: #2980b9;
+}
+
+#custom-home {
+    background-color: #f0932b;
 }
 
 #idle_inhibitor {

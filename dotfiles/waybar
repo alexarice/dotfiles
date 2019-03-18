@@ -1,7 +1,7 @@
 {
     "layer": "bottom", // Waybar at top layer
     "position": "bottom", // Waybar at the bottom of your screen
-    "modules-left": ["sway/workspaces",  "cpu", "backlight", "pulseaudio", "custom/spotify"],
+    "modules-left": ["sway/workspaces",  "cpu", "backlight", "pulseaudio", "custom/root", "custom/home", "custom/spotify"],
     "modules-center": ["sway/window"],
     "modules-right": [ "network", "battery", "clock"],
     "tray": {
@@ -14,10 +14,10 @@
         "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
-        "format": "CPU: {usage}%"
+        "format": "<b>CPU</b>: {usage}%"
     },
     "memory": {
-        "format": "MEM: {}%"
+        "format": "<b>MEM</b>: {}%"
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -28,7 +28,7 @@
     },
     "backlight": {
         // "device": "acpi_video1",
-        "format": "BL: {percent}% {icon}",
+        "format": "<b>BL</b>: {percent}% {icon}",
         "format-icons": ["", ""],
         "on-scroll-up": "brightnessctl s +1%",
         "on-scroll-down": "brightnessctl s 1%-"
@@ -39,7 +39,7 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "BAT: {capacity}% {icon}",
+        "format": "<b>BAT</b>: {capacity}% {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
@@ -71,5 +71,13 @@
         "format": " {}",
         "max-length": 40,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+    },
+    "custom/root": {
+        "format": "<b>\\</b> {}",
+        "exec": "df -h | gawk '/dm-2/ {print $3 \"/\" $2}'"
+    },
+    "custom/home": {
+        "format": "<b>~</b> {}",
+        "exec": "df -h | gawk '/home/ {print $3 \"/\" $2}'"
     }
 }

@@ -2,10 +2,10 @@
 
 filestart="$HOME/Pictures/screenshot"
 number=0
-while test -e "$filestart$number.jpg"; do
+while test -e "$filestart$number.png"; do
 	(( ++number))
 done
 
-fname="$filestart$number.jpg"
+fname="$filestart$number.png"
 
-import -window root $fname
+grim $fname
