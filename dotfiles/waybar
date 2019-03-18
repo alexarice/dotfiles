@@ -1,9 +1,9 @@
 {
     "layer": "bottom", // Waybar at top layer
     "position": "bottom", // Waybar at the bottom of your screen
-    "modules-left": ["sway/workspaces", "pulseaudio", "custom/spotify"],
+    "modules-left": ["sway/workspaces",  "cpu", "backlight", "pulseaudio", "custom/spotify"],
     "modules-center": ["sway/window"],
-    "modules-right": [ "network", "cpu", "backlight", "battery", "clock", "tray"],
+    "modules-right": [ "network", "battery", "clock"],
     "tray": {
         // "icon-size": 21,
         "spacing": 10
