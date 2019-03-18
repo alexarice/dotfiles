@@ -3,7 +3,9 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
-
+let
+waybar = pkgs.callPackage /home/alex/dotfiles/waybar-nix/waybar.nix { };
+in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -61,7 +63,7 @@
 
   # List packages installed in system profile. To search, run:
   environment = {
-    systemPackages = (with pkgs.haskellPackages; [
+    systemPackages = [waybar] ++ (with pkgs.haskellPackages; [
       apply-refact
       hlint
       stylish-haskell
@@ -131,10 +133,10 @@
       aspell
       aspellDicts.en
 
-      # X Server tools
-      xorg.xbacklight
-      libnotify
-      xclip
+      # Wayland
+      mako
+      grim
+      brightnessctl
 
       # Utilities
       blueman
@@ -193,28 +195,33 @@
 
   services.ratbagd.enable = true;
 
+  services.mingetty.autologinUser = "alex";
+
   # Enable sound.
   sound.enable = true;
 
   # Enable the X11 windowing system.
   services.xserver = {
-    enable = true;
-    exportConfiguration = true;
-    layout = "gb";
-    displayManager.auto = {
-      enable = true;
-      user = "alex";
-    };
-    desktopManager.default = "none";
-    windowManager.default = "i3";
-    windowManager.i3.enable = true;
-    libinput = {
-      enable = true;
-      naturalScrolling = true;
-      disableWhileTyping = true;
-      tapping = false;
-    };
+    enable = false;
+#    exportConfiguration = true;
+#    layout = "gb";
+#    displayManager.auto = {
+#      enable = true;
+#      user = "alex";
+#    };
+#    desktopManager.default = "none";
+#    windowManager.default = "i3";
+#    windowManager.i3.enable = true;
+#    libinput = {
+#      enable = true;
+#      naturalScrolling = true;
+#      disableWhileTyping = true;
+#      tapping = false;
+#    };
   };
+  hardware.brightnessctl.enable = true;
+  programs.sway.enable = true;
+  programs.sway.extraPackages = with pkgs; [xwayland swaylock swayidle];
 
   # Use Zsh
   programs.zsh.enable = true;
@@ -230,7 +237,7 @@
       shell = pkgs.zsh;
       isNormalUser = true;
       home = "/home/alex";
-      extraGroups = ["wheel" "networkmanager" "audio"];
+      extraGroups = ["wheel" "networkmanager" "audio" "video"];
       uid = 1000;
       hashedPassword = "$6$lY0U5C4WoOcmj.6$YLKJMkQVUJDbItcyHV7wZuvmzpvmOcPR9dgHWJYzUHBB7bSevyC4Vqpqm2IxoVqqhpz.KY7aQJnQI2HaSDsL1.";
     };

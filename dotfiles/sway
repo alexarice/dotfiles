@@ -1,0 +1,111 @@
+font pango:Source Code Pro 9
+floating_modifier Mod4
+new_window normal 1
+new_float normal 2
+hide_edge_borders none
+force_focus_wrapping no
+focus_follows_mouse yes
+focus_on_window_activation smart
+mouse_warping output
+
+default_border pixel 2
+gaps inner 4
+
+client.focused #2A38A8 #2A38A8 #FFFFFF #2e9ef4 #2A38A8
+client.focused_inactive #333333 #333333 #999999 #484e50 #2A38A8
+client.unfocused #333333 #333333 #999999 #292d2e #333333
+client.urgent #FF0000 #8C5665 #FF0000 #900000 #FF0000
+client.placeholder #000000 #0c0c0c #ffffff #000000 #0c0c0c
+client.background #ffffff
+
+bindsym Mod4+1 workspace 1
+bindsym Mod4+2 workspace 2
+bindsym Mod4+3 workspace 3
+bindsym Mod4+4 workspace 4
+bindsym Mod4+5 workspace 5
+bindsym Mod4+6 workspace 6
+bindsym Mod4+7 workspace 7
+bindsym Mod4+8 workspace 8
+bindsym Mod4+9 workspace 9
+bindsym Mod4+Ctrl+k exec "shutdown -h now"
+bindsym Mod4+Ctrl+r exec reboot
+bindsym Mod4+Ctrl+s exec "swaylock -f && systemctl suspend"
+bindsym Mod4+Down focus down
+bindsym Mod4+Left focus left
+bindsym Mod4+Return exec termite
+bindsym Mod4+Right focus right
+bindsym Mod4+Shift+1 move container to workspace 1
+bindsym Mod4+Shift+2 move container to workspace 2
+bindsym Mod4+Shift+3 move container to workspace 3
+bindsym Mod4+Shift+4 move container to workspace 4
+bindsym Mod4+Shift+5 move container to workspace 5
+bindsym Mod4+Shift+6 move container to workspace 6
+bindsym Mod4+Shift+7 move container to workspace 7
+bindsym Mod4+Shift+8 move container to workspace 8
+bindsym Mod4+Shift+9 move container to workspace 9
+bindsym Mod4+Shift+Down move down
+bindsym Mod4+Shift+Left move left
+bindsym Mod4+Shift+Right move right
+bindsym Mod4+Shift+Up move up
+bindsym Mod4+Shift+a exec "setxkbmap -layout gb"
+bindsym Mod4+Shift+c reload
+bindsym Mod4+Shift+d exec "setxkbmap -layout gb -variant dvorak"
+bindsym Mod4+Shift+e exec sway-nagbar -t warning -m 'Do you want to exit i3?' -b 'Yes' 'sway-msg exit'
+bindsym Mod4+Shift+q kill
+bindsym Mod4+Shift+r restart
+bindsym Mod4+Shift+space floating toggle
+bindsym Mod4+Up focus up
+bindsym Mod4+b exec emacsclient --create-frame
+bindsym Mod4+c exec firefox
+bindsym Mod4+d exec --no-startup-id j4-dmenu-desktop
+bindsym Mod4+e layout toggle split
+bindsym Mod4+f fullscreen toggle
+bindsym Mod4+h split h
+bindsym Mod4+m exec thunderbird
+bindsym Mod4+n exec pcmanfm
+bindsym Mod4+o exec "i3lock -f"
+bindsym Mod4+p exec /home/alex/scripts/take_screenshot
+bindsym Mod4+r mode resize
+bindsym Mod4+s layout stacking
+bindsym Mod4+space focus mode_toggle
+bindsym Mod4+v split v
+bindsym Mod4+w layout tabbed
+bindsym XF86AudioLowerVolume exec "pactl set-sink-volume 0 -5% && pkill -RTMIN+11 i3blocks"
+bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume 0 +5% && pkill -RTMIN+11 i3blocks"
+bindsym XF86MonBrightnessDown exec "brightnessctl s 5%-"
+bindsym XF86MonBrightnessUp exec "brightnessctl s +5%"
+
+mode "resize" {
+bindsym Down resize grow height 10 px or 10 ppt
+bindsym Escape mode default
+bindsym Left resize shrink width 10 px or 10 ppt
+bindsym Return mode default
+bindsym Right resize grow width 10 px or 10 ppt
+bindsym Up resize shrink height 10 px or 10 ppt
+}
+
+input "2:7:SynPS/2_Synaptics_TouchPad" {
+  natural_scroll enabled
+}
+
+input "*" {
+  xkb_layout gb
+  xkb_variant dvorak
+}
+
+bar {
+    swaybar_command waybar
+}
+
+output "*" background "~/dotfiles/background-image.png" fill
+
+
+exec --no-startup-id redshift -l 51.2092712:0.2556012999999666
+
+exec --no-startup-id blueman-applet
+
+exec --no-startup-id nm-applet
+
+exec --no-startup-id dropbox start
+
+
