@@ -7,8 +7,7 @@
 }
 
 window#waybar {
-    background: rgba(43, 48, 59, 0.5);
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+    background: rgba(43, 48, 59, 0);
     color: #ffffff;
 }
 
@@ -76,7 +75,7 @@ window#waybar {
 }
 
 #backlight {
-    background: #90b1b1;
+    background: #9b59b6;
 }
 
 #network {
