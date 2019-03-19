@@ -1,0 +1,25 @@
+diff -Naur brillo-v1.4.3/Makefile copy/Makefile
+--- brillo-v1.4.3/Makefile	2018-12-06 17:36:19.000000000 +0000
++++ copy/Makefile	2019-03-19 21:27:10.501689556 +0000
+@@ -13,7 +13,6 @@
+ MANDIR=$(DESTDIR)$(PREFIX)/share/man/man1
+ PKEDIR=$(DESTDIR)$(PREFIX)/share/polkit-1/actions
+ UDEVDIR=$(DESTDIR)$(PREFIX)/lib/udev/rules.d
+-AADIR=$(DESTDIR)/etc/apparmor.d
+ 
+ SRC = \
+ 	src/value.c \
+@@ -53,12 +52,10 @@
+ dist: $(PROG) man polkit
+ 
+ install-dist: install dist
+-	install -dZ -m 755 $(MANDIR) $(PKEDIR) $(UDEVDIR) $(AADIR) $(AADIR)/local
++	install -dZ -m 755 $(MANDIR) $(PKEDIR) $(UDEVDIR)
+ 	install -DZ -m 644 $(PROG).1 -t $(MANDIR)
+ 	install -DZ -m 644 contrib/$(VENDOR).$(PROG).policy -t $(PKEDIR)
+ 	install -DZ -m 644 contrib/90-brillo.rules -t $(UDEVDIR)
+-	install -DZ -m 644 contrib/bin.brillo -t $(AADIR)
+-	install -DZ -m 644 contrib/local/bin.brillo -t $(AADIR)/local
+ 
+ uninstall:
+ 	rm -f $(BINDIR)/$(PROG)

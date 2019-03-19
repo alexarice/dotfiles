@@ -9,6 +9,7 @@ redshift = pkgs.callPackage /home/alex/dotfiles/redshift-wayland/default.nix {
     inherit (pkgs.python3Packages) python pygobject3 pyxdg wrapPython;
     geoclue = pkgs.geoclue2;
   };
+brillo = pkgs.callPackage /home/alex/dotfiles/brillo/default.nix{ };
 my-python-packages = python-packages : with python-packages; [ dbus-python ];
 my-python3 = pkgs.python3.withPackages my-python-packages;
 in
@@ -69,7 +70,8 @@ in
 
   # List packages installed in system profile. To search, run:
   environment = {
-    systemPackages = [waybar redshift] ++ (with pkgs.haskellPackages; [
+    systemPackages = [waybar redshift brillo]
+    ++ (with pkgs.haskellPackages; [
       apply-refact
       hlint
       stylish-haskell
@@ -205,26 +207,9 @@ in
   # Enable sound.
   sound.enable = true;
 
-  # Enable the X11 windowing system.
-  services.xserver = {
-    enable = false;
-#    exportConfiguration = true;
-#    layout = "gb";
-#    displayManager.auto = {
-#      enable = true;
-#      user = "alex";
-#    };
-#    desktopManager.default = "none";
-#    windowManager.default = "i3";
-#    windowManager.i3.enable = true;
-#    libinput = {
-#      enable = true;
-#      naturalScrolling = true;
-#      disableWhileTyping = true;
-#      tapping = false;
-#    };
-  };
-  hardware.brightnessctl.enable = true;
+  # Disable the X11 windowing system.
+  services.xserver.enable = false;
+
   programs.sway.enable = true;
   programs.sway.extraPackages = with pkgs; [xwayland swaylock swayidle];
 

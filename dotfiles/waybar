@@ -20,8 +20,8 @@
         // "device": "acpi_video1",
         "format": "<b>BL</b>: {percent}%",
         "format-icons": ["", ""],
-        "on-scroll-up": "brightnessctl s +1%",
-        "on-scroll-down": "brightnessctl s 1%-"
+        "on-scroll-up": "brillo -A 0.5",
+        "on-scroll-down": "brillo -U 0.5"
     },
     "battery": {
         "states": {
