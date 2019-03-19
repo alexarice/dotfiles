@@ -5,6 +5,10 @@
 { config, pkgs, ... }:
 let
 waybar = pkgs.callPackage /home/alex/dotfiles/waybar-nix/waybar.nix { };
+redshift = pkgs.callPackage /home/alex/dotfiles/redshift-wayland/default.nix {
+    inherit (pkgs.python3Packages) python pygobject3 pyxdg wrapPython;
+    geoclue = pkgs.geoclue2;
+  };
 my-python-packages = python-packages : with python-packages; [ dbus-python ];
 my-python3 = pkgs.python3.withPackages my-python-packages;
 in
@@ -65,7 +69,7 @@ in
 
   # List packages installed in system profile. To search, run:
   environment = {
-    systemPackages = [waybar] ++ (with pkgs.haskellPackages; [
+    systemPackages = [waybar redshift] ++ (with pkgs.haskellPackages; [
       apply-refact
       hlint
       stylish-haskell
@@ -151,9 +155,6 @@ in
 
       # Things in I3 config
       j4-dmenu-desktop
-      imagemagick
-      redshift
-      networkmanagerapplet
       dropbox-cli
 
       # GTK
