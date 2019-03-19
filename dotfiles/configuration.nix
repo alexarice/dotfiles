@@ -5,6 +5,8 @@
 { config, pkgs, ... }:
 let
 waybar = pkgs.callPackage /home/alex/dotfiles/waybar-nix/waybar.nix { };
+my-python-packages = python-packages : with python-packages; [ dbus-python ];
+my-python3 = pkgs.python3.withPackages my-python-packages;
 in
 {
   imports =
@@ -108,6 +110,7 @@ in
       cabal2nix
       nodejs
       python
+      my-python3
       nodePackages.tern
 
       # CLI Programs
@@ -171,6 +174,7 @@ in
       google-fonts
       source-code-pro
       powerline-fonts
+      font-awesome
     ];
     fontconfig = {
       enable = true;
