@@ -18,7 +18,7 @@ in
     [ # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
     ];
-  
+
   boot.plymouth.enable = true;
 
   boot.initrd.luks.devices = [
@@ -191,26 +191,28 @@ in
     };
   };
 
-  # Save manual
-  services.nixosManual.showManual = true;
+  services = {
+    # Save manual
+    nixosManual.showManual = true;
 
-  # Start emacs server
-  services.emacs.enable = true;
-  services.emacs.defaultEditor = true;
+    # Start emacs server
+    emacs.enable = true;
+    emacs.defaultEditor = true;
 
-  services.upower.enable = true;
+    upower.enable = true;
 
-  services.ratbagd.enable = true;
+    ratbagd.enable = true;
 
-  services.mingetty.autologinUser = "alex";
+    mingetty.autologinUser = "alex";
 
-  services.tlp.enable = true;
+    tlp.enable = true;
+
+    # Disable the X11 windowing system.
+    xserver.enable = false;
+  };
 
   # Enable sound.
   sound.enable = true;
-
-  # Disable the X11 windowing system.
-  services.xserver.enable = false;
 
   programs.sway.enable = true;
   programs.sway.extraPackages = with pkgs; [xwayland swaylock swayidle];
