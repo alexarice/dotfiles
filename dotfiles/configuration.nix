@@ -204,6 +204,8 @@ in
 
   services.mingetty.autologinUser = "alex";
 
+  services.tlp.enable = true;
+
   # Enable sound.
   sound.enable = true;
 
