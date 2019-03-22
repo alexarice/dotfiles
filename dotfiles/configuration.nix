@@ -59,9 +59,6 @@ in
     opengl.driSupport32Bit = true;
   };
 
-  programs.dconf.enable = true;
-  services.dbus.packages = [ pkgs.gnome3.dconf ];
-
   # Set your time zone.
   time.timeZone = "Europe/London";
 
@@ -98,6 +95,7 @@ in
       pcmanfm
       lxmenu-data
       shared_mime_info
+      glib
 
       # LaTeX
       texlive.combined.scheme-full
@@ -154,6 +152,7 @@ in
       scrot
       gnome3.gnome-power-manager
       piper
+      udiskie
 
       # Things in I3 config
       j4-dmenu-desktop
@@ -210,6 +209,9 @@ in
     # Disable the X11 windowing system.
     xserver.enable = false;
   };
+
+  programs.dconf.enable = true;
+  services.dbus.packages = [ pkgs.gnome3.dconf ];
 
   # Enable sound.
   sound.enable = true;

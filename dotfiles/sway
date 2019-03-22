@@ -56,14 +56,14 @@ bindsym Mod4+Shift+r restart
 bindsym Mod4+Shift+space floating toggle
 bindsym Mod4+Up focus up
 bindsym Mod4+b exec emacsclient --create-frame
-bindsym Mod4+c exec firefox
+bindsym Mod4+c exec "GDK_BACKEND=wayland firefox"
 bindsym Mod4+d exec --no-startup-id j4-dmenu-desktop
 bindsym Mod4+e layout toggle split
 bindsym Mod4+f fullscreen toggle
 bindsym Mod4+h split h
 bindsym Mod4+m exec thunderbird
 bindsym Mod4+n exec pcmanfm
-bindsym Mod4+o exec "i3lock -f"
+bindsym Mod4+o exec "swaylock -f"
 bindsym Mod4+p exec /home/alex/scripts/take_screenshot
 bindsym Mod4+r mode resize
 bindsym Mod4+s layout stacking
@@ -103,10 +103,17 @@ bar {
 
 output "*" background "~/dotfiles/background-image.png" fill
 
+set $gnome-schema org.gnome.desktop.interface
+
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'Adapta-Nokto-Eta'
+    gsettings set $gnome-schema icon-theme 'Adwaita'
+    gsettings set $gnome-scheme font-name 'Source Code Pro 10'
+}
 
 exec --no-startup-id redshift -l 51.2092712:0.2556012999999666 -t 6500K:2000K
 exec --no-startup-id mako
-
+exec --no-startup-id udiskie
 exec --no-startup-id dropbox start
 
 

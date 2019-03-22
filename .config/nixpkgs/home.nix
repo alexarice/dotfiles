@@ -114,13 +114,6 @@ in
       gtk-xft-rgba="rgb";
     };
   };
-  services = {
-    udiskie = {
-      enable = true;
-      automount = true;
-      notify = true;
-    };
-  };
   home.file.".spacemacs".source = "${dots}/spacemacs";
   home.file.".ghc/ghci.conf".source = "${dots}/ghci.conf";
   home.file.".config/waybar/config".source = "${dots}/waybar";
