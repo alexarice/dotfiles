@@ -27,6 +27,7 @@ in
       fullscreen = false;
       scrollOnOutput = false;
       scrollOnKeystroke = true;
+      scrollbackLines = 10000;
       searchWrap = false;
       urgentOnBell = true;
       font = "Source Code Pro for Powerline 10";
