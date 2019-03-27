@@ -9,7 +9,7 @@ redshift = pkgs.callPackage /home/alex/dotfiles/redshift-wayland/default.nix {
     inherit (pkgs.python3Packages) python pygobject3 pyxdg wrapPython;
     geoclue = pkgs.geoclue2;
   };
-brillo = pkgs.callPackage /home/alex/dotfiles/brillo/default.nix{ };
+brillo = (import /home/alex/nixpkgs {}).brillo;
 my-python-packages = python-packages : with python-packages; [ dbus-python ];
 my-python3 = pkgs.python3.withPackages my-python-packages;
 in
@@ -108,6 +108,7 @@ in
           process
           containers
           parsec
+          multimap
           ]))
       cabal-install
       nix-prefetch-git
@@ -143,8 +144,8 @@ in
       # Wayland
       mako
       grim
-      brightnessctl
-
+      slurp
+      
       # Utilities
       blueman
       pavucontrol
@@ -212,6 +213,7 @@ in
 
   programs.dconf.enable = true;
   services.dbus.packages = [ pkgs.gnome3.dconf ];
+  services.udev.packages = [ brillo ];
 
   # Enable sound.
   sound.enable = true;
