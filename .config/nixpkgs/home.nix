@@ -67,7 +67,9 @@ in
       initExtra = ''
                 export DEFAULT_USER=\"alex\"
                 prompt_context(){}
-                if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+                export GDK_BACKEND=wayland
+                if [[ -z $DISPLAY ]] && [[ $(tty) =
+                /dev/tty1 ]]; then
                   exec sway
                 fi
                 '';

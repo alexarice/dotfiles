@@ -56,12 +56,12 @@ bindsym Mod4+Shift+r restart
 bindsym Mod4+Shift+space floating toggle
 bindsym Mod4+Up focus up
 bindsym Mod4+b exec emacsclient --create-frame
-bindsym Mod4+c exec "GDK_BACKEND=wayland firefox"
+bindsym Mod4+c exec "firefox"
 bindsym Mod4+d exec --no-startup-id j4-dmenu-desktop
 bindsym Mod4+e layout toggle split
 bindsym Mod4+f fullscreen toggle
 bindsym Mod4+h split h
-bindsym Mod4+m exec thunderbird
+bindsym Mod4+m exec "GDK_BACKEND=x11 thunderbird"
 bindsym Mod4+n exec pcmanfm
 bindsym Mod4+o exec "swaylock -f"
 bindsym Mod4+p exec /home/alex/scripts/take_screenshot
