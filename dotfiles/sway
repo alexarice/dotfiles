@@ -101,7 +101,7 @@ bar {
     swaybar_command waybar
 }
 
-output "*" background "~/dotfiles/background-image.png" fill
+output "*" background "~/dotfiles/background-image-2.png" fill
 
 set $gnome-schema org.gnome.desktop.interface
 
