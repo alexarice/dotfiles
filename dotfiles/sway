@@ -65,6 +65,7 @@ bindsym Mod4+m exec "GDK_BACKEND=x11 thunderbird"
 bindsym Mod4+n exec pcmanfm
 bindsym Mod4+o exec "swaylock -f"
 bindsym Mod4+p exec /home/alex/scripts/take_screenshot
+bindsym Mod4+Shift+p exec /home/alex/scripts/take_screenshot full
 bindsym Mod4+r mode resize
 bindsym Mod4+s layout stacking
 bindsym Mod4+space focus mode_toggle

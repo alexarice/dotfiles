@@ -8,4 +8,8 @@ done
 
 fname="$filestart$number.png"
 
-grim -g "$(slurp)" $fname
+if [ $1 = "full" ]; then
+    grim $fname
+else
+    grim -g "$(slurp)" $fname
+fi
