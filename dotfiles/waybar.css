@@ -10,7 +10,6 @@ window#waybar {
     background: rgba(43, 48, 59, 0);
 }
 
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button {
     padding: 0 3;
     background: transparent;
