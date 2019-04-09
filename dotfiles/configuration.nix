@@ -10,7 +10,7 @@ redshift = pkgs.callPackage /home/alex/dotfiles/redshift-wayland/default.nix {
     geoclue = pkgs.geoclue2;
   };
 brillo = (import /home/alex/nixpkgs {}).brillo;
-my-python-packages = python-packages : with python-packages; [ dbus-python ];
+my-python-packages = python-packages : with python-packages; [ dbus-python pygobject3 ];
 my-python3 = pkgs.python3.withPackages my-python-packages;
 in
 {
@@ -145,7 +145,7 @@ in
       mako
       grim
       slurp
-      
+
       # Utilities
       blueman
       pavucontrol
@@ -154,6 +154,7 @@ in
       gnome3.gnome-power-manager
       piper
       udiskie
+      playerctl
 
       # Things in I3 config
       j4-dmenu-desktop

@@ -62,7 +62,9 @@
         "format": " {}",
         "interval": 5,
         "max-length": 100,
-        "exec": "python3 $HOME/.config/waybar/mediaplayer.py"
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl next",
+        "exec": "playerctl metadata -f '{{artist}}: {{title}}' | sed 's/&/&amp;/g'"
     },
     "custom/root": {
         "format": "<b>\\</b> {}",

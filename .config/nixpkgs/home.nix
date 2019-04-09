@@ -121,5 +121,4 @@ in
   home.file.".config/waybar/config".source = "${dots}/waybar";
   home.file.".config/waybar/style.css".source = "${dots}/waybar.css";
   home.file.".config/sway/config".source = "${dots}/sway";
-  home.file.".config/waybar/mediaplayer.py".source = "${scripts}/mediaplayer.py";
 }
