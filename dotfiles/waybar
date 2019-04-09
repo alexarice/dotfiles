@@ -62,8 +62,9 @@
         "format": " {}",
         "interval": 5,
         "max-length": 100,
-        "on-click": "playerctl play-pause",
+        "on-click": "playerctl previous",
         "on-click-right": "playerctl next",
+        "on-click-middle": "playerctl play-pause",
         "exec": "playerctl metadata -f '{{artist}}: {{title}}' | sed 's/&/&amp;/g'"
     },
     "custom/root": {
