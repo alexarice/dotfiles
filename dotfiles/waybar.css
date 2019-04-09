@@ -1,6 +1,6 @@
 * {
     border: none;
-    border-radius: 2;
+    border-radius: 5 5 0 0;
     font-family: "Source Code Pro";
     font-size: 12px;
     min-height: 0;
@@ -12,20 +12,24 @@ window#waybar {
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button {
-    padding: 0 5px;
+    padding: 0 3;
     background: transparent;
-    color: #ffffff;
     border-bottom: 3px solid transparent;
+    color: #f8f8f2;
+}
+
+#workspaces {
+    margin: 0 3;
 }
 
 #workspaces button.focused {
-    background: #64727D;
+    background: #282a36;
     border-bottom: 3px solid #ffffff;
 }
 
 #clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-spotify, #tray, #mode, #idle_inhibitor, #custom-root, #custom-home {
     padding: 0 10px;
-    margin: 0 5px;
+    margin: 0 3px;
     background-color: #282a36;
     color: #81c1e4
 }
