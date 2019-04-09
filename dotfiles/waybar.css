@@ -1,8 +1,8 @@
 * {
     border: none;
-    border-radius: 0;
+    border-radius: 2;
     font-family: "Source Code Pro";
-    font-size: 13px;
+    font-size: 12px;
     min-height: 0;
 }
 
@@ -23,19 +23,14 @@ window#waybar {
     border-bottom: 3px solid #ffffff;
 }
 
-#mode {
-    background: #64727D;
-    border-bottom: 3px solid #ffffff;
-}
-
 #clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-spotify, #tray, #mode, #idle_inhibitor, #custom-root, #custom-home {
     padding: 0 10px;
     margin: 0 5px;
     background-color: #282a36;
-    color: #50fa7b
+    color: #81c1e4
 }
 #window {
-    color: #50fa7b;
+    color: #81c1e4;
 }
 
 #battery.charging {
