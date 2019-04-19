@@ -69,10 +69,10 @@
     },
     "custom/root": {
         "format": "<b>\\</b> {}",
-        "exec": "df -h | gawk '/dm-2/ {print $3 \"/\" $2}'"
+        "exec": "df -h | gawk '$6 == \"/\" {print $3 \"/\" $2}'"
     },
     "custom/home": {
         "format": "<b>~</b> {}",
-        "exec": "df -h | gawk '/home/ {print $3 \"/\" $2}'"
+        "exec": "df -h | gawk '$6 == \"/home\" {print $3 \"/\" $2}'"
     }
 }
