@@ -9,7 +9,6 @@ redshift = pkgs.callPackage /home/alex/dotfiles/redshift-wayland/default.nix {
     inherit (pkgs.python3Packages) python pygobject3 pyxdg wrapPython;
     geoclue = pkgs.geoclue2;
   };
-brillo = (import /home/alex/nixpkgs {}).brillo;
 in
 {
   imports =
@@ -65,7 +64,7 @@ in
 
   # List packages installed in system profile. To search, run:
   environment = {
-    systemPackages = [waybar redshift brillo]
+    systemPackages = [waybar redshift]
     ++ (with pkgs.haskellPackages; [
       apply-refact
       hlint
@@ -204,14 +203,13 @@ in
     mingetty.autologinUser = "alex";
 
     tlp.enable = true;
-
+    logind.extraConfig = "HandleLidSwitch=ignore";
     # Disable the X11 windowing system.
     xserver.enable = false;
   };
 
   programs.dconf.enable = true;
   services.dbus.packages = [ pkgs.gnome3.dconf ];
-  services.udev.packages = [ brillo ];
 
   # Enable sound.
   sound.enable = true;
@@ -221,6 +219,7 @@ in
 
   # Use Zsh
   programs.zsh.enable = true;
+  hardware.brillo.enable = true;
 
   # Set up immutable users
   users = {
@@ -233,7 +232,7 @@ in
       shell = pkgs.zsh;
       isNormalUser = true;
       home = "/home/alex";
-      extraGroups = ["wheel" "networkmanager" "audio" "video"];
+      extraGroups = ["wheel" "networkmanager" "video" "audio"];
       uid = 1000;
       hashedPassword = "$6$lY0U5C4WoOcmj.6$YLKJMkQVUJDbItcyHV7wZuvmzpvmOcPR9dgHWJYzUHBB7bSevyC4Vqpqm2IxoVqqhpz.KY7aQJnQI2HaSDsL1.";
     };
