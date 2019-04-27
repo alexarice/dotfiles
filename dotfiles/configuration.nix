@@ -4,17 +4,17 @@
 
 { config, pkgs, ... }:
 let
-waybar = pkgs.callPackage /home/alex/dotfiles/waybar-nix/waybar.nix { };
-redshift = pkgs.callPackage /home/alex/dotfiles/redshift-wayland/default.nix {
-    inherit (pkgs.python3Packages) python pygobject3 pyxdg wrapPython;
-    geoclue = pkgs.geoclue2;
-  };
+  url = "https://github.com/colemickens/nixpkgs-wayland/archive/master.tar.gz";
+  waylandOverlay = (import (builtins.fetchTarball url));
+  brilloOverlay = self: super: { brillo = (import /home/alex/nixpkgs { }).brillo; };
 in
 {
   imports =
     [ # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
     ];
+
+  nixpkgs.overlays = [ waylandOverlay brilloOverlay ];
 
   boot.plymouth.enable = true;
 
@@ -64,8 +64,7 @@ in
 
   # List packages installed in system profile. To search, run:
   environment = {
-    systemPackages = [waybar redshift]
-    ++ (with pkgs.haskellPackages; [
+    systemPackages = (with pkgs.haskellPackages; [
       apply-refact
       hlint
       stylish-haskell
@@ -141,6 +140,9 @@ in
       mako
       grim
       slurp
+      waybar
+      redshift-wayland
+      brillo
 
       # Utilities
       blueman
@@ -202,6 +204,8 @@ in
 
     mingetty.autologinUser = "alex";
 
+    udev.packages = [ pkgs.brillo ];
+
     tlp.enable = true;
     logind.extraConfig = "HandleLidSwitch=ignore";
     # Disable the X11 windowing system.
@@ -219,7 +223,6 @@ in
 
   # Use Zsh
   programs.zsh.enable = true;
-  hardware.brillo.enable = true;
 
   # Set up immutable users
   users = {

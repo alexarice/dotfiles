@@ -1,15 +1,16 @@
 font pango:Source Code Pro 9
 floating_modifier Mod4
-new_window normal 1
-new_float normal 2
+default_border pixel 2
+default_floating_border normal 2
 hide_edge_borders none
-force_focus_wrapping no
+focus_wrapping no
 focus_follows_mouse yes
 focus_on_window_activation smart
 mouse_warping output
 
-default_border pixel 2
 gaps inner 4
+smart_gaps on
+smart_borders on
 
 client.focused #81c1e4 #81c1e4 #FFFFFF #2e9ef4 #81c1e4
 client.focused_inactive #282a36 #282a36 #999999 #484e50 #282a36
@@ -116,5 +117,3 @@ exec --no-startup-id redshift -l 51.2092712:0.2556012999999666 -t 6500K:2000K
 exec --no-startup-id mako
 exec --no-startup-id udiskie
 exec --no-startup-id dropbox start
-
-
