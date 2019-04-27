@@ -4,7 +4,7 @@
     "height": 25,
     "modules-left": ["sway/workspaces",  "cpu", "backlight", "pulseaudio", "custom/spotify"],
     "modules-center": ["sway/window"],
-    "modules-right": ["custom/root", "custom/home", "network", "battery", "clock"],
+    "modules-right": ["custom/root", "network", "battery", "clock"],
     "tray": {
         // "icon-size": 21,
         "spacing": 10
@@ -71,10 +71,5 @@
         "format": "<b>\\</b> {}",
         "interval": 60,
         "exec": "df -h | gawk '$6 == \"/\" {print $3 \"/\" $2}'"
-    },
-    "custom/home": {
-        "format": "<b>~</b> {}",
-        "interval": 60,
-        "exec": "df -h | gawk '$6 == \"/home\" {print $3 \"/\" $2}'"
     }
 }
