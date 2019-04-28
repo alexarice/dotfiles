@@ -83,6 +83,7 @@ in
       libreoffice
       discord
       steam
+      sgtpuzzles
 
       # LXDE
       gpicview
@@ -149,10 +150,17 @@ in
       pavucontrol
       dunst
       scrot
-      gnome3.gnome-power-manager
       piper
       udiskie
       playerctl
+      xlibs.xeyes
+      veracrypt
+      libnotify
+
+      # Gnome
+      gnome3.gnome-power-manager
+      gnome3.nautilus
+      gnome3.eog
 
       # Things in I3 config
       j4-dmenu-desktop
