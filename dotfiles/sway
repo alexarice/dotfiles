@@ -8,8 +8,8 @@ focus_follows_mouse yes
 focus_on_window_activation smart
 mouse_warping output
 
-gaps inner 4
-smart_gaps on
+gaps inner 0
+gaps bottom 4
 smart_borders on
 
 client.focused #81c1e4 #81c1e4 #FFFFFF #2e9ef4 #81c1e4
@@ -63,7 +63,7 @@ bindsym Mod4+e layout toggle split
 bindsym Mod4+f fullscreen toggle
 bindsym Mod4+h split h
 bindsym Mod4+m exec "GDK_BACKEND=x11 thunderbird"
-bindsym Mod4+n exec pcmanfm
+bindsym Mod4+n exec nautilus
 bindsym Mod4+o exec "swaylock -f"
 bindsym Mod4+p exec /home/alex/scripts/take_screenshot
 bindsym Mod4+Shift+p exec /home/alex/scripts/take_screenshot full
