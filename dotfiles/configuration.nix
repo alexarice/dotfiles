@@ -7,14 +7,19 @@ let
   url = "https://github.com/colemickens/nixpkgs-wayland/archive/master.tar.gz";
   waylandOverlay = (import (builtins.fetchTarball url));
   brilloOverlay = self: super: { brillo = (import /home/alex/nixpkgs { }).brillo; };
+  antOverlay = self: super: {
+    inherit (import /home/alex/nixpkgs2 { })
+    ant-theme ant-dracula-theme ant-nebula-theme ant-bloody-theme;
+  };
 in
 {
   imports =
-    [ # Include the results of the hardware scan.
-      /etc/nixos/hardware-configuration.nix
+    [
+    /etc/nixos/hardware-configuration.nix
+    /etc/nixos/cachix.nix
     ];
 
-  nixpkgs.overlays = [ waylandOverlay brilloOverlay ];
+  nixpkgs.overlays = [ waylandOverlay brilloOverlay antOverlay ];
 
   boot.plymouth.enable = true;
 
@@ -85,15 +90,6 @@ in
       steam
       sgtpuzzles
 
-      # LXDE
-      gpicview
-      lxtask
-      lxappearance
-      pcmanfm
-      lxmenu-data
-      shared_mime_info
-      glib
-
       # LaTeX
       texlive.combined.scheme-full
 
@@ -148,9 +144,6 @@ in
       # Utilities
       blueman
       pavucontrol
-      dunst
-      scrot
-      piper
       udiskie
       playerctl
       xlibs.xeyes
@@ -161,14 +154,20 @@ in
       gnome3.gnome-power-manager
       gnome3.nautilus
       gnome3.eog
+      glib
 
       # Things in I3 config
       j4-dmenu-desktop
-      dropbox-cli
+      dropbox
 
       # GTK
       adapta-gtk-theme
       gnome3.adwaita-icon-theme
+      arc-icon-theme
+      ant-theme
+      ant-dracula-theme
+      ant-nebula-theme
+      ant-bloody-theme
     ]);
   };
 
@@ -227,7 +226,7 @@ in
   sound.enable = true;
 
   programs.sway.enable = true;
-  programs.sway.extraPackages = with pkgs; [xwayland swaylock swayidle];
+  programs.sway.extraPackages = with pkgs; [xwayland swaylock swayidle swaybg];
 
   # Use Zsh
   programs.zsh.enable = true;

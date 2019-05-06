@@ -89,7 +89,7 @@ in
     };
   };
   gtk = {
-    enable = true;
+    enable = false;
     theme = {
       package = pkgs.adapta-gtk-theme;
       name = "Adapta-Nokto-Eta";
