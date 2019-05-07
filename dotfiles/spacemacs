@@ -334,6 +334,10 @@ you should place your code here."
   (setq org-refile-targets '((org-agenda-files . (:maxlevel . 6)))))
 )
 (setq org-bullets-bullet-list '("■" "◆" "▲" "▶"))
+(setq mouse-wheel-scroll-amount '(1))
+(setq TeX-source-correlate-mode t)
+(setq TeX-source-correlate-start-server t)
+(setq TeX-source-correlate-method 'synctex)
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 (custom-set-variables
