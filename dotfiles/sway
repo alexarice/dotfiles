@@ -114,6 +114,6 @@ exec_always {
 }
 
 exec --no-startup-id redshift -l 51.2092712:0.2556012999999666 -t 6500K:2000K
-exec --no-startup-id mako
+exec --no-startup-id "mako --default-timeout 10000"
 exec --no-startup-id udiskie
 exec --no-startup-id dropbox start
