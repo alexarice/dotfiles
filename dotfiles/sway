@@ -103,7 +103,10 @@ bar {
     swaybar_command waybar
 }
 
-output "*" background "~/dotfiles/background-image-2.png" fill
+output HDMI-A-2 pos 0,0 res 1920x1080 bg "~/dotfiles/background-image-2.png" fill
+
+output eDP-1 pos 0,1080 res 1600x900 bg "~/dotfiles/background-image-2.png" fill
+
 
 set $gnome-schema org.gnome.desktop.interface
 
