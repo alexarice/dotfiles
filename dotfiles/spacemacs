@@ -57,8 +57,8 @@ values."
      spell-checking
      syntax-checking
      version-control
-     (latex :variables TeX-view-program-list '(("Evince" "evince --page-index=%(outpage) %o"))
-            TeX-view-program-selection '((output-pdf "Evince"))
+     (latex :variables
+            TeX-view-program-selection '((output-pdf "Zathura"))
             TeX-electric-math nil
             latex-enable-auto-fill nil
             latex-enable-folding t
@@ -324,20 +324,28 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-;; Display Visited File's Path in the Frame Title
-(setq frame-title-format "spacemacs: %b")
-(setq-default adaptive-wrap-extra-indent 2)
-(add-hook 'visual-line-mode-hook #'adaptive-wrap-prefix-mode)
-(global-visual-line-mode +1)
-(add-hook 'doc-view-mode-hook 'auto-revert-mode)
-(with-eval-after-load 'org
-  (setq org-refile-targets '((org-agenda-files . (:maxlevel . 6)))))
-)
+  ;; Display Visited File's Path in the Frame Title
+  (setq frame-title-format "spacemacs: %b")
+  (setq-default adaptive-wrap-extra-indent 2)
+  (add-hook 'visual-line-mode-hook #'adaptive-wrap-prefix-mode)
+  (global-visual-line-mode +1)
+  (add-hook 'doc-view-mode-hook 'auto-revert-mode)
+  (with-eval-after-load 'org
+    (setq org-refile-targets '((org-agenda-files . (:maxlevel . 6)))))
+  )
 (setq org-bullets-bullet-list '("■" "◆" "▲" "▶"))
 (setq mouse-wheel-scroll-amount '(1))
 (setq TeX-source-correlate-mode t)
 (setq TeX-source-correlate-start-server t)
 (setq TeX-source-correlate-method 'synctex)
+(add-to-list 'TeX-expand-list
+             '("%sn" (lambda () server-name)))
+(add-to-list 'TeX-view-program-list
+             '("Zathura"
+               ("zathura %o"
+                (mode-io-correlate " --synctex-forward %n:0:%b -x \"emacsclient --socket-name=%sn --no-wait +%{line} %{input}\""))
+               "zathura"))
+
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 (custom-set-variables
