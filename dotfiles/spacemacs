@@ -58,6 +58,12 @@ values."
      syntax-checking
      version-control
      (latex :variables
+            TeX-view-program-list
+                         '(("Zathura"
+                           ("zathura %o"
+                            (mode-io-correlate " --synctex-forward %n:0:%b -x \"emacsclient --socket-name=%sn --no-wait +%{line} %{input}\""))
+                           "zathura"))
+            TeX-expand-list (cons '("%sn" (lambda () server-name)) TeX-expand-list)
             TeX-view-program-selection '((output-pdf "Zathura"))
             TeX-electric-math nil
             latex-enable-auto-fill nil
@@ -106,7 +112,7 @@ values."
    ;; when the current branch is not `develop'. Note that checking for
    ;; new versions works via git commands, thus it calls GitHub services
    ;; whenever you start Emacs. (default nil)
-   dotspacemacs-check-for-update nil
+   dotspacemacs-check-for-update t
    ;; If non-nil, a form that evaluates to a package directory. For example, to
    ;; use different package directories for different Emacs versions, set this
    ;; to `emacs-version'.
@@ -338,13 +344,6 @@ you should place your code here."
 (setq TeX-source-correlate-mode t)
 (setq TeX-source-correlate-start-server t)
 (setq TeX-source-correlate-method 'synctex)
-(add-to-list 'TeX-expand-list
-             '("%sn" (lambda () server-name)))
-(add-to-list 'TeX-view-program-list
-             '("Zathura"
-               ("zathura %o"
-                (mode-io-correlate " --synctex-forward %n:0:%b -x \"emacsclient --socket-name=%sn --no-wait +%{line} %{input}\""))
-               "zathura"))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
