@@ -89,6 +89,7 @@ in
       discord
       steam
       sgtpuzzles
+      zathura
 
       # LaTeX
       texlive.combined.scheme-full
