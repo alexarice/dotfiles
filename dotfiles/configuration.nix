@@ -159,6 +159,7 @@ in
 
       # Things in I3 config
       j4-dmenu-desktop
+      bemenu
       dropbox
 
       # GTK
