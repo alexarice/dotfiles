@@ -58,7 +58,7 @@ bindsym Mod4+Shift+space floating toggle
 bindsym Mod4+Up focus up
 bindsym Mod4+b exec emacsclient --create-frame
 bindsym Mod4+c exec "firefox"
-bindsym Mod4+d exec j4-dmenu-desktop --dmenu="bemenu -i --fn 'Source Code Pro 10' --tf=#81c1e4 --hf=#81c1e4 --hb=#282a36"
+bindsym Mod4+d exec j4-dmenu-desktop --no-generic --dmenu="bemenu -i --fn 'Source Code Pro 10' --tf=#81c1e4 --hf=#81c1e4 --hb=#282a36"
 bindsym Mod4+e layout toggle split
 bindsym Mod4+f fullscreen toggle
 bindsym Mod4+h split h
