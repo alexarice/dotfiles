@@ -112,7 +112,6 @@ in
       nodePackages.tern
 
       # CLI Programs
-      termite
       wine
       git
       bup
@@ -151,10 +150,10 @@ in
       veracrypt
       libnotify
 
-      # Gnome
-      gnome3.gnome-power-manager
-      gnome3.nautilus
-      gnome3.eog
+      # Desktop environment
+      termite
+      mate.caja
+      mate.eom
       glib
 
       # Things in I3 config
@@ -207,19 +206,18 @@ in
     emacs.enable = true;
     emacs.defaultEditor = true;
 
-    upower.enable = true;
-
-    ratbagd.enable = true;
-
     mingetty.autologinUser = "alex";
 
     udev.packages = [ pkgs.brillo ];
 
     tlp.enable = true;
     logind.extraConfig = "HandleLidSwitch=ignore";
-    # Disable the X11 windowing system.
-    xserver.enable = false;
   };
+
+  services.gnome3.gvfs.enable = true;
+  environment.variables.GIO_EXTRA_MODULES = [
+    "${pkgs.gnome3.gvfs}/lib/gio/modules"
+  ];
 
   programs.dconf.enable = true;
   services.dbus.packages = [ pkgs.gnome3.dconf ];

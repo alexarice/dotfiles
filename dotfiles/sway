@@ -63,7 +63,7 @@ bindsym Mod4+e layout toggle split
 bindsym Mod4+f fullscreen toggle
 bindsym Mod4+h split h
 bindsym Mod4+m exec "GDK_BACKEND=x11 thunderbird"
-bindsym Mod4+n exec nautilus
+bindsym Mod4+n exec caja
 bindsym Mod4+l exec "swaylock -f -c 000000"
 bindsym Mod4+p exec /home/alex/scripts/take_screenshot
 bindsym Mod4+Shift+p exec /home/alex/scripts/take_screenshot full
@@ -110,13 +110,6 @@ output eDP-1 pos 0,1080 res 1600x900 bg "~/dotfiles/background-image-2.png" fill
 
 set $gnome-schema org.gnome.desktop.interface
 
-exec_always {
-    gsettings set $gnome-schema gtk-theme 'Arc'
-    gsettings set $gnome-schema icon-theme 'Arc'
-    gsettings set $gnome-schema font-name 'Source Code Pro 10'
-}
-
 exec --no-startup-id redshift -l 51.2092712:0.2556012999999666 -t 6500K:2000K
 exec --no-startup-id "mako --default-timeout 10000"
 exec --no-startup-id udiskie
-exec --no-startup-id dropbox start
