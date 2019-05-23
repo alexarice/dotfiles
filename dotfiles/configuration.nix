@@ -128,6 +128,7 @@ in
       imagemagick
       unzip
       zip
+      pdftk
 
       # Dictionaries
       aspell

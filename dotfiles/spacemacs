@@ -58,12 +58,7 @@ values."
      syntax-checking
      version-control
      (latex :variables
-            TeX-view-program-list
-                         '(("Zathura"
-                           ("zathura %o"
-                            (mode-io-correlate " --synctex-forward %n:0:%b -x \"emacsclient --socket-name=%sn --no-wait +%{line} %{input}\""))
-                           "zathura"))
-            TeX-expand-list (cons '("%sn" (lambda () server-name)) TeX-expand-list)
+   ;;         TeX-expand-list (cons '("%sn" (lambda () server-name)) TeX-expand-list)
             TeX-view-program-selection '((output-pdf "Zathura"))
             TeX-electric-math nil
             latex-enable-auto-fill nil
