@@ -150,6 +150,7 @@ in
       xlibs.xeyes
       veracrypt
       libnotify
+      libappindicator
 
       # Desktop environment
       termite

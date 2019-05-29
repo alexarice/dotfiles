@@ -4,7 +4,7 @@
     "height": 25,
     "modules-left": ["sway/workspaces",  "cpu", "backlight", "pulseaudio", "custom/spotify"],
     "modules-center": ["sway/window"],
-    "modules-right": ["custom/root", "network", "battery", "clock"],
+    "modules-right": ["custom/root", "network", "battery", "clock", "tray"],
     "tray": {
         // "icon-size": 21,
         "spacing": 10
@@ -34,6 +34,10 @@
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
     },
     "network": {
         // "interface": "wlp2s0", // (Optional) To force the use of this interface
