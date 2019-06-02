@@ -32,6 +32,7 @@ in
   ];
 
   boot.supportedFilesystems = [ "ntfs" ];
+  boot.vesa = true;
 
   security.sudo.enable = true;
   security.sudo.extraConfig = "Defaults pwfeedback";
@@ -39,6 +40,8 @@ in
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.consoleMode = "max";
+  boot.loader.systemd-boot.memtest86.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "Alex_Nixos"; # Define your hostname.
