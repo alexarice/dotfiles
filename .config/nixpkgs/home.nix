@@ -61,6 +61,7 @@ in
     zsh = {
       enable = true;
       enableAutosuggestions = true;
+      enableCompletion = true;
       history = {
         ignoreDups = true;
       };
@@ -85,6 +86,11 @@ in
           "web-search"
         ];
         theme = "agnoster";
+      };
+      sessionVariables = {
+        EDITOR = "emacsclient --create-frame";
+        VISUAL = "emacsclient --create-frame";
+        BROWSER = "firefox";
       };
     };
   };

@@ -108,7 +108,6 @@ in
           multimap
           ]))
       cabal-install
-      nix-prefetch-git
       cabal2nix
       nodejs
       python
@@ -158,13 +157,14 @@ in
       # Desktop environment
       termite
       mate.caja
+      mate.caja-extensions
       mate.eom
       glib
 
       # Things in I3 config
       j4-dmenu-desktop
       bemenu
-      dropbox
+      dropbox-cli
 
       # GTK
       adapta-gtk-theme
