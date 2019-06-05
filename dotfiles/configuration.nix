@@ -62,6 +62,7 @@ in
     };
     bluetooth.enable = true;
     opengl.driSupport32Bit = true;
+    cpu.intel.updateMicrocode = true;
   };
 
   # Set your time zone.
@@ -131,6 +132,7 @@ in
       unzip
       zip
       pdftk
+      pamixer
 
       # Dictionaries
       aspell
