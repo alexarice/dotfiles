@@ -77,6 +77,7 @@ in
       apply-refact
       hlint
       stylish-haskell
+      Agda
     ]) ++ (with pkgs; [
       home-manager
 
