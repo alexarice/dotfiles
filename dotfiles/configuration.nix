@@ -177,6 +177,10 @@ in
       ant-dracula-theme
       ant-nebula-theme
       ant-bloody-theme
+
+      # Nix
+      nix-review
+      nix-info
     ]);
   };
 
