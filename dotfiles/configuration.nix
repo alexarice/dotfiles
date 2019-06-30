@@ -12,6 +12,7 @@ in
 {
   imports =
     [
+    /home/alex/dotfiles/home.nix
     /etc/nixos/hardware-configuration.nix
     /etc/nixos/cachix.nix
     ];
@@ -168,6 +169,7 @@ in
       adapta-gtk-theme
       gnome3.adwaita-icon-theme
       arc-icon-theme
+      arc-theme
       ant-theme
       ant-dracula-theme
       ant-nebula-theme
