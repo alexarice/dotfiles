@@ -1,11 +1,8 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
 let
   url = "https://github.com/colemickens/nixpkgs-wayland/archive/master.tar.gz";
   waylandOverlay = (import (builtins.fetchTarball url));
+  redshift-wayland = (waylandOverlay {} pkgs).redshift-wayland;
   brilloOverlay = self: super: { brillo = (import /home/alex/nixpkgs { }).brillo; };
   antOverlay = self: super: {
     inherit (import /home/alex/nixpkgs2 { })
@@ -19,7 +16,7 @@ in
     /etc/nixos/cachix.nix
     ];
 
-  nixpkgs.overlays = [ waylandOverlay brilloOverlay antOverlay ];
+  nixpkgs.overlays = [ brilloOverlay antOverlay ];
 
   boot.plymouth.enable = true;
 
@@ -32,7 +29,6 @@ in
   ];
 
   boot.supportedFilesystems = [ "ntfs" ];
-  boot.vesa = true;
 
   security.sudo.enable = true;
   security.sudo.extraConfig = "Defaults pwfeedback";
@@ -43,6 +39,7 @@ in
   boot.loader.systemd-boot.consoleMode = "max";
   boot.loader.systemd-boot.memtest86.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelPackages = pkgs.linuxPackages_5_1;
 
   networking.hostName = "Alex_Nixos"; # Define your hostname.
   networking.networkmanager.enable = true;
@@ -116,7 +113,6 @@ in
       nodePackages.tern
 
       # CLI Programs
-      wine
       git
       bup
       neofetch
@@ -159,8 +155,7 @@ in
 
       # Desktop environment
       termite
-      mate.caja
-      mate.caja-extensions
+      mate.caja#(mate.caja-with-extensions.override { extensions = [ mate.caja-extensions mate.caja-dropbox ]; })
       mate.eom
       glib
 
@@ -181,6 +176,11 @@ in
       # Nix
       nix-review
       nix-info
+
+      # Trashing
+      espeak
+      audacity
+      youtube-dl
     ]);
   };
 
@@ -238,7 +238,7 @@ in
   sound.enable = true;
 
   programs.sway.enable = true;
-  programs.sway.extraPackages = with pkgs; [xwayland swaylock swayidle swaybg];
+  programs.sway.extraPackages = with pkgs; [xwayland swaylock swayidle];
 
   # Use Zsh
   programs.zsh.enable = true;
