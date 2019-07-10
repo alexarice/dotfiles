@@ -5,11 +5,16 @@ let
   i3mod = "Mod4";
 in
 {
-  imports = [ <home-manager/nixos> ];
+  imports = [ /home/alex/home-manager/nixos ];
 
   home-manager.users.alex = {pkgs, lib, ...}:
   {
+    nixpkgs.config.allowBroken = true;
     programs = {
+      spacemacs = {
+        enable = true;
+        configFile = "${dots}/spacemacs";
+      };
       git = {
         enable = true;
         userName = "Alex Rice";
