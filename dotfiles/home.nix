@@ -101,8 +101,6 @@ in
           theme = "agnoster";
         };
         sessionVariables = {
-          EDITOR = "emacsclient --create-frame";
-          VISUAL = "emacsclient --create-frame";
           BROWSER = "firefox";
         };
       };
