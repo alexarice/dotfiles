@@ -18,6 +18,9 @@ in
       };
     };
 
+
+    boot.initrd.kernelModules = [ "usbcore" "usb_storage" "vfat" ];
+
     boot.initrd.luks.devices = [
       {
         name = "cryptlvm";
