@@ -125,6 +125,7 @@ in
       steam
       sgtpuzzles
       openmw
+      steam-run-native
       (wine.override { gstreamerSupport = false; })
     ]);
 
