@@ -125,6 +125,7 @@ in
       steam
       sgtpuzzles
       openmw
+      (wine.override { gstreamerSupport = false; })
     ]);
 
     programs = {
