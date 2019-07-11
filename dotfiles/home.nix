@@ -62,6 +62,7 @@ in
       ant-dracula-theme
       ant-nebula-theme
       ant-bloody-theme
+      hicolor-icon-theme
 
       # Dictionaries
       aspell
