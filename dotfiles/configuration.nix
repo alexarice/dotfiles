@@ -1,13 +1,6 @@
 { config, pkgs, ... }:
 let
-  url = "https://github.com/colemickens/nixpkgs-wayland/archive/master.tar.gz";
-  waylandOverlay = (import (builtins.fetchTarball url));
-  redshift-wayland = (waylandOverlay {} pkgs).redshift-wayland;
   brilloOverlay = self: super: { brillo = (import /home/alex/nixpkgs { }).brillo; };
-  antOverlay = self: super: {
-    inherit (import /home/alex/nixpkgs2 { })
-    ant-theme ant-dracula-theme ant-nebula-theme ant-bloody-theme;
-  };
   USBID = "a4ede8f0-01";
 in
 {
@@ -19,7 +12,7 @@ in
     ];
 
     nixpkgs = {
-      overlays = [ brilloOverlay antOverlay ];
+      overlays = [ brilloOverlay ];
       config = {
         allowUnfree = true;
       };
@@ -79,117 +72,11 @@ in
 
     # System packages
     environment = {
-      systemPackages = (with pkgs.haskellPackages; [
-        apply-refact
-        hlint
-        stylish-haskell
-        Agda
-      ]) ++ (with pkgs; [
-        # Programs
-        emacs
-        firefox
-        chromium
-        thunderbird
-        vlc
-        gimp
-        evince
-        spotify
-        libreoffice
-        discord
-        steam
-        sgtpuzzles
-        zathura
-
-        # LaTeX
-        texlive.combined.scheme-full
-
-        # Programming
-        (haskellPackages.ghcWithHoogle
-        (haskellPackages: with haskellPackages; [
-          lens
-          arrows
-          process
-          containers
-          parsec
-          multimap
-        ]))
-        cabal-install
-        cabal2nix
-        nodejs
-        python
-        nodePackages.tern
-
-        # CLI Programs
+      systemPackages = with pkgs; [
         git
         bup
-        neofetch
-        tree
-        wget
-        gnupg
-        curl
-        psmisc
-        gparted
-        mkpasswd
-        file
-        binutils
-        imagemagick
-        unzip
-        zip
-        pdftk
-        pamixer
-
-        # Dictionaries
-        aspell
-        aspellDicts.en
-
-        # Wayland
-        mako
-        grim
-        slurp
-        waybar
-        redshift-wayland
         brillo
-
-        # Utilities
-        blueman
-        pavucontrol
-        udiskie
-        playerctl
-        xlibs.xeyes
-        veracrypt
-        libnotify
-        libappindicator
-
-        # Desktop environment
-        termite
-        (mate.caja-with-extensions.override { extensions = [ mate.caja-extensions mate.caja-dropbox ]; })
-        mate.eom
-        glib
-
-        # Things in I3 config
-        j4-dmenu-desktop
-        bemenu
-        dropbox-cli
-
-        # GTK
-        adapta-gtk-theme
-        gnome3.adwaita-icon-theme
-        arc-icon-theme
-        arc-theme
-        ant-theme
-        ant-dracula-theme
-        ant-nebula-theme
-        ant-bloody-theme
-
-        # Nix
-        nix-review
-        nix-info
-
-        # Trashing
-        espeak
-        audacity
-        youtube-dl
-      ]);
+      ];
     };
 
     # Load fonts
@@ -245,6 +132,7 @@ in
     # Enable sound.
     sound.enable = true;
 
+    # Enable Sway
     programs.sway.enable = true;
     programs.sway.extraPackages = with pkgs; [xwayland swaylock swayidle];
 
