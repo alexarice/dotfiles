@@ -10,6 +10,11 @@ in
   home-manager.users.alex = {pkgs, lib, ...}:
   {
     nixpkgs.config.allowBroken = true;
+
+    home.packages = with pkgs; [
+      lgogdownloader
+    ];
+
     programs = {
       spacemacs = {
         enable = true;

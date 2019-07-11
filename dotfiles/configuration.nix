@@ -77,7 +77,7 @@ in
 
     nix.extraOptions = "keep-outputs = true";
 
-    # List packages installed in system profile. To search, run:
+    # System packages
     environment = {
       systemPackages = (with pkgs.haskellPackages; [
         apply-refact
@@ -162,7 +162,7 @@ in
 
         # Desktop environment
         termite
-        mate.caja#(mate.caja-with-extensions.override { extensions = [ mate.caja-extensions mate.caja-dropbox ]; })
+        (mate.caja-with-extensions.override { extensions = [ mate.caja-extensions mate.caja-dropbox ]; })
         mate.eom
         glib
 
