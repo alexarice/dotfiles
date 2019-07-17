@@ -48,9 +48,7 @@ bindsym Mod4+Shift+Down move down
 bindsym Mod4+Shift+Left move left
 bindsym Mod4+Shift+Right move right
 bindsym Mod4+Shift+Up move up
-bindsym Mod4+Shift+a exec "setxkbmap -layout gb"
 bindsym Mod4+Shift+c reload
-bindsym Mod4+Shift+d exec "setxkbmap -layout gb -variant dvorak"
 bindsym Mod4+Shift+e exec sway-nagbar -t warning -m 'Do you want to exit i3?' -b 'Yes' 'sway-msg exit'
 bindsym Mod4+Shift+q kill
 bindsym Mod4+Shift+r restart
@@ -72,10 +70,7 @@ bindsym Mod4+s layout stacking
 bindsym Mod4+space focus mode_toggle
 bindsym Mod4+v split v
 bindsym Mod4+w layout tabbed
-bindsym XF86AudioLowerVolume exec "pactl set-sink-volume 0 -5% && pkill -RTMIN+11 i3blocks"
-bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume 0 +5% && pkill -RTMIN+11 i3blocks"
-bindsym XF86MonBrightnessDown exec "brightnessctl s 5%-"
-bindsym XF86MonBrightnessUp exec "brightnessctl s +5%"
+bindsym Mod4+x exec networkmanager_dmenu
 
 mode "resize" {
 bindsym Down resize grow height 10 px or 10 ppt

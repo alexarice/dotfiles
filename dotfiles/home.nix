@@ -48,6 +48,8 @@ in
       j4-dmenu-desktop
       bemenu
       dropbox-cli
+      networkmanager_dmenu
+      dmenu
 
       # Nix
       nix-review
@@ -108,6 +110,7 @@ in
       nodejs
       python
       nodePackages.tern
+      cscope
 
       # Programs
       emacs
@@ -127,7 +130,6 @@ in
       sgtpuzzles
       openmw
       steam-run-native
-      (wine.override { gstreamerSupport = false; })
     ]);
 
     programs = {
@@ -248,7 +250,6 @@ in
         gtk-xft-rgba="rgb";
       };
     };
-    home.file.".spacemacs".source = "${dots}/spacemacs";
     home.file.".ghc/ghci.conf".source = "${dots}/ghci.conf";
     home.file.".config/waybar/config".source = "${dots}/waybar";
     home.file.".config/waybar/style.css".source = "${dots}/waybar.css";

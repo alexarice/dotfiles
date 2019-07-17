@@ -58,6 +58,8 @@ values."
      syntax-checking
      version-control
      agda
+     c-c++
+     cscope
      (latex :variables
    ;;         TeX-expand-list (cons '("%sn" (lambda () server-name)) TeX-expand-list)
             TeX-view-program-selection '((output-pdf "Zathura"))

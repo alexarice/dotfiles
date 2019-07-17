@@ -77,6 +77,7 @@ in
         git
         bup
         brillo
+        xboxdrv
       ];
     };
 
@@ -94,6 +95,7 @@ in
         powerline-fonts
         font-awesome
       ];
+
       fontconfig = {
         enable = true;
         antialias = true;
