@@ -128,7 +128,7 @@ in
       # Games
       steam
       sgtpuzzles
-      openmw
+      (openmw.overrideAttrs ( attrs: attrs // { patches = [ ./openmw.patch ]; }))
       steam-run-native
     ]);
 
