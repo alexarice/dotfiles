@@ -26,6 +26,8 @@ in
       stylish-haskell
       Agda
     ]) ++ (with pkgs; [
+
+      (pkgs.callPackage (/home/alex/nixmacs) { configurationFile = /home/alex/dotfiles/nixmacsConf.nix; })
       # CLI Programs
       neofetch
       tree
@@ -130,6 +132,7 @@ in
       sgtpuzzles
       (openmw.overrideAttrs ( attrs: attrs // { patches = [ ./openmw.patch ]; }))
       steam-run-native
+      lutris
     ]);
 
     programs = {
