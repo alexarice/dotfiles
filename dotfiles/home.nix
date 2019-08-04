@@ -136,10 +136,6 @@ in
     ]);
 
     programs = {
-      spacemacs = {
-        enable = true;
-        configFile = "${dots}/spacemacs";
-      };
       git = {
         enable = true;
         userName = "Alex Rice";
