@@ -116,12 +116,14 @@ in
       emacs.enable = true;
       emacs.defaultEditor = true;
 
+      upower.enable = true;
+
       mingetty.autologinUser = "alex";
 
       udev.packages = [ pkgs.brillo ];
 
       tlp.enable = true;
-      logind.extraConfig = "HandleLidSwitch=ignore";
+      logind.lidSwitch = "ignore";
     };
 
     services.gnome3.gvfs.enable = true;
