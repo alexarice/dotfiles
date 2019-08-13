@@ -8,8 +8,8 @@ let
     inherit (import /home/alex/nixpkgs2 { })
     ant-theme ant-dracula-theme ant-nebula-theme ant-bloody-theme;
   };
-  waylandOverlay = (import (builtins.fetchTarball url));
-  redshift-wayland = (waylandOverlay {} pkgs).redshift-wayland;
+  waylandOverlay = import /home/alex/nixpkgs-wayland/default.nix; #(import (builtins.fetchTarball url));
+  inherit (waylandOverlay {} pkgs) redshift-wayland wldash dot-desktop;
 in
 {
   imports = [ /home/alex/home-manager/nixos ];
@@ -27,6 +27,8 @@ in
       Agda
     ]) ++ (with pkgs; [
 
+      wldash
+      dot-desktop
       (pkgs.callPackage (/home/alex/nixmacs) { configurationFile = /home/alex/dotfiles/nixmacsConf.nix; })
       # CLI Programs
       neofetch
@@ -132,7 +134,6 @@ in
       sgtpuzzles
       (openmw.overrideAttrs ( attrs: attrs // { patches = [ ./openmw.patch ]; }))
       steam-run-native
-      lutris
     ]);
 
     programs = {
