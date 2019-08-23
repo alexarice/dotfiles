@@ -126,7 +126,7 @@ in
       logind.lidSwitch = "ignore";
     };
 
-    services.gnome3.gvfs.enable = true;
+    services.gvfs.enable = true;
     environment.variables.GIO_EXTRA_MODULES = [
       "${pkgs.gnome3.gvfs}/lib/gio/modules"
     ];
