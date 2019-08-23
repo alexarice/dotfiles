@@ -112,10 +112,6 @@ in
       # Save manual
       nixosManual.showManual = true;
 
-      # Start emacs server
-      emacs.enable = true;
-      emacs.defaultEditor = true;
-
       upower.enable = true;
 
       mingetty.autologinUser = "alex";

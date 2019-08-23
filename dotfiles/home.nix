@@ -218,6 +218,7 @@ in
           theme = "agnoster";
         };
         sessionVariables = {
+          EDITOR = "nixmacs";
           BROWSER = "firefox";
         };
       };
