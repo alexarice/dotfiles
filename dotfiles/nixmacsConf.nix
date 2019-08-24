@@ -23,12 +23,19 @@
       global-hl-line = true;
       neo-theme = "arrow";
       recent-files-mode = true;
+      electric-pair-mode = true;
     };
 
-    theme = {
-      enable = true;
-      package = epkgs.melpaPackages.dracula-theme;
-      themeName = "dracula";
+    appearance = {
+      theme = {
+        enable = true;
+        package = epkgs.melpaPackages.dracula-theme;
+        themeName = "dracula";
+      };
+      fonts = {
+        font = "Source Code Pro 11";
+        unicode-font = "STIXGeneral";
+      };
     };
   };
 }
