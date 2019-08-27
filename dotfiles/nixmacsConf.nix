@@ -11,20 +11,12 @@
       nix.enable = true;
       latex.enable = true;
       git.enable = true;
+      c.enable = false;
     };
 
-    settings = {
-      line-numbers.enable = true;
-      adaptive-wrap.enable = true;
-      smooth-scrolling.enable = true;
-      debug.enable = true;
-      delete-trailing-whitespace = true;
-      crux-C-a = true;
-      global-hl-line = true;
-      neo-theme = "arrow";
-      recent-files-mode = true;
-      electric-pair-mode = true;
-    };
+    settings.debug.enable = true;
+
+    use-package.smartparens.enable = true;
 
     appearance = {
       theme = {
