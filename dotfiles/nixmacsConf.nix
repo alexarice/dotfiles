@@ -16,7 +16,11 @@
 
     settings.debug.enable = true;
 
-    use-package.smartparens.enable = true;
+    package.smartparens = {
+      enable = true;
+    };
+
+    package.neo-theme.settings.neo-theme = "arrow";
 
     appearance = {
       theme = {
