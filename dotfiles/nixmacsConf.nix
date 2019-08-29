@@ -11,7 +11,7 @@
       nix.enable = true;
       latex.enable = true;
       git.enable = true;
-      c.enable = false;
+      c.enable = true;
     };
 
     settings.debug.enable = true;
