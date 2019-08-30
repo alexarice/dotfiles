@@ -22,6 +22,8 @@
 
     package.neo-theme.settings.neo-theme = "arrow";
 
+    package.nix-update.enable = true;
+
     appearance = {
       theme = {
         enable = true;
