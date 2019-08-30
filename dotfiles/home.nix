@@ -56,6 +56,7 @@ in
       dmenu
 
       # Nix
+      nixpkgs-fmt
       nix-review
       nix-info
 
