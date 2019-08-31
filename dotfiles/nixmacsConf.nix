@@ -12,6 +12,7 @@
       latex.enable = true;
       git.enable = true;
       c.enable = true;
+      org.enable = true;
     };
 
     settings.debug.enable = true;
