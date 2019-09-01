@@ -164,6 +164,12 @@ in
               background = "#282a36";
               foreground = "#f8f8f2";
             };
+            cursor = {
+              cursor = "#81c1e4";
+            };
+            selection = {
+              background = "#ccccc7";
+            };
             normal = {
               black =   "#000000";
               red =     "#ff5555";
