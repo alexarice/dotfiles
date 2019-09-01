@@ -59,6 +59,7 @@ in
       nixpkgs-fmt
       nix-review
       nix-info
+      direnv
 
       # GTK
       adapta-gtk-theme
@@ -260,6 +261,7 @@ in
           /dev/tty1 ]]; then
           exec sway
           fi
+          eval "$(${pkgs.direnv}/bin/direnv hook zsh)"
         '';
         oh-my-zsh = {
           enable = true;

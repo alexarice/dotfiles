@@ -25,6 +25,8 @@
 
     package.nix-update.enable = true;
 
+    package.direnv.enable = true;
+
     appearance = {
       theme = {
         enable = true;
