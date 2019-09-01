@@ -114,8 +114,6 @@ in
       cabal2nix
       nodejs
       python
-      nodePackages.tern
-      cscope
 
       # Programs
       emacs
