@@ -13,6 +13,8 @@
       git.enable = true;
       c.enable = true;
       org.enable = true;
+      python.enable = true;
+      javascript.enable = true;
     };
 
     settings.debug.enable = true;
