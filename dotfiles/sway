@@ -33,7 +33,7 @@ bindsym Mod4+Ctrl+r exec reboot
 bindsym Mod4+Ctrl+s exec "swaylock -f && systemctl suspend"
 bindsym Mod4+Down focus down
 bindsym Mod4+Left focus left
-bindsym Mod4+Return exec termite
+bindsym Mod4+Return exec alacritty
 bindsym Mod4+Right focus right
 bindsym Mod4+Shift+1 move container to workspace 1
 bindsym Mod4+Shift+2 move container to workspace 2
