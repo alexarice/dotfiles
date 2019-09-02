@@ -15,6 +15,7 @@
       org.enable = true;
       python.enable = true;
       javascript.enable = true;
+      systemd.enable = true;
     };
 
     settings.debug.enable = true;
