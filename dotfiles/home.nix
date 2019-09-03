@@ -8,7 +8,7 @@ let
     inherit (import /home/alex/nixpkgs2 { })
     ant-theme ant-dracula-theme ant-nebula-theme ant-bloody-theme;
   };
-  waylandOverlay = import /home/alex/nixpkgs-wayland/default.nix; #(import (builtins.fetchTarball url));
+  waylandOverlay = import (builtins.fetchTarball url);
   inherit (waylandOverlay {} pkgs) redshift-wayland wldash dot-desktop;
 in
 {
@@ -28,7 +28,6 @@ in
     ]) ++ (with pkgs; [
 
       wldash
-      dot-desktop
       (pkgs.callPackage (/home/alex/nixmacs) { configurationFile = /home/alex/dotfiles/nixmacsConf.nix; })
       # CLI Programs
       neofetch
@@ -99,7 +98,7 @@ in
       glib
 
       # LaTeX
-      texlive.combined.scheme-full
+      #texlive.combined.scheme-full
 
       # Programming
       (haskellPackages.ghcWithHoogle
@@ -130,10 +129,10 @@ in
       zathura
 
       # Games
-      steam
+      #steam
       sgtpuzzles
-      (openmw.overrideAttrs ( attrs: attrs // { patches = [ ./openmw.patch ]; }))
-      steam-run-native
+      #(openmw.overrideAttrs ( attrs: attrs // { patches = [ ./openmw.patch ]; }))
+      #steam-run-native
     ]);
 
     programs = {
@@ -201,10 +200,7 @@ in
         userName = "Alex Rice";
         userEmail = "alexrice999@hotmail.co.uk";
         ignores = ["*~"];
-        extraConfig = ''
-          [core]
-          filemode = false
-        '';
+        extraConfig.core.filemode = false;
       };
       termite = {
         enable = true;
