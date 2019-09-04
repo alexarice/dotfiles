@@ -9,6 +9,9 @@ let
     ant-theme ant-dracula-theme ant-nebula-theme ant-bloody-theme;
   };
   waylandOverlay = import (builtins.fetchTarball url);
+  emacsOverlay = import (builtins.fetchTarball {
+      url = https://github.com/nix-community/emacs-overlay/archive/master.tar.gz;
+    });
   inherit (waylandOverlay {} pkgs) redshift-wayland wldash dot-desktop;
 in
 {
@@ -18,7 +21,7 @@ in
   {
     nixpkgs.config.allowBroken = true;
     nixpkgs.config.allowUnfree = true;
-    nixpkgs.overlays = [ antOverlay ];
+    nixpkgs.overlays = [ antOverlay emacsOverlay ];
 
     home.packages = (with pkgs.haskellPackages; [
       apply-refact
@@ -28,7 +31,7 @@ in
     ]) ++ (with pkgs; [
 
       wldash
-      (pkgs.callPackage (/home/alex/nixmacs) { configurationFile = /home/alex/dotfiles/nixmacsConf.nix; })
+      (pkgs.callPackage (/home/alex/nixmacs) { configurationFile = /home/alex/dotfiles/nixmacsConf.nix; package = pkgs.emacsGit; })
       # CLI Programs
       neofetch
       tree
@@ -245,9 +248,9 @@ in
           menu = "wldash";
           terminal = "alacritty";
           keybindings = lib.mkOptionDefault {
-            "${modifier}+n" = "exec nixmacs";
+            "${modifier}+n" = "exec caja";
             "${modifier}+m" = "exec \"GDK_BACKEND=x11 thunderbird\"";
-            "${modifier}+a" = "exec caja";
+            "${modifier}+b" = lib.mkForce "exec nixmacs";
             "${modifier}+c" = "exec firefox";
             "${modifier}+p" = "exec ${scripts}/take_screenshot";
             "${modifier}+l" = "exec \"swaylock -f -c 000000\"";
@@ -424,7 +427,7 @@ in
           WantedBy = [ "sway-session.target" ];
         };
         Service = {
-          ExecStart = "${pkgs.mako}/bin/mako";
+          ExecStart = "${pkgs.mako}/bin/mako --default-timeout 10000";
           RestartSec = 3;
           Restart = "always";
         };
@@ -438,7 +441,7 @@ in
           WantedBy = [ "sway-session.target" ];
         };
         Service = {
-          ExecStart = "dropbox start";
+          ExecStart = "${pkgs.dropbox-cli}/bin/dropbox start";
           RestartSec = 3;
           Restart = "always";
         };
