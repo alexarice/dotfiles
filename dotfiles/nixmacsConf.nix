@@ -4,10 +4,7 @@
   config = {
     layers = {
       ivy.enable = true;
-      completion = {
-        enable = true;
-        yas-expand-key = "C-;";
-      };
+      completion.enable = true;
       nix.enable = true;
       latex.enable = true;
       git.enable = true;
