@@ -2,7 +2,7 @@
 let
   dots = "/home/alex/dotfiles";
   scripts = "/home/alex/scripts";
-  i3mod = "Mod4";
+  modifier = "Mod4";
   url = "https://github.com/colemickens/nixpkgs-wayland/archive/master.tar.gz";
   antOverlay = self: super: {
     inherit (import /home/alex/nixpkgs2 { })
@@ -80,7 +80,6 @@ in
       grim
       slurp
       waybar
-      redshift-wayland
 
       # Utilities
       blueman
@@ -202,8 +201,93 @@ in
         ignores = ["*~"];
         extraConfig.core.filemode = false;
       };
-      termite = {
+      sway = {
         enable = true;
+        config = {
+          bars = [];
+          colors = {
+            focused = {
+              border = "#2A38A8";
+              background = "#2A38A8";
+              text = "#FFFFFF";
+              indicator = "#2e9ef4";
+              childBorder = "#333333";
+            };
+            focusedInactive = {
+              border = "#333333";
+              background = "#333333";
+              text = "#999999";
+              indicator = "#484e50";
+              childBorder = "#333333";
+            };
+            unfocused = {
+              border = "#333333";
+              background = "#333333";
+              text = "#999999";
+              indicator = "#292d2e";
+              childBorder = "#333333";
+            };
+            urgent = {
+              border = "#FF0000";
+              background = "#8C5665";
+              text = "#FF0000";
+              indicator = "#900000";
+              childBorder = "#FF0000";
+            };
+          };
+          fonts = [ "Source Code Pro 9" ];
+          gaps = {
+            inner = 0;
+            bottom = 4;
+            smartBorders = "on";
+          };
+          inherit modifier;
+          menu = "wldash";
+          terminal = "alacritty";
+          keybindings = lib.mkOptionDefault {
+            "${modifier}+n" = "exec nixmacs";
+            "${modifier}+m" = "exec \"GDK_BACKEND=x11 thunderbird\"";
+            "${modifier}+a" = "exec caja";
+            "${modifier}+c" = "exec firefox";
+            "${modifier}+p" = "exec ${scripts}/take_screenshot";
+            "${modifier}+l" = "exec \"swaylock -f -c 000000\"";
+            "XF86MonBrightnessUp" = "exec \"brillo -A 1\"";
+            "XF86MonBrightnessDown" = "exec \"brillo -U 1\"";
+            "XF86AudioLowerVolume" = "exec \"pactl set-sink-volume 0 -5%";
+            "XF86AudioRaiseVolume" = "exec \"pactl set-sink-volume 0 +5%\"";
+            "${modifier}+x" = "exec networkmanager_dmenu";
+            "${modifier}+Ctrl+r" = "exec reboot";
+            "${modifier}+Ctrl+k" = "exec \"shutdown -h now\"";
+            "${modifier}+Ctrl+s" = "exec \"swaylock -f -c 000000 && systemctl suspend\"";
+          };
+          window = {
+            border = 1;
+            titlebar = false;
+          };
+        };
+        extraPackages = with pkgs; [xwayland swaylock swayidle];
+        extraConfig = ''
+          input "2:7:SynPS/2_Synaptics_TouchPad" {
+            natural_scroll enabled
+          }
+
+          input "1739:0:Synaptics_TM2668-002" {
+            natural_scroll enabled
+          }
+
+          input "*" {
+            xkb_layout gb
+            xkb_variant dvorak
+          }
+
+          output HDMI-A-2 pos 0,0 res 1920x1080 bg "~/dotfiles/background-image-2.png" fill
+
+          output eDP-1 pos 0,1080 res 1600x900 bg "~/dotfiles/background-image-2.png" fill
+        '';
+        systemdIntegration = true;
+      };
+      termite = {
+        enable = false;
         allowBold = true;
         audibleBell = false;
         clickableUrl = true;
@@ -255,7 +339,7 @@ in
           prompt_context(){}
           if [[ -z $DISPLAY ]] && [[ $(tty) =
           /dev/tty1 ]]; then
-          exec sway
+            exec sway
           fi
           eval "$(${pkgs.direnv}/bin/direnv hook zsh)"
         '';
@@ -278,6 +362,12 @@ in
           BROWSER = "firefox";
         };
       };
+    };
+    services.redshift = {
+      enable = true;
+      package = redshift-wayland;
+      latitude = "51.2092712";
+      longitude = "0.2556012999999666";
     };
     gtk = {
       enable = false;
@@ -310,7 +400,64 @@ in
     home.file.".ghc/ghci.conf".source = "${dots}/ghci.conf";
     home.file.".config/waybar/config".source = "${dots}/waybar";
     home.file.".config/waybar/style.css".source = "${dots}/waybar.css";
-    home.file.".config/sway/config".source = "${dots}/sway";
-
+    systemd.user.services = {
+      waybar = {
+        Unit = {
+          Description = pkgs.waybar.meta.description;
+          PartOf = [ "graphical-session.target" ];
+        };
+        Install = {
+          WantedBy = [ "sway-session.target" ];
+        };
+        Service = {
+          ExecStart = "${pkgs.waybar}/bin/waybar";
+          RestartSec = 3;
+          Restart = "always";
+        };
+      };
+      mako = {
+        Unit = {
+          Description = pkgs.mako.meta.description;
+          PartOf = [ "graphical-session.target" ];
+        };
+        Install = {
+          WantedBy = [ "sway-session.target" ];
+        };
+        Service = {
+          ExecStart = "${pkgs.mako}/bin/mako";
+          RestartSec = 3;
+          Restart = "always";
+        };
+      };
+      dropbox = {
+        Unit = {
+          Description = pkgs.dropbox.meta.description;
+          PartOf = [ "graphical-session.target" ];
+        };
+        Install = {
+          WantedBy = [ "sway-session.target" ];
+        };
+        Service = {
+          ExecStart = "dropbox start";
+          RestartSec = 3;
+          Restart = "always";
+        };
+      };
+      udiskie = {
+        Unit = {
+          Description = pkgs.udiskie.meta.description;
+          PartOf = [ "graphical-session.target" ];
+        };
+        Install = {
+          WantedBy = [ "sway-session.target" ];
+        };
+        Service = {
+          ExecStart = "${pkgs.udiskie}/bin/udiskie";
+          RestartSec = 3;
+          Restart = "always";
+        };
+      };
+      redshift.Install.WantedBy = lib.mkForce [ "sway-session.target" ];
+    };
   };
 }

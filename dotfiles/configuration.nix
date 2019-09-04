@@ -62,6 +62,7 @@ in
         package = pkgs.pulseaudioFull;
       };
       bluetooth.enable = true;
+      opengl.enable = true;
       opengl.driSupport32Bit = true;
       cpu.intel.updateMicrocode = true;
     };
@@ -84,6 +85,7 @@ in
     # Load fonts
     fonts = {
       enableFontDir = true;
+      enableDefaultFonts = true;
       fonts = with pkgs; [
         inconsolata
         terminus_font_ttf
@@ -132,10 +134,6 @@ in
 
     # Enable sound.
     sound.enable = true;
-
-    # Enable Sway
-    programs.sway.enable = true;
-    programs.sway.extraPackages = with pkgs; [xwayland swaylock swayidle];
 
     # Use Zsh
     programs.zsh.enable = true;
