@@ -342,7 +342,7 @@ in
           prompt_context(){}
           if [[ -z $DISPLAY ]] && [[ $(tty) =
           /dev/tty1 ]]; then
-            exec sway
+            exec ${pkgs.dbus}/bin/dbus-run-session ${pkgs.sway}/bin/sway
           fi
           eval "$(${pkgs.direnv}/bin/direnv hook zsh)"
         '';
@@ -435,15 +435,16 @@ in
       dropbox = {
         Unit = {
           Description = pkgs.dropbox.meta.description;
-          PartOf = [ "graphical-session.target" ];
+          PartOf = [ "local-fs.target" "network.target" ];
         };
         Install = {
-          WantedBy = [ "sway-session.target" ];
+          WantedBy = [ "multi-user.target" ];
         };
         Service = {
-          ExecStart = "${pkgs.dropbox-cli}/bin/dropbox start";
+          ExecStart = "/home/alex/.dropbox-dist/dropboxd";
           RestartSec = 3;
-          Restart = "always";
+          Restart = "on-failure";
+          User="alex";
         };
       };
       udiskie = {
