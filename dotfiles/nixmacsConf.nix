@@ -27,6 +27,15 @@
 
     package.direnv.enable = true;
 
+    package.which-key.enable = true;
+
+    keybindings.xah-fly-keys = {
+      enable = true;
+      keyboard-layout = "dvorak";
+    };
+
+    package.xah-fly-keys.use-package.chords."nh" = "xah-fly-command-mode-activate";
+
     appearance = {
       theme = {
         enable = true;
