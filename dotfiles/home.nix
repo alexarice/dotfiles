@@ -115,7 +115,7 @@ in
       cabal-install
       cabal2nix
       nodejs
-      python
+      python3
 
       # Programs
       emacs
@@ -253,6 +253,7 @@ in
             "${modifier}+b" = lib.mkForce "exec nixmacs";
             "${modifier}+c" = "exec firefox";
             "${modifier}+p" = "exec ${scripts}/take_screenshot";
+            "${modifier}+Shift+p" = "exec ${scripts}/take_screenshot full";
             "${modifier}+l" = "exec \"swaylock -f -c 000000\"";
             "XF86MonBrightnessUp" = "exec \"brillo -A 1\"";
             "XF86MonBrightnessDown" = "exec \"brillo -U 1\"";

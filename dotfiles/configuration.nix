@@ -96,6 +96,10 @@ in
         source-code-pro
         powerline-fonts
         font-awesome
+        symbola
+        dejavu_fonts
+        emacs-all-the-icons-fonts
+        noto-fonts
       ];
 
       fontconfig = {

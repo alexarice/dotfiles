@@ -17,27 +17,14 @@
   settings.debug.enable = true;
 
   package = {
-    smartparens.enable = true;
-    powerline.enable = false;
-    nix-update.enable = true;
     direnv.enable = true;
-    which-key.enable = true;
     xah-fly-keys = {
       enable = true;
       settings.keyboard-layout = "dvorak";
       use-package.chords."nh" = "xah-fly-command-mode-activate";
     };
-    use-package-chords.use-package.custom.key-chord-two-keys-delay = 0.2;
-    doom-modeline = {
-      enable = true;
-    };
-    doom-themes.use-package.custom = {
-      doom-themes-enable-bold = true;
-      doom-themes-enable-italic = true;
-    };
+    unicode-fonts.enable = true;
   };
-
-
 
   appearance = {
     theme = {
