@@ -29,12 +29,13 @@
 
     package.which-key.enable = true;
 
-    keybindings.xah-fly-keys = {
+    package.xah-fly-keys = {
       enable = true;
-      keyboard-layout = "dvorak";
+      settings.keyboard-layout = "dvorak";
+      use-package.chords."nh" = "xah-fly-command-mode-activate";
     };
 
-    package.xah-fly-keys.use-package.chords."nh" = "xah-fly-command-mode-activate";
+    package.use-package-chords.use-package.custom.key-chord-two-keys-delay = 0.2;
 
     appearance = {
       theme = {
