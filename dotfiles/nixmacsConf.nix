@@ -16,31 +16,34 @@
 
   settings.debug.enable = true;
 
-  package.smartparens = {
-    enable = true;
+  package = {
+    smartparens.enable = true;
+    powerline.enable = false;
+    nix-update.enable = true;
+    direnv.enable = true;
+    which-key.enable = true;
+    xah-fly-keys = {
+      enable = true;
+      settings.keyboard-layout = "dvorak";
+      use-package.chords."nh" = "xah-fly-command-mode-activate";
+    };
+    use-package-chords.use-package.custom.key-chord-two-keys-delay = 0.2;
+    doom-modeline = {
+      enable = true;
+    };
+    doom-themes.use-package.custom = {
+      doom-themes-enable-bold = true;
+      doom-themes-enable-italic = true;
+    };
   };
 
-  package.neo-theme.settings.neo-theme = "arrow";
 
-  package.nix-update.enable = true;
-
-  package.direnv.enable = true;
-
-  package.which-key.enable = true;
-
-  package.xah-fly-keys = {
-    enable = true;
-    settings.keyboard-layout = "dvorak";
-    use-package.chords."nh" = "xah-fly-command-mode-activate";
-  };
-
-  package.use-package-chords.use-package.custom.key-chord-two-keys-delay = 0.2;
 
   appearance = {
     theme = {
       enable = true;
-      package = epkgs.melpaPackages.dracula-theme;
-      themeName = "dracula";
+      package = epkgs.doom-themes;
+      themeName = "doom-dracula";
     };
     fonts = {
       font = "Source Code Pro 11";
