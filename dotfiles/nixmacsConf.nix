@@ -31,6 +31,15 @@
       enable = true;
       package = epkgs.doom-themes;
       themeName = "doom-dracula";
+      extraConfig = ''
+        ; Enable flashing mode-line on errors
+        (doom-themes-visual-bell-config)
+
+        ;; Enable custom neotree theme (all-the-icons must be installed!)
+        (doom-themes-neotree-config)
+
+        (doom-themes-org-config)
+      '';
     };
     fonts = {
       font = "Source Code Pro 11";
