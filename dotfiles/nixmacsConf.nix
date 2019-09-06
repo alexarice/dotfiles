@@ -12,6 +12,7 @@
     python.enable = true;
     javascript.enable = true;
     systemd.enable = true;
+    yaml.enable = true;
   };
 
   settings.debug.enable = true;
