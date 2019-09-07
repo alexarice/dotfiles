@@ -100,7 +100,7 @@ in
       glib
 
       # LaTeX
-      #texlive.combined.scheme-full
+      # texlive.combined.scheme-full
 
       # Programming
       (haskellPackages.ghcWithHoogle
@@ -131,10 +131,10 @@ in
       zathura
 
       # Games
-      #steam
+      steam
       sgtpuzzles
-      #(openmw.overrideAttrs ( attrs: attrs // { patches = [ ./openmw.patch ]; }))
-      #steam-run-native
+      (openmw.overrideAttrs ( attrs: attrs // { patches = [ ./openmw.patch ]; }))
+      steam-run-native
     ]);
 
     programs = {
