@@ -268,26 +268,32 @@ in
             border = 2;
             titlebar = false;
           };
+          input = {
+            "2:7:SynPS/2_Synaptics_TouchPad" = {
+              natural_scroll = "enabled";
+            };
+            "1739:0:Synaptics_TM2668-002" = {
+              natural_scroll = "enabled";
+            };
+            "*" = {
+              xkb_layout = "gb";
+              xkb_variant = "dvorak";
+            };
+          };
+          output = {
+            "HDMI-A-2" = {
+              pos = "0,0";
+              res = "1920x1080";
+              bg = "\"${dots}/background-image-2.png\" fill";
+            };
+            "eDP-1" = {
+              pos = "0,0";
+              res = "1600x900";
+              bg = "\"${dots}/background-image-2.png\" fill";
+            };
+          };
         };
         extraPackages = with pkgs; [xwayland swaylock swayidle];
-        extraConfig = ''
-          input "2:7:SynPS/2_Synaptics_TouchPad" {
-            natural_scroll enabled
-          }
-
-          input "1739:0:Synaptics_TM2668-002" {
-            natural_scroll enabled
-          }
-
-          input "*" {
-            xkb_layout gb
-            xkb_variant dvorak
-          }
-
-          output HDMI-A-2 pos 0,0 res 1920x1080 bg "~/dotfiles/background-image-2.png" fill
-
-          output eDP-1 pos 0,1080 res 1600x900 bg "~/dotfiles/background-image-2.png" fill
-        '';
         systemdIntegration = true;
       };
       termite = {
