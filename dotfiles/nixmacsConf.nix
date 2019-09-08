@@ -25,6 +25,7 @@
       use-package.chords."nh" = "xah-fly-command-mode-activate";
     };
     unicode-fonts.enable = true;
+    nix-update.enable = true;
   };
 
   appearance = {
