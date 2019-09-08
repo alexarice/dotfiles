@@ -287,7 +287,7 @@ in
               bg = "\"${dots}/background-image-2.png\" fill";
             };
             "eDP-1" = {
-              pos = "0,0";
+              pos = "0,1080";
               res = "1600x900";
               bg = "\"${dots}/background-image-2.png\" fill";
             };
