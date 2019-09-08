@@ -210,25 +210,25 @@ in
           bars = [];
           colors = {
             focused = {
-              border = "#2A38A8";
-              background = "#2A38A8";
+              border = "#81c1e4";
+              background = "#81c1e4";
               text = "#FFFFFF";
               indicator = "#2e9ef4";
-              childBorder = "#333333";
+              childBorder = "#81c1e4";
             };
             focusedInactive = {
-              border = "#333333";
-              background = "#333333";
+              border = "#282a36";
+              background = "#282a36";
               text = "#999999";
               indicator = "#484e50";
-              childBorder = "#333333";
+              childBorder = "#282a36";
             };
             unfocused = {
-              border = "#333333";
-              background = "#333333";
+              border = "#282a36";
+              background = "#282a36";
               text = "#999999";
-              indicator = "#292d2e";
-              childBorder = "#333333";
+              indicator = "#282a36";
+              childBorder = "#282a36";
             };
             urgent = {
               border = "#FF0000";
@@ -257,7 +257,7 @@ in
             "${modifier}+l" = "exec \"swaylock -f -c 000000\"";
             "XF86MonBrightnessUp" = "exec \"brillo -A 1\"";
             "XF86MonBrightnessDown" = "exec \"brillo -U 1\"";
-            "XF86AudioLowerVolume" = "exec \"pactl set-sink-volume 0 -5%";
+            "XF86AudioLowerVolume" = "exec \"pactl set-sink-volume 0 -5%\"";
             "XF86AudioRaiseVolume" = "exec \"pactl set-sink-volume 0 +5%\"";
             "${modifier}+x" = "exec networkmanager_dmenu";
             "${modifier}+Ctrl+r" = "exec reboot";
@@ -265,7 +265,7 @@ in
             "${modifier}+Ctrl+s" = "exec \"swaylock -f -c 000000 && systemctl suspend\"";
           };
           window = {
-            border = 1;
+            border = 2;
             titlebar = false;
           };
         };
@@ -372,6 +372,10 @@ in
       package = redshift-wayland;
       latitude = "51.2092712";
       longitude = "0.2556012999999666";
+    };
+    qt = {
+      enable = true;
+      platformTheme = "gtk";
     };
     gtk = {
       enable = false;
