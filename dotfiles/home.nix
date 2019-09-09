@@ -100,7 +100,11 @@ in
       glib
 
       # LaTeX
-      # texlive.combined.scheme-full
+      (texlive.combine {
+        inherit (texlive) scheme-full;
+        pkgFilter = (pkg: (pkg.tlType == "run" || pkg.tlType == "bin" || pkg.pname == "core") && pkg.pname != "biber");
+        extraName = "no-biber-full";
+      })
 
       # Programming
       (haskellPackages.ghcWithHoogle
@@ -159,7 +163,7 @@ in
               family = "Source Code Pro for Powerline";
               style = "Bold Italic";
             };
-            size = 10;
+            size = 9;
           };
           colors = {
             primary = {
