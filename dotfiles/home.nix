@@ -100,11 +100,12 @@ in
       glib
 
       # LaTeX
-      (texlive.combine {
-        inherit (texlive) scheme-full;
-        pkgFilter = (pkg: (pkg.tlType == "run" || pkg.tlType == "bin" || pkg.pname == "core") && pkg.pname != "biber");
-        extraName = "no-biber-full";
-      })
+      texlive.combined.scheme-full
+      # (texlive.combine {
+       # inherit (texlive) scheme-full;
+ #      pkgFilter = (pkg: (pkg.tlType == "run" || pkg.tlType == "bin" || pkg.pname == "core") && pkg.pname != "biber");
+        # extraName = "no-biber-full";
+      # })
 
       # Programming
       (haskellPackages.ghcWithHoogle
