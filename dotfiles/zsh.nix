@@ -29,7 +29,8 @@
         "systemd"
         "web-search"
       ];
-      theme = "agnoster";
+      custom = "${pkgs.callPackage ./zsh_custom { }}";
+      theme = "powerlevel10k";
     };
     sessionVariables = {
       EDITOR = "nixmacs";
