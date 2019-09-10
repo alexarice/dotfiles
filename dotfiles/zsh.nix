@@ -16,6 +16,8 @@
       exec ${pkgs.dbus}/bin/dbus-run-session ${pkgs.sway}/bin/sway
       fi
       eval "$(${pkgs.direnv}/bin/direnv hook zsh)"
+      # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+      [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
     '';
     oh-my-zsh = {
       enable = true;

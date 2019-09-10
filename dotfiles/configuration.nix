@@ -86,19 +86,12 @@ in
       enableFontDir = true;
       enableDefaultFonts = true;
       fonts = with pkgs; [
-        inconsolata
-        terminus_font_ttf
-        siji
-        fira-mono
-        ubuntu_font_family
-        google-fonts
         source-code-pro
-        powerline-fonts
-        font-awesome
         symbola
         dejavu_fonts
         emacs-all-the-icons-fonts
         noto-fonts
+        nerdfonts
       ];
 
       fontconfig = {
