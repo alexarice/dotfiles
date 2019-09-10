@@ -1,0 +1,19 @@
+diff --git a/apps/openmw/engine.cpp b/apps/openmw/engine.cpp
+index 07127d28b..73618813e 100644
+--- a/apps/openmw/engine.cpp
++++ b/apps/openmw/engine.cpp
+@@ -515,10 +515,13 @@ void OMW::Engine::prepareEngine (Settings::Manager & settings)
+         controllerFileName = "gamecontrollerdb.txt";
+     }
+ 
++    const std::string userdefault = mCfgMgr.getUserConfigPath().string() + "/" + controllerFileName;
+     const std::string localdefault = mCfgMgr.getLocalPath().string() + "/" + controllerFileName;
+     const std::string globaldefault = mCfgMgr.getGlobalPath().string() + "/" + controllerFileName;
+     std::string gameControllerdb;
+-    if (boost::filesystem::exists(localdefault))
++    if (boost::filesystem::exists(userdefault))
++        gameControllerdb = userdefault;
++    else if (boost::filesystem::exists(localdefault))
+         gameControllerdb = localdefault;
+     else if (boost::filesystem::exists(globaldefault))
+         gameControllerdb = globaldefault;
