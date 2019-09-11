@@ -131,18 +131,15 @@ in
     # Enable sound.
     sound.enable = true;
 
-    # Use Zsh
-    programs.zsh.enable = true;
-
     # Set up immutable users
     users = {
       mutableUsers = false;
       users.root = {
-        shell = pkgs.zsh;
+        shell = pkgs.fish;
         hashedPassword = "$6$4dxSa3uVxuwa$2pkshyXLslXxhuZCMZVmrknXsrd4k5DTrJgoL4izv6U/XQJ6iM2asqX.L6chpmEiBlhJC1F1P7Pw/3RZX/VMN0";
       };
       users.alex = {
-        shell = pkgs.zsh;
+        shell = pkgs.fish;
         isNormalUser = true;
         home = "/home/alex";
         extraGroups = ["wheel" "networkmanager" "video" "audio"];
