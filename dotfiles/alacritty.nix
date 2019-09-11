@@ -22,7 +22,7 @@
           family = "Source Code Pro";
           style = "Bold Italic";
         };
-        size = 9;
+        size = 10;
       };
       colors = {
         primary = {

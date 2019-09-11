@@ -45,7 +45,7 @@
       '';
     };
     fonts = {
-      font = "Source Code Pro 9";
+      font = "Source Code Pro 10";
       unicode-font = "STIXGeneral";
     };
   };
