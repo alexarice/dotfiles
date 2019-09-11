@@ -7,19 +7,19 @@
       tabspaces = 2;
       font = {
         normal = {
-          family = "Source Code Pro";
+          family = "Source Code Pro for Powerline";
           style = "Regular";
         };
         bold = {
-          family = "Source Code Pro";
+          family = "Source Code Pro for Powerline";
           style = "Bold";
         };
         italic = {
-          family = "Source Code Pro";
+          family = "Source Code Pro for Powerline";
           style = "Italic";
         };
         bold-italic = {
-          family = "Source Code Pro";
+          family = "Source Code Pro for Powerline";
           style = "Bold Italic";
         };
         size = 10;

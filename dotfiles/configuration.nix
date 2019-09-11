@@ -87,6 +87,7 @@ in
       enableDefaultFonts = true;
       fonts = with pkgs; [
         source-code-pro
+        powerline-fonts
         symbola
         dejavu_fonts
         emacs-all-the-icons-fonts
