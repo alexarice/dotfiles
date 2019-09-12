@@ -4,7 +4,7 @@ let
   inherit (config) dots scripts modifier;
 in
 {
-  programs.sway = {
+  services.sway = {
     enable = true;
     config = {
       bars = [];
