@@ -132,6 +132,14 @@ in
     # Enable sound.
     sound.enable = true;
 
+    programs.fish = {
+      enable = true;
+      loginShellInit = ''
+        not set -q DISPLAY && test (tty) = /dev/tty1
+        and exec ${pkgs.dbus}/bin/dbus-run-session ${pkgs.sway}/bin/sway
+      '';
+    };
+
     # Set up immutable users
     users = {
       mutableUsers = false;
