@@ -12,5 +12,10 @@
     };
   };
 
+  home.sessionVariables = {
+    EDITOR = "nixmacs";
+    BROWSER = "firefox";
+  };
+
   xdg.configFile."fish/functions".source = pkgs.callPackage ./fish_prompt.nix { };
 }
