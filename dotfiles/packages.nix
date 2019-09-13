@@ -9,7 +9,7 @@
   ]) ++ (with pkgs; [
 
     wldash
-    (pkgs.callPackage (/home/alex/nixmacs) { configurationFile = /home/alex/dotfiles/nixmacsConf.nix;  })
+    nixmacs
     # CLI Programs
     neofetch
     tree

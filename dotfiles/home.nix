@@ -33,6 +33,8 @@ with lib;
     };
 
     config = {
+      _module.args.setEnvironment = config.system.build.setEnvironment;
+
       nixpkgs.config = {
         allowBroken = true;
         allowUnfree = true;

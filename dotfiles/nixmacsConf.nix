@@ -27,6 +27,7 @@
     unicode-fonts.enable = true;
     nix-update.enable = true;
     tex.settings.TeX-view-program-selection.output-pdf = "Zathura";
+    doom-modeline.use-package.custom.doom-modeline-icon = true;
   };
 
   appearance = {

@@ -17,7 +17,11 @@ let
   myWaylandOverlay = self: super: {
     inherit (waylandOverlay {} super) redshift-wayland wldash;
   };
+
+  nixmacsOverlay = self: super: {
+    nixmacs = (self.pkgs.callPackage (/home/alex/nixmacs) { configurationFile = /home/alex/dotfiles/nixmacsConf.nix;  });
+  };
 in
 {
-  nixpkgs.overlays = [ antOverlay emacsOverlay myWaylandOverlay ];
+  nixpkgs.overlays = [ antOverlay emacsOverlay myWaylandOverlay nixmacsOverlay ];
 }

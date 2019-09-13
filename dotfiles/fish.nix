@@ -14,7 +14,7 @@
   };
 
   home.sessionVariables = {
-    EDITOR = "nixmacs";
+    EDITOR = "emacsclient -c";
     BROWSER = "firefox";
   };
 

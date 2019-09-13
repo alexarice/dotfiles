@@ -83,8 +83,6 @@ in
 
     # Load fonts
     fonts = {
-      enableFontDir = true;
-      enableDefaultFonts = true;
       fonts = with pkgs; [
         source-code-pro
         powerline-fonts

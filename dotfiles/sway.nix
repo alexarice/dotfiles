@@ -50,7 +50,7 @@ in
       keybindings = lib.mkOptionDefault {
         "${modifier}+n" = "exec caja";
         "${modifier}+m" = "exec \"GDK_BACKEND=x11 thunderbird\"";
-        "${modifier}+b" = lib.mkForce "exec nixmacs";
+        "${modifier}+b" = lib.mkForce "exec emacsclient -c";
         "${modifier}+c" = "exec firefox";
         "${modifier}+p" = "exec ${scripts}/take_screenshot";
         "${modifier}+Shift+p" = "exec ${scripts}/take_screenshot full";
