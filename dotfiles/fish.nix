@@ -9,6 +9,7 @@
       ga = "git add";
       gst = "git status";
       gr = "git rebase -S";
+      gd = "git diff";
     };
   };
 
