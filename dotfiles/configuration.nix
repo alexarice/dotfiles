@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 let
-  brilloOverlay = self: super: { brillo = (import /home/alex/nixpkgs { }).brillo; };
+  inherit (import /home/alex/dotfiles/overlays.nix) fishOverlay brilloOverlay;
   USBID = "a4ede8f0-01";
 in
 {
@@ -11,7 +11,7 @@ in
     ];
 
     nixpkgs = {
-      overlays = [ brilloOverlay ];
+      overlays = [ brilloOverlay fishOverlay ];
       config = {
         allowUnfree = true;
       };

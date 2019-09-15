@@ -9,7 +9,6 @@ with lib;
   {
     imports = [
       ./packages.nix
-      ./overlays.nix
       ./alacritty.nix
       ./files.nix
       ./git.nix
@@ -39,6 +38,8 @@ with lib;
         allowBroken = true;
         allowUnfree = true;
       };
+
+      nixpkgs.overlays = builtins.attrValues (import ./overlays.nix);
 
       dots = /home/alex/dotfiles;
       scripts = /home/alex/scripts;
