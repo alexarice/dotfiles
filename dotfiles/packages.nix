@@ -28,6 +28,7 @@
     pdftk
     pamixer
     lgogdownloader
+    fzf
 
     # Things in sway config
     j4-dmenu-desktop
