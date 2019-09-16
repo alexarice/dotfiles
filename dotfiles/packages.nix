@@ -10,6 +10,7 @@
 
     wldash
     nixmacs
+
     # CLI Programs
     neofetch
     tree
@@ -78,44 +79,40 @@
     glib
 
     # LaTeX
-    texlive.combined.scheme-full      # (texlive.combine {
-      # inherit (texlive) scheme-full;
-      #      pkgFilter = (pkg: (pkg.tlType == "run" || pkg.tlType == "bin" || pkg.pname == "core") && pkg.pname != "biber");
-      # extraName = "no-biber-full";
-      # })
+    texlive.combined.scheme-full
 
-      # Programming
-      (haskellPackages.ghcWithHoogle
-      (haskellPackages: with haskellPackages; [
-        lens
-        arrows
-        process
-        containers
-        parsec
-        multimap
-      ]))
-      cabal-install
-      cabal2nix
-      nodejs
-      python3
+    # Programming
+    (haskellPackages.ghcWithHoogle
+    (haskellPackages: with haskellPackages; [
+      lens
+      arrows
+      process
+      containers
+      parsec
+      multimap
+    ]))
+    cabal-install
+    cabal2nix
+    nodejs
+    python3
 
-      # Programs
-      emacs
-      firefox
-      chromium
-      thunderbird
-      vlc
-      gimp
-      evince
-      spotify
-      libreoffice
-      discord
-      zathura
+    # Programs
+    emacs
+    firefox
+    chromium
+    thunderbird
+    vlc
+    gimp
+    evince
+    spotify
+    libreoffice
+    discord
+    zathura
 
-      # Games
-      steam
-      sgtpuzzles
-      (openmw.overrideAttrs ( attrs: attrs // { patches = [ ./openmw.patch ]; }))
-      steam-run-native
+    # Games
+    steam
+    sgtpuzzles
+    (openmw.overrideAttrs ( attrs: attrs // { patches = [ ./openmw.patch ]; }))
+    steam-run-native
   ]);
 }
