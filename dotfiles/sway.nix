@@ -93,7 +93,6 @@ in
         };
       };
     };
-    extraPackages = with pkgs; [xwayland swaylock swayidle];
     systemdIntegration = true;
   };
 }

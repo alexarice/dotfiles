@@ -115,6 +115,8 @@ in
 
       udev.packages = [ pkgs.brillo ];
 
+      geoclue2.enable = true;
+
       tlp.enable = true;
       logind.lidSwitch = "ignore";
     };

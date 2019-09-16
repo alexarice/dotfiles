@@ -63,6 +63,7 @@
     grim
     slurp
     waybar
+    swaylock
 
     # Utilities
     blueman
