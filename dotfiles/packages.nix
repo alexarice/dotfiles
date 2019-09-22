@@ -41,6 +41,7 @@
     nixpkgs-fmt
     nix-review
     nix-info
+    nix-index
     direnv
 
     # GTK
