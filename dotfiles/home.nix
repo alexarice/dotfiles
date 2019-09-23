@@ -12,12 +12,12 @@ with lib;
       ./alacritty.nix
       ./files.nix
       ./git.nix
-      ./gpg.nix
       ./direnv.nix
       ./fish.nix
       ./redshift.nix
       ./systemd.nix
       ./sway.nix
+      ./offlineimap.nix
     ];
 
     options = {

@@ -75,6 +75,7 @@
     veracrypt
     libnotify
     libappindicator
+    bitwarden-cli
 
     # Desktop environment
     (mate.caja-with-extensions.override { extensions = [ mate.caja-extensions mate.caja-dropbox ]; })
