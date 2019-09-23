@@ -114,6 +114,7 @@
 
     # Games
     steam
+    steamcmd
     sgtpuzzles
     (openmw.overrideAttrs ( attrs: attrs // { patches = [ ./openmw.patch ]; }))
     steam-run-native
