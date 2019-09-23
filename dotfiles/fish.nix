@@ -5,10 +5,10 @@
     enable = true;
     shellAliases = {
       gp = "git push";
-      gc = "git commit -S";
+      gc = "git commit";
       ga = "git add";
       gst = "git status";
-      gr = "git rebase -S";
+      gr = "git rebase";
       gd = "git diff";
     };
   };
