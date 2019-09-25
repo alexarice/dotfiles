@@ -21,7 +21,10 @@
     direnv.enable = true;
     xah-fly-keys = {
       enable = true;
-      settings.keyboard-layout = "dvorak";
+      settings = {
+        keyboard-layout = "dvorak";
+        major-mode-bind-key = ".";
+      };
       use-package.chords."nh" = "xah-fly-command-mode-activate";
     };
     unicode-fonts.enable = true;
