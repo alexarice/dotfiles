@@ -18,6 +18,7 @@
     javascript.enable = true;
     systemd.enable = true;
     yaml.enable = true;
+    notmuch.enable = true;
   };
 
   settings.debug.enable = true;
