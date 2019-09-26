@@ -9,7 +9,7 @@ while $i
    if test $status -eq 1
       bw unlock --raw > /home/alex/.config/bitwarden/session
    else
-      echo $j
+      printf $j
       set i false
    end
 end
