@@ -1,3 +1,4 @@
+
 { pkgs, ... }:
 
 {
@@ -10,6 +11,7 @@
 
     wldash
     nixmacs
+    wl-clipboard
 
     # CLI Programs
     neofetch
