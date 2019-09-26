@@ -117,11 +117,6 @@ in
 
       geoclue2.enable = true;
 
-      offlineimap = {
-        enable = true;
-        install = true;
-      };
-
       tlp.enable = true;
       logind.lidSwitch = "ignore";
     };

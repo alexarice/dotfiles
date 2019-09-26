@@ -17,7 +17,7 @@ with lib;
       ./redshift.nix
       ./systemd.nix
       ./sway.nix
-      ./offlineimap.nix
+      ./emails.nix
     ];
 
     options = {
