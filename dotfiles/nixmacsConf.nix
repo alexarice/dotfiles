@@ -8,7 +8,12 @@
     latex.enable = true;
     git.enable = true;
     c.enable = true;
-    org.enable = true;
+    org = {
+      enable = true;
+      agenda-files = [
+        /home/alex/Dropbox/SortOutLife.org
+      ];
+    };
     python.enable = true;
     javascript.enable = true;
     systemd.enable = true;
@@ -24,6 +29,10 @@
       settings = {
         keyboard-layout = "dvorak";
         major-mode-bind-key = ".";
+        command-mode-bindings = {
+          "\";\"" = "self-insert-command";
+          "\"#\"" = "xah-comment-dwim";
+        };
       };
       use-package.chords."nh" = "xah-fly-command-mode-activate";
     };
