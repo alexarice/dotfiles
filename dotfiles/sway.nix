@@ -93,6 +93,5 @@ in
         };
       };
     };
-    systemdIntegration = true;
   };
 }
