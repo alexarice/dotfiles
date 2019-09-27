@@ -1,79 +1,79 @@
 {
-    "layer": "bottom", // Waybar at bottom layer
-    "position": "bottom", // Waybar at the bottom of your screen
-    "height": 25,
-    "modules-left": ["sway/workspaces",  "cpu", "backlight", "pulseaudio", "custom/spotify"],
-    "modules-center": ["sway/window"],
-    "modules-right": ["custom/root", "network", "battery", "clock", "tray"],
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 10
+  "layer": "bottom", // Waybar at bottom layer
+  "position": "bottom", // Waybar at the bottom of your screen
+  "height": 25,
+  "modules-left": ["sway/workspaces",  "cpu", "backlight", "pulseaudio", "custom/spotify"],
+  "modules-center": ["sway/window"],
+  "modules-right": ["custom/root", "network", "battery", "clock", "tray"],
+  "tray": {
+    // "icon-size": 21,
+    "spacing": 10
+  },
+  "clock": {
+    "format": "{:%a %d %b | %H:%M}",
+    "tooltip-format": "{:%Y-%m-%d | %H:%M}",
+    "format-alt": "{:%Y-%m-%d}"
+  },
+  "cpu": {
+    "format": "<b>CPU</b>: {usage}%"
+  },
+  "backlight": {
+    // "device": "acpi_video1",
+    "format": "{icon}: {percent}%",
+    "format-icons": [""],
+    "on-scroll-up": "brillo -A 0.5",
+    "on-scroll-down": "brillo -U 0.5"
+  },
+  "battery": {
+    "states": {
+      // "good": 95,
+      "warning": 30,
+      "critical": 15
     },
-    "clock": {
-        "format": "{:Wed %d %b | %H:%M}",
-        "tooltip-format": "{:%Y-%m-%d | %H:%M}",
-        "format-alt": "{:%Y-%m-%d}"
+    "format": "{icon}: {capacity}%",
+    // "format-good": "", // An empty format will hide the module
+    // "format-full": "",
+    "format-icons": ["", "", "", "", ""]
+  },
+  "tray": {
+    // "icon-size": 21,
+    "spacing": 10
+  },
+  "network": {
+    // "interface": "wlp2s0", // (Optional) To force the use of this interface
+    "format-wifi": "{essid} ({signalStrength}%)",
+    "format-ethernet": "{ifname}: {ipaddr}/{cidr}",
+    "format-disconnected": "Disconnected ⚠"
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-muted": "",
+    "format-icons": {
+      "headphones": "",
+      "handsfree": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", ""]
     },
-    "cpu": {
-        "format": "<b>CPU</b>: {usage}%"
-    },
-    "backlight": {
-        // "device": "acpi_video1",
-        "format": "<b>BL</b>: {percent}%",
-        "format-icons": ["", ""],
-        "on-scroll-up": "brillo -A 0.5",
-        "on-scroll-down": "brillo -U 0.5"
-    },
-    "battery": {
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "<b>BAT</b>: {capacity}%",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 10
-    },
-    "network": {
-        // "interface": "wlp2s0", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%)",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr}",
-        "format-disconnected": "Disconnected ⚠"
-    },
-    "pulseaudio": {
-        "scroll-step": 1,
-        "format": "<b>VOL</b> {volume}%",
-        "format-bluetooth": "<b>VOL</b> {volume}%",
-        "format-muted": "MUTED",
-        "format-icons": {
-            "headphones": "",
-            "handsfree": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", ""]
-        },
-        "on-click": "pactl set-sink-mute 0 toggle",
-        "on-click-right": "pavucontrol"
-    },
-    "custom/spotify": {
-        "format": " {}",
-        "interval": 5,
-        "max-length": 100,
-        "on-click": "playerctl previous",
-        "on-click-right": "playerctl next",
-        "on-click-middle": "playerctl play-pause",
-        "exec": "playerctl metadata -f '{{artist}}: {{title}}' | sed 's/&/&amp;/g'"
-    },
-    "custom/root": {
-        "format": "<b>\\</b> {}",
-        "interval": 60,
-        "exec": "df -h | gawk '$6 == \"/\" {print $3 \"/\" $2}'"
-    }
+    "scroll-step": 1,
+    "on-click": "pactl set-sink-mute 0 toggle",
+    "on-click-right": "pavucontrol"
+  },
+  "custom/spotify": {
+    "format": " {}",
+    "interval": 5,
+    "max-length": 100,
+    "on-click": "playerctl previous",
+    "on-click-right": "playerctl next",
+    "on-click-middle": "playerctl play-pause",
+    "exec": "playerctl metadata -f '{{artist}}: {{title}}' | sed 's/&/&amp;/g'"
+  },
+  "custom/root": {
+    "format": "<b>\\</b> {}",
+    "interval": 60,
+    "exec": "df -h | gawk '$6 == \"/\" {print $3 \"/\" $2}'"
+  }
 }
