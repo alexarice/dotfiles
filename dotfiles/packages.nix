@@ -114,6 +114,7 @@
     libreoffice
     discord
     zathura
+    mu
 
     # Games
     steam

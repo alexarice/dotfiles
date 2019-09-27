@@ -18,7 +18,7 @@
     javascript.enable = true;
     systemd.enable = true;
     yaml.enable = true;
-    notmuch.enable = true;
+    mu4e.enable = true;
   };
 
   settings.debug.enable = true;
