@@ -101,6 +101,7 @@
     cabal2nix
     nodejs
     python3
+    android-studio
 
     # Programs
     emacs
