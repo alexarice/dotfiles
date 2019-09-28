@@ -60,7 +60,10 @@ in
         support32Bit = true;
         package = pkgs.pulseaudioFull;
       };
-      bluetooth.enable = true;
+      bluetooth = {
+        enable = true;
+        package = pkgs.bluezFull;
+      };
       opengl.enable = true;
       opengl.driSupport32Bit = true;
       cpu.intel.updateMicrocode = true;
@@ -136,7 +139,7 @@ in
       enable = true;
       loginShellInit = ''
         not set -q DISPLAY && test (tty) = /dev/tty1
-        and exec ${pkgs.dbus}/bin/dbus-run-session ${pkgs.sway}/bin/sway
+        and exec env _JAVA_AWT_WM_NONREPARENTING=1 ${pkgs.dbus}/bin/dbus-run-session ${pkgs.sway}/bin/sway
       '';
     };
 
