@@ -11,7 +11,7 @@
     org = {
       enable = true;
       agenda-files = [
-        /home/alex/Dropbox/SortOutLife.org
+        /home/alex/Dropbox/org/SortOutLife.org
       ];
     };
     python.enable = true;
@@ -21,7 +21,9 @@
     mu4e.enable = true;
   };
 
-  settings.debug.enable = true;
+  settings = {
+    debug.enable = true;
+  };
 
   package = {
     direnv.enable = true;
