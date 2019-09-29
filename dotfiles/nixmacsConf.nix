@@ -19,6 +19,7 @@
     systemd.enable = true;
     yaml.enable = true;
     mu4e.enable = true;
+    haskell.enable = true;
   };
 
   settings = {
@@ -61,8 +62,7 @@
       '';
     };
     fonts = {
-      font = "Source Code Pro 10";
-      unicode-font = "STIXGeneral";
+#      font = "Source Code Pro 10";
     };
   };
 }

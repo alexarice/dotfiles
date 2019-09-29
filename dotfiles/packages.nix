@@ -2,12 +2,7 @@
 { pkgs, ... }:
 
 {
-  home.packages = (with pkgs.haskellPackages; [
-    apply-refact
-    hlint
-    stylish-haskell
-    Agda
-  ]) ++ (with pkgs; [
+  home.packages = with pkgs; [
 
     wldash
     nixmacs
@@ -97,6 +92,7 @@
       parsec
       multimap
     ]))
+    haskellPackages.Agda
     cabal-install
     cabal2nix
     nodejs
@@ -123,5 +119,5 @@
     sgtpuzzles
     (openmw.overrideAttrs ( attrs: attrs // { patches = [ ./openmw.patch ]; }))
     steam-run-native
-  ]);
+  ];
 }

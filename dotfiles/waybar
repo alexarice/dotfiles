@@ -19,7 +19,7 @@
   },
   "backlight": {
     // "device": "acpi_video1",
-    "format": "{icon}: {percent}%",
+    "format": "{percent}% {icon}",
     "format-icons": [""],
     "on-scroll-up": "brillo -A 0.5",
     "on-scroll-down": "brillo -U 0.5"
@@ -30,7 +30,7 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "{icon}: {capacity}%",
+    "format": "{capacity}% {icon}",
     // "format-good": "", // An empty format will hide the module
     // "format-full": "",
     "format-icons": ["", "", "", "", ""]

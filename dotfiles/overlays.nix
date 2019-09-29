@@ -13,9 +13,9 @@ in
     inherit (import /home/alex/nixpkgs { }) brillo;
   };
 
-  emacsOverlay = import (builtins.fetchTarball {
-    url = https://github.com/nix-community/emacs-overlay/archive/master.tar.gz;
-  });
+#  emacsOverlay = import (builtins.fetchTarball {
+#    url = https://github.com/nix-community/emacs-overlay/archive/master.tar.gz;
+#  });
 
   myWaylandOverlay = self: super: {
     inherit (waylandOverlay {} super) redshift-wayland wldash;
@@ -34,5 +34,9 @@ in
         sha256 = "0cl7kwqqrq4zkfhz4s19vjad62v7ddqk93x3z068nvzs0lfjcrj9";
       };
     }));
+  };
+
+  waybarOverlay = self: super: {
+    waybar = super.waybar.override { pulseSupport = true; };
   };
 }
