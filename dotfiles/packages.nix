@@ -42,14 +42,6 @@
     direnv
 
     # GTK
-    adapta-gtk-theme
-    gnome3.adwaita-icon-theme
-    arc-icon-theme
-    arc-theme
-    ant-theme
-    ant-dracula-theme
-    ant-nebula-theme
-    ant-bloody-theme
     hicolor-icon-theme
 
     # Dictionaries

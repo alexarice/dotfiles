@@ -33,7 +33,7 @@
     dropbox = {
       Unit = {
         Description = pkgs.dropbox.meta.description;
-        PartOf = [ "local-fs.target" "network.target" ];
+        After = [ "local-fs.target" "network.target" ];
       };
       Install = {
         WantedBy = [ "multi-user.target" ];
@@ -42,7 +42,6 @@
         ExecStart = "/home/alex/.dropbox-dist/dropboxd";
         RestartSec = 3;
         Restart = "on-failure";
-        User="alex";
       };
     };
     udiskie = {

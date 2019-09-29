@@ -12,6 +12,7 @@ with lib;
       ./alacritty.nix
       ./files.nix
       ./git.nix
+      ./gtk.nix
       ./direnv.nix
       ./fish.nix
       ./redshift.nix
