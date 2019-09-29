@@ -13,16 +13,19 @@ in
     inherit (import /home/alex/nixpkgs { }) brillo;
   };
 
-#  emacsOverlay = import (builtins.fetchTarball {
-#    url = https://github.com/nix-community/emacs-overlay/archive/master.tar.gz;
-#  });
+  emacsOverlay = import (builtins.fetchTarball {
+    url = https://github.com/nix-community/emacs-overlay/archive/master.tar.gz;
+  });
 
   myWaylandOverlay = self: super: {
     inherit (waylandOverlay {} super) redshift-wayland wldash;
   };
 
   nixmacsOverlay = self: super: {
-    nixmacs = (self.pkgs.callPackage (/home/alex/nixmacs) { configurationFile = /home/alex/dotfiles/nixmacsConf.nix;  });
+    nixmacs = (self.pkgs.callPackage (/home/alex/nixmacs) {
+      configurationFile = /home/alex/dotfiles/nixmacsConf.nix;
+      package = self.emacsGit;
+    });
   };
 
   fishOverlay = self: super: {
