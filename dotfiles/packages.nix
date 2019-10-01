@@ -92,7 +92,7 @@
     android-studio
 
     # Programs
-    emacsGit
+    emacs
     firefox
     chromium
     thunderbird
