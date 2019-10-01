@@ -18,7 +18,6 @@
     javascript.enable = true;
     systemd.enable = true;
     yaml.enable = true;
-    mu4e.enable = true;
     haskell.enable = true;
   };
 
@@ -41,7 +40,6 @@
       use-package.chords."nh" = "xah-fly-command-mode-activate";
     };
     unicode-fonts.enable = true;
-    nix-update.enable = true;
     tex.settings.TeX-view-program-selection.output-pdf = "Zathura";
     doom-modeline.use-package.custom.doom-modeline-icon = true;
   };
