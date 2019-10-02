@@ -83,6 +83,7 @@
       containers
       parsec
       multimap
+      quickcheck-with-counterexamples
     ]))
     haskellPackages.Agda
     cabal-install
@@ -109,7 +110,7 @@
     steam
     steamcmd
     sgtpuzzles
-    (openmw.overrideAttrs ( attrs: attrs // { patches = [ ./openmw.patch ]; }))
+    # (openmw.overrideAttrs ( attrs: attrs // { patches = [ ./openmw.patch ]; }))
     steam-run-native
   ];
 }
