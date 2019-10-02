@@ -2,6 +2,7 @@
 
 {
   layers = {
+    agda.enable = true;
     ivy.enable = true;
     completion.enable = true;
     nix.enable = true;
