@@ -72,7 +72,10 @@ in
     # Set your time zone.
     time.timeZone = "Europe/London";
 
-    nix.extraOptions = "keep-outputs = true";
+    nix = {
+      extraOptions = "keep-outputs = true";
+      autoOptimiseStore = true;
+    };
 
     # System packages
     environment = {
