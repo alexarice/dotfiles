@@ -88,7 +88,6 @@
     haskellPackages.Agda
     cabal-install
     cabal2nix
-    nodejs
     python3
     android-studio
 
