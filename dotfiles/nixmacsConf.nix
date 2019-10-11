@@ -5,6 +5,7 @@
     agda.enable = true;
     ivy.enable = true;
     completion.enable = true;
+    fish.enable = true;
     nix.enable = true;
     latex.enable = true;
     git.enable = true;
@@ -12,7 +13,7 @@
     org = {
       enable = true;
       agenda-files = [
-        /home/alex/Dropbox/org/SortOutLife.org
+        "/home/alex/Dropbox/org/SortOutLife.org"
       ];
     };
     python.enable = true;
