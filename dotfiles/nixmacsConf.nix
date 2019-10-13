@@ -8,6 +8,7 @@
     fish.enable = true;
     nix.enable = true;
     latex.enable = true;
+    rust.enable = true;
     git.enable = true;
     c.enable = true;
     org = {
