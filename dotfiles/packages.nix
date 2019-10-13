@@ -89,7 +89,6 @@
     cabal-install
     cabal2nix
     python3
-    android-studio
 
     # Programs
     emacs
