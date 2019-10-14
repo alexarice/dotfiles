@@ -30,20 +30,6 @@
         Restart = "always";
       };
     };
-    dropbox = {
-      Unit = {
-        Description = pkgs.dropbox.meta.description;
-        After = [ "local-fs.target" "network.target" ];
-      };
-      Install = {
-        WantedBy = [ "multi-user.target" ];
-      };
-      Service = {
-        ExecStart = "/home/alex/.dropbox-dist/dropboxd";
-        RestartSec = 3;
-        Restart = "on-failure";
-      };
-    };
     udiskie = {
       Unit = {
         Description = pkgs.udiskie.meta.description;
@@ -73,6 +59,5 @@
         Restart = "always";
       };
     };
-    redshift.Install.WantedBy = lib.mkForce [ "sway-session.target" ];
   };
 }
