@@ -4,7 +4,7 @@ let
   inherit (config) dots scripts modifier;
 in
 {
-  services.sway = {
+  wayland.windowManager.sway = {
     enable = true;
     config = {
       bars = [];
