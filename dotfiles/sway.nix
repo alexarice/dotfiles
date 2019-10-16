@@ -85,15 +85,20 @@ in
         };
       };
       output = {
+        "*" = {
+          bg = "\"${dots}/background-image.png\" fill";
+        };
         "HDMI-A-2" = {
           pos = "0,0";
           res = "1920x1080";
-          bg = "\"${dots}/background-image.png\" fill";
+        };
+        "HDMI-A-1" = {
+          pos = "0,0";
+          res = "1920x1080";
         };
         "eDP-1" = {
           pos = "0,1080";
           res = "1600x900";
-          bg = "\"${dots}/background-image.png\" fill";
         };
       };
     };
