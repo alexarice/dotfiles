@@ -40,7 +40,7 @@
           "\"#\"" = "xah-comment-dwim";
         };
       };
-      use-package.chords."nh" = "xah-fly-command-mode-activate";
+      use-package.bind."<end>" = "xah-fly-command-mode-activate";
     };
     unicode-fonts.enable = true;
     tex.settings.TeX-view-program-selection.output-pdf = "Zathura";
