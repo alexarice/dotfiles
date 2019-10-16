@@ -6,6 +6,7 @@ in
 {
   wayland.windowManager.sway = {
     enable = true;
+    package = null;
     config = {
       bars = [];
       colors = {

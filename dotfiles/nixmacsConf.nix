@@ -28,6 +28,8 @@
     debug.enable = true;
   };
 
+  custom.enable = true;
+
   package = {
     direnv.enable = true;
     xah-fly-keys = {
