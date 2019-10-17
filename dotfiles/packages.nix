@@ -86,6 +86,7 @@
       parsec
       multimap
       quickcheck-with-counterexamples
+      cassava
     ]))
     haskellPackages.Agda
     cabal-install
