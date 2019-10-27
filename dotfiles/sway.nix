@@ -60,6 +60,10 @@ in
         "XF86MonBrightnessDown" = "exec \"brillo -U 1\"";
         "XF86AudioLowerVolume" = "exec \"pactl set-sink-volume 0 -5%\"";
         "XF86AudioRaiseVolume" = "exec \"pactl set-sink-volume 0 +5%\"";
+        "XF86AudioPlay" = "exec \"playerctl play\"";
+        "XF86AudioPause" = "exec \"playerctl pause\"";
+        "XF86AudioNext" = "exec \"playerctl next\"";
+        "XF86AudioPrev" = "exec \"playerctl previous\"";
         "${modifier}+x" = "exec networkmanager_dmenu";
         "${modifier}+Ctrl+r" = "exec reboot";
         "${modifier}+Ctrl+k" = "exec \"shutdown -h now\"";
