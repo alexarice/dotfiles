@@ -84,8 +84,9 @@ in
           natural_scroll = "enabled";
         };
         "*" = {
-          xkb_layout = "gb";
-          xkb_variant = "dvorak";
+          xkb_layout = "gb,gb";
+          xkb_variant = "dvorak,";
+          xkb_options = "grp:alt_space_toggle";
         };
       };
       output = {
