@@ -26,12 +26,20 @@ window#waybar {
     border-bottom: 3px solid #ffffff;
 }
 
-#clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-spotify, #tray, #mode, #idle_inhibitor, #custom-root, #custom-home {
+#clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-spotify, #tray, #idle_inhibitor, #custom-root, #custom-home {
     padding: 0 10px;
     margin: 0 3px;
     background-color: #282a36;
     color: #81c1e4;
 }
+
+#mode {
+    padding: 0 10px;
+    margin: 0 3px;
+    color: #282a36;
+    background-color: #50fa7b;
+}
+
 #window {
     color: #81c1e4;
 }

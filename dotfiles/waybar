@@ -1,12 +1,11 @@
 {
-  "layer": "bottom", // Waybar at bottom layer
-  "position": "bottom", // Waybar at the bottom of your screen
+  "layer": "bottom",
+  "position": "bottom",
   "height": 25,
-  "modules-left": ["sway/workspaces",  "cpu", "backlight", "pulseaudio", "custom/spotify"],
+  "modules-left": ["sway/workspaces", "cpu", "backlight", "pulseaudio", "custom/spotify"],
   "modules-center": ["sway/window"],
-  "modules-right": ["custom/root", "network", "battery", "clock", "tray"],
+  "modules-right": ["sway/mode", "custom/root", "network", "battery", "clock", "tray"],
   "tray": {
-    // "icon-size": 21,
     "spacing": 10
   },
   "clock": {
@@ -17,8 +16,10 @@
   "cpu": {
     "format": "<b>CPU</b>: {usage}%"
   },
+  "window": {
+    "max-length": 80
+  },
   "backlight": {
-    // "device": "acpi_video1",
     "format": "{percent}% {icon}",
     "format-icons": [""],
     "on-scroll-up": "brillo -A 0.5",
@@ -26,21 +27,14 @@
   },
   "battery": {
     "states": {
-      // "good": 95,
+      "good": 95,
       "warning": 30,
       "critical": 15
     },
     "format": "{capacity}% {icon}",
-    // "format-good": "", // An empty format will hide the module
-    // "format-full": "",
     "format-icons": ["", "", "", "", ""]
   },
-  "tray": {
-    // "icon-size": 21,
-    "spacing": 10
-  },
   "network": {
-    // "interface": "wlp2s0", // (Optional) To force the use of this interface
     "format-wifi": "{essid} ({signalStrength}%)",
     "format-ethernet": "{ifname}: {ipaddr}/{cidr}",
     "format-disconnected": "Disconnected ⚠"
@@ -62,6 +56,10 @@
     "on-click": "pactl set-sink-mute 0 toggle",
     "on-click-right": "pavucontrol"
   },
+  "mode": {
+    "format": "{}",
+    "max-length":50
+  },
   "custom/spotify": {
     "format": " {}",
     "interval": 5,
@@ -69,7 +67,8 @@
     "on-click": "playerctl previous",
     "on-click-right": "playerctl next",
     "on-click-middle": "playerctl play-pause",
-    "exec": "playerctl metadata -f '{{artist}}: {{title}}' | sed 's/&/&amp;/g'"
+    "exec": "playerctl metadata -f '{{artist}}: {{title}}' | sed 's/&/&amp;/g'",
+    "exec-if": "pgrep spotify"
   },
   "custom/root": {
     "format": "<b>\\</b> {}",
