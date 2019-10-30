@@ -34,6 +34,7 @@
     bemenu
     dropbox-cli
     networkmanager_dmenu
+    networkmanagerapplet
     dmenu
 
     # Nix
