@@ -82,6 +82,7 @@ in
 
     # System packages
     environment = {
+      pathsToLink = [ "/share/agda" ];
       systemPackages = with pkgs; [
         git
         bup

@@ -8,7 +8,6 @@
     nixmacs
     wl-clipboard
     mendeley
-    hugo
 
     # CLI Programs
     neofetch
@@ -89,6 +88,7 @@
       quickcheck-with-counterexamples
       cassava
     ]))
+    AgdaStdlib
     haskellPackages.Agda
     cabal-install
     cabal2nix
