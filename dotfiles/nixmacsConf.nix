@@ -32,6 +32,7 @@
 
   package = {
     direnv.enable = true;
+    agda-input.enable = true;
     xah-fly-keys = {
       enable = true;
       settings = {
