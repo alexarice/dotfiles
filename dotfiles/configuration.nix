@@ -44,7 +44,10 @@ in
     boot.kernelPackages = pkgs.linuxPackages_latest;
 
     networking.hostName = "Alex_Nixos"; # Define your hostname.
-    networking.networkmanager.enable = true;
+    networking.networkmanager = {
+      enable = true;
+      # wifi.backend = "iwd";
+    };
 
     # Select internationalisation properties.
     i18n = {
