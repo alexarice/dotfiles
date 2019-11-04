@@ -10,7 +10,7 @@
     latex.enable = true;
     rust.enable = true;
     git.enable = true;
-    c.enable = true;
+    c.enable = false;
     org = {
       enable = true;
       agenda-files = [
