@@ -66,6 +66,7 @@
       '';
     };
     fonts = {
+      unicode-font = "DejaVu Sans";
 #      font = "Source Code Pro 10";
     };
   };
