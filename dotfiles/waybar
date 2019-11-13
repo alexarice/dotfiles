@@ -67,7 +67,7 @@
     "on-click": "playerctl previous",
     "on-click-right": "playerctl next",
     "on-click-middle": "playerctl play-pause",
-    "exec": "playerctl metadata -f '{{artist}}: {{title}}' | sed 's/&/&amp;/g'",
+    "exec": "sleep 0.5 ; playerctl metadata -f '{{artist}}: {{title}}' | sed 's/&/&amp;/g'",
     "exec-if": "pgrep spotify"
   },
   "custom/root": {
