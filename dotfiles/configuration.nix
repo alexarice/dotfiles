@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 let
-  inherit (import /home/alex/dotfiles/overlays.nix) fishOverlay brilloOverlay;
+  inherit (import /home/alex/dotfiles/overlays.nix) fishOverlay;
   USBID = "a4ede8f0-01";
 in
 {
@@ -11,7 +11,7 @@ in
     ];
 
     nixpkgs = {
-      overlays = [ brilloOverlay fishOverlay ];
+      overlays = [ fishOverlay ];
       config = {
         allowUnfree = true;
       };
@@ -70,6 +70,7 @@ in
       opengl.enable = true;
       opengl.driSupport32Bit = true;
       cpu.intel.updateMicrocode = true;
+      brillo.enable = true;
     };
 
     # Set your time zone.
@@ -86,7 +87,6 @@ in
       systemPackages = with pkgs; [
         git
         bup
-        brillo
         xboxdrv
       ];
     };
@@ -122,8 +122,6 @@ in
       upower.enable = true;
 
       mingetty.autologinUser = "alex";
-
-      udev.packages = [ pkgs.brillo ];
 
       geoclue2.enable = true;
 

@@ -9,10 +9,6 @@ in
     ant-theme ant-dracula-theme ant-nebula-theme ant-bloody-theme;
   };
 
-  brilloOverlay = self: super: {
-    inherit (import /home/alex/nixpkgs { }) brillo;
-  };
-
   emacsOverlay = import (builtins.fetchTarball {
     url = https://github.com/nix-community/emacs-overlay/archive/master.tar.gz;
   });
