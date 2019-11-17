@@ -27,6 +27,8 @@
     pamixer
     lgogdownloader
     fzf
+    htop
+    iftop
 
     # Things in sway config
     j4-dmenu-desktop
