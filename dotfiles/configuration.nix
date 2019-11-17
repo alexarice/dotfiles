@@ -134,6 +134,7 @@ in
       "${pkgs.gnome3.gvfs}/lib/gio/modules"
     ];
 
+    programs.gnupg.agent.enable = true;
     programs.sway.enable = true;
     programs.dconf.enable = true;
     services.dbus.packages = [ pkgs.gnome3.dconf ];
