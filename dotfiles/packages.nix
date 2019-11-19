@@ -69,6 +69,7 @@
     libnotify
     libappindicator
     bitwarden-cli
+    xdg_utils
 
     # Desktop environment
     (mate.caja-with-extensions.override { extensions = [ mate.caja-extensions mate.caja-dropbox ]; })
