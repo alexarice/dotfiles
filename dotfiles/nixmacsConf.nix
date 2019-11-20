@@ -26,6 +26,7 @@
 
   settings = {
     debug.enable = true;
+    cancel-minibuffer-with-mouse = true;
   };
 
   custom.enable = true;
