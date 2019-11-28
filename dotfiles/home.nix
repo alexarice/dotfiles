@@ -19,6 +19,7 @@ with lib;
       ./systemd.nix
       ./sway.nix
       ./emails.nix
+      ./lorri.nix
     ];
 
     options = {
