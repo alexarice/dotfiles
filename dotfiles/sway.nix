@@ -48,6 +48,7 @@ in
       inherit modifier;
       menu = "wldash";
       terminal = "alacritty";
+      workspaceAutoBackAndForth = true;
       keybindings = lib.mkOptionDefault {
         "${modifier}+n" = "exec caja";
         "${modifier}+m" = "exec \"GDK_BACKEND=x11 thunderbird\"";
