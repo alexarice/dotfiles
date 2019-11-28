@@ -90,6 +90,7 @@
       multimap
       quickcheck-with-counterexamples
       cassava
+      diagrams
     ]))
     AgdaStdlib
     haskellPackages.Agda
