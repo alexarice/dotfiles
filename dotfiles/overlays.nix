@@ -4,6 +4,9 @@ let
   });
 in
 {
+  agdaOverlay = self: super: {
+    inherit (import /home/alex/nixpkgs { }) agda-categories;
+  };
   antOverlay = self: super: {
     inherit (import /home/alex/nixpkgs2 { })
     ant-theme ant-dracula-theme ant-nebula-theme ant-bloody-theme;
