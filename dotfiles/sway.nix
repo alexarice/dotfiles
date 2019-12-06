@@ -41,8 +41,9 @@ in
       };
       fonts = [ "Source Code Pro 9" ];
       gaps = {
-        inner = 0;
-        bottom = 4;
+        inner = 10;
+        outer = -10;
+        bottom = -16;
         smartBorders = "on";
       };
       inherit modifier;
@@ -74,6 +75,7 @@ in
         border = 2;
         titlebar = false;
       };
+
       startup = [
         { command = "dropbox start"; always = true; }
       ];

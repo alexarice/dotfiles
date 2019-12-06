@@ -4,9 +4,9 @@ let
   });
 in
 {
-  agdaOverlay = self: super: {
-    inherit (import /home/alex/nixpkgs { }) agda-categories;
-  };
+  # agdaOverlay = self: super: {
+  #   inherit (import /home/alex/nixpkgs { }) agda-categories;
+  # };
   antOverlay = self: super: {
     inherit (import /home/alex/nixpkgs2 { })
     ant-theme ant-dracula-theme ant-nebula-theme ant-bloody-theme;
@@ -16,9 +16,9 @@ in
     url = https://github.com/nix-community/emacs-overlay/archive/master.tar.gz;
   });
 
-  myWaylandOverlay = self: super: {
-    inherit (waylandOverlay {} super) redshift-wayland wldash;
-  };
+  myWaylandOverlay = waylandOverlay;# self: super: {
+  #   inherit (waylandOverlay {} super) redshift-wayland wldash;
+  # };
 
   nixmacsOverlay = self: super: {
     nixmacs = (self.pkgs.callPackage (/home/alex/nixmacs) {
@@ -37,7 +37,7 @@ in
     }));
   };
 
-  waybarOverlay = self: super: {
-    waybar = super.waybar.override { pulseSupport = true; };
-  };
+  # waybarOverlay = self: super: {
+  #   waybar = super.waybar.override { pulseSupport = true; };
+  # };
 }

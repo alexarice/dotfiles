@@ -93,7 +93,6 @@
       diagrams
     ]))
     AgdaStdlib
-    agda-categories
     haskellPackages.Agda
     cabal-install
     cabal2nix
