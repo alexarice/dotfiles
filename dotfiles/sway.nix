@@ -43,7 +43,7 @@ in
       gaps = {
         inner = 10;
         outer = -10;
-        bottom = -16;
+        bottom = -6;
         smartBorders = "on";
       };
       inherit modifier;
