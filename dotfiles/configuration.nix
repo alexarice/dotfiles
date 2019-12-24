@@ -41,7 +41,7 @@ in
     boot.loader.systemd-boot.enable = true;
     boot.loader.systemd-boot.consoleMode = "max";
     boot.loader.efi.canTouchEfiVariables = true;
-    boot.kernelPackages = pkgs.linuxPackages_latest;
+    # boot.kernelPackages = pkgs.linuxPackages_latest;
 
     networking.hostName = "Alex_Nixos"; # Define your hostname.
     networking.networkmanager = {
@@ -50,9 +50,12 @@ in
     };
 
     # Select internationalisation properties.
+    console = {
+      font = "lat2-Terminus16";
+      keyMap = "uk";
+    };
+
     i18n = {
-      consoleFont = "Lat2-Terminus16";
-      consoleKeyMap = "uk";
       defaultLocale = "en_GB.UTF-8";
     };
 
