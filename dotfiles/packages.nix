@@ -1,4 +1,3 @@
-
 { pkgs, ... }:
 
 {
@@ -92,8 +91,7 @@
       cassava
       diagrams
     ]))
-    AgdaStdlib
-    haskellPackages.Agda
+    ((import ../nixpkgs { }).agda.agdaWithPackages (p: [ p.standard-library ]))
     cabal-install
     cabal2nix
     python3
@@ -115,9 +113,11 @@
 
     # Games
     steam
-    steamcmd
     sgtpuzzles
     # (openmw.overrideAttrs ( attrs: attrs // { patches = [ ./openmw.patch ]; }))
     steam-run-native
+    wine
+    winetricks
+    cage
   ];
 }

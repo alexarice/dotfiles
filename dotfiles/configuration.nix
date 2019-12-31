@@ -72,6 +72,7 @@ in
       };
       opengl.enable = true;
       opengl.driSupport32Bit = true;
+      opengl.extraPackages32 = [ pkgs.pkgsi686Linux.libva ];
       cpu.intel.updateMicrocode = true;
       brillo.enable = true;
     };
@@ -86,7 +87,6 @@ in
 
     # System packages
     environment = {
-      pathsToLink = [ "/share/agda" ];
       systemPackages = with pkgs; [
         git
         bup
