@@ -8,7 +8,7 @@
     fish.enable = true;
     nix.enable = true;
     latex.enable = true;
-    rust.enable = true;
+    rust.enable = false;
     git.enable = true;
     c.enable = false;
     org = {
@@ -25,7 +25,7 @@
   };
 
   settings = {
-    debug.enable = true;
+    debug.enable = false;
     cancel-minibuffer-with-mouse = true;
   };
 
@@ -33,7 +33,7 @@
 
   package = {
     direnv.enable = true;
-    agda-input.enable = true;
+    agda-input.enable = false;
     xah-fly-keys = {
       enable = true;
       settings = {

@@ -90,12 +90,14 @@
       quickcheck-with-counterexamples
       cassava
       diagrams
+      ieee
     ]))
     ((import ../nixpkgs { }).agda.agdaWithPackages (p: [ p.standard-library ]))
     cabal-install
     cabal2nix
     python3
     android-studio
+    oraclejdk8
 
     # Programs
     emacs
@@ -118,6 +120,7 @@
     steam-run-native
     wine
     winetricks
+    minecraft
     cage
   ];
 }

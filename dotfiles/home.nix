@@ -40,6 +40,7 @@ with lib;
       nixpkgs.config = {
         allowBroken = true;
         allowUnfree = true;
+        oraclejdk.accept_license = true;
       };
 
       nixpkgs.overlays = builtins.attrValues (import ./overlays.nix);

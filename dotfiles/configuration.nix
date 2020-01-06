@@ -14,9 +14,9 @@ in
       overlays = [ fishOverlay ];
       config = {
         allowUnfree = true;
+        oraclejdk.accept_license = true;
       };
     };
-
 
     boot.initrd.kernelModules = [ "usbcore" "usb_storage" "vfat" ];
 
@@ -24,11 +24,11 @@ in
       {
         name = "cryptlvm";
         device = "/dev/sda2";
-        keyFile = "/dev/disk/by-partuuid/${USBID}";
-        fallbackToPassword = true;
+        # keyFile = "/dev/disk/by-partuuid/${USBID}";
+        # fallbackToPassword = true;
+        # keyFileSize = 4096;
         allowDiscards = true;
         preLVM = false;
-        keyFileSize = 4096;
       }
     ];
 
@@ -140,6 +140,7 @@ in
     programs.gnupg.agent.enable = true;
     programs.sway.enable = true;
     programs.dconf.enable = true;
+    programs.adb.enable = true;
     services.dbus.packages = [ pkgs.gnome3.dconf ];
 
     # Enable sound.
@@ -164,7 +165,7 @@ in
         shell = pkgs.fish;
         isNormalUser = true;
         home = "/home/alex";
-        extraGroups = ["wheel" "networkmanager" "video" "audio"];
+        extraGroups = ["wheel" "networkmanager" "video" "audio" "adbusers"];
         uid = 1000;
         hashedPassword = "$6$lY0U5C4WoOcmj.6$YLKJMkQVUJDbItcyHV7wZuvmzpvmOcPR9dgHWJYzUHBB7bSevyC4Vqpqm2IxoVqqhpz.KY7aQJnQI2HaSDsL1.";
       };
