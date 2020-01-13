@@ -92,7 +92,7 @@
       diagrams
       ieee
     ]))
-    ((import ../nixpkgs { }).agda.agdaWithPackages (p: [ p.standard-library ]))
+    ((import ../nixpkgs { }).agda.withPackages (p: [ p.standard-library ]))
     cabal-install
     cabal2nix
     python3
