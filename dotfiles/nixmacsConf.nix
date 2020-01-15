@@ -25,7 +25,7 @@
   };
 
   settings = {
-    debug.enable = false;
+    config-command.enable = true;
     cancel-minibuffer-with-mouse = true;
   };
 
