@@ -89,7 +89,7 @@ in
         "*" = {
           xkb_layout = "gb,gb";
           xkb_variant = "dvorak,";
-          xkb_options = "grp:alt_space_toggle";
+          xkb_options = "grp:alt_space_toggle,caps:none";
         };
       };
       output = {
