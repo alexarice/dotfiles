@@ -11,7 +11,6 @@ in
     ];
 
     nixpkgs = {
-      overlays = [ fishOverlay ];
       config = {
         allowUnfree = true;
         oraclejdk.accept_license = true;
