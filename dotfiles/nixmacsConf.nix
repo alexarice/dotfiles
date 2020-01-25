@@ -22,6 +22,7 @@
     systemd.enable = true;
     yaml.enable = true;
     haskell.enable = true;
+    markdown.enable = true;
   };
 
   settings = {
@@ -33,7 +34,6 @@
 
   package = {
     direnv.enable = true;
-    agda-input.enable = false;
     xah-fly-keys = {
       enable = true;
       settings = {
