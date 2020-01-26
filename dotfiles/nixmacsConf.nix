@@ -1,5 +1,8 @@
 { config, lib, epkgs, ... }:
 
+let
+  all-hies = import (fetchTarball "https://github.com/infinisil/all-hies/tarball/master") {};
+in
 {
   layers = {
     agda.enable = true;
@@ -21,7 +24,11 @@
     javascript.enable = true;
     systemd.enable = true;
     yaml.enable = true;
-    haskell.enable = true;
+    lsp.enable = true;
+    haskell = {
+      enable = true;
+      hies = all-hies.selection { selector = p: { inherit (p) ghc865; };};
+    };
     markdown.enable = true;
   };
 

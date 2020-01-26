@@ -8,6 +8,7 @@ in
     [
       /home/alex/dotfiles/home.nix
       /etc/nixos/hardware-configuration.nix
+      /etc/nixos/cachix.nix
     ];
 
     nixpkgs = {

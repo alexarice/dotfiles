@@ -6,7 +6,8 @@
     wldash
     nixmacs
     wl-clipboard
-    mendeley
+    cachix
+
 
     # CLI Programs
     neofetch
