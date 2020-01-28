@@ -98,7 +98,6 @@
     cabal2nix
     python3
     android-studio
-    oraclejdk8
 
     # Programs
     emacs
@@ -117,11 +116,8 @@
     # Games
     steam
     sgtpuzzles
-    # (openmw.overrideAttrs ( attrs: attrs // { patches = [ ./openmw.patch ]; }))
     steam-run-native
     wine
     winetricks
-    minecraft
-    cage
   ];
 }
