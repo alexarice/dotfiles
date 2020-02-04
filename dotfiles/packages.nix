@@ -7,6 +7,7 @@
     nixmacs
     wl-clipboard
     cachix
+    catt
 
 
     # CLI Programs

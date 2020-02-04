@@ -22,4 +22,8 @@ in
       configurationFile = /home/alex/dotfiles/nixmacsConf.nix;
     });
   };
+
+  cattOverlay = self: super: {
+    catt = (self.pkgs.callPackage ./pkgs/catt { });
+  };
 }
