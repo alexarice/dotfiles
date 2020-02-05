@@ -137,10 +137,6 @@ in
       "${pkgs.gnome3.gvfs}/lib/gio/modules"
     ];
 
-    programs.gnupg.agent = {
-      enable = true;
-      pinentryFlavor = "gnome3";
-    };
     programs.dconf.enable = true;
     programs.adb.enable = true;
     services.dbus.packages = [ pkgs.gnome3.dconf ];

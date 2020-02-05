@@ -20,6 +20,7 @@ with lib;
       ./sway.nix
       ./emails.nix
       ./lorri.nix
+      ./gpg.nix
     ];
 
     options = {
