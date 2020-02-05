@@ -6,7 +6,10 @@ in
 {
   wayland.windowManager.sway = {
     enable = true;
-    package = null;
+    extraSessionCommands = ''
+      export _JAVA_AWT_WM_NONREPARENTING=1
+    '';
+
     config = {
       bars = [];
       colors = {

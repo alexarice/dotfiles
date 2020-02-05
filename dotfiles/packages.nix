@@ -8,7 +8,7 @@
     wl-clipboard
     cachix
     catt
-
+    pinentry
 
     # CLI Programs
     neofetch

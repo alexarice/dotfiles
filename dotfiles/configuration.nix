@@ -35,6 +35,7 @@ in
 
     security.sudo.enable = true;
     security.sudo.extraConfig = "Defaults pwfeedback";
+    security.pam.services.swaylock = {};
 
     # Use the systemd-boot EFI boot loader.
     boot.loader.systemd-boot.enable = true;
@@ -136,8 +137,10 @@ in
       "${pkgs.gnome3.gvfs}/lib/gio/modules"
     ];
 
-    programs.gnupg.agent.enable = true;
-    programs.sway.enable = true;
+    programs.gnupg.agent = {
+      enable = true;
+      pinentryFlavor = "gnome3";
+    };
     programs.dconf.enable = true;
     programs.adb.enable = true;
     services.dbus.packages = [ pkgs.gnome3.dconf ];
@@ -149,7 +152,7 @@ in
       enable = true;
       loginShellInit = ''
         not set -q DISPLAY && test (tty) = /dev/tty1
-        and exec env _JAVA_AWT_WM_NONREPARENTING=1 sway
+        and exec sway
       '';
     };
 
