@@ -1,7 +1,8 @@
-{ config, lib, epkgs, ... }:
+{ config, lib, epkgs, pkgs, ... }:
 
 let
   all-hies = import (fetchTarball "https://github.com/infinisil/all-hies/tarball/master") {};
+  catt-mode = epkgs.callPackage ./pkgs/catt/catt-mode.nix { };
 in
 {
   layers = {
@@ -40,6 +41,11 @@ in
   custom.enable = true;
 
   package = {
+    catt-mode = {
+      enable = true;
+      package = catt-mode;
+      use-package.mode = ''"\\.catt\\'"'';
+    };
     direnv.enable = true;
     xah-fly-keys = {
       enable = true;

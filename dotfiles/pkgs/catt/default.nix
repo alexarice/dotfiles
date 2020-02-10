@@ -7,8 +7,8 @@ ocamlPackages.buildDune2Package {
   src = fetchFromGitHub {
     repo = "catt.io";
     owner = "ericfinster";
-    rev = "e8de81fa70b0d7dbe874c20b8bea1f095558ee20";
-    sha256 = "0nxzky13dwaag850grxbwaqh2jrarxirw7fqbv6n89xc95cb99gq";
+    rev = "5dfa3d8c9bef3f572a165f5083635db368011c68";
+    sha256 = "082v3pcpv2kzs0iqa668g94wynkkj1rqxxmfabd5m9ciiz0fgds8";
   };
 
   buildInputs = with ocamlPackages; [
