@@ -14,6 +14,7 @@ in
     latex.enable = true;
     rust.enable = false;
     git.enable = true;
+    ocaml.enable = true;
     c.enable = false;
     org = {
       enable = true;
@@ -41,12 +42,6 @@ in
   custom.enable = true;
 
   package = {
-    tuareg.enable = true;
-    merlin = {
-      enable = true;
-      external-packages = [ pkgs.ocamlPackages.merlin ];
-      use-package.hook = "(tuareg-mode . merlin-mode)";
-    };
     catt-mode = {
       enable = true;
       package = catt-mode;
