@@ -26,4 +26,13 @@ in
   cattOverlay = self: super: {
     catt = (self.pkgs.callPackage ./pkgs/catt { });
   };
+
+  agdaOverlay = self: super: {
+
+    agda-dev = ((self.haskellPackages.override {
+      overrides = new: old: {
+        regex-tdfa = new.regex-tdfa_1_3_1_0;
+      };
+    }).callPackage ./pkgs/agda { });
+  };
 }
