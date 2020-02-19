@@ -94,7 +94,7 @@
       diagrams
       ieee
     ]))
-    ((callPackage (import ./pkgs/agda-packages-devel.nix) { Agda = agda-dev; }).withPackages (p: [ p.standard-library ]))
+    ((callPackage (import ./pkgs/agda-packages-devel.nix) { inherit (haskellPackages) Agda; }).withPackages (p: [ p.standard-library ]))
     # ((import ../nixpkgs { }).agda.withPackages (p: [ p.standard-library ]))
     cabal-install
     cabal2nix

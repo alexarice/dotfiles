@@ -28,11 +28,14 @@ in
   };
 
   agdaOverlay = self: super: {
-
-    agda-dev = ((self.haskellPackages.override {
+    haskellPackages = super.haskellPackages.override {
       overrides = new: old: {
-        regex-tdfa = new.regex-tdfa_1_3_1_0;
+        Agda = ((self.haskellPackages.override {
+          overrides = new: old: {
+            regex-tdfa = new.regex-tdfa_1_3_1_0;
+          };
+        }).callPackage ./pkgs/agda { });
       };
-    }).callPackage ./pkgs/agda { });
+    };
   };
 }

@@ -43,7 +43,6 @@ in
   custom.enable = true;
 
   package = {
-    agda-mode.package = pkgs.agda-dev;
     catt-mode = {
       enable = true;
       package = catt-mode;
