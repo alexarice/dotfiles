@@ -48,6 +48,7 @@ in
       package = catt-mode;
       use-package.mode = ''"\\.catt\\'"'';
     };
+    haskell-mode.external-packages = [];
     direnv.enable = true;
     xah-fly-keys = {
       enable = true;
