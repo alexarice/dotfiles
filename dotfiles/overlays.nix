@@ -30,11 +30,7 @@ in
   agdaOverlay = self: super: {
     haskellPackages = super.haskellPackages.override {
       overrides = new: old: {
-        Agda = ((self.haskellPackages.override {
-          overrides = new: old: {
-            regex-tdfa = new.regex-tdfa_1_3_1_0;
-          };
-        }).callPackage ./pkgs/agda { });
+        Agda = self.haskellPackages.callPackage ./pkgs/agda { };
       };
     };
   };

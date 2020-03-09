@@ -9,6 +9,8 @@
     cachix
     catt
     pinentry
+    binutils
+    pythonPackages.binwalk
 
     # CLI Programs
     neofetch
@@ -93,6 +95,7 @@
       cassava
       diagrams
       ieee
+      filemanip
     ]))
     ((callPackage (import ./pkgs/agda-packages-devel.nix) { inherit (haskellPackages) Agda; }).withPackages (p: [ p.standard-library ]))
     # ((import ../nixpkgs { }).agda.withPackages (p: [ p.standard-library ]))
