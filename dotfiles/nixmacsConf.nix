@@ -37,7 +37,7 @@ in
   settings = {
     config-command.enable = true;
     cancel-minibuffer-with-mouse = true;
-    minibuffer-inherit-input-mode = true;
+    minibuffer-inherit-input-mode = false;
   };
 
   custom.enable = true;
