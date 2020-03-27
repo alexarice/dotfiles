@@ -26,12 +26,4 @@ in
   cattOverlay = self: super: {
     catt = (self.pkgs.callPackage ./pkgs/catt { });
   };
-
-  agdaOverlay = self: super: {
-    haskellPackages = super.haskellPackages.override {
-      overrides = new: old: {
-        Agda = self.haskellPackages.callPackage ./pkgs/agda { };
-      };
-    };
-  };
 }

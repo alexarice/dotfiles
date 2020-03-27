@@ -65,6 +65,7 @@ in
     unicode-fonts.enable = true;
     tex.settings.TeX-view-program-selection.output-pdf = "Zathura";
     doom-modeline.use-package.custom.doom-modeline-icon = true;
+    nix-mode.use-package.demand = true;
   };
 
   appearance = {

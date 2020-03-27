@@ -1,8 +1,10 @@
 { stdenv, fetchFromGitHub, ocamlPackages }:
 
-ocamlPackages.buildDune2Package {
+ocamlPackages.buildDunePackage {
   pname = "catt";
   version = "master";
+
+  useDune2 = true;
 
   src = ../../../university/catt/catt.io;
 
