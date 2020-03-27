@@ -11,6 +11,7 @@
     pinentry
     binutils
     pythonPackages.binwalk
+    zoom-us
 
     # CLI Programs
     neofetch
