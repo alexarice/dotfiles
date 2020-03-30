@@ -3,6 +3,7 @@
 let
   all-hies = import (fetchTarball "https://github.com/infinisil/all-hies/tarball/master") {};
   catt-mode = epkgs.callPackage ./pkgs/catt/catt-mode.nix { };
+  org-agda-export = epkgs.callPackage ./pkgs/org/ox-agda-html.nix { };
 in
 {
   layers = {
@@ -47,6 +48,13 @@ in
       enable = true;
       package = catt-mode;
       use-package.mode = ''"\\.catt\\'"'';
+    };
+    ox-agda-html = {
+      enable = true;
+      package = org-agda-export;
+      use-package.commands = [
+        "org-publish-lagda"
+      ];
     };
     haskell-mode.external-packages = [];
     direnv.enable = true;
