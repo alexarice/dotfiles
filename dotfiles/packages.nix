@@ -1,5 +1,8 @@
 { pkgs, ... }:
 
+let
+  std-lib = import ./pkgs/std-lib;
+in
 {
   home.packages = with pkgs; [
 
@@ -99,7 +102,9 @@
       filemanip
     ]))
     # ((callPackage (import ./pkgs/agda-packages-devel.nix) { inherit (haskellPackages) Agda; }).withPackages (p: [ p.standard-library ]))
-    ((import ../nixpkgs { }).agda.withPackages (p: [ p.standard-library ]))
+    ((import ../nixpkgs { }).agda.withPackages (p: [ (p.callPackage std-lib {
+      inherit  (haskellPackages) ghcWithPackages;
+    }) ]))
     cabal-install
     cabal2nix
     python3

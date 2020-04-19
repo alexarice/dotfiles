@@ -4,7 +4,6 @@
   programs.alacritty = {
     enable = true;
     settings = {
-      tabspaces = 2;
       font = {
         normal = {
           family = "Source Code Pro for Powerline";
