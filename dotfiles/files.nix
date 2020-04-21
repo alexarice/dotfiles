@@ -13,6 +13,5 @@ in
   '';
   home.file.".agda/defaults".text = ''
     standard-library
-    groups
   '';
 }

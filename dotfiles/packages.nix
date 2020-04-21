@@ -13,7 +13,6 @@ in
     catt
     pinentry
     binutils
-    pythonPackages.binwalk
     zoom-us
 
     # CLI Programs
@@ -108,7 +107,6 @@ in
     cabal-install
     cabal2nix
     python3
-    android-studio
 
     # Programs
     emacs
