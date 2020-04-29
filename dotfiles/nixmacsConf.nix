@@ -44,6 +44,7 @@ in
   custom.enable = true;
 
   package = {
+    which-key.enable = false;
     catt-mode = {
       enable = true;
       package = catt-mode;
@@ -64,8 +65,8 @@ in
         keyboard-layout = "dvorak";
         major-mode-bind-key = ".";
         command-mode-bindings = {
-          "\";\"" = "self-insert-command";
-          "\"#\"" = "xah-comment-dwim";
+          ";" = "self-insert-command";
+          "#" = "xah-comment-dwim";
         };
       };
       use-package.bind."<end>" = "xah-fly-command-mode-activate";
