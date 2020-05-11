@@ -16,6 +16,8 @@
       };
     };
 
+    networking.hostName = "Alex_Nixos"; # Define your hostname.
+
     hardware = {
       cpu.intel.updateMicrocode = true;
     };
