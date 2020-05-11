@@ -13,6 +13,8 @@ in
     catt
     pinentry
     binutils
+    xdg-desktop-portal
+    xdg-desktop-portal-wlr
     zoom-us
 
     # CLI Programs
