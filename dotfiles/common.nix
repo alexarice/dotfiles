@@ -1,27 +1,16 @@
 { config, pkgs, ... }:
 let
   inherit (import /home/alex/dotfiles/overlays.nix) fishOverlay;
-  USBID = "a4ede8f0-01";
 in
 {
   imports =
     [
-      /home/alex/dotfiles/home.nix
-      /etc/nixos/hardware-configuration.nix
-      /etc/nixos/cachix.nix
+      ./home.nix
     ];
 
     nixpkgs = {
       config = {
         allowUnfree = true;
-      };
-    };
-
-    boot.initrd.luks.devices = {
-      cryptlvm = {
-        device = "/dev/sda2";
-        allowDiscards = true;
-        preLVM = true;
       };
     };
 
@@ -66,8 +55,6 @@ in
       };
       opengl.enable = true;
       opengl.driSupport32Bit = true;
-      opengl.extraPackages32 = [ pkgs.pkgsi686Linux.libva ];
-      cpu.intel.updateMicrocode = true;
       brillo.enable = true;
     };
 
@@ -116,14 +103,9 @@ in
       # Save manual
       nixosManual.showManual = true;
 
-      upower.enable = true;
-
       mingetty.autologinUser = "alex";
 
       geoclue2.enable = true;
-
-      tlp.enable = true;
-      logind.lidSwitch = "ignore";
     };
 
     services.gvfs.enable = true;
