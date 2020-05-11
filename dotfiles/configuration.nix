@@ -14,18 +14,12 @@ in
     nixpkgs = {
       config = {
         allowUnfree = true;
-        oraclejdk.accept_license = true;
       };
     };
-
-    boot.initrd.kernelModules = [ "usbcore" "usb_storage" "vfat" ];
 
     boot.initrd.luks.devices = {
       cryptlvm = {
         device = "/dev/sda2";
-        # keyFile = "/dev/disk/by-partuuid/${USBID}";
-        # fallbackToPassword = true;
-        # keyFileSize = 4096;
         allowDiscards = true;
         preLVM = true;
       };
