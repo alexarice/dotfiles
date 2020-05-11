@@ -1,14 +1,7 @@
-let
-  waylandOverlay = import (builtins.fetchTarball {
-    url = https://github.com/colemickens/nixpkgs-wayland/archive/master.tar.gz;
-  });
-in
 {
-  emacsOverlay = import (builtins.fetchTarball {
-    url = https://github.com/nix-community/emacs-overlay/archive/master.tar.gz;
-  });
+  emacsOverlay = import <emacs>;
 
-  myWaylandOverlay = waylandOverlay;
+  myWaylandOverlay = import <nixpkgs-wayland>;
 
   nixmacsOverlay = self: super: {
     nixmacs = (self.pkgs.callPackage (/home/alex/nixmacs) {
