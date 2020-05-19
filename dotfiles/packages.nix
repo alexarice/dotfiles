@@ -2,6 +2,7 @@
 
 let
   std-lib = import ./pkgs/std-lib;
+  categories = import ./pkgs/agda-categories;
 in
 {
   home.packages = with pkgs; [
@@ -103,9 +104,10 @@ in
       filemanip
     ]))
     # ((callPackage (import ./pkgs/agda-packages-devel.nix) { inherit (haskellPackages) Agda; }).withPackages (p: [ p.standard-library ]))
-    ((import ../nixpkgs { }).agda.withPackages (p: [ (p.callPackage std-lib {
+    ((import ../nixpkgs { }).agda.withPackages (p: [ (p.callPackage std-lib  {
       inherit  (haskellPackages) ghcWithPackages;
-    }) ]))
+    }) (p.callPackage categories { })
+    ]))
     cabal-install
     cabal2nix
     python3
@@ -125,10 +127,10 @@ in
     mu
 
     # Games
-    steam
+    # steam
     sgtpuzzles
-    steam-run-native
-    wine
-    winetricks
+    # steam-run-native
+    # wine
+    # winetricks
   ];
 }

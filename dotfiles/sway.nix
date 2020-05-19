@@ -89,13 +89,16 @@ in
         "1739:0:Synaptics_TM2668-002" = {
           natural_scroll = "enabled";
         };
-        "*" = {
+        "*" = if config.machine == "laptop" then {
           xkb_layout = "gb,gb";
           xkb_variant = "dvorak,";
           xkb_options = "grp:alt_space_toggle,caps:none";
+        } else {
+          xkb_layout = "gb";
+          xkb_options = "caps:none";
         };
       };
-      output = {
+      output = if config.machine == "laptop" then {
         "*" = {
           bg = "\"${dots}/background-image.png\" fill";
         };
@@ -110,6 +113,18 @@ in
         "eDP-1" = {
           pos = "1120,1080";
           res = "1600x900";
+        };
+      } else {
+        "*" = {
+          bg = "\"${dots}/background-image.png\" fill";
+        };
+        "DP-1" = {
+          pos = "0,0";
+          res = "1920x1080";
+        };
+        "HDMI-A-1" = {
+          pos = "1920,0";
+          res = "1920x1080";
         };
       };
     };

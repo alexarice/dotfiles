@@ -33,6 +33,12 @@ with lib;
       modifier = mkOption {
         type = types.str;
       };
+      machine = mkOption {
+        type = types.enum [
+          "laptop"
+          "desktop"
+        ];
+      };
     };
 
     config = {
@@ -49,6 +55,7 @@ with lib;
       dots = /home/alex/dotfiles;
       scripts = /home/alex/scripts;
       modifier = "Mod4";
+      machine = config.machine;
     };
   };
 }

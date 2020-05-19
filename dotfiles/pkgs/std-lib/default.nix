@@ -4,7 +4,7 @@ mkDerivation rec {
   pname = "standard-library";
   version = "1.3";
 
-  src = ../../../agda-stdlib2;
+  src = ../../../agda-stdlib;
 
   nativeBuildInputs = [ (ghcWithPackages (self : [ self.filemanip ])) ];
   preConfigure = ''

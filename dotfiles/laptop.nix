@@ -16,6 +16,8 @@
       };
     };
 
+    machine = "laptop";
+
     networking.hostName = "Alex_Nixos"; # Define your hostname.
 
     hardware = {

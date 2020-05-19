@@ -1,17 +1,29 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
+
+with lib;
+
 let
   inherit (import /home/alex/dotfiles/overlays.nix) fishOverlay;
 in
 {
+  options = {
+    machine = mkOption {
+      type = types.enum [
+        "laptop"
+        "desktop"
+      ];
+    };
+  };
+
   imports =
     [
       ./home.nix
     ];
 
-    nixpkgs = {
-      config = {
-        allowUnfree = true;
-      };
+  config = {
+
+    nixpkgs.config = {
+      allowUnfree = true;
     };
 
     boot.supportedFilesystems = [ "ntfs" ];
@@ -27,8 +39,8 @@ in
     # boot.kernelPackages = pkgs.linuxPackages_latest;
 
     networking.networkmanager = {
-      enable = true;
-      # wifi.backend = "iwd";
+    enable = true;
+    # wifi.backend = "iwd";
     };
 
     # Select internationalisation properties.
@@ -83,7 +95,7 @@ in
         dejavu_fonts
         emacs-all-the-icons-fonts
         noto-fonts
-        nerdfonts
+        # nerdfonts
       ];
 
       fontconfig = {
@@ -143,9 +155,11 @@ in
         hashedPassword = "$6$lY0U5C4WoOcmj.6$YLKJMkQVUJDbItcyHV7wZuvmzpvmOcPR9dgHWJYzUHBB7bSevyC4Vqpqm2IxoVqqhpz.KY7aQJnQI2HaSDsL1.";
       };
     };
+
     # This value determines the NixOS release with which your system is to be
     # compatible, in order to avoid breaking some software such as database
     # servers. You should change this only after NixOS release notes say you
     # should.
     system.stateVersion = "18.09"; # Did you read the comment?
+  };
 }
