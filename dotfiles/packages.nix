@@ -3,6 +3,7 @@
 let
   std-lib = import ./pkgs/std-lib;
   categories = import ./pkgs/agda-categories;
+  cubical = (import ../nixpkgs { }).agdaPackages.cubical;
 in
 {
   home.packages = with pkgs; [
@@ -17,6 +18,7 @@ in
     xdg-desktop-portal
     xdg-desktop-portal-wlr
     zoom-us
+    styx
 
     # CLI Programs
     neofetch
@@ -104,10 +106,7 @@ in
       filemanip
     ]))
     # ((callPackage (import ./pkgs/agda-packages-devel.nix) { inherit (haskellPackages) Agda; }).withPackages (p: [ p.standard-library ]))
-    ((import ../nixpkgs { }).agda.withPackages (p: [ (p.callPackage std-lib  {
-      inherit  (haskellPackages) ghcWithPackages;
-    }) (p.callPackage categories { })
-    ]))
+    (agda.withPackages (p: [ p.standard-library (p.callPackage categories { }) cubical ]))
     cabal-install
     cabal2nix
     python3

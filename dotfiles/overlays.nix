@@ -12,4 +12,10 @@
   cattOverlay = self: super: {
     catt = (self.pkgs.callPackage ./pkgs/catt { });
   };
+
+  styxOverlay = self: super: {
+    styx = super.styx.overrideAttrs (oldAttrs: {
+      src = ../styx;
+    });
+  };
 }
