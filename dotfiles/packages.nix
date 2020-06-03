@@ -128,6 +128,7 @@ in
     # Games
     # steam
     sgtpuzzles
+    dwarf-fortress-packages.dwarf-fortress-full
     # steam-run-native
     # wine
     # winetricks
