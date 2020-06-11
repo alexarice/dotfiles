@@ -3,3 +3,5 @@
 	name = Alex Rice
 [core]
 	filemode = false
+[color]
+	ui = auto

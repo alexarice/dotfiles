@@ -30,7 +30,13 @@ in
 
     security.sudo.enable = true;
     security.sudo.extraConfig = "Defaults pwfeedback";
-    security.pam.services.swaylock = {};
+    programs.sway = {
+      enable = true;
+      extraSessionCommands = ''
+        export _JAVA_AWT_WM_NONREPARENTING=1
+      '';
+    };
+
 
     # Use the systemd-boot EFI boot loader.
     boot.loader.systemd-boot.enable = true;
@@ -120,13 +126,9 @@ in
     };
 
     services.gvfs.enable = true;
-    environment.variables.GIO_EXTRA_MODULES = [
-      "${pkgs.gnome3.gvfs}/lib/gio/modules"
-    ];
 
     programs.dconf.enable = true;
     programs.adb.enable = true;
-    services.dbus.packages = [ pkgs.gnome3.dconf ];
 
     # Enable sound.
     sound.enable = true;

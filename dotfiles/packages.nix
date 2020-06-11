@@ -126,7 +126,7 @@ in
     mu
 
     # Games
-    # steam
+    steam
     sgtpuzzles
     dwarf-fortress-packages.dwarf-fortress-full
     # steam-run-native
