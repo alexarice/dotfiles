@@ -5,8 +5,8 @@ let
 in
 {
   imports = [
-    /home/alex/dotfiles/common.nix
-    /etc/nixos/hardware-configuration.nix
+    ./common.nix
+    ../../../etc/nixos/hardware-configuration.nix
   ];
 
   machine = "desktop";
@@ -14,16 +14,6 @@ in
   networking.hostName = "Desktop_Nixos";
 
   nixpkgs.overlays = [ amdvlkOverlay ];
-
-  fileSystems."/home/alex/ssd" = {
-    device = "/dev/sda2";
-    fsType = "ntfs";
-  };
-
-  fileSystems."/home/alex/hdd" = {
-    device = "/dev/sdb2";
-    fsType = "ntfs";
-  };
 
   services.xserver.videoDrivers = [ "amdgpu" ];
 
