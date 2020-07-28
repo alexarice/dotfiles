@@ -1,7 +1,7 @@
 {
   emacsOverlay = import <emacs>;
 
-  myWaylandOverlay = import <nixpkgs-wayland>;
+  waylandOverlay = import <nixpkgs-wayland>;
 
   nixmacsOverlay = self: super: {
     nixmacs = (self.pkgs.callPackage (/home/alex/nixmacs) {

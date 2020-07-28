@@ -3,7 +3,7 @@
 with lib;
 
 let
-  inherit (import /home/alex/dotfiles/overlays.nix) fishOverlay;
+  inherit (import /home/alex/dotfiles/overlays.nix) waylandOverlay;
 in
 {
   options = {
@@ -21,6 +21,9 @@ in
     ];
 
   config = {
+    # nixpkgs.overlays = [
+    #   waylandOverlay
+    # ];
 
     nixpkgs.config = {
       allowUnfree = true;
@@ -34,6 +37,8 @@ in
       enable = true;
       extraSessionCommands = ''
         export _JAVA_AWT_WM_NONREPARENTING=1
+        export XDG_CURRENT_DESKTOP=sway
+        export XDG_SESSION_TYPE=wayland
       '';
     };
 
@@ -123,7 +128,18 @@ in
       mingetty.autologinUser = "alex";
 
       geoclue2.enable = true;
+
+      pipewire.enable = true;
     };
+
+    # xdg.portal = {
+    #   enable = true;
+    #   gtkUsePortal = true;
+    #   extraPortals = with pkgs; [
+    #     pkgs.xdg-desktop-portal-gtk
+    #     pkgs.xdg-desktop-portal-wlr
+    #   ];
+    # };
 
     services.gvfs.enable = true;
 

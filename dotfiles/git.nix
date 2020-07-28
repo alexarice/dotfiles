@@ -10,6 +10,9 @@
       key = "4B9FC04B9EE7F4AE99A7573493DDCD7A2B3F3B88";
       signByDefault = true;
     };
-    extraConfig.core.filemode = false;
+    extraConfig = {
+      core.filemode = false;
+      pull.rebase = true;
+    };
   };
 }

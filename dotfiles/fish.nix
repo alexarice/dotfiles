@@ -17,7 +17,6 @@
   home.sessionVariables = {
     EDITOR = "emacsclient -c";
     BROWSER = "firefox";
-    XDG_CURRENT_DESKTOP = "sway";
   };
 
   xdg.configFile."fish/functions".source = pkgs.callPackage ./fish_prompt.nix { };
