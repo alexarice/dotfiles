@@ -18,8 +18,4 @@
       src = ../styx;
     });
   };
-
-  amdvlkOverlay = self: super: {
-    inherit (import ../nixpkgs { }) amdvlk;
-  };
 }

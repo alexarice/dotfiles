@@ -1,7 +1,6 @@
 { config, lib, epkgs, pkgs, ... }:
 
 let
-  all-hies = import <all-hies> {};
   catt-mode = epkgs.callPackage ./pkgs/catt/catt-mode.nix { };
   org-agda-export = epkgs.callPackage ./pkgs/org/ox-agda-html.nix { };
 in
@@ -30,7 +29,6 @@ in
     lsp.enable = true;
     haskell = {
       enable = true;
-      hies = all-hies.selection { selector = p: { inherit (p) ghc865; };};
     };
     markdown.enable = true;
   };
