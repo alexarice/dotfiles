@@ -21,9 +21,9 @@ in
     ];
 
   config = {
-    # nixpkgs.overlays = [
-    #   waylandOverlay
-    # ];
+    nixpkgs.overlays = [
+      waylandOverlay
+    ];
 
     nixpkgs.config = {
       allowUnfree = true;
@@ -129,15 +129,21 @@ in
 
       geoclue2.enable = true;
 
-      pipewire.enable = true;
+      # pipewire.enable = true;
+
+      xserver = {
+        enable = true;
+        desktopManager.plasma5.enable = true;
+        displayManager.startx.enable = true;
+      };
     };
 
     # xdg.portal = {
     #   enable = true;
-    #   gtkUsePortal = true;
+    #   # gtkUsePortal = true;
     #   extraPortals = with pkgs; [
-    #     pkgs.xdg-desktop-portal-gtk
-    #     pkgs.xdg-desktop-portal-wlr
+    #     # xdg-desktop-portal-gtk
+    #     xdg-desktop-portal-wlr
     #   ];
     # };
 
@@ -151,10 +157,14 @@ in
 
     programs.fish = {
       enable = true;
-      loginShellInit = ''
-        not set -q DISPLAY && test (tty) = /dev/tty1
-        and exec sway
-      '';
+      # loginShellInit = ''
+      #   if not set -q SWAYSTARTED
+      #     if not set -q DISPLAY && test (tty) = /dev/tty1
+      #       set -g SWAYSTARTED 1
+      #       exec sway
+      #     end
+      #   end
+      # '';
     };
 
     # Set up immutable users

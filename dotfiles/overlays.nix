@@ -18,4 +18,9 @@
       src = ../styx;
     });
   };
+
+  nssFixOverlay = self: super: {
+    discord = super.discord.override { nss = super.nss_3_44; };
+    spotify = super.spotify.override { nss = super.nss_3_44; };
+  };
 }
