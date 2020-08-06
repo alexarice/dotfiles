@@ -1,7 +1,6 @@
 { pkgs, ... }:
 
 let
-  std-lib = import ./pkgs/std-lib;
   categories = import ./pkgs/agda-categories;
 in
 {
