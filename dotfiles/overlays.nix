@@ -23,4 +23,14 @@
     discord = super.discord.override { nss = super.nss_3_44; };
     spotify = super.spotify.override { nss = super.nss_3_44; };
   };
+
+  pipewireNoBT = self: super: {
+    pipewire = super.pipewire.overrideAttrs (attrs: {
+      mesonFlags = attrs.mesonFlags ++ [
+        "-Dbluez5=false"
+        "-Dbluez-backend-native=false"
+        "-Dbluez-backend-ofono=false"
+      ];
+    });
+  };
 }

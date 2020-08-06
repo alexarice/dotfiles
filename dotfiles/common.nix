@@ -3,7 +3,7 @@
 with lib;
 
 let
-  inherit (import /home/alex/dotfiles/overlays.nix) waylandOverlay;
+  inherit (import /home/alex/dotfiles/overlays.nix) waylandOverlay pipewireNoBT;
 in
 {
   options = {
@@ -23,6 +23,7 @@ in
   config = {
     nixpkgs.overlays = [
       waylandOverlay
+      pipewireNoBT
     ];
 
     nixpkgs.config = {
@@ -129,7 +130,7 @@ in
 
       geoclue2.enable = true;
 
-      # pipewire.enable = true;
+      pipewire.enable = true;
 
       xserver = {
         enable = true;
@@ -138,14 +139,14 @@ in
       };
     };
 
-    # xdg.portal = {
-    #   enable = true;
-    #   # gtkUsePortal = true;
-    #   extraPortals = with pkgs; [
-    #     # xdg-desktop-portal-gtk
-    #     xdg-desktop-portal-wlr
-    #   ];
-    # };
+    xdg.portal = {
+      enable = true;
+      # gtkUsePortal = true;
+      extraPortals = with pkgs; [
+        # xdg-desktop-portal-gtk
+        xdg-desktop-portal-wlr
+      ];
+    };
 
     services.gvfs.enable = true;
 
