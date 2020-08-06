@@ -3,7 +3,6 @@
 let
   std-lib = import ./pkgs/std-lib;
   categories = import ./pkgs/agda-categories;
-  cubical = (import ../nixpkgs { }).agdaPackages.cubical;
 in
 {
   home.packages = with pkgs; [
@@ -104,7 +103,7 @@ in
       filemanip
     ]))
     # ((callPackage (import ./pkgs/agda-packages-devel.nix) { inherit (haskellPackages) Agda; }).withPackages (p: [ p.standard-library ]))
-    (agda.withPackages (p: [ p.standard-library (p.callPackage categories { }) cubical ]))
+    (agda.withPackages (p: [ p.standard-library (p.callPackage categories { }) p.cubical ]))
     cabal-install
     cabal2nix
     python3
