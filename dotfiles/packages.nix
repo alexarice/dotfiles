@@ -2,6 +2,7 @@
 
 let
   categories = import ./pkgs/agda-categories;
+  std-lib = import ./pkgs/std-lib;
 in
 {
   home.packages = with pkgs; [
@@ -101,8 +102,7 @@ in
       ieee
       filemanip
     ]))
-    # ((callPackage (import ./pkgs/agda-packages-devel.nix) { inherit (haskellPackages) Agda; }).withPackages (p: [ p.standard-library ]))
-    (agda.withPackages (p: [ p.standard-library (p.callPackage categories { }) p.cubical ]))
+    (agda.withPackages (p: [ (p.callPackage categories { }) (p.callPackage std-lib { inherit (pkgs.haskellPackages) ghcWithPackages; }) p.cubical ]))
     cabal-install
     cabal2nix
     python3
