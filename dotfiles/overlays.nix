@@ -13,11 +13,11 @@
     catt = (self.pkgs.callPackage ./pkgs/catt { });
   };
 
-  styxOverlay = self: super: {
-    styx = super.styx.overrideAttrs (oldAttrs: {
-      src = ../styx;
-    });
-  };
+  # styxOverlay = self: super: {
+  #   styx = super.styx.overrideAttrs (oldAttrs: {
+  #     src = ../styx;
+  #   });
+  # };
 
   nssFixOverlay = self: super: {
     discord = super.discord.override { nss = super.nss_3_44; };
