@@ -102,7 +102,7 @@ in
       ieee
       filemanip
     ]))
-    (agda.withPackages (p: [ (p.callPackage categories { }) (p.callPackage std-lib { inherit (pkgs.haskellPackages) ghcWithPackages; }) p.cubical ]))
+    (agda.withPackages (p: [ p.standard-library (p.callPackage categories { })  p.cubical ]))
     cabal-install
     cabal2nix
     python3
