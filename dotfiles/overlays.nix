@@ -13,12 +13,6 @@
     catt = (self.pkgs.callPackage ./pkgs/catt { });
   };
 
-  # styxOverlay = self: super: {
-  #   styx = super.styx.overrideAttrs (oldAttrs: {
-  #     src = ../styx;
-  #   });
-  # };
-
   nssFixOverlay = self: super: {
     discord = super.discord.override { nss = super.nss_3_44; };
     spotify = super.spotify.override { nss = super.nss_3_44; };
@@ -32,5 +26,16 @@
         "-Dbluez-backend-ofono=false"
       ];
     });
+  };
+
+  firefox-wayland = self: super: {
+    firefox = let
+      src = self.fetchFromGitHub {
+        owner = "colemickens";
+        repo = "nixpkgs";
+        rev = "nixpkgs-firefox-pipewire";
+        sha256 = "1yswyxy24wjxqmjld56853vq4jq98c6wmqkybnpbg537d79xplbq";
+      };
+      in (import src { }).firefox;
   };
 }

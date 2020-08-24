@@ -124,9 +124,6 @@ in
     };
 
     services = {
-      # Save manual
-      nixosManual.showManual = true;
-
       mingetty.autologinUser = "alex";
 
       geoclue2.enable = true;
