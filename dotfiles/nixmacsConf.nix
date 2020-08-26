@@ -42,6 +42,7 @@ in
   custom.enable = true;
 
   package = {
+    proof-general.enable = true;
     which-key.enable = false;
     catt-mode = {
       enable = true;

@@ -1,3 +1,4 @@
+
 { pkgs, ... }:
 
 let
@@ -106,6 +107,7 @@ in
     cabal-install
     cabal2nix
     python3
+    coq
 
     # Programs
     emacs
