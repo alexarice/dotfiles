@@ -3,7 +3,7 @@
 {
   services.redshift = {
     enable = true;
-    package = pkgs.redshift-wayland;
+    package = pkgs.gammastep;
     provider = "geoclue2";
     tray = true;
   };
