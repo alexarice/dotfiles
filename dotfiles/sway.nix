@@ -56,8 +56,8 @@ in
         "${modifier}+m" = "exec \"GDK_BACKEND=x11 thunderbird\"";
         "${modifier}+b" = lib.mkForce "exec emacsclient -c";
         "${modifier}+c" = "exec firefox";
-        "${modifier}+p" = "exec ${scripts}/take_screenshot";
-        "${modifier}+Shift+p" = "exec ${scripts}/take_screenshot full";
+        "${modifier}+p" = "exec ${scripts + "/take_screenshot"}";
+        "${modifier}+Shift+p" = "exec ${scripts + "/take_screenshot"} full";
         "${modifier}+l" = "exec \"swaylock -f -c 000000\"";
         "XF86MonBrightnessUp" = "exec \"brillo -A 1\"";
         "XF86MonBrightnessDown" = "exec \"brillo -U 1\"";
@@ -98,7 +98,7 @@ in
       };
       output = if config.machine == "laptop" then {
         "*" = {
-          bg = "\"${dots}/background-image.png\" fill";
+          bg = "\"${dots + "/background-image.png"}\" fill";
         };
         "HDMI-A-1" = {
           pos = "0,0";
@@ -114,7 +114,7 @@ in
         };
       } else {
         "*" = {
-          bg = "\"${dots}/background-image.png\" fill";
+          bg = "\"${dots + "/background-image.png"}\" fill";
         };
         "DP-1" = {
           pos = "0,0";
