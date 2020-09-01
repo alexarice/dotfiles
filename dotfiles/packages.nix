@@ -107,7 +107,7 @@ in
     cabal-install
     cabal2nix
     python3
-    coq
+    coqPackages_8_12.coq
 
     # Programs
     emacs

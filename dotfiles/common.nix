@@ -41,6 +41,7 @@ in
         export _JAVA_AWT_WM_NONREPARENTING=1
         export XDG_CURRENT_DESKTOP=sway
         export XDG_SESSION_TYPE=wayland
+        systemctl --user import-environment
       '';
     };
 
@@ -139,9 +140,7 @@ in
 
     xdg.portal = {
       enable = true;
-      # gtkUsePortal = true;
       extraPortals = with pkgs; [
-        # xdg-desktop-portal-gtk
         xdg-desktop-portal-wlr
       ];
     };

@@ -9,6 +9,7 @@ in
     agda.enable = true;
     ivy.enable = true;
     completion.enable = true;
+    coq.enable = true;
     fish.enable = true;
     nix.enable = true;
     latex.enable = true;
@@ -42,7 +43,6 @@ in
   custom.enable = true;
 
   package = {
-    proof-general.enable = true;
     which-key.enable = false;
     catt-mode = {
       enable = true;
