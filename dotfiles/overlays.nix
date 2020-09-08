@@ -6,6 +6,7 @@
   nixmacsOverlay = self: super: {
     nixmacs = (self.pkgs.callPackage (/home/alex/nixmacs) {
       configurationFile = /home/alex/dotfiles/nixmacsConf.nix;
+      package = self.emacs-pgtk;
     });
   };
 
@@ -29,7 +30,7 @@
         owner = "colemickens";
         repo = "nixpkgs";
         rev = "nixpkgs-firefox-pipewire";
-        sha256 = "1yswyxy24wjxqmjld56853vq4jq98c6wmqkybnpbg537d79xplbq";
+        sha256 = "1n26zad06gm768bf2vhz1r8z5csz1cdr3bfpahknzbnzp3q0hzhm";
       };
       in (import src { }).firefox;
   };

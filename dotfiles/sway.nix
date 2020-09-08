@@ -90,10 +90,10 @@ in
         "*" = if config.machine == "laptop" then {
           xkb_layout = "gb,gb";
           xkb_variant = "dvorak,";
-          xkb_options = "grp:alt_space_toggle,caps:none";
+          xkb_options = "grp:alt_space_toggle,caps:menu";
         } else {
           xkb_layout = "gb";
-          xkb_options = "caps:none";
+          xkb_options = "caps:menu";
         };
       };
       output = if config.machine == "laptop" then {
