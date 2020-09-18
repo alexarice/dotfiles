@@ -38,6 +38,7 @@ in
     fzf
     htop
     iftop
+    gitAndTools.git-extras
 
     # Things in sway config
     j4-dmenu-desktop
