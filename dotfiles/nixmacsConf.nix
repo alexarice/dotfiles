@@ -70,6 +70,7 @@ in
       };
       use-package.bind."<end>" = "xah-fly-command-mode-activate";
       use-package.bind."<menu>" = "xah-fly-command-mode-activate";
+      use-package.bind."<VoidSymbol>" = "xah-fly-command-mode-activate";
     };
     unicode-fonts.enable = true;
     tex.settings.TeX-view-program-selection.output-pdf = "Zathura";
