@@ -6,14 +6,8 @@
   nixmacsOverlay = self: super: {
     nixmacs = (self.pkgs.callPackage (/home/alex/nixmacs) {
       configurationFile = /home/alex/dotfiles/nixmacsConf.nix;
-      # package = self.emacs-pgtk;
+      package = self.emacsGcc;
     });
-  };
-
-  discordOverlay = self: super: {
-    discord = (import ../nixpkgs { config = {
-      allowUnfree = true;
-    }; }).discord;
   };
 
   cattOverlay = self: super: {
