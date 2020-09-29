@@ -30,7 +30,7 @@
         owner = "colemickens";
         repo = "nixpkgs";
         rev = "nixpkgs-firefox-pipewire";
-        sha256 = "1n26zad06gm768bf2vhz1r8z5csz1cdr3bfpahknzbnzp3q0hzhm";
+        sha256 = "09c93dpz0fz1yk2b0qfy3v5bknnlbzrqd0h3damcc7q3dmc8ll3f";
       };
       in (import src { }).firefox;
   };
