@@ -87,7 +87,11 @@ in
     time.timeZone = "Europe/London";
 
     nix = {
-      extraOptions = "keep-outputs = true";
+      package = pkgs.nixUnstable;
+      extraOptions = ''
+        keep-outputs = true
+        experimental-features = nix-command flakes
+      '';
       autoOptimiseStore = true;
     };
 
