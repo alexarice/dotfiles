@@ -111,7 +111,7 @@ in
     coqPackages_8_12.coq
 
     # Programs
-    emacs-pgtk
+    emacs
     firefox
     chromium
     thunderbird

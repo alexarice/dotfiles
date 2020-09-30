@@ -6,7 +6,6 @@
   nixmacsOverlay = self: super: {
     nixmacs = (self.pkgs.callPackage (/home/alex/nixmacs) {
       configurationFile = /home/alex/dotfiles/nixmacsConf.nix;
-      package = self.emacsGcc;
     });
   };
 
