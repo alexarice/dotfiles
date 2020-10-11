@@ -23,6 +23,15 @@
   #   });
   # };
 
+  zoomOverlay = self: super: {
+    my-zoom = self.zoom-us.overrideAttrs (attrs: {
+      pname = "my-zoom";
+      qtWrapperArgs = attrs.qtWrapperArgs ++ [
+        ''--prefix GDK_BACKEND : "x11"''
+      ];
+    });
+  };
+
   gammastep = self: super: {
     gammastep = super.gammastep.overrideAttrs (attr: {
       postInstall = ''

@@ -1,9 +1,11 @@
 
+
 { pkgs, ... }:
 
 let
   categories = import ./pkgs/agda-categories;
   std-lib = import ./pkgs/std-lib;
+  cabal-bin = pkgs.callPackage (import ./pkgs/agda-2.6.2.nix) { };
 in
 {
   home.packages = with pkgs; [
@@ -15,7 +17,7 @@ in
     catt
     pinentry
     binutils
-    zoom-us
+    my-zoom
     styx
 
     # CLI Programs
@@ -105,6 +107,7 @@ in
       filemanip
     ]))
     (agda.withPackages (p: [ p.standard-library (p.callPackage categories { })  p.cubical ]))
+    cabal-bin
     cabal-install
     cabal2nix
     python3
