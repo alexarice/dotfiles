@@ -3,8 +3,6 @@
 { pkgs, ... }:
 
 let
-  categories = import ./pkgs/agda-categories;
-  std-lib = import ./pkgs/std-lib;
   cabal-bin = pkgs.callPackage (import ./pkgs/agda-2.6.2.nix) { };
 in
 {
@@ -106,7 +104,7 @@ in
       ieee
       filemanip
     ]))
-    (agda.withPackages (p: [ p.standard-library (p.callPackage categories { })  p.cubical ]))
+    (agda.withPackages (p: [ p.standard-library p.agda-categories p.cubical ]))
     cabal-bin
     cabal-install
     cabal2nix
