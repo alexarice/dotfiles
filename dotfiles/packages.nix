@@ -105,7 +105,7 @@ in
       filemanip
     ]))
     (agda.withPackages (p: [ p.standard-library p.agda-categories p.cubical ]))
-    cabal-bin
+    # cabal-bin
     cabal-install
     cabal2nix
     python3
