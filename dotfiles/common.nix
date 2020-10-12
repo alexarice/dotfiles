@@ -3,7 +3,7 @@
 with lib;
 
 let
-  inherit (import /home/alex/dotfiles/overlays.nix) waylandOverlay;
+  inherit (import /home/alex/dotfiles/overlays.nix) myWaylandOverlay;
 in
 {
   options = {
@@ -23,7 +23,7 @@ in
 
   config = {
     nixpkgs.overlays = [
-      waylandOverlay
+      myWaylandOverlay
     ];
 
     nixpkgs.config = {

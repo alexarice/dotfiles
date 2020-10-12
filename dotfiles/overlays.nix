@@ -1,13 +1,13 @@
 {
   emacsOverlay = import <emacs>;
 
-  waylandOverlay = import <nixpkgs-wayland>;
-
   nixmacsOverlay = self: super: {
     nixmacs = (self.pkgs.callPackage (/home/alex/nixmacs) {
       configurationFile = /home/alex/dotfiles/nixmacsConf.nix;
     });
   };
+
+  myWaylandOverlay = self: super: builtins.removeAttrs (import <nixpkgs-wayland> self super) [ "sway-unwrapped" "wlroots" ];
 
   cattOverlay = self: super: {
     catt = (self.pkgs.callPackage ./pkgs/catt { });
@@ -32,7 +32,7 @@
     });
   };
 
-  gammastep = self: super: {
+  gammastepOverlay = self: super: {
     gammastep = super.gammastep.overrideAttrs (attr: {
       postInstall = ''
         ln $out/bin/gammastep $out/bin/redshift
