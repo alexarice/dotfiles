@@ -17,6 +17,7 @@ in
     binutils
     my-zoom
     styx
+    manix
 
     # CLI Programs
     neofetch
