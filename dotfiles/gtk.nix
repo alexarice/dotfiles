@@ -9,8 +9,8 @@
       name = "Arc";
     };
     theme = {
-      package = pkgs.ant-dracula-theme;
-      name = "Ant-Dracula";
+      package = pkgs.dracula-theme;
+      name = "Dracula";
     };
   };
 }
