@@ -86,10 +86,8 @@ in
     time.timeZone = "Europe/London";
 
     nix = {
-      package = pkgs.nixUnstable;
       extraOptions = ''
         keep-outputs = true
-        experimental-features = nix-command flakes
       '';
       autoOptimiseStore = true;
     };
@@ -101,6 +99,7 @@ in
         bup
         xboxdrv
       ];
+      homeBinInPath = true;
     };
 
     # Load fonts
