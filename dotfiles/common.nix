@@ -131,11 +131,11 @@ in
 
       geoclue2.enable = true;
 
-      xserver = {
-        enable = true;
-        desktopManager.plasma5.enable = true;
-        displayManager.startx.enable = true;
-      };
+      # xserver = {
+      #   enable = true;
+      #   desktopManager.plasma5.enable = true;
+      #   displayManager.startx.enable = true;
+      # };
     };
 
     # xdg.portal = {
@@ -155,14 +155,14 @@ in
 
     programs.fish = {
       enable = true;
-      # loginShellInit = ''
-      #   if not set -q SWAYSTARTED
-      #     if not set -q DISPLAY && test (tty) = /dev/tty1
-      #       set -g SWAYSTARTED 1
-      #       exec sway
-      #     end
-      #   end
-      # '';
+      loginShellInit = ''
+        if not set -q SWAYSTARTED
+          if not set -q DISPLAY && test (tty) = /dev/tty1
+            set -g SWAYSTARTED 1
+            exec sway
+          end
+        end
+      '';
     };
 
     # This value determines the NixOS release with which your system is to be
