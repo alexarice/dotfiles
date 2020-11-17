@@ -15,7 +15,7 @@ with lib;
       ./gtk.nix
       ./direnv.nix
       ./fish.nix
-      ./redshift.nix
+      ./gammastep.nix
       ./systemd.nix
       ./sway.nix
       ./emails.nix
