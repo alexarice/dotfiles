@@ -42,8 +42,6 @@ in
     gitAndTools.git-extras
 
     # Things in sway config
-    j4-dmenu-desktop
-    bemenu
     dropbox-cli
     networkmanager_dmenu
     networkmanagerapplet
@@ -76,7 +74,6 @@ in
     udiskie
     playerctl
     xlibs.xeyes
-    veracrypt
     libnotify
     libappindicator
     bitwarden-cli
@@ -94,14 +91,8 @@ in
     (haskellPackages.ghcWithHoogle
     (haskellPackages: with haskellPackages; [
       lens
-      arrows
-      process
       containers
       parsec
-      multimap
-      quickcheck-with-counterexamples
-      cassava
-      diagrams
       ieee
       filemanip
     ]))
