@@ -8,7 +8,7 @@
   };
 
   fmt6overlay = self: super: {
-    fmt_6 = super.fmt; # (self.pkgs.callPackage ./pkgs/fmt { }).fmt_6;
+    fmt_6 = super.fmt;
   };
 
   myWaylandOverlay = self: super: builtins.removeAttrs (import <nixpkgs-wayland> self super) [ ];
