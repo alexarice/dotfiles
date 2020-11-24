@@ -7,7 +7,11 @@
     });
   };
 
-  myWaylandOverlay = self: super: builtins.removeAttrs (import <nixpkgs-wayland> self super) [ "sway-unwrapped" "wlroots" ];
+  fmt6overlay = self: super: {
+    fmt_6 = (self.pkgs.callPackage ./pkgs/fmt { });
+  };
+
+  myWaylandOverlay = self: super: builtins.removeAttrs (import <nixpkgs-wayland> self super) [ ];
 
   cattOverlay = self: super: {
     catt = (self.pkgs.callPackage ./pkgs/catt { });
