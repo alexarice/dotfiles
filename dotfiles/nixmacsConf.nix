@@ -13,7 +13,7 @@ in
     fish.enable = true;
     nix.enable = true;
     latex.enable = true;
-    rust.enable = false;
+    rust.enable = true;
     git.enable = true;
     ocaml.enable = true;
     c.enable = false;

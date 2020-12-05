@@ -44,4 +44,8 @@
       '';
     });
   };
+
+  discordOverlay = self: super: {
+    discord = (import <master> { config = { allowUnfree = true; }; }).discord;
+  };
 }
