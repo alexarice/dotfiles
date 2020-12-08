@@ -105,7 +105,7 @@ in
 
     # Programs
     emacs
-    firefox
+    firefox-bin
     chromium
     thunderbird
     vlc
