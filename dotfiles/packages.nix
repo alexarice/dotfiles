@@ -99,7 +99,7 @@ in
     (agda.withPackages (p: [ p.standard-library p.agda-categories p.cubical ]))
     # cabal-bin
     cabal-install
-    cabal2nix
+    # cabal2nix
     python3
     coqPackages_8_12.coq
 
