@@ -14,6 +14,13 @@
 	  };
 	};
       })
+      (self: super: {
+        nixmacs = let
+	  src = builtins.fetchTarball { url = "https://github.com/alexarice/nixmacs/archive/master.tar.gz"; };
+	in self.pkgs.callPackage src {
+	  configurationFile = /home/alex/dotfiles/nixmacs-conf-rpi.nix;
+	};
+      })
     ];
     
     boot.loader.grub.enable = false;
@@ -39,6 +46,7 @@
     environment.systemPackages = with pkgs; [
       git
       emacs
+      nixmacs
       (python37.withPackages (p: [ p.discordpy p.gspread p.oauth2client ]))
     ];
 
@@ -47,6 +55,8 @@
       enableSSHSupport = true;
       pinentryFlavor = null;
     };
+
+    hardware.enableRedistributableFirmware = true;
 
     systemd.user.services.bookbot = {
       enable = true;
