@@ -1,3 +1,4 @@
+
 { config, pkgs, lib, ... }:
 
 {
@@ -22,7 +23,7 @@
 	};
       })
     ];
-    
+
     boot.loader.grub.enable = false;
     boot.loader.generic-extlinux-compatible.enable = true;
 
@@ -37,12 +38,12 @@
     };
     swapDevices = [ { device = "/swapfile"; size = 1024; } ];
 
-    networking.networkmanager.enable = false;
+    networking.networkmanager.enable = true;
     networking.hostName = "rpi-nixos";
 
     services.sshd.enable = true;
     services.mingetty.autologinUser = "alex";
-    
+
     environment.systemPackages = with pkgs; [
       git
       emacs
