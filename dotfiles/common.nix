@@ -116,9 +116,8 @@ in
         symbola
         dejavu_fonts
         emacs-all-the-icons-fonts
-        noto-fonts
-        # nerdfonts
-      ];
+      ] ++ optional (config.machine != "rpi") noto-fonts;
+      enableDefaultFonts = mkIf (config.machine == "rpi") false;
 
       fontconfig = {
         enable = true;
