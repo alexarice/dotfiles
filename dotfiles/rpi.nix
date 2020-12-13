@@ -22,13 +22,6 @@
 	        };
 	      };
       })
-      (self: super: {
-        nixmacsrpi = let
-	        src = builtins.fetchTarball { url = "https://github.com/alexarice/nixmacs/archive/master.tar.gz"; };
-	      in self.pkgs.callPackage src {
-	        configurationFile = /home/alex/dotfiles/nixmacs-conf-rpi.nix;
-	      };
-      })
     ];
 
     boot.loader.grub.enable = false;
