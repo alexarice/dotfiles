@@ -74,7 +74,7 @@ in
     hardware = {
       pulseaudio = {
         enable = true;
-        support32Bit = true;
+        support32Bit = mkIf (config.machine != "rpi") true;
         extraModules = [ pkgs.pulseaudio-modules-bt ];
         package = pkgs.pulseaudioFull;
       };
@@ -83,7 +83,7 @@ in
         package = pkgs.bluezFull;
       };
       opengl.enable = true;
-      opengl.driSupport32Bit = true;
+      opengl.driSupport32Bit = mkIf (config.machine != "rpi") true;
       brillo.enable = true;
     };
 
