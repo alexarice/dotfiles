@@ -153,7 +153,7 @@ in
     services.gvfs.enable = true;
 
     programs.dconf.enable = true;
-    programs.adb.enable = true;
+    programs.adb.enable = mkIf (config.machine != "rpi") true;
 
     # Enable sound.
     sound.enable = true;
