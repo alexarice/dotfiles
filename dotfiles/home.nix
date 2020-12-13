@@ -47,6 +47,7 @@ with lib;
       nixpkgs.config = {
         allowBroken = true;
         allowUnfree = true;
+        allowUnsupportedSystem = true;
         oraclejdk.accept_license = true;
       };
 

@@ -9,6 +9,8 @@
   config = {
     machine = "rpi";
 
+    nixpkgs.config.allowUnsupportedSystem = true;
+
     nixpkgs.overlays = [
       (self: super: {
         python37 = super.python37.override {
