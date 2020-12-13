@@ -43,6 +43,7 @@ in
         export XDG_SESSION_TYPE=wayland
         systemctl --user import-environment
       '';
+      extraPackages = [];
     };
 
     boot.loader = if config.machine == "rpi" then {
