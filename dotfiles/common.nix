@@ -45,7 +45,7 @@ in
       '';
     };
 
-    boot.loader = if config.machine = "rpi" then {
+    boot.loader = if config.machine == "rpi" then {
        grub.enable = false;
        generic-extlinux-compatible.enable = true;
     } else {
@@ -53,7 +53,7 @@ in
       systemd-boot.enable = true;
       systemd-boot.consoleMode = "max";
       efi.canTouchEfiVariables = true;
-    }
+    };
     # boot.kernelPackages = pkgs.linuxPackages_latest;
 
     networking.networkmanager = {
