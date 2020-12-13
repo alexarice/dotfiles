@@ -150,9 +150,9 @@ in
     #   ];
     # };
 
-    services.gvfs.enable = true;
+    services.gvfs.enable = mkIf (config.machine != "rpi") true;
 
-    programs.dconf.enable = true;
+    programs.dconf.enable = mkIf (config.machine != "rpi") true;
     programs.adb.enable = mkIf (config.machine != "rpi") true;
 
     # Enable sound.
