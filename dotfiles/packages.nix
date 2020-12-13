@@ -83,6 +83,7 @@ in
     (mate.caja-with-extensions.override { extensions = [ mate.caja-extensions mate.caja-dropbox ]; })
     mate.eom
     glib
+    shared-mime-info
 
     # LaTeX
     texlive.combined.scheme-full
