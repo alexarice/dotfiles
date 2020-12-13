@@ -36,6 +36,7 @@ with lib;
         type = types.enum [
           "laptop"
           "desktop"
+          "rpi"
         ];
       };
     };
