@@ -54,7 +54,7 @@
       };
       Service = {
         Type = "forking";
-        ExecStart = "${pkgs.bash}/bin/bash -c 'source ${setEnvironment}; exec ${pkgs.nixmacs}/bin/nixmacs --daemon'";
+        ExecStart = "${pkgs.bash}/bin/bash -c 'source ${setEnvironment}; exec ${if config.machine == "rpi" then pkgs.nixmacsrpi else pkgs.nixmacs}/bin/nixmacs --daemon'";
         ExecStop = "${pkgs.emacs}/bin/emacsclient --eval \"(kill-emacs)\"";
         Restart = "always";
       };
