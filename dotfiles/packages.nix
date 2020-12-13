@@ -1,12 +1,12 @@
 
 
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 let
   cabal-bin = pkgs.callPackage (import ./pkgs/agda-2.6.2.nix) { };
 in
 {
-  home.packages = with pkgs; [
+  home.packages = with pkgs; if config.machine != "rpi" then [
 
     wldash
     nixmacs
@@ -124,5 +124,13 @@ in
     # steam-run-native
     # wine
     # winetricks
+  ] else [
+    wldash
+    wl-clipboard
+    git
+    emacs
+    nixmacsrpi
+    pinentry
+    (python37.withPackages (p: [ p.discordpy p.gspread p.oauth2client ]))
   ];
 }

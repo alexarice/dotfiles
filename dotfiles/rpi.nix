@@ -3,10 +3,12 @@
 
 {
   imports = [
-    ./users.nix
+    ./common.nix
   ];
 
   config = {
+    machine = "rpi";
+
     nixpkgs.overlays = [
       (self: super: {
         python37 = super.python37.override {
@@ -21,11 +23,11 @@
 	      };
       })
       (self: super: {
-        nixmacs = let
-	  src = builtins.fetchTarball { url = "https://github.com/alexarice/nixmacs/archive/master.tar.gz"; };
-	in self.pkgs.callPackage src {
-	  configurationFile = /home/alex/dotfiles/nixmacs-conf-rpi.nix;
-	};
+        nixmacsrpi = let
+	        src = builtins.fetchTarball { url = "https://github.com/alexarice/nixmacs/archive/master.tar.gz"; };
+	      in self.pkgs.callPackage src {
+	        configurationFile = /home/alex/dotfiles/nixmacs-conf-rpi.nix;
+	      };
       })
     ];
 
@@ -45,22 +47,6 @@
 
     networking.networkmanager.enable = true;
     networking.hostName = "rpi-nixos";
-
-    services.sshd.enable = true;
-    services.mingetty.autologinUser = "alex";
-
-    environment.systemPackages = with pkgs; [
-      git
-      emacs
-      nixmacs
-      (python37.withPackages (p: [ p.discordpy p.gspread p.oauth2client ]))
-    ];
-
-    programs.gnupg.agent = {
-      enable = true;
-      enableSSHSupport = true;
-      pinentryFlavor = null;
-    };
 
     hardware.enableRedistributableFirmware = true;
 

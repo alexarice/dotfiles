@@ -11,6 +11,7 @@ in
       type = types.enum [
         "laptop"
         "desktop"
+        "rpi"
       ];
     };
   };
@@ -44,11 +45,15 @@ in
       '';
     };
 
-
-    # Use the systemd-boot EFI boot loader.
-    boot.loader.systemd-boot.enable = true;
-    boot.loader.systemd-boot.consoleMode = "max";
-    boot.loader.efi.canTouchEfiVariables = true;
+    boot.loader = if config.machine = "rpi" then {
+       grub.enable = false;
+       generic-extlinux-compatible.enable = true;
+    } else {
+      # Use the systemd-boot EFI boot loader.
+      systemd-boot.enable = true;
+      systemd-boot.consoleMode = "max";
+      efi.canTouchEfiVariables = true;
+    }
     # boot.kernelPackages = pkgs.linuxPackages_latest;
 
     networking.networkmanager = {
@@ -98,7 +103,6 @@ in
       systemPackages = with pkgs; [
         git
         bup
-        xboxdrv
       ];
       homeBinInPath = true;
     };
