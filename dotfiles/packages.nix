@@ -12,7 +12,6 @@ in
     nixmacs
     wl-clipboard
     cachix
-    catt
     pinentry
     binutils
     my-zoom

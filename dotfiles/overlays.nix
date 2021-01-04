@@ -31,9 +31,9 @@
 
   myWaylandOverlay = self: super: builtins.removeAttrs (import <nixpkgs-wayland> self super) [ ];
 
-  cattOverlay = self: super: {
-    catt = (self.pkgs.callPackage ./pkgs/catt { });
-  };
+  # cattOverlay = self: super: {
+  #   catt = (self.pkgs.callPackage ./pkgs/catt { });
+  # };
 
   # pipewireNoBT = self: super: {
   #   pipewire = super.pipewire.overrideAttrs (attrs: {
@@ -65,5 +65,13 @@
 
   discordOverlay = self: super: {
     discord = (import <master> { config = { allowUnfree = true; }; }).discord;
+  };
+
+  agda-master = self: super: {
+    haskellPackages = super.haskellPackages.override {
+      overrides = hpNew: hpOld: rec {
+        Agda = (import <master> { }).haskellPackages.Agda;
+      };
+    };
   };
 }

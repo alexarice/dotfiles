@@ -1,7 +1,7 @@
 { config, lib, epkgs, pkgs, ... }:
 
 let
-  catt-mode = epkgs.callPackage ./pkgs/catt/catt-mode.nix { };
+  # catt-mode = epkgs.callPackage ./pkgs/catt/catt-mode.nix { };
   org-agda-export = epkgs.callPackage ./pkgs/org/ox-agda-html.nix { };
 in
 {
@@ -44,11 +44,11 @@ in
 
   package = {
     which-key.enable = false;
-    catt-mode = {
-      enable = true;
-      package = catt-mode;
-      use-package.mode = ''"\\.catt\\'"'';
-    };
+    # catt-mode = {
+    #   enable = true;
+    #   package = catt-mode;
+    #   use-package.mode = ''"\\.catt\\'"'';
+    # };
     ox-agda-html = {
       enable = true;
       package = org-agda-export;

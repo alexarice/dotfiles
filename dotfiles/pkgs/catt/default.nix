@@ -10,5 +10,6 @@ ocamlPackages.buildDunePackage {
 
   buildInputs = with ocamlPackages; [
     menhir
+    git
   ];
 }
