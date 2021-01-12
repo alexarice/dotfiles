@@ -132,7 +132,7 @@ in
     };
 
     services = {
-      mingetty.autologinUser = "alex";
+      getty.autologinUser = "alex";
 
       geoclue2.enable = true;
 
