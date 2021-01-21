@@ -32,6 +32,10 @@ in
       allowUnfree = true;
     };
 
+    services.xserver.videoDrivers = mkIf (machine == "desktop") [ "amdgpu" ];
+
+    environment.variables.VK_ICD_FILENAMES = mkIf (machine == "desktop") "${pkgs.amdvlk}/share/vulkan/icd.d/amd_icd64.json";
+
     boot.supportedFilesystems = [ "ntfs" ];
 
     security.sudo.enable = true;
