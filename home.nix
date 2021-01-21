@@ -3,8 +3,6 @@
 with lib;
 
 {
-  imports = [ <home-manager/nixos> ];
-
   home-manager.users.alex = {pkgs, lib, ...}:
   {
     imports = [
