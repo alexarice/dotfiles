@@ -1,8 +1,5 @@
 { pkgs, ... }:
 
-let
-  inherit (import /home/alex/dotfiles/overlays.nix) amdvlkOverlay;
-in
 {
   imports = [
     ./common.nix

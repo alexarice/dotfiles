@@ -23,6 +23,8 @@ in
     ];
 
   config = {
+    nix.package = pkgs.nixFlakes;
+
     nixpkgs.overlays = [
       myWaylandOverlay
     ];
@@ -95,6 +97,7 @@ in
       extraOptions = ''
         keep-outputs = true
         keep-derivations = true
+        experimental-features = nix-command flakes
       '';
       autoOptimiseStore = true;
     };
