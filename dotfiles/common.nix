@@ -19,7 +19,6 @@ in
   imports =
     [
       ./home.nix
-      ./users.nix
     ];
 
   config = {
