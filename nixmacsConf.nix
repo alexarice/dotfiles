@@ -49,13 +49,6 @@ in
     #   package = catt-mode;
     #   use-package.mode = ''"\\.catt\\'"'';
     # };
-    ox-agda-html = {
-      enable = true;
-      package = org-agda-export;
-      use-package.commands = [
-        "org-publish-lagda"
-      ];
-    };
     haskell-mode.external-packages = [];
     direnv.enable = true;
     xah-fly-keys = {

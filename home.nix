@@ -49,12 +49,14 @@ with lib;
         oraclejdk.accept_license = true;
       };
 
-      nixpkgs.overlays = builtins.attrValues (import ./overlays.nix);
+      nixpkgs.overlays = config.nixpkgs.overlays;
 
-      dots = /home/alex/dotfiles;
-      scripts = /home/alex/scripts;
+      dots = ./.;
+      scripts = ./scripts;
       modifier = "Mod4";
       machine = config.machine;
+
+      home.stateVersion = "20.09";
     };
   };
 }

@@ -2,9 +2,6 @@
 
 with lib;
 
-let
-  inherit (import /home/alex/dotfiles/overlays.nix) myWaylandOverlay;
-in
 {
   options = {
     machine = mkOption {
@@ -19,22 +16,19 @@ in
   imports =
     [
       ./home.nix
+      ./overlays.nix
     ];
 
   config = {
     nix.package = pkgs.nixFlakes;
 
-    nixpkgs.overlays = [
-      myWaylandOverlay
-    ];
-
     nixpkgs.config = {
       allowUnfree = true;
     };
 
-    services.xserver.videoDrivers = mkIf (machine == "desktop") [ "amdgpu" ];
+    services.xserver.videoDrivers = mkIf (config.machine == "desktop") [ "amdgpu" ];
 
-    environment.variables.VK_ICD_FILENAMES = mkIf (machine == "desktop") "${pkgs.amdvlk}/share/vulkan/icd.d/amd_icd64.json";
+    environment.variables.VK_ICD_FILENAMES = mkIf (config.machine == "desktop") "${pkgs.amdvlk}/share/vulkan/icd.d/amd_icd64.json";
 
     boot.supportedFilesystems = [ "ntfs" ];
 
