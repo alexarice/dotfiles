@@ -31,6 +31,7 @@
         ./home.nix
         ./overlays.nix
         ./hardware-configuration.nix
+        ./cachix.nix
         home-manager.nixosModules.home-manager
         ({ ... }: {
           nixpkgs.overlays = overlays;
