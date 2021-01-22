@@ -14,7 +14,16 @@ with lib;
   };
 
   config = {
-    nix.package = pkgs.nixFlakes;
+    nix = {
+      package = pkgs.nixFlakes;
+      trustedUsers = [ "root" "alex" ];
+      extraOptions = ''
+        keep-outputs = true
+        keep-derivations = true
+        experimental-features = nix-command flakes
+      '';
+      autoOptimiseStore = true;
+    };
 
     nixpkgs.config = {
       allowUnfree = true;
@@ -84,14 +93,7 @@ with lib;
     # Set your time zone.
     time.timeZone = "Europe/London";
 
-    nix = {
-      extraOptions = ''
-        keep-outputs = true
-        keep-derivations = true
-        experimental-features = nix-command flakes
-      '';
-      autoOptimiseStore = true;
-    };
+
 
     # System packages
     environment = {

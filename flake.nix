@@ -36,6 +36,7 @@
           nixpkgs.overlays = overlays;
           machine = "desktop";
           networking.hostName = "Desktop_Nixos";
+          system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev;
         })
       ];
     };
