@@ -13,12 +13,6 @@ with lib;
     };
   };
 
-  imports =
-    [
-      ./home.nix
-      ./overlays.nix
-    ];
-
   config = {
     nix.package = pkgs.nixFlakes;
 

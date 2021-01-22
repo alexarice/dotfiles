@@ -14,7 +14,6 @@ in
     cachix
     pinentry
     binutils
-    my-zoom
     styx
     manix
 
