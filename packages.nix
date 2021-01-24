@@ -16,6 +16,7 @@ in
     binutils
     styx
     manix
+    zoom-us
 
     # CLI Programs
     neofetch

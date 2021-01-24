@@ -101,11 +101,11 @@
         "unstableSmall": "unstableSmall"
       },
       "locked": {
-        "lastModified": 1611295318,
-        "narHash": "sha256-TFWLeuefiakoZIzVgMGbp90kt8zCcWmJcPMkIji6slc=",
+        "lastModified": 1611486287,
+        "narHash": "sha256-eo1iH8y/ZUMXgi+vHbJFAALY0xkuh9yrXlUXaM9zXQs=",
         "owner": "colemickens",
         "repo": "nixpkgs-wayland",
-        "rev": "4f9a6463f66a18c07711593c425d78a8080f6ac2",
+        "rev": "2e15d01438b2159f2c9de1ad9f49998b77663340",
         "type": "github"
       },
       "original": {
