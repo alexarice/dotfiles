@@ -32,7 +32,7 @@
           ./users.nix
           ./home.nix
           ./overlays.nix
-          ./hardware-configuration.nix
+          ./hardware/desktop.nix
           ./cachix.nix
           home-manager.nixosModules.home-manager
           ({ ... }: {
