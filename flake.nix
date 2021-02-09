@@ -17,9 +17,9 @@
       nixmacs = nixmacs.nixmacs {
         configurationFile = ./nixmacsConf.nix;
         package = self.pkgs.emacs;
-        extraOverrides = self: super: {
-          use-package = self.callPackage ./pkgs/use-package { };
-        };
+        # extraOverrides = self: super: {
+        #   use-package = self.callPackage ./pkgs/use-package { };
+        # };
       };
     })
   ];
