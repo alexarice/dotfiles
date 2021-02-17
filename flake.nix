@@ -8,18 +8,20 @@
     nixpkgs-wayland.url = "github:colemickens/nixpkgs-wayland";
     home-manager.url = "github:nix-community/home-manager";
     nixmacs.url = "github:alexarice/nixmacs";
+    all-agda.url = "/home/alex/all-agda";
   };
 
-  outputs = { self, nixpkgs, master, nixpkgs-wayland, home-manager, nixmacs }:
+  outputs = { self, nixpkgs, master, nixpkgs-wayland, home-manager, nixmacs, all-agda }:
   let overlays = [
     nixpkgs-wayland.overlay
+    all-agda.overlay
     (self: super: {
       nixmacs = nixmacs.nixmacs {
         configurationFile = ./nixmacsConf.nix;
         package = self.pkgs.emacs;
-        # extraOverrides = self: super: {
-        #   use-package = self.callPackage ./pkgs/use-package { };
-        # };
+        extraOverrides = self: super: {
+          agda2-mode = all-agda.legacyPackages."x86_64-linux".agdaPackages-master.agda-mode super;
+        };
       };
     })
   ];
