@@ -44,7 +44,8 @@ in
 
   package = {
     which-key.enable = false;
-    # catt-mode = {
+    company.use-package.custom.company-dabbrev-downcase = "nil";
+        # catt-mode = {
     #   enable = true;
     #   package = catt-mode;
     #   use-package.mode = ''"\\.catt\\'"'';

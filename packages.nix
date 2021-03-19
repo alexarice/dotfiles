@@ -17,6 +17,7 @@ in
     styx
     manix
     zoom-us
+    swiProlog
 
     # CLI Programs
     neofetch
