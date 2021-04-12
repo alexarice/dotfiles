@@ -7,8 +7,8 @@
     master.url = "github:nixos/nixpkgs";
     nixpkgs-wayland.url = "github:colemickens/nixpkgs-wayland";
     home-manager.url = "github:nix-community/home-manager";
-    nixmacs.url = "/home/alex/nixmacs";
-    all-agda.url = "/home/alex/all-agda";
+    nixmacs.url = "github:alexarice/nixmacs";
+    all-agda.url = "github:alexarice/all-agda";
   };
 
   outputs = { self, nixpkgs, master, nixpkgs-wayland, home-manager, nixmacs, all-agda }:

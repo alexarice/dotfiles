@@ -6,13 +6,17 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "narHash": "sha256-dda5Vo4wyMNHelsrCucLYtt7tc1j8eRmeUHX1+lTfsM=",
-        "path": "/home/alex/all-agda",
-        "type": "path"
+        "lastModified": 1613668004,
+        "narHash": "sha256-hSUezIFUVJ6hokTnftv3HqvVcHHvT1ivdwUrJb4u+uY=",
+        "owner": "alexarice",
+        "repo": "all-agda",
+        "rev": "4b54e7bfe80a7616b10c3d723305a27b1ece5066",
+        "type": "github"
       },
       "original": {
-        "path": "/home/alex/all-agda",
-        "type": "path"
+        "owner": "alexarice",
+        "repo": "all-agda",
+        "type": "github"
       }
     },
     "cachix": {
@@ -101,13 +105,17 @@
         "nmd": "nmd"
       },
       "locked": {
-        "narHash": "sha256-MY2O6aR2eEB/I7LfCG5arEv/RSxD1AR+Vadbhg0tdBM=",
-        "path": "/home/alex/nixmacs",
-        "type": "path"
+        "lastModified": 1618219479,
+        "narHash": "sha256-6QF0DLBScaeE8E1OOMY7VrGNn0AJXvSat1K0PWGrLOk=",
+        "owner": "alexarice",
+        "repo": "nixmacs",
+        "rev": "9d7af2f1c637f0123d8241c399a6e5fa74de0e2b",
+        "type": "github"
       },
       "original": {
-        "path": "/home/alex/nixmacs",
-        "type": "path"
+        "owner": "alexarice",
+        "repo": "nixmacs",
+        "type": "github"
       }
     },
     "nixpkgs": {
