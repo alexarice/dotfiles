@@ -6,7 +6,7 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "narHash": "sha256-8T77egMsAiMcjX6xazxhKuaOCtu7f8UFB2DlzySxqhc=",
+        "narHash": "sha256-dda5Vo4wyMNHelsrCucLYtt7tc1j8eRmeUHX1+lTfsM=",
         "path": "/home/alex/all-agda",
         "type": "path"
       },
@@ -81,11 +81,11 @@
     },
     "master": {
       "locked": {
-        "lastModified": 1618216442,
-        "narHash": "sha256-t2CgQ5UCbrvE9DucMMcz9++S0gEVd0QKUNG9EyEAgwU=",
+        "lastModified": 1618217346,
+        "narHash": "sha256-oMC+exravBAbyIN7PPb4CqT2m6D/57eG5zdi7uyTA/c=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "dce8fc727dc2891628e4f878bb18af643b7b255d",
+        "rev": "a1c0d6ddbcb6d307d44b158d1056d15ad2bd05d0",
         "type": "github"
       },
       "original": {
@@ -148,11 +148,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1618216442,
-        "narHash": "sha256-t2CgQ5UCbrvE9DucMMcz9++S0gEVd0QKUNG9EyEAgwU=",
+        "lastModified": 1618217346,
+        "narHash": "sha256-oMC+exravBAbyIN7PPb4CqT2m6D/57eG5zdi7uyTA/c=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "dce8fc727dc2891628e4f878bb18af643b7b255d",
+        "rev": "a1c0d6ddbcb6d307d44b158d1056d15ad2bd05d0",
         "type": "github"
       },
       "original": {
