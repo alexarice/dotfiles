@@ -18,6 +18,7 @@ in
     manix
     zoom-us
     swiProlog
+    rmapi
 
     # CLI Programs
     neofetch
@@ -114,7 +115,7 @@ in
     evince
     spotify
     libreoffice
-    discord
+    # discord
     zathura
     mu
 

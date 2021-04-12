@@ -7,7 +7,7 @@
     master.url = "github:nixos/nixpkgs";
     nixpkgs-wayland.url = "github:colemickens/nixpkgs-wayland";
     home-manager.url = "github:nix-community/home-manager";
-    nixmacs.url = "github:alexarice/nixmacs";
+    nixmacs.url = "/home/alex/nixmacs";
     all-agda.url = "/home/alex/all-agda";
   };
 

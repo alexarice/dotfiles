@@ -27,7 +27,10 @@ in
     javascript.enable = true;
     systemd.enable = true;
     yaml.enable = true;
-    lsp.enable = true;
+    lsp = {
+      enable = true;
+      ui = true;
+    };
     haskell = {
       enable = true;
     };
@@ -52,6 +55,17 @@ in
     # };
     haskell-mode.external-packages = [];
     direnv.enable = true;
+    org-roam = {
+      enable = true;
+      settings.directory = "~/Dropbox/roam";
+    };
+    org-ref = {
+      enable = true;
+      settings.bibliography = ''"~/Dropbox/citations/citations.bib"'';
+      use-package.custom.org-ref-pdf-directory = ''"~/Dropbox/citations"'';
+    };
+    ivy-bibtex.enable = true;
+    org-roam-bibtex.enable = true;
     xah-fly-keys = {
       enable = true;
       settings = {
