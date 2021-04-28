@@ -1,7 +1,7 @@
 { config, lib, epkgs, pkgs, ... }:
 
 let
-  # catt-mode = epkgs.callPackage ./pkgs/catt/catt-mode.nix { };
+  catt-mode = builtins.trace "Hi" (epkgs.callPackage ./pkgs/catt/catt-mode.nix { });
   org-agda-export = epkgs.callPackage ./pkgs/org/ox-agda-html.nix { };
 in
 {
@@ -48,11 +48,11 @@ in
   package = {
     which-key.enable = false;
     company.use-package.custom.company-dabbrev-downcase = "nil";
-        # catt-mode = {
-    #   enable = true;
-    #   package = catt-mode;
-    #   use-package.mode = ''"\\.catt\\'"'';
-    # };
+    catt-mode = {
+      enable = true;
+      package = catt-mode;
+      use-package.mode = ''"\\.catt\\'"'';
+    };
     haskell-mode.external-packages = [];
     direnv.enable = true;
     org-roam = {

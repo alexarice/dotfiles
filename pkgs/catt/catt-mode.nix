@@ -4,5 +4,5 @@ trivialBuild rec {
   pname = "catt-mode";
   version = "master";
 
-  src = catt.src;
+  src = ./.;
 }

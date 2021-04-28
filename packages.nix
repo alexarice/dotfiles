@@ -29,6 +29,7 @@ in
     psmisc
     gparted
     mkpasswd
+    jq
     file
     binutils
     imagemagick
