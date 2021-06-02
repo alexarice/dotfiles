@@ -1,7 +1,7 @@
 { config, lib, epkgs, pkgs, ... }:
 
 let
-  catt-mode = builtins.trace "Hi" (epkgs.callPackage ./pkgs/catt/catt-mode.nix { });
+  catt-mode = epkgs.callPackage ./pkgs/catt/catt-mode.nix { };
   org-agda-export = epkgs.callPackage ./pkgs/org/ox-agda-html.nix { };
 in
 {

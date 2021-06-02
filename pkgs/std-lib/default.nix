@@ -1,4 +1,4 @@
-{ stdenv, mkDerivation, fetchFromGitHub, ghcWithPackages }:
+{ stdenv, lib, mkDerivation, fetchFromGitHub, ghcWithPackages }:
 
 mkDerivation rec {
   pname = "standard-library";
@@ -11,11 +11,11 @@ mkDerivation rec {
     runhaskell GenerateEverything.hs
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     homepage = "https://wiki.portal.chalmers.se/agda/pmwiki.php?n=Libraries.StandardLibrary";
     description = "A standard library for use with the Agda compiler";
-    license = stdenv.lib.licenses.mit;
-    platforms = stdenv.lib.platforms.unix;
+    license = licenses.mit;
+    platforms = platforms.unix;
     maintainers = with maintainers; [ jwiegley mudri alexarice turion ];
   };
 }

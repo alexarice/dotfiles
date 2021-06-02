@@ -116,7 +116,7 @@ in
     evince
     spotify
     libreoffice
-    # discord
+    discord
     zathura
     mu
 

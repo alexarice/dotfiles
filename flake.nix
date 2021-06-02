@@ -24,6 +24,12 @@
         };
       };
     })
+    (self: super: {
+      discord = (import master {
+        system = "x86_64-linux";
+        config.allowUnfree = true;
+      }).discord;
+    })
   ];
   in {
     nixosConfigurations = {

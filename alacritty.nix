@@ -56,7 +56,6 @@
         };
       };
       background_opacity = 0.8;
-      mouse.url.launcher = "firefox";
     };
   };
 }

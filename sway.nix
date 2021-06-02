@@ -40,7 +40,9 @@ in
           childBorder = "#FF0000";
         };
       };
-      fonts = [ "Source Code Pro 9" ];
+      fonts = {
+        names = [ "Source Code Pro 9" ];
+      };
       gaps = {
         inner = 10;
         outer = -10;
