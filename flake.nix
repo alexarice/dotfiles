@@ -20,7 +20,7 @@
         configurationFile = ./nixmacsConf.nix;
         package = self.pkgs.emacs;
         extraOverrides = self: super: {
-          agda2-mode = all-agda.legacyPackages."x86_64-linux".agdaPackages-master.agda-mode super;
+          agda2-mode = all-agda.legacyPackages."x86_64-linux".agdaPackages-2_6_2.agda-mode super;
         };
       };
     })

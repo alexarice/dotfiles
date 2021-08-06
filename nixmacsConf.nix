@@ -61,8 +61,8 @@ in
     };
     org-ref = {
       enable = true;
-      settings.bibliography = ''"~/Dropbox/citations/citations.bib"'';
-      use-package.custom.org-ref-pdf-directory = ''"~/Dropbox/citations"'';
+      settings.bibliography = ''"/home/alex/Dropbox/citations/citations.bib"'';
+      use-package.custom.org-ref-pdf-directory = ''"/home/alex/Dropbox/citations"'';
     };
     ivy-bibtex.enable = true;
     org-roam-bibtex.enable = true;

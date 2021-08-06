@@ -99,7 +99,7 @@ in
       ieee
       filemanip
     ]))
-    (agda-master.withPackages (p: [ p.cubical ]))
+    (agda-2_6_2.withPackages (p: [ p.standard-library p.agda-categories ]))
     # cabal-bin
     cabal-install
     # cabal2nix
