@@ -5,7 +5,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     master.url = "github:nixos/nixpkgs";
-    nixpkgs-wayland.url = "github:colemickens/nixpkgs-wayland";
+    nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
     home-manager.url = "github:nix-community/home-manager";
     nixmacs.url = "/home/alex/nixmacs";
     all-agda.url = "github:alexarice/all-agda";
@@ -13,7 +13,7 @@
 
   outputs = { self, nixpkgs, master, nixpkgs-wayland, home-manager, nixmacs, all-agda }:
   let overlays = [
-    nixpkgs-wayland.overlay
+    (self: super: removeAttrs (nixpkgs-wayland.overlay self super) [ "sway-unwrapped" "wlroots" ])
     all-agda.overlay
     (self: super: {
       nixmacs = nixmacs.nixmacs {
