@@ -102,16 +102,12 @@ in
         "*" = {
           bg = "\"${dots + "/background-image.png"}\" fill";
         };
-        "HDMI-A-1" = {
+        "DP-1" = {
           pos = "0,0";
-          res = "1920x1080";
-        };
-        "HDMI-A-2" = {
-          pos = "1920,0";
-          res = "1920x1080";
+          res = "3840x2160";
         };
         "eDP-1" = {
-          pos = "1120,1080";
+          pos = "1120,2160";
           res = "1600x900";
         };
       } else {
