@@ -105,6 +105,8 @@ in
     # cabal2nix
     python3
     coqPackages_8_12.coq
+    cargo
+    rustc
 
     # Programs
     emacs
