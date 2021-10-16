@@ -111,13 +111,17 @@
         "nmd": "nmd"
       },
       "locked": {
-        "narHash": "sha256-8wWlYQNDG1YLGJsjrIx5m6USYjQ7cLy7BPmUPZd2ld8=",
-        "path": "/home/alex/nixmacs",
-        "type": "path"
+        "lastModified": 1628547194,
+        "narHash": "sha256-Ja1bPperfU6D6h6LWAI1yN3KXi7WmKQ0tbFEJVURo2w=",
+        "owner": "alexarice",
+        "repo": "nixmacs",
+        "rev": "3fad81618082ce39172f2cfe414a7ac57f7bb2de",
+        "type": "github"
       },
       "original": {
-        "path": "/home/alex/nixmacs",
-        "type": "path"
+        "owner": "alexarice",
+        "repo": "nixmacs",
+        "type": "github"
       }
     },
     "nixpkgs": {

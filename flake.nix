@@ -1,4 +1,5 @@
 
+
 {
   description = "Nixos configuration";
 
@@ -7,7 +8,7 @@
     master.url = "github:nixos/nixpkgs";
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
     home-manager.url = "github:nix-community/home-manager";
-    nixmacs.url = "/home/alex/nixmacs";
+    nixmacs.url = "github:alexarice/nixmacs";
     all-agda.url = "github:alexarice/all-agda";
   };
 
