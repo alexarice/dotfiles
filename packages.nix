@@ -123,7 +123,7 @@ in
     mu
 
     # Games
-    steam
+    # steam
     sgtpuzzles
     # steam-run-native
     # wine
