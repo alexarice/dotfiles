@@ -42,6 +42,7 @@ in
     htop
     iftop
     gitAndTools.git-extras
+    numactl
 
     # Things in sway config
     dropbox-cli
