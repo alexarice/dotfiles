@@ -126,6 +126,7 @@ in
     # Games
     # steam
     sgtpuzzles
+    runelite
     # steam-run-native
     # wine
     # winetricks

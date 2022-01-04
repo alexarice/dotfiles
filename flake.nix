@@ -14,7 +14,8 @@
 
   outputs = { self, nixpkgs, master, nixpkgs-wayland, home-manager, nixmacs, all-agda }:
   let overlays = [
-    (self: super: removeAttrs (nixpkgs-wayland.overlay self super) [ "sway-unwrapped" "wlroots" ])
+    nixpkgs-wayland.overlay
+    # (self: super: removeAttrs (nixpkgs-wayland.overlay self super) [ "sway-unwrapped" "wlroots" ])
     all-agda.overlay
     (self: super: {
       nixmacs = nixmacs.nixmacs {
