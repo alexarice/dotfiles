@@ -15,7 +15,11 @@
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/1cec557b-0b80-4e8b-a27e-30cee2805d52";
-      fsType = "ext4";
+    fsType = "ext4";
+    options = [
+      "defaults"
+      "discard"
+    ];
     };
 
   fileSystems."/boot" =

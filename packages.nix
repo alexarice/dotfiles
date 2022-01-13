@@ -43,6 +43,7 @@ in
     iftop
     gitAndTools.git-extras
     numactl
+    ocamlPackages.cpdf
 
     # Things in sway config
     dropbox-cli

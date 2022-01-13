@@ -37,6 +37,9 @@ with lib;
 
     services.xserver.videoDrivers = mkIf (config.machine == "desktop") [ "amdgpu" ];
 
+    services.fwupd.enable = true;
+    boot.tmpOnTmpfs = true;
+
     environment.variables.VK_ICD_FILENAMES = mkIf (config.machine == "desktop") "${pkgs.amdvlk}/share/vulkan/icd.d/amd_icd64.json";
 
     boot.supportedFilesystems = [ "ntfs" ];
