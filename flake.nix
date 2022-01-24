@@ -16,6 +16,9 @@
   let overlays = [
     nixpkgs-wayland.overlay
     # (self: super: removeAttrs (nixpkgs-wayland.overlay self super) [ "sway-unwrapped" "wlroots" ])
+    (self: super: {
+      wldash = self.callPackage ./pkgs/wldash { };
+    })
     all-agda.overlay
     (self: super: {
       nixmacs = nixmacs.nixmacs {
