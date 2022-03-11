@@ -14,7 +14,6 @@ in
     cachix
     pinentry
     binutils
-    styx
     manix
     zoom-us
     swiProlog
@@ -77,7 +76,7 @@ in
     pavucontrol
     udiskie
     playerctl
-    xlibs.xeyes
+    xorg.xeyes
     libnotify
     libappindicator
     bitwarden-cli

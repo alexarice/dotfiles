@@ -55,7 +55,7 @@
           white =   "#e6e6e6";
         };
       };
-      background_opacity = 0.8;
+      window.opacity = 0.8;
     };
   };
 }

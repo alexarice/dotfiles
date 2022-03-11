@@ -9,7 +9,7 @@
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
     home-manager.url = "github:nix-community/home-manager";
     nixmacs.url = "github:alexarice/nixmacs";
-    all-agda.url = "github:alexarice/all-agda";
+    all-agda.url = "/home/alex/all-agda";
   };
 
   outputs = { self, nixpkgs, master, nixpkgs-wayland, home-manager, nixmacs, all-agda }:
@@ -19,7 +19,7 @@
     (self: super: {
       wldash = self.callPackage ./pkgs/wldash { };
     })
-    all-agda.overlay
+    all-agda.overlay."x86_64-linux"
     (self: super: {
       nixmacs = nixmacs.nixmacs {
         configurationFile = ./nixmacsConf.nix;

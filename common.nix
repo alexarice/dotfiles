@@ -16,19 +16,26 @@ with lib;
   config = {
     nix = {
       package = pkgs.nixFlakes;
-      trustedUsers = [ "root" "alex" ];
+
+      settings = {
+        trusted-users = [ "root" "alex" ];
+
+        substituters = [
+          "https://hydra.iohk.io"
+        ];
+
+        trusted-public-keys = [
+          "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ="
+        ];
+
+        auto-optimise-store = true;
+      };
+
       extraOptions = ''
         keep-outputs = true
         keep-derivations = true
         experimental-features = nix-command flakes
       '';
-      autoOptimiseStore = true;
-      binaryCachePublicKeys = [
-        "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ="
-      ];
-      binaryCaches = [
-        "https://hydra.iohk.io"
-      ];
     };
 
     nixpkgs.config = {
