@@ -24,14 +24,17 @@
         "nixpkgs-unstable": "nixpkgs-unstable_2"
       },
       "locked": {
-        "lastModified": 1646661451,
-        "narHash": "sha256-iZ4zJrfSfIihtkfPqioNnnpuEIS9kkooF3mu3m2lIEI=",
-        "type": "git",
-        "url": "file:///home/alex/all-agda"
+        "lastModified": 1647277111,
+        "narHash": "sha256-9NIo1BGOovZtu/Sy+IJ6XrFqk3ZYHGE7D5CO6DgaD1M=",
+        "owner": "alexarice",
+        "repo": "all-agda",
+        "rev": "208ff896d69b108bbb35ecc1277319ab992b66e4",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///home/alex/all-agda"
+        "owner": "alexarice",
+        "repo": "all-agda",
+        "type": "github"
       }
     },
     "cabal-32": {

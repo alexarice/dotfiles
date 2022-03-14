@@ -9,7 +9,7 @@
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
     home-manager.url = "github:nix-community/home-manager";
     nixmacs.url = "github:alexarice/nixmacs";
-    all-agda.url = "/home/alex/all-agda";
+    all-agda.url = "github:alexarice/all-agda";
   };
 
   outputs = { self, nixpkgs, master, nixpkgs-wayland, home-manager, nixmacs, all-agda }:
