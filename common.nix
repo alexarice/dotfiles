@@ -7,6 +7,7 @@ with lib;
     machine = mkOption {
       type = types.enum [
         "laptop"
+        "framework"
         "desktop"
         "rpi"
       ];

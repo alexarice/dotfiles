@@ -94,6 +94,44 @@
           })
         ];
       };
+      framework = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./common.nix
+          ./users.nix
+          # ./home.nix
+          ./overlays.nix
+          # ./hardware/laptop.nix
+          # ./cachix.nix
+          # home-manager.nixosModules.home-manager
+          ({ ... }: {
+            nixpkgs.overlays = overlays;
+            boot.initrd.luks.devices = {
+              cryptlvm = {
+                device = "/dev/nvme0n1p1";
+                allowDiscards = true;
+                preLVM = true;
+              };
+            };
+
+            machine = "framework";
+
+            networking.hostName = "Alex_fm"; # Define your hostname.
+
+            hardware = {
+              cpu.intel.updateMicrocode = true;
+            };
+
+            services = {
+              upower.enable = true;
+
+              tlp.enable = true;
+              logind.lidSwitch = "ignore";
+            };
+            system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev;
+          })
+        ];
+      };
     };
   };
 }
