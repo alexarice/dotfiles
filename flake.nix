@@ -97,13 +97,13 @@
       framework = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./common.nix
+          # ./common.nix
           ./users.nix
-          ./home.nix
+          # ./home.nix
           ./overlays.nix
           ./hardware/framework.nix
           ./cachix.nix
-          home-manager.nixosModules.home-manager
+          # home-manager.nixosModules.home-manager
           ({ ... }: {
             nixpkgs.overlays = overlays;
             boot.initrd.luks.devices = {
