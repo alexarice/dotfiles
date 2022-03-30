@@ -101,7 +101,7 @@
           ./users.nix
           # ./home.nix
           ./overlays.nix
-          # ./hardware/laptop.nix
+          ./hardware/framework.nix
           # ./cachix.nix
           # home-manager.nixosModules.home-manager
           ({ ... }: {
