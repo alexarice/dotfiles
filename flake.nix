@@ -114,7 +114,7 @@
               };
             };
 
-            machine = "framework";
+            # machine = "framework";
 
             networking.hostName = "Alex_fm"; # Define your hostname.
 
