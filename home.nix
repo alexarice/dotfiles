@@ -35,6 +35,7 @@ with lib;
           "laptop"
           "desktop"
           "rpi"
+          "framework"
         ];
       };
     };
