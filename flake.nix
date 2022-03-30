@@ -99,11 +99,11 @@
         modules = [
           ./common.nix
           ./users.nix
-          # ./home.nix
+          ./home.nix
           ./overlays.nix
           ./hardware/framework.nix
-          # ./cachix.nix
-          # home-manager.nixosModules.home-manager
+          ./cachix.nix
+          home-manager.nixosModules.home-manager
           ({ ... }: {
             nixpkgs.overlays = overlays;
             boot.initrd.luks.devices = {
