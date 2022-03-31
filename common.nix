@@ -82,10 +82,10 @@ with lib;
     };
 
     # Select internationalisation properties.
-    console = {
-      font = "lat2-Terminus16";
-      keyMap = "uk";
-    };
+    # console = {
+    #   font = "lat2-Terminus16";
+    #   keyMap = "uk";
+    # };
 
     i18n = {
       defaultLocale = "en_GB.UTF-8";

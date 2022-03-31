@@ -10,11 +10,13 @@
     home-manager.url = "github:nix-community/home-manager";
     nixmacs.url = "github:alexarice/nixmacs";
     all-agda.url = "github:alexarice/all-agda";
+    emacs-overlay.url = "github:nix-community/emacs-overlay";
   };
 
-  outputs = { self, nixpkgs, master, nixpkgs-wayland, home-manager, nixmacs, all-agda }:
+  outputs = { self, nixpkgs, master, nixpkgs-wayland, home-manager, nixmacs, all-agda, emacs-overlay }:
   let overlays = [
     nixpkgs-wayland.overlay
+    emacs-overlay.overlay
     # (self: super: removeAttrs (nixpkgs-wayland.overlay self super) [ "sway-unwrapped" "wlroots" ])
     (self: super: {
       wldash = self.callPackage ./pkgs/wldash { };
@@ -97,13 +99,13 @@
       framework = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          # ./common.nix
+          ./common.nix
           ./users.nix
-          # ./home.nix
+          ./home.nix
           ./overlays.nix
           ./hardware/framework.nix
           ./cachix.nix
-          # home-manager.nixosModules.home-manager
+          home-manager.nixosModules.home-manager
           ({ ... }: {
             nixpkgs.overlays = overlays;
             boot.initrd.luks.devices = {
@@ -114,7 +116,7 @@
               };
             };
 
-            # machine = "framework";
+            machine = "framework";
 
             networking.hostName = "Alex_fm"; # Define your hostname.
 

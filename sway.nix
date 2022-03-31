@@ -86,10 +86,13 @@ in
         "2:7:SynPS/2_Synaptics_TouchPad" = {
           natural_scroll = "enabled";
         };
+        "2362:628:PIXA3854:00_093A:0274_Touchpad" = {
+          natural_scroll = "enabled";
+        };
         "1739:0:Synaptics_TM2668-002" = {
           natural_scroll = "enabled";
         };
-        "*" = if config.machine == "laptop" then {
+        "*" = if config.machine == "laptop" || config.machine == "framework" then {
           xkb_layout = "gb,gb";
           xkb_variant = "dvorak,";
           xkb_options = "grp:alt_space_toggle,caps:menu";
@@ -98,10 +101,11 @@ in
           xkb_options = "caps:menu";
         };
       };
-      output = if config.machine == "laptop" then {
+      output = {
         "*" = {
           bg = "\"${dots + "/background-image.png"}\" fill";
         };
+      } // (if config.machine == "laptop" then {
         "DP-1" = {
           pos = "0,0";
           res = "3840x2160";
@@ -110,10 +114,7 @@ in
           pos = "1120,2160";
           res = "1600x900";
         };
-      } else {
-        "*" = {
-          bg = "\"${dots + "/background-image.png"}\" fill";
-        };
+      } else if config.machine == "desktop" then {
         "DP-1" = {
           pos = "0,0";
           res = "1920x1080";
@@ -122,7 +123,13 @@ in
           pos = "1920,0";
           res = "1920x1080";
         };
-      };
+      } else {
+        "eDP-1" = {
+          pos = "0,0";
+          res = "2256x1504";
+          scale = "1";
+        };
+      });
     };
   };
 }
