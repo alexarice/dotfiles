@@ -1,5 +1,3 @@
-
-
 { pkgs, config, ... }:
 
 let
@@ -100,7 +98,7 @@ in
       ieee
       filemanip
     ]))
-    (agda-2_6_2.withPackages (p: [ p.standard-library p.agda-categories ]))
+    (agda-2_6_2.withPackages (p: [ p.standard-library p.agda-categories p.cubical ]))
     # cabal-bin
     cabal-install
     # cabal2nix
@@ -108,6 +106,7 @@ in
     coqPackages_8_12.coq
     cargo
     rustc
+    gnumake
 
     # Programs
     emacs

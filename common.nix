@@ -95,7 +95,6 @@ with lib;
       pulseaudio = {
         enable = true;
         support32Bit = mkIf (config.machine != "rpi") true;
-        extraModules = [ pkgs.pulseaudio-modules-bt ];
         package = pkgs.pulseaudioFull;
       };
       bluetooth = {
