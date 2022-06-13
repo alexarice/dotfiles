@@ -15,12 +15,12 @@
 
   outputs = { self, nixpkgs, master, nixpkgs-wayland, home-manager, nixmacs, all-agda, emacs-overlay }:
   let overlays = [
-    nixpkgs-wayland.overlay
+    # nixpkgs-wayland.overlay
     emacs-overlay.overlay
-    # (self: super: removeAttrs (nixpkgs-wayland.overlay self super) [ "sway-unwrapped" "wlroots" ])
-    (self: super: {
-      wldash = self.callPackage ./pkgs/wldash { };
-    })
+    (self: super: removeAttrs (nixpkgs-wayland.overlay self super) [ "sway-unwrapped" "wlroots" ])
+    # (self: super: {
+    #   wldash = self.callPackage ./pkgs/wldash { };
+    # })
     all-agda.overlay."x86_64-linux"
     (self: super: {
       nixmacs = nixmacs.nixmacs {
