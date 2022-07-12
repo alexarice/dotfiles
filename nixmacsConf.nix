@@ -43,7 +43,29 @@ in
     minibuffer-inherit-input-mode = false;
   };
 
+  init-el.preamble = ''
+    (defun reasoning-block (n)
+      (interactive "nLines: ")
+      (let ((indent (current-indentation)))
+           (progn (defun go (n)
+         (if (> n 0) (progn
+                (insert (make-string (+ 2 indent) ?\s))
+                (insert "?\n")
+                (insert (make-string (+ 4 indent) ?\s))
+                (insert "≈⟨ ? ⟩\n")
+                (go (- n 1)))))
+            (insert "begin\n")
+            (go n)
+            (insert (make-string (+ 2 indent) ?\s))
+            (insert "? ∎"))))
+  '';
+
   custom.enable = true;
+
+  keybindings.hydra.hydra-agda.bindings."e" = {
+    command = "reasoning-block";
+    colour = "blue";
+  };
 
   package = {
     which-key.enable = false;

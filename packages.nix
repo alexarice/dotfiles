@@ -49,6 +49,7 @@ in
     dmenu
 
     # Nix
+    nixos-generators
     nixpkgs-fmt
     nix-review
     nix-info
