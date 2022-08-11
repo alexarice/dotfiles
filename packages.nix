@@ -123,8 +123,10 @@ in
     zathura
     mu
 
+    zotero
+
     # Games
-    # steam
+    steam
     sgtpuzzles
     runelite
     # steam-run-native
