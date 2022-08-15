@@ -10,10 +10,11 @@
     home-manager.url = "github:nix-community/home-manager";
     nixmacs.url = "github:alexarice/nixmacs";
     all-agda.url = "github:alexarice/all-agda";
-    emacs-overlay.url = "github:nix-community/emacs-overlay";
+    emacs-overlay.url = "github:nix-community/emacs-overlay";#
+    nixos-wsl.url = "github:nix-community/NixOS-WSL";
   };
 
-  outputs = { self, nixpkgs, master, nixpkgs-wayland, home-manager, nixmacs, all-agda, emacs-overlay }:
+  outputs = { self, nixpkgs, master, nixpkgs-wayland, home-manager, nixmacs, all-agda, emacs-overlay, nixos-wsl }:
   let overlays = [
     # nixpkgs-wayland.overlay
     emacs-overlay.overlay
@@ -131,6 +132,30 @@
               logind.lidSwitch = "ignore";
             };
             system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev;
+          })
+        ];
+      };
+      wsl = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+
+        modules = [
+          nixos-wsl.nixosModules.wsl
+          ({ pkgs, ... }: {
+            wsl = {
+              enable = true;
+              automountPath = "/mnt";
+              defaultUser = "nixos";
+              startMenuLaunchers = true;
+            };
+            nix.package = pkgs.nixFlakes;
+            nix.extraOptions = ''
+              experimental-features = nix-command flakes
+            '';
+            nixpkgs.overlays = overlays;
+            environment.systemPackages = with pkgs; [
+              git
+              nixmacs
+            ];
           })
         ];
       };
