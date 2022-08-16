@@ -1,5 +1,3 @@
-
-
 {
   description = "Nixos configuration";
 
@@ -139,8 +137,24 @@
         system = "x86_64-linux";
 
         modules = [
+          ./cachix.nix
+          ./overlays.nix
+          home-manager.nixosModules.home-manager
           nixos-wsl.nixosModules.wsl
-          ({ pkgs, ... }: {
+          ({ pkgs, ... }: let
+            stateVersion = "22.11";
+            in {
+            system.stateVersion = stateVersion;
+            home-manager.users.nixos = { lib, ... }: {
+              imports = [
+                ./git.nix
+                ./fish.nix
+                ./direnv.nix
+              ];
+              programs.git.signing = lib.mkForce null;
+              home.stateVersion = stateVersion;
+            };
+
             wsl = {
               enable = true;
               automountPath = "/mnt";
@@ -151,10 +165,40 @@
             nix.extraOptions = ''
               experimental-features = nix-command flakes
             '';
+            services.xserver.layout = "gb";
+            services.xserver.xkbVariant = "dvorak";
+
+            # Load fonts
+            fonts = {
+              fonts = with pkgs; [
+                source-code-pro
+                powerline-fonts
+                symbola
+                dejavu_fonts
+                emacs-all-the-icons-fonts
+                noto-fonts
+              ];
+
+              fontconfig = {
+                enable = true;
+                antialias = true;
+                cache32Bit = true;
+                defaultFonts = {
+                  monospace = [ "Source Code Pro" "DejaVu Sans Mono" ];
+                  sansSerif = [  "DejaVu Sans" ];
+                  serif = [  "DejaVu Serif" ];
+                };
+              };
+            };
+
             nixpkgs.overlays = overlays;
+            nixpkgs.config = {
+              allowUnfree = true;
+            };
             environment.systemPackages = with pkgs; [
               git
-              nixmacs
+              (nixmacs.fromConf ./wsl-nixmacs.nix)
+	            emacs
             ];
           })
         ];
