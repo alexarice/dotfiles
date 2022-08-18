@@ -155,6 +155,8 @@
               home.stateVersion = stateVersion;
             };
 
+            users.users.nixos.shell = pkgs.fish;
+
             wsl = {
               enable = true;
               automountPath = "/mnt";
@@ -165,6 +167,7 @@
             nix.extraOptions = ''
               experimental-features = nix-command flakes
             '';
+            services.xserver.enable = true;
             services.xserver.layout = "gb";
             services.xserver.xkbVariant = "dvorak";
 
@@ -198,7 +201,8 @@
             environment.systemPackages = with pkgs; [
               git
               (nixmacs.fromConf ./wsl-nixmacs.nix)
-	            emacs
+	      emacs
+              xorg.setxkbmap
             ];
           })
         ];

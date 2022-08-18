@@ -22,9 +22,10 @@
   };
 
   package = {
+    adaptive-wrap.enable = false;
     which-key.enable = false;
     company.use-package.custom.company-dabbrev-downcase = "nil";
-
+    direnv.enable = true;
     xah-fly-keys = {
       enable = true;
       settings = {
@@ -33,6 +34,8 @@
         command-mode-bindings = {
           ";" = "self-insert-command";
           "#" = "xah-comment-dwim";
+          "'" = "xref-find-definitions";
+          "-" = "xref-pop-marker-stack";
         };
       };
       use-package.bind."<end>" = "xah-fly-command-mode-activate";
@@ -43,6 +46,7 @@
     tex.settings.TeX-view-program-selection.output-pdf = "Zathura";
     doom-modeline.use-package.custom.doom-modeline-icon = true;
     nix-mode.use-package.demand = true;
+    protobuf-mode.enable = true;
   };
 
   appearance = {
@@ -53,9 +57,6 @@
       extraConfig = ''
         ; Enable flashing mode-line on errors
         (doom-themes-visual-bell-config)
-
-        ;; Enable custom neotree theme (all-the-icons must be installed!)
-        (doom-themes-neotree-config)
 
         (doom-themes-org-config)
       '';
