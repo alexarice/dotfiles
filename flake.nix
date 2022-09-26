@@ -163,7 +163,7 @@
               defaultUser = "nixos";
               startMenuLaunchers = true;
             };
-            nix.package = pkgs.nixFlakes;
+            nix.package = pkgs.nixVersions.stable;
             nix.extraOptions = ''
               experimental-features = nix-command flakes
             '';
@@ -201,7 +201,8 @@
             environment.systemPackages = with pkgs; [
               git
               (nixmacs.fromConf ./wsl-nixmacs.nix)
-	      emacs
+	            emacs
+              ripgrep
               xorg.setxkbmap
             ];
           })
