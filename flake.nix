@@ -204,6 +204,7 @@
 	            emacs
               ripgrep
               xorg.setxkbmap
+              docker
             ];
           })
         ];
