@@ -16,8 +16,6 @@ with lib;
 
   config = {
     nix = {
-      package = pkgs.nixFlakes;
-
       settings = {
         trusted-users = [ "root" "alex" ];
 
@@ -92,14 +90,13 @@ with lib;
     };
 
     hardware = {
-      pulseaudio = {
-        enable = true;
-        support32Bit = mkIf (config.machine != "rpi") true;
-        package = pkgs.pulseaudioFull;
-      };
+      # pulseaudio = {
+      #   enable = true;
+      #   support32Bit = mkIf (config.machine != "rpi") true;
+      #   package = pkgs.pulseaudioFull;
+      # };
       bluetooth = {
         enable = true;
-        package = pkgs.bluezFull;
       };
       opengl.enable = true;
       opengl.driSupport32Bit = mkIf (config.machine != "rpi") true;
@@ -148,6 +145,13 @@ with lib;
 
       geoclue2.enable = true;
 
+      pipewire = {
+        enable = true;
+        alsa.enable = true;
+        pulse.enable = true;
+      };
+
+      dbus.enable = true;
       # xserver = {
       #   enable = true;
       #   desktopManager.plasma5.enable = true;
@@ -155,12 +159,13 @@ with lib;
       # };
     };
 
-    # xdg.portal = {
-    #   enable = true;
-    #   extraPortals = with pkgs; [
-    #     xdg-desktop-portal-wlr
-    #   ];
-    # };
+    xdg.portal = {
+      enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-gtk
+      ];
+      wlr.enable = true;
+    };
 
     services.gvfs.enable = mkIf (config.machine != "rpi") true;
 

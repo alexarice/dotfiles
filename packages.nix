@@ -51,7 +51,7 @@ in
     # Nix
     nixos-generators
     nixpkgs-fmt
-    nix-review
+    nixpkgs-review
     nix-info
     nix-index
     direnv
@@ -79,7 +79,7 @@ in
     libnotify
     libappindicator
     bitwarden-cli
-    xdg_utils
+    xdg-utils
 
     # Desktop environment
     (mate.caja-with-extensions.override { extensions = [ mate.caja-extensions mate.caja-dropbox ]; })
