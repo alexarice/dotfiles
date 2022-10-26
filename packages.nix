@@ -122,6 +122,8 @@ in
     discord
     zathura
     mu
+    pijul
+    ripgrep
 
     zotero
 
