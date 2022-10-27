@@ -439,11 +439,11 @@
         "nmd": "nmd"
       },
       "locked": {
-        "lastModified": 1666865307,
-        "narHash": "sha256-yKOubwKj/CZmNckT+0uD/2i1nvy+hqMtUuvsEqf3QZw=",
+        "lastModified": 1666866085,
+        "narHash": "sha256-2zJHMKOry72lPhS/yOOPea81ETMgREJ4kj/FX+T5wWk=",
         "owner": "alexarice",
         "repo": "nixmacs",
-        "rev": "3e2dfd840322a56b6ae05b180e5b958f1012ab7a",
+        "rev": "a32ac9e0c3b696c7b6caadea62ea30fdf82f089b",
         "type": "github"
       },
       "original": {
