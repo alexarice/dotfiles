@@ -205,6 +205,9 @@
               ripgrep
               xorg.setxkbmap
               docker
+              # Dictionaries
+              aspell
+              aspellDicts.en
             ];
           })
         ];

@@ -47,6 +47,10 @@
     doom-modeline.use-package.custom.doom-modeline-icon = true;
     nix-mode.use-package.demand = true;
     protobuf-mode.enable = true;
+    flyspell = {
+      enable = true;
+      use-package.custom.aspell-dictionary = ''"en_GB-ise"'';
+    };
   };
 
   appearance = {
