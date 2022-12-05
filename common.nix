@@ -20,7 +20,7 @@ with lib;
         trusted-users = [ "root" "alex" ];
 
         substituters = [
-          "https://hydra.iohk.io"
+          "https://cache.iog.io"
         ];
 
         trusted-public-keys = [
