@@ -92,6 +92,10 @@ in
         "1739:0:Synaptics_TM2668-002" = {
           natural_scroll = "enabled";
         };
+        "1133:16467:Logiteck_G900" = {
+          accel_profile = "flat";
+          pointer_accel = "-1.0";
+        };
         "*" = if config.machine == "laptop" || config.machine == "framework" then {
           xkb_layout = "gb,gb";
           xkb_variant = "dvorak,";
