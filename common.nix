@@ -55,6 +55,11 @@ with lib;
       extraPackages = [];
     };
 
+    programs.nm-applet = {
+      enable = true;
+      indicator = true;
+    };
+
     boot.loader = if config.machine == "rpi" then {
        grub.enable = false;
        generic-extlinux-compatible.enable = true;
