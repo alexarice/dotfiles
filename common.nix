@@ -95,8 +95,10 @@ with lib;
       bluetooth = {
         enable = true;
       };
-      opengl.enable = true;
-      opengl.driSupport32Bit = mkIf (config.machine != "rpi") true;
+      opengl = {
+        enable = true;
+        driSupport32Bit = mkIf (config.machine != "rpi") true;
+      };
       brillo.enable = true;
     };
 

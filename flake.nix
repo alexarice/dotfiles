@@ -8,18 +8,20 @@
     home-manager.url = "github:nix-community/home-manager";
     nixmacs.url = "github:alexarice/nixmacs";
     all-agda.url = "github:alexarice/all-agda";
-    emacs-overlay.url = "github:nix-community/emacs-overlay";#
+    emacs-overlay.url = "github:nix-community/emacs-overlay";
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
-  outputs = { self, nixpkgs, master, nixpkgs-wayland, home-manager, nixmacs, all-agda, emacs-overlay, nixos-wsl }:
+  outputs = { self, nixpkgs, master, nixpkgs-wayland, home-manager, nixmacs, all-agda, emacs-overlay, nixos-wsl, nixos-hardware }:
   let overlays = [
-    # nixpkgs-wayland.overlay
     emacs-overlay.overlay
     (self: super: removeAttrs (nixpkgs-wayland.overlay self super) [ "sway-unwrapped" "wlroots" ])
-    # (self: super: {
-    #   wldash = self.callPackage ./pkgs/wldash { };
-    # })
+    (self: super: {
+      clisp = super.clisp.override {
+        readline = self.readline6;
+      };
+    })
     all-agda.overlay."x86_64-linux"
     (self: super: {
       nixmacs = nixmacs.nixmacs {
@@ -105,6 +107,7 @@
           ./hardware/framework.nix
           ./cachix.nix
           home-manager.nixosModules.home-manager
+          nixos-hardware.nixosModules.framework
           ({ ... }: {
             nixpkgs.overlays = overlays;
             boot.initrd.luks.devices = {
