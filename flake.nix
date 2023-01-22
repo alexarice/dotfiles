@@ -17,11 +17,6 @@
   let overlays = [
     emacs-overlay.overlay
     (self: super: removeAttrs (nixpkgs-wayland.overlay self super) [ "sway-unwrapped" "wlroots" ])
-    (self: super: {
-      clisp = super.clisp.override {
-        readline = self.readline6;
-      };
-    })
     all-agda.overlay."x86_64-linux"
     (self: super: {
       nixmacs = nixmacs.nixmacs {

@@ -1,8 +1,5 @@
 { pkgs, config, ... }:
 
-let
-  cabal-bin = pkgs.callPackage (import ./pkgs/agda-2.6.2.nix) { };
-in
 {
   home.packages = with pkgs; if config.machine != "rpi" then [
 
@@ -41,6 +38,7 @@ in
     gitAndTools.git-extras
     numactl
     ocamlPackages.cpdf
+    piper
 
     # Things in sway config
     dropbox-cli

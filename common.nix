@@ -60,6 +60,8 @@ with lib;
       indicator = true;
     };
 
+    services.ratbagd.enable = mkIf (config.machine == "desktop" || config.machine == "framework") true;
+
     boot.loader = if config.machine == "rpi" then {
        grub.enable = false;
        generic-extlinux-compatible.enable = true;
@@ -142,7 +144,13 @@ with lib;
     services = {
       getty.autologinUser = "alex";
 
-      geoclue2.enable = true;
+      geoclue2 = {
+        enable = true;
+        appConfig.gammastep = {
+          isSystem = false;
+          isAllowed = true;
+        };
+      };
 
       pipewire = {
         enable = true;
