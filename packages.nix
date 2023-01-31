@@ -122,7 +122,7 @@
     mu
     pijul
     ripgrep
-
+    signal-desktop
     zotero
 
     # Games
