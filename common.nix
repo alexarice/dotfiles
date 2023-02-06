@@ -109,11 +109,13 @@ with lib;
 
 
 
+
     # System packages
     environment = {
       systemPackages = with pkgs; [
         git
         bup
+        gnome.adwaita-icon-theme
       ];
       homeBinInPath = true;
     };

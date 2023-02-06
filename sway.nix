@@ -142,6 +142,12 @@ in
           res = "3840x2160";
         };
       });
+
+      seat = {
+        "seat0" = {
+          xcursor_theme = "Dracula-cursors";
+        };
+      };
     };
   };
 }

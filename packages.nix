@@ -97,7 +97,7 @@
       ieee
       filemanip
     ]))
-    (agda-2_6_2.withPackages (p: [ p.standard-library p.agda-categories p.cubical ]))
+    (agda-2_6_3.withPackages (p: [ p.standard-library ]))
     # cabal-bin
     cabal-install
     # cabal2nix
@@ -109,7 +109,7 @@
 
     # Programs
     emacs
-    firefox-bin
+    firefox-wayland
     chromium
     thunderbird
     vlc
