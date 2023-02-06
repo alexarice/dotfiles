@@ -73,6 +73,7 @@ in
         "${modifier}+Ctrl+r" = "exec reboot";
         "${modifier}+Ctrl+k" = "exec \"shutdown -h now\"";
         "${modifier}+Ctrl+s" = "exec \"swaylock -f -c 000000 && systemctl suspend\"";
+        "${modifier}+Shift+s" = "exec grim -g \"$(slurp -d)\" - | wl-copy -t image/png";
       };
       window = {
         border = 2;
