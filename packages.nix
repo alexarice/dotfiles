@@ -97,7 +97,7 @@
       ieee
       filemanip
     ]))
-    (agda-2_6_3.withPackages (p: [ p.standard-library ]))
+    (agda-2_6_3.withPackages (p: with p; [ standard-library cubical ]))
     # cabal-bin
     cabal-install
     # cabal2nix

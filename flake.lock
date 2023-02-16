@@ -90,11 +90,11 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1675678071,
-        "narHash": "sha256-5XiEGXRySk6J8JMcv/yybcn1wzbxpIjnLMCeYxQLj4w=",
+        "lastModified": 1676544430,
+        "narHash": "sha256-T490MydE0FCX9w2ZlZdXDZUwg4EEGQ6C+bzCZfgPprU=",
         "owner": "alexarice",
         "repo": "all-agda",
-        "rev": "d16e6d384fd95f4ee68bdfa8d418d0aed6b5385f",
+        "rev": "2b23836d15b5f8f35209ecbc6de3e88d44879ea7",
         "type": "github"
       },
       "original": {
