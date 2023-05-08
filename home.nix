@@ -50,6 +50,11 @@ with lib;
         oraclejdk.accept_license = true;
       };
 
+      services.kdeconnect = {
+        enable = true;
+        indicator = true;
+      };
+
       nixpkgs.overlays = config.nixpkgs.overlays;
 
       dots = ./.;
