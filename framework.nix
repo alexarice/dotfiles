@@ -11,7 +11,7 @@
       ./cachix.nix
       inputs.home-manager.nixosModules.home-manager
       inputs.nixos-hardware.nixosModules.framework
-      ({ config, ... }: {
+      ({ ... }: {
         nixpkgs = {
           inherit (config) overlays;
         };
