@@ -118,6 +118,7 @@
     spotify
     libreoffice
     discord
+    mumble
     zathura
     mu
     pijul
