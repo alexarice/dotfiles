@@ -14,6 +14,7 @@
         nixpkgs = {
           inherit (config) overlays;
         };
+        _module.args.inputs = inputs;
         nix.registry.nixpkgs.flake = inputs.nixpkgs;
         machine = "desktop";
         networking.hostName = "Desktop_Nixos";

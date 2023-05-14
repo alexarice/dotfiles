@@ -12,6 +12,7 @@
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     flake-parts.url = "github:hercules-ci/flake-parts";
+    emacs-nix.url = "github:alexarice/emacs-nix";
   };
 
   outputs = inputs@{ flake-parts, ... }:

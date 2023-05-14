@@ -108,7 +108,6 @@
     gnumake
 
     # Programs
-    emacs
     firefox-wayland
     chromium
     thunderbird
