@@ -6,11 +6,39 @@
 
     package = pkgs.emacsUnstablePgtk;
 
-    config = {
+    config = {epkgs, ... }: {
       package = {
+        boon-dvorak = {
+          enable = false;
+          package = [ epkgs.boon ];
+          config = "(boon-mode)";
+        };
+
+        corfu = {
+          enable = true;
+          custom = {
+            corfu-auto = true;
+            corfu-quit-no-match = "'separtor";
+            corfu-auto-delay = 0;
+            corfu-auto-prefix = 2;
+          };
+          init = ''
+            (global-corfu-mode)
+          '';
+        };
+
+        cape = {
+          enable = true;
+          init = ''
+            (add-to-list 'completion-at-point-functions #'cape-dabbrev)
+            (add-to-list 'completion-at-point-functions #'cape-file)
+          '';
+        };
+
         meow = {
           enable = true;
           demand = true;
+          package = [ (epkgs.meow.overrideAttrs (oldAttrs: { src = /home/alex/meow; })) ];
           config = ''
             (setq meow-cheatsheet-layout meow-cheatsheet-layout-dvorak)
             (meow-define-keys 'insert '("<menu>" . meow-insert-exit))
@@ -26,13 +54,12 @@
               '("9" . meow-digit-argument)
               '("0" . meow-digit-argument)
               '("/" . meow-keypad-describe-key)
-              '("?" . meow-cheatsheet)
-              '("SPC" . meow-M-x))
+              '("?" . meow-cheatsheet))
             (meow-motion-overwrite-define-key
               ;; custom keybinding for motion state
               '("<escape>" . ignore))
             (meow-normal-define-key
-            '("0" . meow-expand-0)
+              '("0" . meow-expand-0)
               '("9" . meow-expand-9)
               '("8" . meow-expand-8)
               '("7" . meow-expand-7)
@@ -92,7 +119,7 @@
               '("X" . meow-sync-grab)
               '("y" . meow-yank)
               '("z" . meow-pop-selection)
-              '("'" . repeat)
+              '("'" . meow-M-x)
               '("<escape>" . ignore)
               '("<menu>" . ignore))
             (meow-global-mode 1)
