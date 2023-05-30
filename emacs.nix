@@ -6,7 +6,7 @@
 
     package = pkgs.emacsUnstablePgtk;
 
-    config = {epkgs, ... }: {
+    config = {config, epkgs, ... }: {
       package = {
         boon-dvorak = {
           enable = false;
@@ -36,7 +36,7 @@
         };
 
         meow = {
-          enable = true;
+          enable = false;
           demand = true;
           # package = [ (epkgs.meow.overrideAttrs (oldAttrs: { src = /home/alex/meow; })) ];
           # config = ''
@@ -135,9 +135,8 @@
                xah-fly-command-map
                '(("#" . xah-comment-dwim)
                  (";" . self-insert-command)
-                 ("a" . meow-M-x)
-                 ("b" . consult-line)
-                 ("SPC" . meow-keypad)))
+                 ("a" . execute-extended-command)
+                 ("b" . consult-line)))
             (xah-fly-keys 1)
           '';
           bind = {
@@ -147,7 +146,7 @@
           };
         };
 
-        direnv.enable = tr
+        direnv.enable = true;
 
         doom-themes = {
           enable = true;
@@ -183,6 +182,15 @@
         vertico = {
           enable = true;
           init = "(vertico-mode)";
+        };
+
+        vertico-directory = {
+          enable = config.package.vertico.enable;
+          package = [];
+          bind.vertico-map = {
+            "RET" = "vertico-directory-enter";
+            "DEL" = "vertico-directory-delete-word";
+          };
         };
 
         orderless = {
