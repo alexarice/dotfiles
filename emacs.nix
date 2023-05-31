@@ -187,10 +187,10 @@
         vertico-directory = {
           enable = config.package.vertico.enable;
           package = [];
-          bind.vertico-map = {
-            "RET" = "vertico-directory-enter";
-            "DEL" = "vertico-directory-delete-word";
-          };
+          # bind.vertico-map = {
+          #   "RET" = "vertico-directory-enter";
+          #   "DEL" = "vertico-directory-delete-word";
+          # };
         };
 
         orderless = {

@@ -11,7 +11,6 @@
     binutils
     manix
     zoom-us
-    swiProlog
     rmapi
 
     # CLI Programs
