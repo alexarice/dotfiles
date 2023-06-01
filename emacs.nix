@@ -8,12 +8,6 @@
 
     config = {config, epkgs, ... }: {
       package = {
-        boon-dvorak = {
-          enable = false;
-          package = [ epkgs.boon ];
-          config = "(boon-mode)";
-        };
-
         corfu = {
           enable = true;
           custom = {
@@ -35,114 +29,31 @@
           '';
         };
 
-        meow = {
-          enable = false;
-          demand = true;
-          # package = [ (epkgs.meow.overrideAttrs (oldAttrs: { src = /home/alex/meow; })) ];
-          # config = ''
-          #   (setq meow-cheatsheet-layout meow-cheatsheet-layout-dvorak)
-          #   (meow-define-keys 'insert '("<menu>" . meow-insert-exit))
-          #   (meow-leader-define-key
-          #     '("1" . meow-digit-argument)
-          #     '("2" . meow-digit-argument)
-          #     '("3" . meow-digit-argument)
-          #     '("4" . meow-digit-argument)
-          #     '("5" . meow-digit-argument)
-          #     '("6" . meow-digit-argument)
-          #     '("7" . meow-digit-argument)
-          #     '("8" . meow-digit-argument)
-          #     '("9" . meow-digit-argument)
-          #     '("0" . meow-digit-argument)
-          #     '("/" . meow-keypad-describe-key)
-          #     '("?" . meow-cheatsheet))
-          #   (meow-motion-overwrite-define-key
-          #     ;; custom keybinding for motion state
-          #     '("<escape>" . ignore))
-          #   (meow-normal-define-key
-          #     '("0" . meow-expand-0)
-          #     '("9" . meow-expand-9)
-          #     '("8" . meow-expand-8)
-          #     '("7" . meow-expand-7)
-          #     '("6" . meow-expand-6)
-          #     '("5" . meow-expand-5)
-          #     '("4" . meow-expand-4)
-          #     '("3" . meow-expand-3)
-          #     '("2" . meow-expand-2)
-          #     '("1" . meow-expand-1)
-          #     '("-" . negative-argument)
-          #     '(";" . meow-reverse)
-          #     '("," . meow-inner-of-thing)
-          #     '("." . meow-bounds-of-thing)
-          #     '("<" . meow-beginning-of-thing)
-          #     '(">" . meow-end-of-thing)
-          #     '("a" . meow-append)
-          #     '("A" . meow-open-below)
-          #     '("b" . meow-back-word)
-          #     '("B" . meow-back-symbol)
-          #     '("c" . meow-prev)
-          #     '("C" . meow-prev-expand)
-          #     '("d" . meow-delete)
-          #     '("D" . meow-backward-delete)
-          #     '("e" . meow-line)
-          #     '("E" . meow-goto-line)
-          #     '("f" . meow-find)
-          #     '("g" . meow-cancel-selection)
-          #     '("G" . meow-grab)
-          #     '("h" . meow-left)
-          #     '("H" . meow-left-expand)
-          #     '("i" . meow-insert)
-          #     '("I" . meow-open-above)
-          #     '("j" . meow-join)
-          #     '("k" . meow-kill)
-          #     '("l" . meow-till)
-          #     '("m" . meow-mark-word)
-          #     '("M" . meow-mark-symbol)
-          #     '("n" . meow-right)
-          #     '("N" . meow-right-expand)
-          #     '("o" . meow-block)
-          #     '("O" . meow-to-block)
-          #     '("p" . meow-change)
-          #     '("P" . embark-act)
-          #     '("q" . meow-quit)
-          #     '("Q" . meow-goto-line)
-          #     '("r" . meow-replace)
-          #     '("R" . meow-swap-grab)
-          #     '("s" . consult-line)
-          #     '("t" . meow-next)
-          #     '("T" . meow-next-expand)
-          #     '("u" . meow-undo)
-          #     '("U" . meow-undo-in-selection)
-          #     '("v" . meow-visit)
-          #     '("w" . meow-next-word)
-          #     '("W" . meow-next-symbol)
-          #     '("x" . meow-save)
-          #     '("X" . meow-sync-grab)
-          #     '("y" . meow-yank)
-          #     '("z" . meow-pop-selection)
-          #     '("'" . meow-M-x)
-          #     '("<escape>" . ignore)
-          #     '("<menu>" . ignore))
-          #   (meow-global-mode 1)
-          # '';
-        };
-
         xah-fly-keys = {
           enable = true;
           diminish = "xah-fly-keys";
           config = ''
             (xah-fly-keys-set-layout "dvorak")
-            (xah-fly--define-keys
-               xah-fly-command-map
-               '(("#" . xah-comment-dwim)
-                 (";" . self-insert-command)
-                 ("a" . execute-extended-command)
-                 ("b" . consult-line)))
             (xah-fly-keys 1)
           '';
           bind = {
             "<end>" = "xah-fly-command-mode-activate";
             "<menu>" = "xah-fly-command-mode-activate";
             "<VoidSymbol>" = "xah-fly-command-mode-activate";
+            "xah-fly-leader-key-map" = {
+              "u" = "consult-buffer";
+              "h" = "eglot-code-actions";
+            };
+            "xah-fly-command-map" = {
+              "#" = "xah-comment-dwim";
+              ";" = "self-insert-command";
+              "a" = "execute-extended-command";
+              "m" = "xref-find-definitions";
+              "v" = "xref-go-back";
+              "-" = "universal-argument";
+              "b" = "consult-line";
+              "'" = "eglot-format";
+            };
           };
         };
 
@@ -151,6 +62,22 @@
         doom-themes = {
           enable = true;
           config = "(load-theme 'doom-dracula t)";
+        };
+
+        doom-modeline = {
+          enable = true;
+          custom = {
+            doom-modeline-icon = true;
+            doom-themes-enable-bold = true;
+          };
+          config = ''
+            (doom-modeline-mode 1)
+          '';
+        };
+
+        nerd-icons = {
+          enable = true;
+          custom.nerd-icons-font-family = "Fira Code Nerd Font Mono";
         };
 
         nix-mode = {
@@ -187,10 +114,10 @@
         vertico-directory = {
           enable = config.package.vertico.enable;
           package = [];
-          # bind.vertico-map = {
-          #   "RET" = "vertico-directory-enter";
-          #   "DEL" = "vertico-directory-delete-word";
-          # };
+          bind.vertico-map = {
+            "RET" = "vertico-directory-enter";
+            "DEL" = "vertico-directory-delete-word";
+          };
         };
 
         orderless = {
@@ -208,9 +135,6 @@
 
         consult = {
           enable = true;
-          bind = {
-            "C-c b" = "consult-buffer";
-          };
         };
 
         embark = {
@@ -249,6 +173,7 @@
           enable = true;
           external-packages = [ pkgs.rust-analyzer ];
           hook = "(rustic-mode . eglot-ensure)";
+          custom.rustic-lsp-setup-p = false;
         };
 
         yasnippet.enable = true;
@@ -295,6 +220,9 @@
           (let ((inhibit-message t))
           (recentf-save-list)))
         (run-at-time nil (* 2 60) 'save-recentf-no-output)
+
+        (add-to-list 'default-frame-alist
+             '(font . "Fira Code Nerd Font Mono"))
       '';
 
       postSetup = ''
@@ -304,6 +232,8 @@
           (abort-recursive-edit)))
 
         (add-hook 'mouse-leave-buffer-hook 'stop-using-minibuffer)
+
+        (define-key key-translation-map (kbd "<escape>") (kbd "C-g"))
       '';
     };
   };

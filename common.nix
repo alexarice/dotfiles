@@ -138,6 +138,7 @@ with lib;
         symbola
         dejavu_fonts
         emacs-all-the-icons-fonts
+        (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
       ] ++ optional (config.machine != "rpi") noto-fonts;
       enableDefaultFonts = mkIf (config.machine == "rpi") false;
 
@@ -146,7 +147,7 @@ with lib;
         antialias = true;
         cache32Bit = true;
         defaultFonts = {
-          monospace = [ "Source Code Pro" "DejaVu Sans Mono" ];
+          monospace = [ "Fira Code Nerd Font Mono" "DejaVu Sans Mono" ];
           sansSerif = [  "DejaVu Sans" ];
           serif = [  "DejaVu Serif" ];
         };
