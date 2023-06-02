@@ -220,9 +220,6 @@
           (let ((inhibit-message t))
           (recentf-save-list)))
         (run-at-time nil (* 2 60) 'save-recentf-no-output)
-
-        (add-to-list 'default-frame-alist
-             '(font . "Fira Code Nerd Font Mono"))
       '';
 
       postSetup = ''
@@ -234,6 +231,11 @@
         (add-hook 'mouse-leave-buffer-hook 'stop-using-minibuffer)
 
         (define-key key-translation-map (kbd "<escape>") (kbd "C-g"))
+        (setq default-font "Fira Code Nerd Font Mono")
+        (setq default-font-size 12)
+        (setq current-font-size default-font-size)
+
+        (setq font-change-increment 1.1)
       '';
     };
   };
