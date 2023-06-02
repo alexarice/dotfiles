@@ -6,19 +6,19 @@
     settings = {
       font = {
         normal = {
-          family = "Source Code Pro for Powerline";
+          family = "Fira Code Nerd Font Mono";
           style = "Regular";
         };
         bold = {
-          family = "Source Code Pro for Powerline";
+          family = "Fira Code Nerd Font Mono";
           style = "Bold";
         };
         italic = {
-          family = "Source Code Pro for Powerline";
+          family = "Fira Code Nerd Font Mono";
           style = "Italic";
         };
         bold-italic = {
-          family = "Source Code Pro for Powerline";
+          family = "Fira Code Nerd Font Mono";
           style = "Bold Italic";
         };
         size = 10;

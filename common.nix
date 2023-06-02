@@ -133,12 +133,12 @@ with lib;
     # Load fonts
     fonts = {
       fonts = with pkgs; [
+        (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
         source-code-pro
         powerline-fonts
         symbola
         dejavu_fonts
         emacs-all-the-icons-fonts
-        (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
       ] ++ optional (config.machine != "rpi") noto-fonts;
       enableDefaultFonts = mkIf (config.machine == "rpi") false;
 
@@ -147,7 +147,7 @@ with lib;
         antialias = true;
         cache32Bit = true;
         defaultFonts = {
-          monospace = [ "Fira Code Nerd Font Mono" "DejaVu Sans Mono" ];
+          monospace = [ "FiraCode Nerd Font Mono" "DejaVu Sans Mono" ];
           sansSerif = [  "DejaVu Sans" ];
           serif = [  "DejaVu Serif" ];
         };

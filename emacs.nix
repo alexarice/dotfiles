@@ -77,7 +77,7 @@
 
         nerd-icons = {
           enable = true;
-          custom.nerd-icons-font-family = "Fira Code Nerd Font Mono";
+          custom.nerd-icons-font-family = "FiraCode Nerd Font Mono";
         };
 
         nix-mode = {
@@ -231,11 +231,6 @@
         (add-hook 'mouse-leave-buffer-hook 'stop-using-minibuffer)
 
         (define-key key-translation-map (kbd "<escape>") (kbd "C-g"))
-        (setq default-font "Fira Code Nerd Font Mono")
-        (setq default-font-size 12)
-        (setq current-font-size default-font-size)
-
-        (setq font-change-increment 1.1)
       '';
     };
   };

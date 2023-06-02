@@ -41,7 +41,7 @@ in
         };
       };
       fonts = {
-        names = [ "Source Code Pro 9" ];
+        names = [ "FiraCode Nerd Font Mono 10" ];
       };
       gaps = {
         inner = 10;

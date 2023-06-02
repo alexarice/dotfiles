@@ -3,7 +3,7 @@
 {
   gtk = {
     enable = true;
-    font.name = "Source Code Pro 10";
+    font.name = "FiraCode Nerd Font Mono 10";
     iconTheme = {
       package = pkgs.dracula-theme;
       name = "Dracula-cursors";
