@@ -1,5 +1,8 @@
-{ stdenv, fetchFromGitHub, ocamlPackages }:
-
+{
+  stdenv,
+  fetchFromGitHub,
+  ocamlPackages,
+}:
 ocamlPackages.buildDunePackage {
   pname = "catt";
   version = "master";

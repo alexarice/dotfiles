@@ -1,8 +1,10 @@
-{ config, pkgs, lib, ... }:
-
-with lib;
-
 {
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+with lib; {
   options = {
     machine = mkOption {
       type = types.enum [
@@ -17,7 +19,7 @@ with lib;
   config = {
     nix = {
       settings = {
-        trusted-users = [ "root" "alex" ];
+        trusted-users = ["root" "alex"];
 
         auto-optimise-store = true;
       };
@@ -33,14 +35,11 @@ with lib;
       allowUnfree = true;
     };
 
-    services.xserver.videoDrivers = mkIf (config.machine == "desktop") [ "amdgpu" ];
-
     services.fwupd.enable = true;
+
     boot.tmp.useTmpfs = true;
 
-    environment.variables.VK_ICD_FILENAMES = mkIf (config.machine == "desktop") "${pkgs.amdvlk}/share/vulkan/icd.d/amd_icd64.json";
-
-    boot.supportedFilesystems = [ "ntfs" ];
+    boot.supportedFilesystems = ["ntfs"];
 
     security.sudo.enable = true;
     security.sudo.extraConfig = "Defaults pwfeedback";
@@ -60,27 +59,33 @@ with lib;
       indicator = true;
     };
 
-    services.ratbagd.enable = mkIf (config.machine == "desktop" || config.machine == "framework") true;
-
-    boot.loader = if config.machine == "rpi" then {
-       grub.enable = false;
-       generic-extlinux-compatible.enable = true;
-    } else {
-      # Use the systemd-boot EFI boot loader.
-      systemd-boot.enable = true;
-      systemd-boot.consoleMode = "max";
-      efi.canTouchEfiVariables = true;
-    };
-    # boot.kernelPackages = pkgs.linuxPackages_latest;
+    boot.loader =
+      if config.machine == "rpi"
+      then {
+        grub.enable = false;
+        generic-extlinux-compatible.enable = true;
+      }
+      else {
+        # Use the systemd-boot EFI boot loader.
+        systemd-boot.enable = true;
+        systemd-boot.consoleMode = "max";
+        efi.canTouchEfiVariables = true;
+      };
 
     networking.firewall = {
-        enable = true;
-        allowedTCPPortRanges = [
-            { from = 1714; to = 1764; } # KDE Connect
-        ];
-        allowedUDPPortRanges = [
-            { from = 1714; to = 1764; } # KDE Connect
-        ];
+      enable = true;
+      allowedTCPPortRanges = [
+        {
+          from = 1714;
+          to = 1764;
+        } # KDE Connect
+      ];
+      allowedUDPPortRanges = [
+        {
+          from = 1714;
+          to = 1764;
+        } # KDE Connect
+      ];
     };
 
     networking.networkmanager = {
@@ -105,9 +110,6 @@ with lib;
     # Set your time zone.
     time.timeZone = "Europe/London";
 
-
-
-
     # System packages
     environment = {
       systemPackages = with pkgs; [
@@ -120,11 +122,13 @@ with lib;
 
     # Load fonts
     fonts = {
-      fonts = with pkgs; [
-        (pkgs.nerdfonts.override { fonts = [ "SourceCodePro" ]; })
-        symbola
-        dejavu_fonts
-      ] ++ optional (config.machine != "rpi") noto-fonts;
+      fonts = with pkgs;
+        [
+          (pkgs.nerdfonts.override {fonts = ["SourceCodePro"];})
+          symbola
+          dejavu_fonts
+        ]
+        ++ optional (config.machine != "rpi") noto-fonts;
       enableDefaultFonts = mkIf (config.machine == "rpi") false;
 
       fontconfig = {
@@ -132,9 +136,9 @@ with lib;
         antialias = true;
         cache32Bit = true;
         defaultFonts = {
-          monospace = [ "SauceCodePro Nerd Font Mono" ];
-          sansSerif = [  "DejaVu Sans" ];
-          serif = [  "DejaVu Serif" ];
+          monospace = ["SauceCodePro Nerd Font Mono"];
+          sansSerif = ["DejaVu Sans"];
+          serif = ["DejaVu Serif"];
         };
       };
     };
@@ -167,9 +171,9 @@ with lib;
       wlr.enable = true;
     };
 
-    services.gvfs.enable = mkIf (config.machine != "rpi") true;
+    # services.gvfs.enable = mkIf (config.machine != "rpi") true;
 
-    programs.dconf.enable = mkIf (config.machine != "rpi") true;
+    # programs.dconf.enable = mkIf (config.machine != "rpi") true;
     programs.adb.enable = mkIf (config.machine != "rpi") true;
 
     # Enable sound.

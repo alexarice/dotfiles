@@ -1,9 +1,11 @@
-{ config, lib, pkgs, ... }:
-
-let
-  inherit (config) dots scripts modifier;
-in
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
+  inherit (config) dots scripts modifier;
+in {
   wayland.windowManager.sway = {
     enable = true;
     package = null;
@@ -41,7 +43,7 @@ in
         };
       };
       fonts = {
-        names = [ "SauceCodePro Nerd Font Mono 10" ];
+        names = ["SauceCodePro Nerd Font Mono 10"];
       };
       gaps = {
         inner = 10;
@@ -81,7 +83,10 @@ in
       };
 
       startup = [
-        { command = "dropbox start"; always = true; }
+        {
+          command = "dropbox start";
+          always = true;
+        }
       ];
       input = {
         "2:7:SynPS/2_Synaptics_TouchPad" = {
@@ -97,52 +102,63 @@ in
           accel_profile = "flat";
           pointer_accel = "-1.0";
         };
-        "*" = if config.machine == "laptop" || config.machine == "framework" then {
-          xkb_layout = "gb,gb";
-          xkb_variant = "dvorak,";
-          xkb_options = "grp:alt_space_toggle,caps:menu";
-        } else {
-          xkb_layout = "gb";
-          xkb_options = "caps:menu";
-        };
+        "*" =
+          if config.machine == "laptop" || config.machine == "framework"
+          then {
+            xkb_layout = "gb,gb";
+            xkb_variant = "dvorak,";
+            xkb_options = "grp:alt_space_toggle,caps:menu";
+          }
+          else {
+            xkb_layout = "gb";
+            xkb_options = "caps:menu";
+          };
       };
-      output = {
-        "*" = {
-          bg = "\"${dots + "/background-image.png"}\" fill";
-        };
-      } // (if config.machine == "laptop" then {
-        "DP-1" = {
-          pos = "0,0";
-          res = "3840x2160";
-        };
-        "eDP-1" = {
-          pos = "1120,2160";
-          res = "1600x900";
-        };
-      } else if config.machine == "desktop" then {
-        "DP-1" = {
-          pos = "0,0";
-          res = "1920x1080";
-        };
-        "HDMI-A-1" = {
-          pos = "1920,0";
-          res = "1920x1080";
-        };
-      } else {
-        "eDP-1" = {
-          pos = "792,2160";
-          res = "2256x1504";
-          scale = "1";
-        };
-        "DP-4" = {
-          pos = "0,0";
-          res = "3840x2160";
-        };
-        "DP-1" = {
-          pos = "0,0";
-          res = "3840x2160";
-        };
-      });
+      output =
+        {
+          "*" = {
+            bg = "\"${dots + "/background-image.png"}\" fill";
+          };
+        }
+        // (
+          if config.machine == "laptop"
+          then {
+            "DP-1" = {
+              pos = "0,0";
+              res = "3840x2160";
+            };
+            "eDP-1" = {
+              pos = "1120,2160";
+              res = "1600x900";
+            };
+          }
+          else if config.machine == "desktop"
+          then {
+            "DP-1" = {
+              pos = "0,0";
+              res = "1920x1080";
+            };
+            "HDMI-A-1" = {
+              pos = "1920,0";
+              res = "1920x1080";
+            };
+          }
+          else {
+            "eDP-1" = {
+              pos = "792,2160";
+              res = "2256x1504";
+              scale = "1";
+            };
+            "DP-4" = {
+              pos = "0,0";
+              res = "3840x2160";
+            };
+            "DP-1" = {
+              pos = "0,0";
+              res = "3840x2160";
+            };
+          }
+        );
 
       seat = {
         "seat0" = {

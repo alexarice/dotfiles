@@ -1,9 +1,11 @@
-{ config, lib, pkgs, ... }:
-
-let
-  inherit (config) dots scripts modifier;
-in
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
+  inherit (config) dots scripts modifier;
+in {
   wayland.windowManager.i3 = {
     enable = true;
     package = null;
@@ -40,7 +42,7 @@ in
           childBorder = "#FF0000";
         };
       };
-      fonts = [ "Source Code Pro 9" ];
+      fonts = ["Source Code Pro 9"];
       gaps = {
         inner = 10;
         outer = -10;
@@ -78,7 +80,10 @@ in
       };
 
       startup = [
-        { command = "dropbox start"; always = true; }
+        {
+          command = "dropbox start";
+          always = true;
+        }
       ];
     };
   };

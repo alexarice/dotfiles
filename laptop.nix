@@ -1,6 +1,9 @@
-{ config, lib, inputs, ... }:
-
 {
+  config,
+  lib,
+  inputs,
+  ...
+}: {
   flake.nixosConfigurations.laptop = inputs.nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
     modules = [
@@ -10,7 +13,7 @@
       ./hardware/laptop.nix
       ./cachix.nix
       inputs.home-manager.nixosModules.home-manager
-      ({ config, ... }: {
+      ({config, ...}: {
         nixpkgs = {
           inherit (config) overlays;
         };

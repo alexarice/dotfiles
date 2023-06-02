@@ -1,14 +1,18 @@
-{ config, pkgs, lib, setEnvironment, ... }:
-
 {
+  config,
+  pkgs,
+  lib,
+  setEnvironment,
+  ...
+}: {
   systemd.user.services = {
     waybar = {
       Unit = {
         Description = pkgs.waybar.meta.description;
-        PartOf = [ "graphical-session.target" ];
+        PartOf = ["graphical-session.target"];
       };
       Install = {
-        WantedBy = [ "sway-session.target" ];
+        WantedBy = ["sway-session.target"];
       };
       Service = {
         ExecStart = "${pkgs.waybar}/bin/waybar";
@@ -19,10 +23,10 @@
     mako = {
       Unit = {
         Description = pkgs.mako.meta.description;
-        PartOf = [ "graphical-session.target" ];
+        PartOf = ["graphical-session.target"];
       };
       Install = {
-        WantedBy = [ "sway-session.target" ];
+        WantedBy = ["sway-session.target"];
       };
       Service = {
         ExecStart = "${pkgs.mako}/bin/mako --default-timeout 10000";
@@ -33,10 +37,10 @@
     udiskie = {
       Unit = {
         Description = pkgs.udiskie.meta.description;
-        PartOf = [ "graphical-session.target" ];
+        PartOf = ["graphical-session.target"];
       };
       Install = {
-        WantedBy = [ "sway-session.target" ];
+        WantedBy = ["sway-session.target"];
       };
       Service = {
         ExecStart = "${pkgs.udiskie}/bin/udiskie";
@@ -49,7 +53,7 @@
         Description = "Emacs text editor";
       };
       Install = {
-        WantedBy = [ "default.target" ];
+        WantedBy = ["default.target"];
       };
       Service = {
         Type = "forking";

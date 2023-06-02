@@ -1,7 +1,11 @@
-{ self, config, lib, inputs, ... }:
-
 {
-  flake.nixosModules.wsl = { pkgs, ... }: let
+  self,
+  config,
+  lib,
+  inputs,
+  ...
+}: {
+  flake.nixosModules.wsl = {pkgs, ...}: let
     stateVersion = "22.11";
   in {
     imports = [
@@ -12,7 +16,7 @@
 
     system.stateVersion = stateVersion;
     _module.args.inputs = inputs;
-    home-manager.users.nixos = { lib, ... }: {
+    home-manager.users.nixos = {lib, ...}: {
       imports = [
         ./git.nix
         ./fish.nix
@@ -56,9 +60,9 @@
         antialias = true;
         cache32Bit = true;
         defaultFonts = {
-          monospace = [ "Source Code Pro" "DejaVu Sans Mono" ];
-          sansSerif = [  "DejaVu Sans" ];
-          serif = [  "DejaVu Serif" ];
+          monospace = ["Source Code Pro" "DejaVu Sans Mono"];
+          sansSerif = ["DejaVu Sans"];
+          serif = ["DejaVu Serif"];
         };
       };
     };
@@ -72,7 +76,7 @@
     environment.systemPackages = with pkgs; [
       git
       (inputs.nixmacs.fromConf ./wsl-nixmacs.nix)
-	    emacs
+      emacs
       ripgrep
       xorg.setxkbmap
       docker

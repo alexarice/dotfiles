@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   programs.fish = {
     enable = true;
     shellAliases = {
@@ -19,5 +17,5 @@
     BROWSER = "firefox";
   };
 
-  xdg.configFile."fish/functions".source = pkgs.callPackage ./fish_prompt.nix { };
+  xdg.configFile."fish/functions".source = pkgs.callPackage ./fish_prompt.nix {};
 }

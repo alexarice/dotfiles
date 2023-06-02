@@ -1,6 +1,9 @@
-{ config, lib, inputs, ... }:
-
 {
+  config,
+  lib,
+  inputs,
+  ...
+}: {
   flake.nixosConfigurations.framework = inputs.nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
     modules = [
@@ -11,7 +14,7 @@
       ./cachix.nix
       inputs.home-manager.nixosModules.home-manager
       inputs.nixos-hardware.nixosModules.framework
-      ({ ... }: {
+      ({...}: {
         nixpkgs = {
           inherit (config) overlays;
         };
@@ -39,6 +42,8 @@
           logind.lidSwitch = "ignore";
         };
         system.configurationRevision = lib.mkIf (inputs.self ? rev) inputs.self.rev;
+
+        services.ratbagd.enable = true;
       })
     ];
   };

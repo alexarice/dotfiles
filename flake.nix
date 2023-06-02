@@ -13,17 +13,18 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     flake-parts.url = "github:hercules-ci/flake-parts";
     emacs-nix.url = "github:alexarice/emacs-nix";
+    nil.url = "github:oxalica/nil";
   };
 
-  outputs = inputs@{ flake-parts, ... }:
-  flake-parts.lib.mkFlake { inherit inputs; } {
-    imports = [
-      ./desktop.nix
-      ./laptop.nix
-      ./wsl.nix
-      ./framework.nix
-      ./overlays.nix # Should probably move to per system
-    ];
-    systems = [ "x86_64-linux" ];
-  };
+  outputs = inputs @ {flake-parts, ...}:
+    flake-parts.lib.mkFlake {inherit inputs;} {
+      imports = [
+        ./desktop.nix
+        ./laptop.nix
+        ./wsl.nix
+        ./framework.nix
+        ./overlays.nix # Should probably move to per system
+      ];
+      systems = ["x86_64-linux"];
+    };
 }

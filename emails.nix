@@ -1,6 +1,4 @@
-{ config, ... }:
-
-{
+{config, ...}: {
   accounts.email.accounts = {
     hotmail = rec {
       primary = true;

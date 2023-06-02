@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   gtk = {
     enable = true;
     font.name = "SauceCodePro Nerd Font Mono 10";

@@ -1,15 +1,18 @@
-{ config, lib, pkgs, inputs, ... }:
-
-with lib;
-
-
 {
-
-
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
+with lib; {
   home-manager = {
     extraSpecialArgs.inputs = inputs;
-    users.alex = {pkgs, lib, ...}:
-    {
+    users.alex = {
+      pkgs,
+      lib,
+      ...
+    }: {
       imports = [
         inputs.emacs-nix.nixosModules.emacs-nix
         ./emacs.nix

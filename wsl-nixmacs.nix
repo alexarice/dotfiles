@@ -1,5 +1,10 @@
-{ config, lib, epkgs, pkgs, ... }:
 {
+  config,
+  lib,
+  epkgs,
+  pkgs,
+  ...
+}: {
   layers = {
     ivy.enable = true;
     completion.enable = true;
@@ -67,7 +72,7 @@
     };
     fonts = {
       unicode-font = "DejaVu Sans";
-#      font = "Source Code Pro 10";
+      #      font = "Source Code Pro 10";
     };
   };
 }

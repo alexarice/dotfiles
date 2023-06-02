@@ -1,10 +1,13 @@
-{ config, lib, epkgs, pkgs, ... }:
-
-let
-  catt-mode = epkgs.callPackage ./pkgs/catt/catt-mode.nix { };
-  org-agda-export = epkgs.callPackage ./pkgs/org/ox-agda-html.nix { };
-in
 {
+  config,
+  lib,
+  epkgs,
+  pkgs,
+  ...
+}: let
+  catt-mode = epkgs.callPackage ./pkgs/catt/catt-mode.nix {};
+  org-agda-export = epkgs.callPackage ./pkgs/org/ox-agda-html.nix {};
+in {
   layers = {
     agda.enable = true;
     ivy.enable = true;
@@ -125,7 +128,7 @@ in
     };
     fonts = {
       unicode-font = "DejaVu Sans";
-#      font = "Source Code Pro 10";
+      #      font = "Source Code Pro 10";
     };
   };
 }

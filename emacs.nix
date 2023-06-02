@@ -1,12 +1,18 @@
-{ pkgs, ... }:
-
 {
+  pkgs,
+  inputs,
+  ...
+}: {
   programs.emacs = {
     enable = true;
 
     package = pkgs.emacsUnstablePgtk;
 
-    config = {config, epkgs, ... }: {
+    config = {
+      config,
+      epkgs,
+      ...
+    }: {
       package = {
         corfu = {
           enable = true;
@@ -82,7 +88,7 @@
 
         nix-mode = {
           enable = true;
-          external-packages = [ pkgs.nil ];
+          external-packages = [inputs.nil.packages.x86_64-linux.nil];
           hook = "(nix-mode . eglot-ensure)";
           custom.nix-indent-function = "'nix-indent-line";
         };
@@ -171,7 +177,7 @@
 
         rustic = {
           enable = true;
-          external-packages = [ pkgs.rust-analyzer ];
+          external-packages = [pkgs.rust-analyzer];
           hook = "(rustic-mode . eglot-ensure)";
           custom.rustic-lsp-setup-p = false;
         };
