@@ -6,7 +6,7 @@
   programs.emacs = {
     enable = true;
 
-    package = pkgs.emacsUnstablePgtk;
+    package = pkgs.emacs-unstable-pgtk;
 
     config = {
       config,
@@ -37,7 +37,14 @@
 
         xah-fly-keys = {
           enable = true;
-          diminish = "xah-fly-keys";
+          init = ''
+            (defun my/server-fix-up()
+            (xah-fly-keys-set-layout "dvorak")
+            (xah-fly-keys 1))
+
+            (if (daemonp)
+              (add-hook 'server-after-make-frame-hook 'my/server-fix-up))
+          '';
           config = ''
             (xah-fly-keys-set-layout "dvorak")
             (xah-fly-keys 1)
@@ -59,6 +66,7 @@
               "-" = "universal-argument";
               "b" = "consult-line";
               "'" = "eglot-format";
+              "l" = "my-agda-map";
             };
           };
         };
@@ -97,19 +105,16 @@
           enable = true;
           package = [];
           init = "(savehist-mode)";
-          diminish = "savehist-mode";
         };
 
         rainbow-mode = {
           enable = true;
           hook = "prog-mode";
-          diminish = "rainbow-mode";
         };
 
         rainbow-delimiters = {
           enable = true;
           hook = "(prog-mode . rainbow-delimiters-mode)";
-          diminish = "rainbow-delimiters-mode";
         };
 
         vertico = {
@@ -151,7 +156,6 @@
         amx = {
           enable = true;
           init = "(amx-mode)";
-          diminish = "amx-mode";
         };
 
         magit.enable = true;
@@ -162,7 +166,6 @@
           enable = true;
           hook = "(prog-mode . git-gutter-mode)";
           custom."git-gutter:update-interval" = 0.5;
-          diminish = "git-gutter-mode";
         };
 
         git-gutter-fringe = {
@@ -181,7 +184,40 @@
           custom.rustic-lsp-setup-p = false;
         };
 
+        agda2-mode = {
+          enable = true;
+          mode = ''"\\.l?agda\\'"'';
+          bind.my-agda-map = {
+            "l" = "agda2-load";
+          };
+        };
+
         yasnippet.enable = true;
+      };
+
+      hydra.hydra-agda = {
+        hint = "nil";
+        docText = ''
+
+          _l_: Load         _f_: Next goal      _r_: Refine  _g_: Give       _s_: Solve
+          _,_: Get context  _b_: Previous goal  _a_: Auto    _c_: Case split
+        '';
+        bindings = {
+          "l" = "agda2-load";
+          "f" = "agda2-next-goal";
+          "b" = "agda2-previous-goal";
+          "r" = "agda2-refine";
+          "g" = "agda2-give";
+          "c" = "agda2-make-case";
+          "," = "agda2-goal-and-context";
+          "a" = "agda2-auto-maybe-all";
+          "s" = "agda2-solve-maybe-all";
+          "q" = {
+            command = "nil";
+            name = "cancel";
+            colour = "blue";
+          };
+        };
       };
 
       global-variables = {
@@ -225,6 +261,21 @@
           (let ((inhibit-message t))
           (recentf-save-list)))
         (run-at-time nil (* 2 60) 'save-recentf-no-output)
+
+        (defun reasoning-block (n)
+          (interactive "nLines: ")
+          (let ((indent (current-indentation)))
+               (progn (defun go (n)
+             (if (> n 0) (progn
+                    (insert (make-string (+ 2 indent) ?\s))
+                    (insert "?\n")
+                    (insert (make-string (+ 4 indent) ?\s))
+                    (insert "≈⟨ ? ⟩\n")
+                    (go (- n 1)))))
+                (insert "begin\n")
+                (go n)
+                (insert (make-string (+ 2 indent) ?\s))
+                (insert "? ∎"))))
       '';
 
       postSetup = ''
