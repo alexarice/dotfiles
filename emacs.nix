@@ -122,7 +122,6 @@
           package = [];
           bind.vertico-map = {
             "RET" = "vertico-directory-enter";
-            "DEL" = "vertico-directory-delete-word";
           };
         };
 
