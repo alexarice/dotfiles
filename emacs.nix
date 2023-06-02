@@ -77,7 +77,7 @@
 
         nerd-icons = {
           enable = true;
-          custom.nerd-icons-font-family = "FiraCode Nerd Font Mono";
+          custom.nerd-icons-font-family = "SauceCodePro Nerd Font Mono";
         };
 
         nix-mode = {

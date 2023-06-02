@@ -6,19 +6,19 @@
     settings = {
       font = {
         normal = {
-          family = "Fira Code Nerd Font Mono";
+          family = "SauceCodePro Nerd Font Mono";
           style = "Regular";
         };
         bold = {
-          family = "Fira Code Nerd Font Mono";
+          family = "SauceCodePro Nerd Font Mono";
           style = "Bold";
         };
         italic = {
-          family = "Fira Code Nerd Font Mono";
+          family = "SauceCodePro Nerd Font Mono";
           style = "Italic";
         };
         bold-italic = {
-          family = "Fira Code Nerd Font Mono";
+          family = "SauceCodePro Nerd Font Mono";
           style = "Bold Italic";
         };
         size = 10;

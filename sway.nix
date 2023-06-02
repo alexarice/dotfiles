@@ -41,7 +41,7 @@ in
         };
       };
       fonts = {
-        names = [ "FiraCode Nerd Font Mono 10" ];
+        names = [ "SauceCodePro Nerd Font Mono 10" ];
       };
       gaps = {
         inner = 10;

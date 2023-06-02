@@ -85,25 +85,13 @@ with lib;
 
     networking.networkmanager = {
       enable = true;
-    # wifi.backend = "iwd";
     };
-
-    # Select internationalisation properties.
-    # console = {
-    #   font = "lat2-Terminus16";
-    #   keyMap = "uk";
-    # };
 
     i18n = {
       defaultLocale = "en_GB.UTF-8";
     };
 
     hardware = {
-      # pulseaudio = {
-      #   enable = true;
-      #   support32Bit = mkIf (config.machine != "rpi") true;
-      #   package = pkgs.pulseaudioFull;
-      # };
       bluetooth = {
         enable = true;
       };
@@ -133,12 +121,9 @@ with lib;
     # Load fonts
     fonts = {
       fonts = with pkgs; [
-        (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
-        source-code-pro
-        powerline-fonts
+        (pkgs.nerdfonts.override { fonts = [ "SourceCodePro" ]; })
         symbola
         dejavu_fonts
-        emacs-all-the-icons-fonts
       ] ++ optional (config.machine != "rpi") noto-fonts;
       enableDefaultFonts = mkIf (config.machine == "rpi") false;
 
@@ -147,7 +132,7 @@ with lib;
         antialias = true;
         cache32Bit = true;
         defaultFonts = {
-          monospace = [ "FiraCode Nerd Font Mono" "DejaVu Sans Mono" ];
+          monospace = [ "SauceCodePro Nerd Font Mono" ];
           sansSerif = [  "DejaVu Sans" ];
           serif = [  "DejaVu Serif" ];
         };
@@ -172,11 +157,6 @@ with lib;
       };
 
       dbus.enable = true;
-      # xserver = {
-      #   enable = true;
-      #   desktopManager.plasma5.enable = true;
-      #   displayManager.startx.enable = true;
-      # };
     };
 
     xdg.portal = {
