@@ -6,7 +6,7 @@
   programs.emacs = {
     enable = true;
 
-    package = pkgs.emacs-unstable-pgtk;
+    package = pkgs.emacsUnstablePgtk;
 
     config = {
       config,
@@ -37,14 +37,6 @@
 
         xah-fly-keys = {
           enable = true;
-          init = ''
-            (defun my/server-fix-up()
-            (xah-fly-keys-set-layout "dvorak")
-            (xah-fly-keys 1))
-
-            (if (daemonp)
-              (add-hook 'server-after-make-frame-hook 'my/server-fix-up))
-          '';
           config = ''
             (xah-fly-keys-set-layout "dvorak")
             (xah-fly-keys 1)
@@ -56,6 +48,7 @@
             "xah-fly-leader-key-map" = {
               "u" = "consult-buffer";
               "h" = "eglot-code-actions";
+              "e" = "pp-eval-expression";
             };
             "xah-fly-command-map" = {
               "#" = "xah-comment-dwim";
@@ -187,9 +180,6 @@
         agda2-mode = {
           enable = true;
           mode = ''"\\.l?agda\\'"'';
-          bind.my-agda-map = {
-            "l" = "agda2-load";
-          };
         };
 
         yasnippet.enable = true;
@@ -218,6 +208,10 @@
             colour = "blue";
           };
         };
+      };
+
+      keymap.my-agda-map = {
+       "l" = "agda2-load";
       };
 
       global-variables = {
