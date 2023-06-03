@@ -59,7 +59,7 @@
               "-" = "universal-argument";
               "b" = "consult-line";
               "'" = "eglot-format";
-              "l" = "my-agda-map";
+              "l" = "major-mode-bind";
             };
           };
         };
@@ -155,6 +155,8 @@
 
         crux.enable = true;
 
+        auctex.enable = true;
+
         git-gutter = {
           enable = true;
           hook = "(prog-mode . git-gutter-mode)";
@@ -210,8 +212,8 @@
         };
       };
 
-      keymap.my-agda-map = {
-       "l" = "agda2-load";
+      keymap.my-latex-map = {
+        "l" = "TeX-command-buffer";
       };
 
       global-variables = {
@@ -270,6 +272,14 @@
                 (go n)
                 (insert (make-string (+ 2 indent) ?\s))
                 (insert "? ∎"))))
+
+        (defun major-mode-bind ()
+          "bind key for major mode"
+          (interactive)
+          (pcase major-mode
+            (`agda2-mode (hydra-agda/body))
+            (`latex-mode (set-transient-map my-latex-map))
+            ))
       '';
 
       postSetup = ''
