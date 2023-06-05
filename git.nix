@@ -11,11 +11,7 @@
     extraConfig = {
       core.filemode = false;
       pull.rebase = true;
+      credential.helper = "store";
     };
-  };
-
-  programs.gh = {
-    enable = true;
-    enableGitCredentialHelper = true;
   };
 }
