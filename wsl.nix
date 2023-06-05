@@ -22,6 +22,7 @@
         ./fish.nix
         ./direnv.nix
         ./emacs.nix
+        inputs.emacs-nix.nixosModules.emacs-nix
       ];
       programs.git.signing = lib.mkForce null;
       home.stateVersion = stateVersion;
