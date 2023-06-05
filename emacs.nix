@@ -64,7 +64,10 @@
           };
         };
 
-        direnv.enable = true;
+        direnv = {
+          enable = true;
+          config = "(direnv-mode)";
+        };
 
         doom-themes = {
           enable = true;
