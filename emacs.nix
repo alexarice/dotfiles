@@ -155,7 +155,10 @@
 
         crux.enable = true;
 
-        auctex.enable = true;
+        tex = {
+          enable = true;
+          package = epkgs.elpaPackages.auctex;
+        };
 
         git-gutter = {
           enable = true;

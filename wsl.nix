@@ -21,6 +21,7 @@
         ./git.nix
         ./fish.nix
         ./direnv.nix
+        ./emacs.nix
       ];
       programs.git.signing = lib.mkForce null;
       home.stateVersion = stateVersion;
