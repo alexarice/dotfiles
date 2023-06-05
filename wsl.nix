@@ -15,17 +15,22 @@
     ];
 
     system.stateVersion = stateVersion;
-    _module.args.inputs = inputs;
-    home-manager.users.nixos = {lib, ...}: {
-      imports = [
-        ./git.nix
-        ./fish.nix
-        ./direnv.nix
-        ./emacs.nix
-        inputs.emacs-nix.nixosModules.emacs-nix
-      ];
-      programs.git.signing = lib.mkForce null;
-      home.stateVersion = stateVersion;
+    home-manager = {
+      extraSpecialArgs.inputs = inputs;
+      users.nixos = {lib, ...}: {
+        imports = [
+          ./git.nix
+          ./fish.nix
+          ./direnv.nix
+          ./emacs.nix
+          inputs.emacs-nix.nixosModules.emacs-nix
+        ];
+        nixpkgs = {
+          inherit (config) overlays;
+        };
+        programs.git.signing = lib.mkForce null;
+        home.stateVersion = stateVersion;
+      };
     };
 
     users.users.nixos.shell = pkgs.fish;
@@ -48,21 +53,19 @@
 
     # Load fonts
     fonts = {
-      fonts = with pkgs; [
-        source-code-pro
-        powerline-fonts
-        symbola
-        dejavu_fonts
-        emacs-all-the-icons-fonts
-        noto-fonts
-      ];
+      fonts = with pkgs;
+        [
+          (pkgs.nerdfonts.override {fonts = ["SourceCodePro"];})
+          symbola
+          dejavu_fonts
+        ];
 
       fontconfig = {
         enable = true;
         antialias = true;
         cache32Bit = true;
         defaultFonts = {
-          monospace = ["Source Code Pro" "DejaVu Sans Mono"];
+          monospace = ["SauceCodePro Nerd Font Mono"];
           sansSerif = ["DejaVu Sans"];
           serif = ["DejaVu Serif"];
         };
