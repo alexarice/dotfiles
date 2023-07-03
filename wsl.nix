@@ -53,12 +53,11 @@
 
     # Load fonts
     fonts = {
-      fonts = with pkgs;
-        [
-          (pkgs.nerdfonts.override {fonts = ["SourceCodePro"];})
-          symbola
-          dejavu_fonts
-        ];
+      fonts = with pkgs; [
+        (pkgs.nerdfonts.override {fonts = ["SourceCodePro"];})
+        symbola
+        dejavu_fonts
+      ];
 
       fontconfig = {
         enable = true;
