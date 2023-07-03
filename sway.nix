@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }: let
   inherit (config) dots scripts modifier;
@@ -150,6 +149,10 @@ in {
               scale = "1";
             };
             "DP-4" = {
+              pos = "0,0";
+              res = "3840x2160";
+            };
+            "DP-3" = {
               pos = "0,0";
               res = "3840x2160";
             };

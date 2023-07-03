@@ -16,7 +16,7 @@
 
     system.stateVersion = stateVersion;
     home-manager = {
-      extraSpecialArgs.inputs = inputs;
+      extraSpecialArgs = inputs;
       users.nixos = {lib, ...}: {
         imports = [
           ./git.nix

@@ -20,7 +20,6 @@
     flake-parts.lib.mkFlake {inherit inputs;} {
       imports = [
         ./desktop.nix
-        ./laptop.nix
         ./wsl.nix
         ./framework.nix
         ./overlays.nix # Should probably move to per system

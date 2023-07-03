@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }:
 with lib; {
@@ -23,6 +24,8 @@ with lib; {
 
         auto-optimise-store = true;
       };
+
+      registry.nixpkgs.flake = inputs.nixpkgs;
 
       extraOptions = ''
         keep-outputs = true

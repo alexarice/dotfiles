@@ -6,6 +6,7 @@
 }: {
   flake.nixosConfigurations.desktop = inputs.nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
+    specialArgs.inputs = inputs;
     modules = [
       ./common.nix
       ./users.nix
@@ -17,7 +18,6 @@
         nixpkgs = {
           inherit (config) overlays;
         };
-        _module.args.inputs = inputs;
         nix.registry.nixpkgs.flake = inputs.nixpkgs;
         machine = "desktop";
         networking.hostName = "Desktop_Nixos";

@@ -1,13 +1,12 @@
 {
   config,
   lib,
-  pkgs,
   inputs,
   ...
 }:
 with lib; {
   home-manager = {
-    extraSpecialArgs.inputs = inputs;
+    extraSpecialArgs = inputs;
     users.alex = {
       pkgs,
       lib,
