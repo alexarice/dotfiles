@@ -7,23 +7,14 @@
     emacs = inputs.emacs-overlay.overlay;
     wayland = self: super: removeAttrs (inputs.nixpkgs-wayland.overlay self super) ["sway-unwrapped" "wlroots"];
     agda = inputs.all-agda.overlay."x86_64-linux";
-    nixmacs = self: super: {
-      nixmacs = inputs.nixmacs.nixmacs {
-        configurationFile = ./nixmacsConf.nix;
-        package = self.pkgs.emacs;
-        extraOverrides = self: super: {
-          agda2-mode = inputs.all-agda.legacyPackages."x86_64-linux".agdaPackages-2_6_3.agda-mode super;
-        };
-      };
-    };
-    discord = self: super: {
-      discord =
-        (import inputs.master {
-          system = "x86_64-linux";
-          config.allowUnfree = true;
-        })
-        .discord;
-    };
+    # discord = self: super: {
+    #   discord =
+    #     (import inputs.master {
+    #       system = "x86_64-linux";
+    #       config.allowUnfree = true;
+    #     })
+    #     .discord;
+    # };
     fmt6overlay = self: super: {
       fmt_6 = super.fmt;
     };

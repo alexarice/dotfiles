@@ -80,13 +80,6 @@ in {
         border = 2;
         titlebar = false;
       };
-
-      startup = [
-        {
-          command = "dropbox start";
-          always = true;
-        }
-      ];
       input = {
         "2:7:SynPS/2_Synaptics_TouchPad" = {
           natural_scroll = "enabled";

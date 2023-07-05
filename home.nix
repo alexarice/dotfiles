@@ -25,7 +25,6 @@ with lib; {
         ./gammastep.nix
         ./systemd.nix
         ./sway.nix
-        ./emails.nix
         ./gpg.nix
       ];
 

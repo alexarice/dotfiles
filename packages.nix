@@ -7,12 +7,10 @@
     if config.machine != "rpi"
     then [
       wldash
-      nixmacs
       wl-clipboard
       cachix
       pinentry
       binutils
-      manix
       zoom-us
       rmapi
 
@@ -32,18 +30,13 @@
       unzip
       zip
       pdftk
-      pamixer
       lgogdownloader
-      fzf
       htop
-      iftop
       gitAndTools.git-extras
       numactl
-      ocamlPackages.cpdf
       piper
 
       # Things in sway config
-      dropbox-cli
       networkmanager_dmenu
       networkmanagerapplet
       dmenu
@@ -75,14 +68,13 @@
       pavucontrol
       udiskie
       playerctl
-      xorg.xeyes
       libnotify
       libappindicator
       bitwarden-cli
       xdg-utils
 
       # Desktop environment
-      (mate.caja-with-extensions.override {extensions = [mate.caja-extensions mate.caja-dropbox];})
+      (mate.caja-with-extensions.override {extensions = [mate.caja-extensions];})
       mate.eom
       glib
       shared-mime-info
@@ -91,21 +83,8 @@
       texlive.combined.scheme-full
 
       # Programming
-      (haskellPackages.ghcWithHoogle
-        (haskellPackages:
-          with haskellPackages; [
-            lens
-            containers
-            parsec
-            ieee
-            filemanip
-          ]))
       (agda-2_6_3.withPackages (p: with p; [standard-library cubical]))
-      # cabal-bin
-      cabal-install
-      # cabal2nix
       python3
-      coqPackages_8_12.coq
       cargo
       rustc
       gnumake
@@ -120,10 +99,7 @@
       spotify
       libreoffice
       discord
-      mumble
       zathura
-      mu
-      pijul
       ripgrep
       signal-desktop
       zotero
@@ -132,9 +108,7 @@
       steam
       sgtpuzzles
       runelite
-      # steam-run-native
-      # wine
-      # winetricks
+      bottles
     ]
     else [
       wldash

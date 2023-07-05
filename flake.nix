@@ -6,7 +6,6 @@
     master.url = "github:nixos/nixpkgs";
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
     home-manager.url = "github:nix-community/home-manager";
-    nixmacs.url = "github:alexarice/nixmacs";
     all-agda.url = "github:alexarice/all-agda";
     emacs-overlay.url = "github:nix-community/emacs-overlay";
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
