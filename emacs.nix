@@ -49,6 +49,7 @@
               "u" = "consult-buffer";
               "h" = "eglot-code-actions";
               "e" = "pp-eval-expression";
+              "." = "major-mode-bind";
             };
             "xah-fly-command-map" = {
               "#" = "xah-comment-dwim";
@@ -250,7 +251,6 @@
         global-hl-line-mode = true;
         global-display-line-numbers-mode = true;
         electric-pair-mode = true;
-        electric-quote-mode = true;
         recentf-mode = true;
       };
 
