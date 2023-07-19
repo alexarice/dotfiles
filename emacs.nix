@@ -186,9 +186,21 @@
           custom.rustic-lsp-setup-p = false;
         };
 
+        haskell-mode = {
+          enable = true;
+          external-packages = [pkgs.haskell-language-server];
+          hook= "(haskell-mode . eglot-ensure)";
+        };
+
         agda2-mode = {
           enable = true;
           mode = ''"\\.l?agda\\'"'';
+        };
+
+        tuareg = {
+          enable = true;
+          external-packages = [pkgs.ocamlPackages.ocaml-lsp];
+          hook = "(tuareg-mode . eglot-ensure)";
         };
 
         yasnippet.enable = true;
