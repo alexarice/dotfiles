@@ -13,6 +13,10 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     emacs-nix.url = "github:alexarice/emacs-nix";
     nil.url = "github:oxalica/nil";
+    nixos-generators = {
+      url = "github:nix-community/nixos-generators";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {flake-parts, ...}:
@@ -21,6 +25,7 @@
         ./desktop.nix
         ./wsl.nix
         ./framework.nix
+        ./installer.nix
         ./overlays.nix # Should probably move to per system
       ];
       systems = ["x86_64-linux"];
