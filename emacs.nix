@@ -1,5 +1,6 @@
 {
   pkgs,
+  lib,
   nil,
   ...
 }: {
@@ -116,15 +117,31 @@
 
         vertico = {
           enable = true;
+          demand = true;
           init = "(vertico-mode)";
         };
 
         vertico-directory = {
           enable = config.package.vertico.enable;
+          after = [ "vertico" ];
+          demand = true;
           package = [];
           bind.vertico-map = {
             "RET" = "vertico-directory-enter";
+            "DEL" = "vertico-directory-delete-char";
           };
+        };
+
+        vertico-multiform = {
+          enable = config.package.vertico.enable;
+          after = [ "vertico" ];
+          demand = true;
+          package = [];
+          config = lib.mkIf config.package.jinx.enable ''
+            (add-to-list 'vertico-multiform-categories
+                         '(jinx grid (vertico-grid-annotate . 20)))
+            (vertico-multiform-mode 1)
+          '';
         };
 
         orderless = {
@@ -159,9 +176,40 @@
 
         crux.enable = true;
 
+        auctex-latexmk = {
+          enable = true;
+          commands = [ "auctex-latexmk-setup" ];
+          custom.auctex-latexmk-inherit-TeX-PDF-mode = true;
+        };
+
         tex = {
           enable = true;
           package = epkgs.elpaPackages.auctex;
+          external-packages = [ pkgs.texlab ];
+          init = ''
+            (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
+            (add-hook 'LaTeX-mode-hook 'TeX-source-correlate-mode)
+            (add-hook 'LaTeX-mode-hook 'TeX-PDF-mode)
+            (add-hook 'LaTeX-mode-hook 'eglot-ensure)
+            (add-hook 'LaTeX-mode-hook 'outline-minor-mode)
+            (add-hook 'LaTeX-mode-hook 'reftex-mode)
+            (add-hook 'LaTeX-mode-hook 'visual-line-mode)
+          '';
+          config = ''
+            (add-to-list 'TeX-view-program-selection
+              '(output-pdf "Zathura"))
+            (auctex-latexmk-setup)
+          '';
+          custom = {
+            TeX-auto-save = true;
+            TeX-parse-self = true;
+          };
+        };
+
+        reftex = {
+          enable = true;
+          package = [];
+          custom.reftex-plug-into-AUCTeX = true;
         };
 
         git-gutter = {
@@ -203,6 +251,11 @@
           hook = "(tuareg-mode . eglot-ensure)";
         };
 
+        jinx = {
+          enable = true;
+          hook = "(text-mode . jinx-mode)";
+        };
+
         yasnippet.enable = true;
       };
 
@@ -232,7 +285,7 @@
       };
 
       keymap.my-latex-map = {
-        "l" = "TeX-command-buffer";
+        "l" = "TeX-command-master";
       };
 
       global-variables = {
