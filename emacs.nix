@@ -276,6 +276,7 @@
           "," = "agda2-goal-and-context";
           "a" = "agda2-auto-maybe-all";
           "s" = "agda2-solve-maybe-all";
+          "e" = "reasoning-block";
           "q" = {
             command = "nil";
             name = "cancel";
