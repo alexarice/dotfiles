@@ -12,7 +12,6 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     flake-parts.url = "github:hercules-ci/flake-parts";
     emacs-nix.url = "github:alexarice/emacs-nix";
-    nil.url = "github:oxalica/nil";
     nixos-generators = {
       url = "github:nix-community/nixos-generators";
       inputs.nixpkgs.follows = "nixpkgs";

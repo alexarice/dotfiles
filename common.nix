@@ -125,7 +125,7 @@ with lib; {
 
     # Load fonts
     fonts = {
-      fonts = with pkgs;
+      packages = with pkgs;
         [
           (pkgs.nerdfonts.override {fonts = ["SourceCodePro"];})
           symbola

@@ -19,6 +19,7 @@
           inherit (config) overlays;
         };
         nix.registry.nixpkgs.flake = inputs.nixpkgs;
+        time.hardwareClockInLocalTime = true;
         machine = "desktop";
         networking.hostName = "Desktop_Nixos";
         system.configurationRevision = lib.mkIf (inputs.self ? rev) inputs.self.rev;

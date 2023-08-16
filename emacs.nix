@@ -1,7 +1,6 @@
 {
   pkgs,
   lib,
-  nil,
   ...
 }: {
   programs.emacs = {
@@ -94,7 +93,7 @@
 
         nix-mode = {
           enable = true;
-          external-packages = [nil.packages.x86_64-linux.nil];
+          external-packages = [pkgs.nil];
           hook = "(nix-mode . eglot-ensure)";
           custom.nix-indent-function = "'nix-indent-line";
         };

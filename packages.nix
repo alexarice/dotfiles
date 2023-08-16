@@ -97,7 +97,7 @@
       gimp
       evince
       spotify
-      libreoffice
+      # libreoffice
       discord
       zathura
       ripgrep
