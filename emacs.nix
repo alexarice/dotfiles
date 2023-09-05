@@ -50,6 +50,7 @@
               "h" = "eglot-code-actions";
               "e" = "pp-eval-expression";
               "." = "major-mode-bind";
+              "r" = "eglot-rename";
             };
             "xah-fly-command-map" = {
               "#" = "xah-comment-dwim";
