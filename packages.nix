@@ -84,6 +84,7 @@
 
       # Programming
       (agda-2_6_3.withPackages (p: with p; [standard-library cubical]))
+      cabal-install
       python3
       cargo
       rustc
