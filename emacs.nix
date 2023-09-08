@@ -256,6 +256,12 @@
         };
 
         yasnippet.enable = true;
+
+        exec-path-from-shell = {
+          enable = true;
+          demand = true;
+          config = "(exec-path-from-shell-initialize)";
+        };
       };
 
       hydra.hydra-agda = {
