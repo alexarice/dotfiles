@@ -257,12 +257,6 @@
         };
 
         yasnippet.enable = true;
-
-        exec-path-from-shell = {
-          enable = true;
-          demand = true;
-          config = "(exec-path-from-shell-initialize)";
-        };
       };
 
       hydra.hydra-agda = {
@@ -324,6 +318,10 @@
         global-display-line-numbers-mode = true;
         electric-pair-mode = true;
         recentf-mode = true;
+      };
+
+      environment = {
+        DISPLAY = "\":0\"";
       };
 
       preamble = ''
