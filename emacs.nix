@@ -257,6 +257,11 @@
         };
 
         yasnippet.enable = true;
+
+        highlight-indent-guides = {
+          enable = true;
+          hook = "(prog-mode . highlight-indent-guides-mode)";
+        };
       };
 
       hydra.hydra-agda = {
