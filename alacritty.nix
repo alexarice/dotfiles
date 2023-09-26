@@ -4,19 +4,19 @@
     settings = {
       font = {
         normal = {
-          family = "SauceCodePro Nerd Font Mono";
+          family = "Monospace";
           style = "Regular";
         };
         bold = {
-          family = "SauceCodePro Nerd Font Mono";
+          family = "Monospace";
           style = "Bold";
         };
         italic = {
-          family = "SauceCodePro Nerd Font Mono";
+          family = "Monospace";
           style = "Italic";
         };
         bold-italic = {
-          family = "SauceCodePro Nerd Font Mono";
+          family = "Monospace";
           style = "Bold Italic";
         };
         size = 10;

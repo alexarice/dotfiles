@@ -127,20 +127,19 @@ with lib; {
     # Load fonts
     fonts = {
       packages = with pkgs;
-        [
-          (pkgs.nerdfonts.override {fonts = ["SourceCodePro"];})
-          symbola
-          dejavu_fonts
-        ]
-        ++ optional (config.machine != "rpi") noto-fonts;
-      enableDefaultFonts = mkIf (config.machine == "rpi") false;
+      [
+        (pkgs.nerdfonts.override { fonts = [ "Hack" ]; })
+        symbola
+        dejavu_fonts
+      ] ++ optional (config.machine != "rpi") noto-fonts;
+      enableDefaultPackages = false;
 
       fontconfig = {
         enable = true;
         antialias = true;
         cache32Bit = true;
         defaultFonts = {
-          monospace = ["SauceCodePro Nerd Font Mono"];
+          monospace = ["Hack Nerd Font"];
           sansSerif = ["DejaVu Sans"];
           serif = ["DejaVu Serif"];
         };

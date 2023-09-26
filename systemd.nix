@@ -51,13 +51,14 @@
     emacs = {
       Unit = {
         Description = "Emacs text editor";
+        After = ["graphical-session.target"];
       };
       Install = {
         WantedBy = ["default.target"];
       };
       Service = {
         Type = "forking";
-        ExecStart = "${pkgs.bash}/bin/bash -c 'source ${setEnvironment}; exec ${config.programs.emacs.finalPackage}/bin/emacs --daemon'";
+        ExecStart = "${config.programs.emacs.finalPackage}/bin/emacs --daemon";
         ExecStop = "${pkgs.emacs}/bin/emacsclient --eval \"(kill-emacs)\"";
         Restart = "always";
       };
