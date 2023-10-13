@@ -107,7 +107,7 @@
 
       # Games
       steam
-      sgtpuzzles
+      sgt-puzzles
       runelite
       bottles
     ]
