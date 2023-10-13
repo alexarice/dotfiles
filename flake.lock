@@ -128,11 +128,11 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "lastModified": 1697190275,
-        "narHash": "sha256-0QA50mVGOEX2bqSA4ldGYJkLyPg+4POTNWYi8BdjDm8=",
+        "lastModified": 1697190610,
+        "narHash": "sha256-wQ7+dZaZ8GxOhlmojSeLyf/SKwNQ7ajFwCHg+EDF130=",
         "owner": "alexarice",
         "repo": "all-agda",
-        "rev": "f5674468d6455f1a7fcd97dfab3c91bec47a71bf",
+        "rev": "8ca0a1dc321365dd1f9c2c5bd01f255683ea2b6f",
         "type": "github"
       },
       "original": {
