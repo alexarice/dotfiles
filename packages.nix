@@ -83,7 +83,7 @@
       texlive.combined.scheme-full
 
       # Programming
-      (agda-2_6_3.withPackages (p: with p; [standard-library cubical]))
+      (agda-2_6_4.withPackages (p: with p; [standard-library]))
       cabal-install
       python3
       cargo
