@@ -78,6 +78,7 @@
       mate.eom
       glib
       shared-mime-info
+      libreoffice
 
       # LaTeX
       texlive.combined.scheme-full
