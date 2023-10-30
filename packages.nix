@@ -110,7 +110,8 @@
       steam
       sgt-puzzles
       runelite
-      bottles
+      lutris
+      wine
     ]
     else [
       wldash
