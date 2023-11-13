@@ -86,6 +86,7 @@
       # Programming
       (agda-2_6_4.withPackages (p: with p; [standard-library]))
       cabal-install
+      ghc
       python3
       cargo
       rustc
