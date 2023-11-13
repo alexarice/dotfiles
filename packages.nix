@@ -100,12 +100,13 @@
       gimp
       evince
       spotify
-      # libreoffice
+      libreoffice
       discord
       zathura
+      (zotero.overrideAttrs (attrs: attrs // { meta = (attrs.meta // { knownVulnerabilities = []; }); }))
       ripgrep
       signal-desktop
-      zotero
+
 
       # Games
       steam
