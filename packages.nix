@@ -53,8 +53,8 @@
       hicolor-icon-theme
 
       # Dictionaries
-      aspell
-      aspellDicts.en
+      hunspell
+      hunspellDicts.en_GB-ise
 
       # Wayland
       mako
@@ -109,7 +109,6 @@
       (zotero.overrideAttrs (attrs: attrs // { meta = (attrs.meta // { knownVulnerabilities = []; }); }))
       ripgrep
       signal-desktop
-
 
       # Games
       steam

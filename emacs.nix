@@ -289,6 +289,10 @@
         "l" = "TeX-command-master";
       };
 
+      keymap.my-rust-map = {
+        "l" = "rustic-cargo-build";
+      };
+
       global-variables = {
         delete-old-versions = -1;
         version-control = true;
@@ -355,6 +359,7 @@
           (pcase major-mode
             (`agda2-mode (hydra-agda/body))
             (`latex-mode (set-transient-map my-latex-map))
+            (`rustic-mode (set-transient-map my-rust-map))
             ))
       '';
 
