@@ -14,7 +14,7 @@
       ./hardware/framework.nix
       ./cachix.nix
       inputs.home-manager.nixosModules.home-manager
-      inputs.nixos-hardware.nixosModules.framework
+      inputs.nixos-hardware.nixosModules.framework-11th-gen-intel
       ({...}: {
         nixpkgs = {
           inherit (config) overlays;
