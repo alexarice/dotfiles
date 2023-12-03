@@ -13,6 +13,7 @@
       ./home.nix
       ./hardware/framework.nix
       ./cachix.nix
+      ./kmonad.nix
       inputs.home-manager.nixosModules.home-manager
       inputs.nixos-hardware.nixosModules.framework-11th-gen-intel
       ({...}: {
