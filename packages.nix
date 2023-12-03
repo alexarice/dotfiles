@@ -91,6 +91,9 @@
       cargo
       rustc
       gnumake
+      gdb
+      lldb
+      gcc
 
       # Programs
       firefox-wayland
