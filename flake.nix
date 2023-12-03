@@ -4,19 +4,40 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     master.url = "github:nixos/nixpkgs";
-    nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
-    home-manager.url = "github:nix-community/home-manager";
+    nixpkgs-wayland = {
+      url = "github:nix-community/nixpkgs-wayland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     all-agda.url = "github:alexarice/all-agda";
-    emacs-overlay.url = "github:nix-community/emacs-overlay";
-    nixos-wsl.url = "github:nix-community/NixOS-WSL";
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    emacs-overlay = {
+      url = "github:nix-community/emacs-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixos-wsl = {
+      url = "github:nix-community/NixOS-WSL";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     flake-parts.url = "github:hercules-ci/flake-parts";
-    emacs-nix.url = "github:alexarice/emacs-nix";
+    emacs-nix = {
+      url = "github:alexarice/emacs-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixos-generators = {
       url = "github:nix-community/nixos-generators";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    kmonad.url = "github:kmonad/kmonad?dir=nix";
+    kmonad = {
+      url = "github:kmonad/kmonad?dir=nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {flake-parts, ...}:
