@@ -21,14 +21,14 @@
           a s d f     j k l ;
         )
         (deflayer U_BASE
-          (tap-hold-next-release 200 a met)
-          (tap-hold-next-release 200 s alt)
-          (tap-hold-next-release 200 d ctl)
-          (tap-hold-next-release 200 f sft)
-          (tap-hold-next-release 200 j sft)
-          (tap-hold-next-release 200 k ctl)
-          (tap-hold-next-release 200 l alt)
-          (tap-hold-next-release 200 ; met)
+          (tap-hold-next-release 100 a met)
+          (tap-hold-next-release 100 s alt)
+          (tap-hold-next-release 100 d ctl)
+          (tap-hold-next-release 100 f sft)
+          (tap-hold-next-release 100 j sft)
+          (tap-hold-next-release 100 k ctl)
+          (tap-hold-next-release 100 l alt)
+          (tap-hold-next-release 100 ; met)
         )
       '';
     };
