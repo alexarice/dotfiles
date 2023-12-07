@@ -147,11 +147,11 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "lastModified": 1701782032,
-        "narHash": "sha256-4H2zG4ZhpgEqvc48bzR4z5xUfxSgJi6EwhL2JAi1cUQ=",
+        "lastModified": 1701786875,
+        "narHash": "sha256-gFlHA1N6MfPvhc5pLzry9YHrS4GymIK9g6pgbHOVtbY=",
         "owner": "alexarice",
         "repo": "all-agda",
-        "rev": "45bc2af6d947b1f88dcba852e96bd8542c2a81b1",
+        "rev": "15ba11629af4946c5ce7dd42e74f66efdd58e9b2",
         "type": "github"
       },
       "original": {
@@ -483,11 +483,11 @@
     },
     "master": {
       "locked": {
-        "lastModified": 1701781594,
-        "narHash": "sha256-rsZ13JDZJLTyh2fENCROJg+mXKO9yO7Y30JPChMrDOU=",
+        "lastModified": 1701786749,
+        "narHash": "sha256-xfLM0QS0YzKRF13iPDBRtYF10zLVBrxRIpiJ0rArRDA=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "566008762b420d7232de7611095b306fc3b84c08",
+        "rev": "68fe03e5cf9904b709b0557506eb6aa778cc5191",
         "type": "github"
       },
       "original": {
