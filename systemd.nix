@@ -58,7 +58,7 @@
       };
       Service = {
         Type = "forking";
-        ExecStart = "${config.programs.emacs.finalPackage}/bin/emacs --daemon";
+        ExecStart = "${pkgs.bash}/bin/bash -c 'source ${setEnvironment}; exec ${config.programs.emacs.finalPackage}/bin/emacs --daemon'";
         ExecStop = "${pkgs.emacs}/bin/emacsclient --eval \"(kill-emacs)\"";
         Restart = "always";
       };
