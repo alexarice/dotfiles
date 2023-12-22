@@ -16,6 +16,11 @@
       };
     };
 
-    gh.enable = true;
+    gh = {
+      enable = true;
+      settings = {
+        version = 1;
+      };
+    };
   };
 }
