@@ -15,10 +15,10 @@
           family = "Monospace";
           style = "Italic";
         };
-        bold-italic = {
-          family = "Monospace";
-          style = "Bold Italic";
-        };
+        # bold-italic = {
+        #   family = "Monospace";
+        #   style = "Bold Italic";
+        # };
         size = 10;
       };
       colors = {
