@@ -84,7 +84,7 @@
       texlive.combined.scheme-full
 
       # Programming
-      (agda-2_6_4.withPackages (p: with p; [standard-library]))
+      (agda-2_6_4.withPackages (p: with p; [ standard-library cubical ]))
       cabal-install
       (haskellPackages.ghcWithPackages (self: [ self.filemanip ]))
       python3

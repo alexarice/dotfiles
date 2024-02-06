@@ -56,8 +56,10 @@ in {
       workspaceAutoBackAndForth = true;
       keybindings = lib.mkOptionDefault {
         "${modifier}+n" = "exec caja";
-        "${modifier}+m" = "exec \"GDK_BACKEND=x11 thunderbird\"";
+        "${modifier}+m" = "exec thunderbird";
         "${modifier}+b" = lib.mkForce "exec emacsclient -c";
+        "${modifier}+h" = lib.mkForce "splith";
+        "${modifier}+tab" = "workspace back_and_forth";
         "${modifier}+c" = "exec firefox";
         "${modifier}+p" = "exec ${scripts + "/take_screenshot"}";
         "${modifier}+Shift+p" = "exec ${scripts + "/take_screenshot"} full";
@@ -75,6 +77,10 @@ in {
         "${modifier}+Ctrl+k" = "exec \"shutdown -h now\"";
         "${modifier}+Ctrl+s" = "exec \"swaylock -f -c 000000 && systemctl suspend\"";
         "${modifier}+Shift+s" = "exec grim -g \"$(slurp -d)\" - | wl-copy -t image/png";
+        "${modifier}+Ctrl+Left" = "move workspace to output left";
+        "${modifier}+Ctrl+Right" = "move workspace to output right";
+        "${modifier}+Ctrl+Up" = "move workspace to output up";
+        "${modifier}+Ctrl+Down" = "move workspace to output down";
       };
       window = {
         border = 2;
