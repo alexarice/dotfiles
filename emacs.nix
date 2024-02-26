@@ -312,6 +312,8 @@
         read-process-output-max = 1024 * 1024;
         enable-recursive-minibuffers = true;
         native-comp-async-report-warnings-errors = "nil";
+        recentf-max-menu-items = 25;
+        recentf-max-saved-items = 100;
       };
 
       global-modes = {
@@ -359,7 +361,7 @@
           (interactive)
           (pcase major-mode
             (`agda2-mode (hydra-agda/body))
-            (`latex-mode (set-transient-map my-latex-map))
+            (`LaTeX-mode (set-transient-map my-latex-map))
             (`rustic-mode (set-transient-map my-rust-map))
             ))
       '';

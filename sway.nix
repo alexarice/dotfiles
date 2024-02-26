@@ -81,6 +81,8 @@ in {
         "${modifier}+Ctrl+Right" = "move workspace to output right";
         "${modifier}+Ctrl+Up" = "move workspace to output up";
         "${modifier}+Ctrl+Down" = "move workspace to output down";
+        "${modifier}+0" = lib.mkForce null;
+        "${modifier}+Shift+0" = lib.mkForce null;
       };
       window = {
         border = 2;

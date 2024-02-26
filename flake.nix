@@ -12,7 +12,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    all-agda.url = "github:alexarice/all-agda";
+    all-agda.url = "/home/alex/all-agda";
     emacs-overlay = {
       url = "github:nix-community/emacs-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
