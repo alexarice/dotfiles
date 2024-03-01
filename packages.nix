@@ -13,6 +13,7 @@
       binutils
       zoom-us
       rmapi
+      unetbootin
 
       # CLI Programs
       neofetch
