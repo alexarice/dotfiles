@@ -7,6 +7,11 @@
     emacs = inputs.emacs-overlay.overlay;
     wayland = self: super: removeAttrs (inputs.nixpkgs-wayland.overlay self super) ["sway-unwrapped" "wlroots"];
     agda = inputs.all-agda.overlay."x86_64-linux";
+
+    agda-default = self: super: {
+      agdaPackages = self.agdaPackages-2_6_4;
+      agda = self.agda-2_6_4;
+    };
     # discord = self: super: {
     #   discord =
     #     (import inputs.master {

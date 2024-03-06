@@ -85,7 +85,7 @@
       texlive.combined.scheme-full
 
       # Programming
-      (agda-2_6_4.withPackages (p: with p; [ standard-library cubical ]))
+      (agda.withPackages (p: with p; [ standard-library cubical ]))
       cabal-install
       (haskellPackages.ghcWithPackages (self: [ self.filemanip ]))
       python3
@@ -112,7 +112,6 @@
       signal-desktop
 
       # Games
-      steam
       sgt-puzzles
       runelite
       lutris

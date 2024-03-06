@@ -179,6 +179,9 @@ with lib; {
 
     # programs.dconf.enable = mkIf (config.machine != "rpi") true;
     programs.adb.enable = mkIf (config.machine != "rpi") true;
+    programs.steam = {
+      enable = true;
+    };
 
     # Enable sound.
     sound.enable = true;

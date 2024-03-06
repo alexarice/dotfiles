@@ -242,7 +242,7 @@
 
         agda2-mode = {
           enable = true;
-          package = (pkgs.agdaPackages-2_6_4.agda-mode epkgs);
+          package = (pkgs.agdaPackages.agda-mode epkgs);
           mode = ''"\\.l?agda\\'"'';
         };
 

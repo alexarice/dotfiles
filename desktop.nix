@@ -14,6 +14,7 @@
       ./hardware/desktop.nix
       ./cachix.nix
       inputs.home-manager.nixosModules.home-manager
+      inputs.fps.nixosModules.programs-sqlite
       ({pkgs, ...}: {
         nixpkgs = {
           inherit (config) overlays;
@@ -24,6 +25,10 @@
         networking.hostName = "Desktop_Nixos";
         system.configurationRevision = lib.mkIf (inputs.self ? rev) inputs.self.rev;
         boot.initrd.kernelModules = [ "amdgpu" ];
+        hardware.opengl = {
+          extraPackages = [ pkgs.amdvlk ];
+          extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
+        };
         services.ratbagd.enable = true;
       })
     ];
