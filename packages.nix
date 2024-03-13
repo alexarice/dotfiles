@@ -113,7 +113,6 @@
 
       # Games
       sgt-puzzles
-      runelite
       lutris
       wine
     ]
