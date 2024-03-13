@@ -182,6 +182,15 @@
           custom.auctex-latexmk-inherit-TeX-PDF-mode = true;
         };
 
+        eglot = {
+          enable = true;
+          package = [];
+          config = ''
+            (add-to-list 'eglot-server-programs
+              '((LaTeX-mode tex-mode context-mode texinfo-mode bibtex-mode) . ("texlab")))
+          '';
+        };
+
         tex = {
           enable = true;
           package = epkgs.elpaPackages.auctex;
