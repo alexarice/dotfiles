@@ -18,10 +18,13 @@
           enable = true;
           custom = {
             corfu-auto = true;
-            corfu-quit-no-match = "'separator";
+            corfu-quit-no-match = true;
             corfu-auto-delay = 0;
-            corfu-auto-prefix = 2;
+            corfu-auto-prefix = 4;
+            corfu-preselect = "'directory";
+            completion-styles = "'(basic)";
           };
+          bind.corfu-map."Ret" = "nil";
           init = ''
             (global-corfu-mode)
           '';
@@ -30,9 +33,11 @@
         cape = {
           enable = true;
           init = ''
-            (add-to-list 'completion-at-point-functions #'cape-dabbrev)
             (add-to-list 'completion-at-point-functions #'cape-file)
+            (add-to-list 'completion-at-point-functions #'cape-keyword)
+            (add-to-list 'completion-at-point-functions #'cape-dabbrev)
           '';
+          custom.cape-dict-case-fold = false;
         };
 
         xah-fly-keys = {
@@ -187,7 +192,38 @@
           package = [];
           config = ''
             (add-to-list 'eglot-server-programs
-              '((LaTeX-mode tex-mode context-mode texinfo-mode bibtex-mode) . ("texlab")))
+            '((LaTeX-mode tex-mode context-mode texinfo-mode bibtex-mode) . ("texlab" :initializationOptions (:texlab (:chktex (:onOpenAndSave nil :onEdit nil))))))
+          '';
+        };
+
+        eglot-booster = {
+          enable = true;
+          package = epkgs.callPackage ./pkgs/eglot-booster { };
+          external-packages = [ pkgs.emacs-lsp-booster ];
+          after = [ "eglot" ];
+          config = ''
+            (eglot-booster-mode)
+          '';
+        };
+
+        catt-mode = {
+          enable = true;
+          package = epkgs.callPackage ./pkgs/catt/catt-mode.nix { };
+        };
+
+        pdf-tools = {
+          enable = true;
+          mode = ''("\\.pdf\\'" . pdf-view-mode)'';
+          custom.pdf-view-incompatible-modes = "display-line-numbers-mode";
+        };
+
+        smartparens-mode = {
+          enable = true;
+          package = epkgs.smartparens;
+          hook = "(prog-mode text-mode markdown-mode)";
+          config = ''
+            (require 'smartparens-config)
+            (eval-after-load 'LaTeX-mode '(require 'smartparens-latex))
           '';
         };
 
@@ -203,6 +239,7 @@
             (add-hook 'LaTeX-mode-hook 'outline-minor-mode)
             (add-hook 'LaTeX-mode-hook 'reftex-mode)
             (add-hook 'LaTeX-mode-hook 'visual-line-mode)
+            (add-hook 'TeX-after-compilation-finished-functions #'TeX-revert-document-buffer)
           '';
           config = ''
             (add-to-list 'TeX-view-program-selection
@@ -332,7 +369,6 @@
 
         global-hl-line-mode = true;
         global-display-line-numbers-mode = true;
-        electric-pair-mode = true;
         recentf-mode = true;
       };
 

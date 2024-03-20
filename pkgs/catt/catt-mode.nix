@@ -1,7 +1,5 @@
 {
-  stdenv,
   trivialBuild,
-  catt,
 }:
 trivialBuild rec {
   pname = "catt-mode";
