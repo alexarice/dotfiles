@@ -110,6 +110,7 @@
       (zotero.overrideAttrs (attrs: attrs // { meta = (attrs.meta // { knownVulnerabilities = []; }); }))
       ripgrep
       signal-desktop
+      inkscape
 
       # Games
       sgt-puzzles

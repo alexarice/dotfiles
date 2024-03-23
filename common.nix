@@ -56,6 +56,7 @@ with lib; {
         systemctl --user import-environment
       '';
       extraPackages = [];
+      wrapperFeatures.gtk = true;
     };
 
     programs.nm-applet = {
