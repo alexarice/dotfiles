@@ -20,11 +20,11 @@
             corfu-auto = true;
             corfu-quit-no-match = true;
             corfu-auto-delay = 0;
-            corfu-auto-prefix = 4;
+            corfu-auto-prefix = 3;
             corfu-preselect = "'directory";
             completion-styles = "'(basic)";
           };
-          bind.corfu-map."Ret" = "nil";
+          bind.corfu-map."RET" = "nil";
           init = ''
             (global-corfu-mode)
           '';
@@ -220,8 +220,7 @@
         smartparens-mode = {
           enable = true;
           package = epkgs.smartparens;
-          hook = "(prog-mode text-mode markdown-mode)";
-          config = ''
+          init = ''
             (require 'smartparens-config)
             (eval-after-load 'LaTeX-mode '(require 'smartparens-latex))
           '';
@@ -360,6 +359,9 @@
         native-comp-async-report-warnings-errors = "nil";
         recentf-max-menu-items = 25;
         recentf-max-saved-items = 100;
+        completion-cycle-threshold = 3;
+        tab-always-indent = "'complete";
+        read-extended-command-predicate = "#'command-completion-default-include-p";
       };
 
       global-modes = {
@@ -370,6 +372,7 @@
         global-hl-line-mode = true;
         global-display-line-numbers-mode = true;
         recentf-mode = true;
+        smartparens-global-mode = true;
       };
 
       environment = {
@@ -378,6 +381,7 @@
 
       preamble = ''
         (add-hook 'before-save-hook 'delete-trailing-whitespace)
+        (setq-default pgtk-wait-for-event-timeout 0)
 
         (defun save-recentf-no-output ()
           "recentf-save-list without output"
