@@ -38,7 +38,7 @@
 
         services = {
           upower.enable = true;
-
+          fprintd.enable = false;
           tlp.enable = true;
           logind.lidSwitch = "ignore";
         };
