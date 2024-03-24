@@ -30,6 +30,15 @@
           '';
         };
 
+        lspce = {
+          enable = true;
+          package = epkgs.callPackage ./pkgs/lspce { };
+
+          config = ''
+            (add-to-list 'lspce-server-programs '("LaTeX" "texlab"))
+          '';
+        };
+
         cape = {
           enable = true;
           init = ''
@@ -100,7 +109,7 @@
         nix-mode = {
           enable = true;
           external-packages = [pkgs.nil];
-          hook = "(nix-mode . eglot-ensure)";
+          hook = "(nix-mode . lspce-mode)";
           custom.nix-indent-function = "'nix-indent-line";
         };
 
@@ -187,24 +196,24 @@
           custom.auctex-latexmk-inherit-TeX-PDF-mode = true;
         };
 
-        eglot = {
-          enable = true;
-          package = [];
-          config = ''
-            (add-to-list 'eglot-server-programs
-            '((LaTeX-mode tex-mode context-mode texinfo-mode bibtex-mode) . ("texlab" :initializationOptions (:texlab (:chktex (:onOpenAndSave nil :onEdit nil))))))
-          '';
-        };
+        # eglot = {
+        #   enable = true;
+        #   package = [];
+        #   config = ''
+        #     (add-to-list 'eglot-server-programs
+        #     '((LaTeX-mode tex-mode context-mode texinfo-mode bibtex-mode) . ("texlab" :initializationOptions (:texlab (:chktex (:onOpenAndSave nil :onEdit nil))))))
+        #   '';
+        # };
 
-        eglot-booster = {
-          enable = true;
-          package = epkgs.callPackage ./pkgs/eglot-booster { };
-          external-packages = [ pkgs.emacs-lsp-booster ];
-          after = [ "eglot" ];
-          config = ''
-            (eglot-booster-mode)
-          '';
-        };
+        # eglot-booster = {
+        #   enable = true;
+        #   package = epkgs.callPackage ./pkgs/eglot-booster { };
+        #   external-packages = [ pkgs.emacs-lsp-booster ];
+        #   after = [ "eglot" ];
+        #   config = ''
+        #     (eglot-booster-mode)
+        #   '';
+        # };
 
         catt-mode = {
           enable = true;
@@ -234,7 +243,7 @@
             (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
             (add-hook 'LaTeX-mode-hook 'TeX-source-correlate-mode)
             (add-hook 'LaTeX-mode-hook 'TeX-PDF-mode)
-            (add-hook 'LaTeX-mode-hook 'eglot-ensure)
+            (add-hook 'LaTeX-mode-hook 'lspce-mode)
             (add-hook 'LaTeX-mode-hook 'outline-minor-mode)
             (add-hook 'LaTeX-mode-hook 'reftex-mode)
             (add-hook 'LaTeX-mode-hook 'visual-line-mode)
@@ -275,14 +284,14 @@
         rustic = {
           enable = true;
           external-packages = [pkgs.rust-analyzer];
-          hook = "(rustic-mode . eglot-ensure)";
+          hook = "(rustic-mode . lspce-mode)";
           custom.rustic-lsp-setup-p = false;
         };
 
         haskell-mode = {
           enable = true;
           external-packages = [pkgs.haskell-language-server];
-          hook= "(haskell-mode . eglot-ensure)";
+          hook= "(haskell-mode . lspce-mode)";
         };
 
         agda2-mode = {
@@ -294,7 +303,7 @@
         tuareg = {
           enable = true;
           external-packages = [pkgs.ocamlPackages.ocaml-lsp];
-          hook = "(tuareg-mode . eglot-ensure)";
+          hook = "(tuareg-mode . lspce-mode)";
         };
 
         jinx = {
