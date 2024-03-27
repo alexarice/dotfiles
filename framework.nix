@@ -15,6 +15,7 @@
       ./cachix.nix
       # ./kmonad.nix
       inputs.home-manager.nixosModules.home-manager
+      inputs.fps.nixosModules.programs-sqlite
       inputs.nixos-hardware.nixosModules.framework-11th-gen-intel
       ({...}: {
         nixpkgs = {
