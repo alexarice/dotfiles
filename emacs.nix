@@ -30,6 +30,11 @@
           '';
         };
 
+        copilot = {
+          enable = true;
+          hook = "(prog-mode . copilot-mode)";
+        };
+
         lspce = {
           enable = true;
           package = epkgs.callPackage ./pkgs/lspce { };
@@ -226,7 +231,7 @@
           custom.pdf-view-incompatible-modes = "display-line-numbers-mode";
         };
 
-        smartparens-mode = {
+        smartparens = {
           enable = true;
           package = epkgs.smartparens;
           init = ''
