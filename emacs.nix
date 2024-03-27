@@ -41,6 +41,7 @@
 
           config = ''
             (add-to-list 'lspce-server-programs '("LaTeX" "texlab"))
+            (add-to-list 'lspce-server-programs '("rustic" "rust-analyzer"))
           '';
         };
 
