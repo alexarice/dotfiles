@@ -21,6 +21,7 @@
       url = "github:nix-community/NixOS-WSL";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    my-nixpkgs.url = "github:alexarice/nixpkgs";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     flake-parts.url = "github:hercules-ci/flake-parts";
     emacs-nix = {

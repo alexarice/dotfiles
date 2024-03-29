@@ -83,6 +83,7 @@
 
       # LaTeX
       texlive.combined.scheme-full
+      texpresso
 
       # Programming
       (agda.withPackages (p: with p; [ standard-library cubical ]))

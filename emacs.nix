@@ -35,6 +35,11 @@
           hook = "(prog-mode . copilot-mode)";
         };
 
+        texpresso = {
+          enable = true;
+          package = pkgs.texpresso-mode;
+        };
+
         lspce = {
           enable = true;
 

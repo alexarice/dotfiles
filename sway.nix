@@ -87,6 +87,14 @@ in {
       window = {
         border = 2;
         titlebar = false;
+        commands = [
+          {
+            command = "resize set width 38";
+            criteria = {
+              title = "^TeXpresso.*$";
+            };
+          }
+        ];
       };
       input = {
         "2:7:SynPS/2_Synaptics_TouchPad" = {

@@ -3,10 +3,18 @@
   lib,
   ...
 }: let
+  my-pkgs = import inputs.my-nixpkgs {
+    system = "x86_64-linux";
+  };
+
   overlays = {
     emacs = inputs.emacs-overlay.overlay;
     wayland = self: super: removeAttrs (inputs.nixpkgs-wayland.overlay self super) ["sway-unwrapped" "wlroots"];
     agda = inputs.all-agda.overlay."x86_64-linux";
+
+    texpresso = self: super: {
+      texpresso-mode = my-pkgs.emacsPackages.texpresso;
+    };
 
     agda-default = self: super: {
       agdaPackages = self.agdaPackages-2_6_4;
