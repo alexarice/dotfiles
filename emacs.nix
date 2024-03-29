@@ -31,13 +31,12 @@
         };
 
         copilot = {
-          enable = true;
+          enable = false;
           hook = "(prog-mode . copilot-mode)";
         };
 
         lspce = {
           enable = true;
-          package = epkgs.callPackage ./pkgs/lspce { };
 
           config = ''
             (add-to-list 'lspce-server-programs '("LaTeX" "texlab"))
