@@ -31,7 +31,14 @@
         };
 
         copilot = {
-          enable = false;
+          enable = true;
+          custom = {
+            copilot-max-char = -1;
+            copilot-indent-offset-warning-disable = true;
+          };
+          bind.copilot-mode-map = {
+            "<tab>" = "copilot-tab";
+          };
           hook = "(prog-mode . copilot-mode)";
         };
 
@@ -408,6 +415,11 @@
           (let ((inhibit-message t))
           (recentf-save-list)))
         (run-at-time nil (* 2 60) 'save-recentf-no-output)
+
+        (defun copilot-tab ()
+          (interactive)
+          (or (copilot-accept-completion)
+              (indent-for-tab-command)))
 
         (defun reasoning-block (n)
           (interactive "nLines: ")

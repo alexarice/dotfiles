@@ -15,7 +15,7 @@
     ;; Allow some extra characters in words
     (modify-syntax-entry ?_ "w" st)
     ;; Comments
-    (modify-syntax-entry ?/ "12" st)
+    (modify-syntax-entry ?/ ". 12" st)
     (modify-syntax-entry ?\n ">" st)
     st)
   "Syntax table for CATT major mode.")
