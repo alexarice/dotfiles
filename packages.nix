@@ -63,6 +63,8 @@
       slurp
       waybar
       swaylock
+      wdisplays
+      wlprop
 
       # Utilities
       blueman

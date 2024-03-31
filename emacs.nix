@@ -357,8 +357,34 @@
         };
       };
 
-      keymap.my-latex-map = {
-        "l" = "TeX-command-master";
+      hydra.hydra-latex = {
+        hint = "nil";
+        docText = ''
+
+          _l_: Build         _c_: Move to cursor
+          _h_: Previous page _t_: texpresso      _n_: Next Page
+        '';
+        bindings = {
+          "l" = {
+            command = "TeX-command-master";
+            colour = "blue";
+          };
+          "h" = "texpresso-previous-page";
+          "n" = "texpresso-next-page";
+          "c" = {
+            command = "texpresso-move-to-cursor";
+            colour = "blue";
+          };
+          "t" = {
+            command = "texpresso";
+            colour = "blue";
+          };
+          "q" = {
+            command = "nil";
+            name = "cancel";
+            colour = "blue";
+          };
+        };
       };
 
       keymap.my-rust-map = {
@@ -441,7 +467,7 @@
           (interactive)
           (pcase major-mode
             (`agda2-mode (hydra-agda/body))
-            (`LaTeX-mode (set-transient-map my-latex-map))
+            (`LaTeX-mode (hydra-latex/body))
             (`rustic-mode (set-transient-map my-rust-map))
             ))
       '';
