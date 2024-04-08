@@ -31,7 +31,7 @@
         };
 
         copilot = {
-          enable = true;
+          enable = false;
           custom = {
             copilot-max-char = -1;
             copilot-indent-offset-warning-disable = true;
