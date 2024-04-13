@@ -1,10 +1,12 @@
 ;; catt-mode.el -- CATT major emacs mode
 
+(require 'agda-input)
+
 (defvar catt-font-lock-keywords
  '(
    ("#.*" . 'font-lock-comment-face)
-   ("\\<\\(def\\|normalise\\|assert\\|import\\|coh\\)\\>\\|:\\|=" . font-lock-keyword-face)
-   ;; ("\\<\\(Hom\\|Type\\)\\>\\|->" . font-lock-builtin-face)
+   ("\\<\\(def\\|normalise\\|assert\\|size\\|import\\|coh\\|in\\)\\>\\|:\\|=" . font-lock-keyword-face)
+   ("\\<\\(comp\\|id\\)\\>\\|->" . font-lock-builtin-face)
    ;; ("\\<\\(\\)\\>" . font-lock-constant-face)
    ("\\<def[ \t]+\\([^ (=]*\\)" 1 'font-lock-function-name-face)
   )
@@ -29,6 +31,7 @@
   (set (make-local-variable 'comment-start) "//")
   (set (make-local-variable 'comment-start-skip) "#+\\s-*")
   (set (make-local-variable 'font-lock-defaults) '(catt-font-lock-keywords))
+  (set-input-method "Agda")
   (setq mode-name "Catt")
   (run-hooks 'catt-mode-hook)
 )

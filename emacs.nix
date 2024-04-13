@@ -434,6 +434,7 @@
       preamble = ''
         (add-hook 'before-save-hook 'delete-trailing-whitespace)
         (setq-default pgtk-wait-for-event-timeout 0)
+        (add-to-list 'default-frame-alist '(alpha-background . 80))
 
         (defun save-recentf-no-output ()
           "recentf-save-list without output"
