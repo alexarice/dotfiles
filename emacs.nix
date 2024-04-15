@@ -82,6 +82,8 @@
               "e" = "pp-eval-expression";
               "." = "major-mode-bind";
               "r" = "eglot-rename";
+              "g" = "magit-status-here";
+              "y" = "jinx-correct";
             };
             "xah-fly-command-map" = {
               "#" = "xah-comment-dwim";

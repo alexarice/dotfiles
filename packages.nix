@@ -86,6 +86,7 @@
       # LaTeX
       texlive.combined.scheme-full
       texpresso
+      (callPackage ./pkgs/textidote { })
 
       # Programming
       (agda.withPackages (p: with p; [ standard-library cubical ]))
