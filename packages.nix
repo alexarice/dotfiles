@@ -120,6 +120,7 @@
       sgt-puzzles
       lutris
       wine
+      runelite
     ]
     else [
       wldash

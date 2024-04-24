@@ -48,7 +48,7 @@
         };
 
         lspce = {
-          enable = true;
+          enable = false;
 
           config = ''
             (add-to-list 'lspce-server-programs '("LaTeX" "texlab"))
@@ -128,7 +128,7 @@
         nix-mode = {
           enable = true;
           external-packages = [pkgs.nil];
-          hook = "(nix-mode . lspce-mode)";
+          hook = "(nix-mode . eglot-ensure)";
           custom.nix-indent-function = "'nix-indent-line";
         };
 
@@ -215,14 +215,16 @@
           custom.auctex-latexmk-inherit-TeX-PDF-mode = true;
         };
 
-        # eglot = {
-        #   enable = true;
-        #   package = [];
-        #   config = ''
-        #     (add-to-list 'eglot-server-programs
-        #     '((LaTeX-mode tex-mode context-mode texinfo-mode bibtex-mode) . ("texlab" :initializationOptions (:texlab (:chktex (:onOpenAndSave nil :onEdit nil))))))
-        #   '';
-        # };
+        eglot = {
+          enable = true;
+          package = [];
+          config = ''
+            (add-to-list 'eglot-server-programs
+            '((LaTeX-mode tex-mode context-mode texinfo-mode bibtex-mode) . ("texlab" :initializationOptions (:texlab (:chktex (:onOpenAndSave nil :onEdit nil))))))
+            (add-to-list 'eglot-server-programs
+              '(catt-mode . ("catt_strict" "--lsp")))
+          '';
+        };
 
         # eglot-booster = {
         #   enable = true;
@@ -237,6 +239,7 @@
         catt-mode = {
           enable = true;
           package = epkgs.callPackage ./pkgs/catt/catt-mode.nix { };
+          # hook = "(catt-mode . eglot-ensure)";
         };
 
         pdf-tools = {
@@ -262,7 +265,7 @@
             (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
             (add-hook 'LaTeX-mode-hook 'TeX-source-correlate-mode)
             (add-hook 'LaTeX-mode-hook 'TeX-PDF-mode)
-            (add-hook 'LaTeX-mode-hook 'lspce-mode)
+            (add-hook 'LaTeX-mode-hook 'eglot-ensure)
             (add-hook 'LaTeX-mode-hook 'outline-minor-mode)
             (add-hook 'LaTeX-mode-hook 'reftex-mode)
             (add-hook 'LaTeX-mode-hook 'visual-line-mode)
@@ -303,14 +306,14 @@
         rustic = {
           enable = true;
           external-packages = [pkgs.rust-analyzer];
-          hook = "(rustic-mode . lspce-mode)";
+          hook = "(rustic-mode . eglot-ensure)";
           custom.rustic-lsp-setup-p = false;
         };
 
         haskell-mode = {
           enable = true;
           external-packages = [pkgs.haskell-language-server];
-          hook= "(haskell-mode . lspce-mode)";
+          hook= "(haskell-mode . eglot-ensure)";
         };
 
         agda2-mode = {
@@ -322,7 +325,7 @@
         tuareg = {
           enable = true;
           external-packages = [pkgs.ocamlPackages.ocaml-lsp];
-          hook = "(tuareg-mode . lspce-mode)";
+          hook = "(tuareg-mode . eglot-ensure)";
         };
 
         jinx = {

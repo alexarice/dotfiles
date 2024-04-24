@@ -17,5 +17,9 @@
     BROWSER = "firefox";
   };
 
+  home.sessionPath = [
+    "$HOME/.cargo/bin"
+  ];
+
   xdg.configFile."fish/functions".source = pkgs.callPackage ./fish_prompt.nix {};
 }
