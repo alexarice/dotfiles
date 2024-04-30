@@ -40,6 +40,13 @@ with lib; {
 
     services.fwupd.enable = true;
 
+    services.printing = {
+      enable = true;
+      clientConf = ''
+        ServerName cups-serv.cl.cam.ac.uk
+      '';
+    };
+
     boot.tmp.useTmpfs = true;
 
     boot.supportedFilesystems = ["ntfs"];
