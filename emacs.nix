@@ -152,6 +152,7 @@
           enable = true;
           demand = true;
           init = "(vertico-mode)";
+          custom.vertico-cycle = true;
         };
 
         vertico-directory = {
