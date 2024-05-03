@@ -223,7 +223,7 @@
             (add-to-list 'eglot-server-programs
             '((LaTeX-mode tex-mode context-mode texinfo-mode bibtex-mode) . ("texlab" :initializationOptions (:texlab (:chktex (:onOpenAndSave nil :onEdit nil))))))
             (add-to-list 'eglot-server-programs
-              '(catt-mode . ("catt_strict" "--lsp")))
+              '(catt-mode . ("~/.cargo/bin/catt_strict" "--lsp")))
           '';
         };
 
@@ -240,7 +240,9 @@
         catt-mode = {
           enable = true;
           package = epkgs.callPackage ./pkgs/catt/catt-mode.nix { };
-          # hook = "(catt-mode . eglot-ensure)";
+          init = ''
+            (add-hook 'catt-mode-hook 'eglot-ensure)
+          '';
         };
 
         pdf-tools = {
