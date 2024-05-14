@@ -114,7 +114,10 @@
       (zotero.overrideAttrs (attrs: attrs // { meta = (attrs.meta // { knownVulnerabilities = []; }); }))
       ripgrep
       signal-desktop
+      zulip
+      zulip-term
       inkscape
+      vscode
 
       # Games
       sgt-puzzles

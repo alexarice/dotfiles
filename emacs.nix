@@ -422,6 +422,7 @@
         completion-cycle-threshold = 3;
         tab-always-indent = "'complete";
         read-extended-command-predicate = "#'command-completion-default-include-p";
+        delete-trailing-lines = false;
       };
 
       global-modes = {
