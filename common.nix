@@ -38,7 +38,7 @@ with lib; {
       allowUnfree = true;
     };
 
-    services.fwupd.enable = true;
+    # services.fwupd.enable = true;
 
     services.printing = {
       enable = true;
