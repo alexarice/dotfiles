@@ -36,6 +36,7 @@
       gitAndTools.git-extras
       numactl
       piper
+      linuxPackages_latest.perf
 
       # Things in sway config
       networkmanager_dmenu
@@ -99,6 +100,7 @@
       gdb
       lldb
       gcc
+      gurobi
 
       # Programs
       firefox-wayland
