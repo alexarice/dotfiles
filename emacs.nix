@@ -47,6 +47,13 @@
           package = pkgs.texpresso-mode;
         };
 
+        "c++-mode" = {
+          enable = true;
+          package = [];
+          external-packages = [pkgs.clang-tools];
+          hook = "(c++-mode . eglot-ensure)";
+        };
+
         lspce = {
           enable = false;
 

@@ -106,8 +106,13 @@ in {
         "1739:0:Synaptics_TM2668-002" = {
           natural_scroll = "enabled";
         };
-        "*:Logiteck_G900" = {
+        "1133:50504:Logitech_USB_Receiver_Mouse" = {
           accel_profile = "flat";
+          left_handed = "enabled";
+        };
+        "7805:11320:ROCCAT_ROCCAT_Kiro_Mouse" = {
+          accel_profile = "flat";
+          pointer_accel = "-0.4";
         };
         "*" =
           if config.machine == "laptop" || config.machine == "framework"
