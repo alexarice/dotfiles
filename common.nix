@@ -114,8 +114,6 @@ with lib; {
       };
       opengl = {
         enable = true;
-        driSupport = true;
-        driSupport32Bit = mkIf (config.machine != "rpi") true;
       };
       brillo.enable = true;
     };
