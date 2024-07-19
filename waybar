@@ -61,13 +61,13 @@
     "max-length":50
   },
   "custom/spotify": {
-    "format": " {}",
+    "format": "  {}",
     "interval": 5,
     "max-length": 100,
-    "on-click": "playerctl previous",
-    "on-click-right": "playerctl next",
-    "on-click-middle": "playerctl play-pause",
-    "exec": "sleep 0.5 ; playerctl metadata -f '{{artist}}: {{title}}' | sed 's/&/&amp;/g'",
+    "on-click": "playerctl -p spotify previous",
+    "on-click-right": "playerctl -p spotify next",
+    "on-click-middle": "playerctl -p spotify play-pause",
+    "exec": "sleep 0.5 ; playerctl -p spotify metadata -f '{{artist}}: {{title}}' | sed 's/&/&amp;/g'",
     "exec-if": "pgrep spotify"
   },
   "custom/root": {

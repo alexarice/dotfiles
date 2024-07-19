@@ -111,7 +111,7 @@
       evince
       spotify
       libreoffice
-      discord
+      vesktop
       zathura
       (zotero.overrideAttrs (attrs: attrs // { meta = (attrs.meta // { knownVulnerabilities = []; }); }))
       ripgrep
