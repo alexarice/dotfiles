@@ -25,7 +25,7 @@
         networking.hostName = "Desktop_Nixos";
         system.configurationRevision = lib.mkIf (inputs.self ? rev) inputs.self.rev;
         boot.initrd.kernelModules = [ "amdgpu" ];
-        hardware.opengl = {
+        hardware.graphics = {
           extraPackages = [ pkgs.amdvlk ];
           extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
         };

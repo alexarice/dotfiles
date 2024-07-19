@@ -112,7 +112,7 @@ with lib; {
       bluetooth = {
         enable = true;
       };
-      opengl = {
+      graphics = {
         enable = true;
       };
       brillo.enable = true;
@@ -126,7 +126,7 @@ with lib; {
       systemPackages = with pkgs; [
         git
         bup
-        gnome.adwaita-icon-theme
+        adwaita-icon-theme
       ];
       homeBinInPath = true;
     };
@@ -188,9 +188,6 @@ with lib; {
     programs.steam = {
       enable = true;
     };
-
-    # Enable sound.
-    sound.enable = true;
 
     programs.fish = {
       enable = true;
