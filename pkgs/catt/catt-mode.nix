@@ -1,6 +1,6 @@
 {
   trivialBuild,
-  agda-input,
+  agda2-mode,
 }:
 trivialBuild rec {
   pname = "catt-mode";
@@ -9,6 +9,6 @@ trivialBuild rec {
   src = ./.;
 
   packageRequires = [
-    agda-input
+    agda2-mode
   ];
 }
