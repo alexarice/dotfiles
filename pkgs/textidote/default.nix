@@ -1,5 +1,10 @@
-{ lib, stdenv, fetchurl, jre, makeWrapper }:
-
+{
+  lib,
+  stdenv,
+  fetchurl,
+  jre,
+  makeWrapper,
+}:
 stdenv.mkDerivation rec {
   pname = "textidote";
   version = "0.8.3";
@@ -9,8 +14,8 @@ stdenv.mkDerivation rec {
     hash = "sha256-BIYswDrVqNEB+J9TwB0Fop+AC8qvPo53KGU7iupC7tk=";
   };
 
-  nativeBuildInputs = [ makeWrapper ];
-  buildInputs = [ jre ];
+  nativeBuildInputs = [makeWrapper];
+  buildInputs = [jre];
 
   dontUnpack = true;
 

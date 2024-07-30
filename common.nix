@@ -134,11 +134,12 @@ with lib; {
     # Load fonts
     fonts = {
       packages = with pkgs;
-      [
-        (pkgs.nerdfonts.override { fonts = [ "Hack" ]; })
-        symbola
-        dejavu_fonts
-      ] ++ optional (config.machine != "rpi") noto-fonts;
+        [
+          (pkgs.nerdfonts.override {fonts = ["Hack"];})
+          symbola
+          dejavu_fonts
+        ]
+        ++ optional (config.machine != "rpi") noto-fonts;
       enableDefaultPackages = false;
 
       fontconfig = {

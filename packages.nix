@@ -87,12 +87,12 @@
       # LaTeX
       texlive.combined.scheme-full
       texpresso
-      (callPackage ./pkgs/textidote { })
+      (callPackage ./pkgs/textidote {})
 
       # Programming
-      (agda.withPackages (p: with p; [ standard-library cubical ]))
+      (agda.withPackages (p: with p; [standard-library cubical]))
       cabal-install
-      (haskellPackages.ghcWithPackages (self: [ self.filemanip ]))
+      (haskellPackages.ghcWithPackages (self: [self.filemanip]))
       python3
       cargo
       rustc
@@ -113,7 +113,7 @@
       libreoffice
       vesktop
       zathura
-      (zotero.overrideAttrs (attrs: attrs // { meta = (attrs.meta // { knownVulnerabilities = []; }); }))
+      (zotero.overrideAttrs (attrs: attrs // {meta = attrs.meta // {knownVulnerabilities = [];};}))
       ripgrep
       signal-desktop
       zulip

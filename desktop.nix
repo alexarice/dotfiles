@@ -24,10 +24,10 @@
         machine = "desktop";
         networking.hostName = "Desktop_Nixos";
         system.configurationRevision = lib.mkIf (inputs.self ? rev) inputs.self.rev;
-        boot.initrd.kernelModules = [ "amdgpu" ];
+        boot.initrd.kernelModules = ["amdgpu"];
         hardware.graphics = {
-          extraPackages = [ pkgs.amdvlk ];
-          extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
+          extraPackages = [pkgs.amdvlk];
+          extraPackages32 = [pkgs.driversi686Linux.amdvlk];
         };
         services.ratbagd.enable = true;
       })

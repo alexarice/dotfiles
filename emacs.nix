@@ -164,7 +164,7 @@
 
         vertico-directory = {
           enable = config.package.vertico.enable;
-          after = [ "vertico" ];
+          after = ["vertico"];
           demand = true;
           package = [];
           bind.vertico-map = {
@@ -175,7 +175,7 @@
 
         vertico-multiform = {
           enable = config.package.vertico.enable;
-          after = [ "vertico" ];
+          after = ["vertico"];
           demand = true;
           package = [];
           config = lib.mkIf config.package.jinx.enable ''
@@ -219,7 +219,7 @@
 
         auctex-latexmk = {
           enable = true;
-          commands = [ "auctex-latexmk-setup" ];
+          commands = ["auctex-latexmk-setup"];
           custom.auctex-latexmk-inherit-TeX-PDF-mode = true;
         };
 
@@ -246,7 +246,7 @@
 
         catt-mode = {
           enable = true;
-          package = epkgs.callPackage ./pkgs/catt/catt-mode.nix { };
+          package = epkgs.callPackage ./pkgs/catt/catt-mode.nix {};
           init = ''
             (add-hook 'catt-mode-hook 'eglot-ensure)
           '';
@@ -270,7 +270,7 @@
         tex = {
           enable = true;
           package = epkgs.elpaPackages.auctex;
-          external-packages = [ pkgs.texlab ];
+          external-packages = [pkgs.texlab];
           init = ''
             (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
             (add-hook 'LaTeX-mode-hook 'TeX-source-correlate-mode)
@@ -323,12 +323,12 @@
         haskell-mode = {
           enable = true;
           external-packages = [pkgs.haskell-language-server];
-          hook= "(haskell-mode . eglot-ensure)";
+          hook = "(haskell-mode . eglot-ensure)";
         };
 
         agda2-mode = {
           enable = true;
-          package = (pkgs.agdaPackages.agda-mode epkgs);
+          package = pkgs.agdaPackages.agda-mode epkgs;
           mode = ''"\\.l?agda\\'"'';
         };
 
