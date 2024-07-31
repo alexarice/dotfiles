@@ -96,6 +96,8 @@
       python3
       cargo
       rustc
+      rustfmt
+      clippy
       gnumake
       gdb
       lldb
@@ -112,7 +114,7 @@
       spotify
       libreoffice
       vesktop
-      zathura
+      (zathuraPkgs.override { useMupdf = false; }).zathuraWrapper
       (zotero.overrideAttrs (attrs: attrs // {meta = attrs.meta // {knownVulnerabilities = [];};}))
       ripgrep
       signal-desktop
