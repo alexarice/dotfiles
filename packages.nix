@@ -10,7 +10,6 @@
       wl-clipboard
       cachix
       pinentry
-      binutils
       zoom-us
       rmapi
       unetbootin
@@ -26,7 +25,6 @@
       mkpasswd
       jq
       file
-      binutils
       imagemagick
       unzip
       zip
@@ -101,8 +99,11 @@
       gnumake
       gdb
       lldb
-      gcc
       gurobi
+      ninja
+      cmake
+      clang
+      mold
 
       # Programs
       firefox-wayland
@@ -114,7 +115,7 @@
       spotify
       libreoffice
       vesktop
-      (zathuraPkgs.override { useMupdf = false; }).zathuraWrapper
+      (zathuraPkgs.override {useMupdf = false;}).zathuraWrapper
       (zotero.overrideAttrs (attrs: attrs // {meta = attrs.meta // {knownVulnerabilities = [];};}))
       ripgrep
       signal-desktop

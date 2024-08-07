@@ -30,37 +30,11 @@
           '';
         };
 
-        copilot = {
-          enable = false;
-          custom = {
-            copilot-max-char = -1;
-            copilot-indent-offset-warning-disable = true;
-          };
-          bind.copilot-mode-map = {
-            "<tab>" = "copilot-tab";
-          };
-          hook = "(prog-mode . copilot-mode)";
-        };
-
-        texpresso = {
-          enable = true;
-          package = pkgs.texpresso-mode;
-        };
-
         "c++-mode" = {
           enable = true;
           package = [];
           external-packages = [pkgs.clang-tools];
           hook = "(c++-mode . eglot-ensure)";
-        };
-
-        lspce = {
-          enable = false;
-
-          config = ''
-            (add-to-list 'lspce-server-programs '("LaTeX" "texlab"))
-            (add-to-list 'lspce-server-programs '("rustic" "rust-analyzer"))
-          '';
         };
 
         cape = {
@@ -234,28 +208,12 @@
           '';
         };
 
-        # eglot-booster = {
-        #   enable = true;
-        #   package = epkgs.callPackage ./pkgs/eglot-booster { };
-        #   external-packages = [ pkgs.emacs-lsp-booster ];
-        #   after = [ "eglot" ];
-        #   config = ''
-        #     (eglot-booster-mode)
-        #   '';
-        # };
-
         catt-mode = {
           enable = true;
           package = epkgs.callPackage ./pkgs/catt/catt-mode.nix {};
           init = ''
             (add-hook 'catt-mode-hook 'eglot-ensure)
           '';
-        };
-
-        pdf-tools = {
-          enable = true;
-          mode = ''("\\.pdf\\'" . pdf-view-mode)'';
-          custom.pdf-view-incompatible-modes = "display-line-numbers-mode";
         };
 
         smartparens = {
@@ -343,8 +301,15 @@
           hook = "(text-mode . jinx-mode)";
         };
 
+        llvm-ts-mode = {
+          enable = true;
+          mode = ''"\\.td\\'"'';
+        };
+
         yasnippet.enable = true;
       };
+
+      tree-sitter.enable = true;
 
       hydra.hydra-agda = {
         hint = "nil";

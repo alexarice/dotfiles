@@ -131,11 +131,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1695375126,
-        "narHash": "sha256-XbFoSwq+0eH/iloVh0039x47IHeqa5vqtNZj32MtBDc=",
+        "lastModified": 1723025080,
+        "narHash": "sha256-R417TYtPXryHwXO8iNVFGF+VOyAEyJss7RrZ4bcFPEM=",
         "owner": "alexarice",
         "repo": "emacs-nix",
-        "rev": "6e8fa754ab9939e1c54e01708f3e321c06071b75",
+        "rev": "5cee8ba7dd001fc2e55ab28fc4a48570e1c1e959",
         "type": "github"
       },
       "original": {
