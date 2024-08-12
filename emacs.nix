@@ -80,9 +80,9 @@
           };
         };
 
-        direnv = {
+        envrc = {
           enable = true;
-          config = "(direnv-mode)";
+          hook = "(after-init . envrc-global-mode)";
         };
 
         doom-themes = {
@@ -111,6 +111,12 @@
           external-packages = [pkgs.nil];
           hook = "(nix-mode . eglot-ensure)";
           custom.nix-indent-function = "'nix-indent-line";
+        };
+
+        python-mode = {
+          enable = true;
+          external-packages = [pkgs.pyright];
+          hook = "(python-mode . eglot-ensure)";
         };
 
         savehist = {
@@ -205,6 +211,10 @@
             '((LaTeX-mode tex-mode context-mode texinfo-mode bibtex-mode) . ("texlab" :initializationOptions (:texlab (:chktex (:onOpenAndSave nil :onEdit nil))))))
             (add-to-list 'eglot-server-programs
               '(catt-mode . ("~/.cargo/bin/catt_strict" "--lsp")))
+            (add-to-list 'eglot-server-programs
+              '(mlir-mode . ("/home/alex/postdoc/mlir/llvm-project/build/bin/mlir-lsp-server")))
+            (add-to-list 'eglot-server-programs
+              '(tablegen-mode . ("/home/alex/postdoc/mlir/llvm-project/build/bin/tblgen-lsp-server" "--tablegen-compilation-database=/home/alex/postdoc/mlir/llvm-project/build/tablegen_compile_commands.yml")))
           '';
         };
 
@@ -303,7 +313,18 @@
 
         llvm-ts-mode = {
           enable = true;
-          mode = ''"\\.td\\'"'';
+        };
+
+        mlir-mode = {
+          enable = true;
+          package = epkgs.callPackage ./pkgs/mlir-mode { };
+          hook = "(mlir-mode . eglot-ensure)";
+        };
+
+        tablegen-mode = {
+          enable = true;
+          package = epkgs.callPackage ./pkgs/tablegen-mode { };
+          hook = "(tablegen-mode . eglot-ensure)";
         };
 
         yasnippet.enable = true;

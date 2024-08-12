@@ -1,4 +1,4 @@
-;; catt-mode.el -- CATT major emacs mode
+;;; catt-mode.el --- CATT major emacs mode
 
 (require 'agda-input)
 

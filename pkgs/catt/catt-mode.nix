@@ -1,10 +1,10 @@
 {
-  trivialBuild,
+  melpaBuild,
   agda2-mode,
 }:
-trivialBuild rec {
+melpaBuild {
   pname = "catt-mode";
-  version = "master";
+  version = "0-unstable-2024-07-15";
 
   src = ./.;
 
