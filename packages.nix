@@ -77,14 +77,14 @@
 
       # Desktop environment
       (mate.caja-with-extensions.override {extensions = [mate.caja-extensions];})
-      mate.eom
+      mc
+      qview
       glib
       shared-mime-info
       libreoffice
 
       # LaTeX
       texlive.combined.scheme-full
-      texpresso
       (callPackage ./pkgs/textidote {})
 
       # Programming

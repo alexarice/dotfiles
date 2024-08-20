@@ -18,6 +18,7 @@ with lib; {
         ./packages.nix
         ./alacritty.nix
         ./files.nix
+        ./foot.nix
         ./git.nix
         ./gtk.nix
         ./direnv.nix

@@ -317,13 +317,13 @@
 
         mlir-mode = {
           enable = true;
-          package = epkgs.callPackage ./pkgs/mlir-mode { };
+          package = epkgs.callPackage ./pkgs/mlir-mode {};
           hook = "(mlir-mode . eglot-ensure)";
         };
 
         tablegen-mode = {
           enable = true;
-          package = epkgs.callPackage ./pkgs/tablegen-mode { };
+          package = epkgs.callPackage ./pkgs/tablegen-mode {};
           hook = "(tablegen-mode . eglot-ensure)";
         };
 

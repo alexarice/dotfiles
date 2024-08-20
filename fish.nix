@@ -6,9 +6,7 @@
       gc = "git commit";
       ga = "git add";
       gst = "git status";
-      gr = "git rebase";
       gd = "git diff";
-      sshtw = "ssh axr1014@tinky-winky.cs.bham.ac.uk";
     };
   };
 
