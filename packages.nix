@@ -77,7 +77,7 @@
 
       # Desktop environment
       (mate.caja-with-extensions.override {extensions = [mate.caja-extensions];})
-      mc
+      nnn
       qview
       glib
       shared-mime-info
