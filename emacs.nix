@@ -263,7 +263,10 @@
         reftex = {
           enable = true;
           package = [];
-          custom.reftex-plug-into-AUCTeX = true;
+          custom = {
+            reftex-plug-into-AUCTeX = true;
+            reftex-use-external-file-finders = true;
+          };
         };
 
         git-gutter = {

@@ -17,6 +17,7 @@
 
   home.sessionPath = [
     "$HOME/.cargo/bin"
+    "$HOME/.cmake/bin"
   ];
 
   xdg.configFile."fish/functions".source = pkgs.callPackage ./fish_prompt.nix {};

@@ -81,7 +81,6 @@
       qview
       glib
       shared-mime-info
-      libreoffice
 
       # LaTeX
       texlive.combined.scheme-full
@@ -120,9 +119,7 @@
       ripgrep
       signal-desktop
       zulip
-      zulip-term
       inkscape
-      vscode
 
       # Games
       sgt-puzzles

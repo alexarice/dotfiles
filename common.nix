@@ -128,7 +128,6 @@ with lib; {
         bup
         adwaita-icon-theme
       ];
-      homeBinInPath = true;
     };
 
     # Load fonts
@@ -200,6 +199,10 @@ with lib; {
           end
         end
       '';
+    };
+
+    programs.nix-ld = {
+      enable = true;
     };
 
     # This value determines the NixOS release with which your system is to be
