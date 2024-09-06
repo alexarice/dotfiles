@@ -339,7 +339,7 @@
         hint = "nil";
         docText = ''
 
-          _l_: Load         _f_: Next goal      _r_: Refine  _g_: Give       _s_: Solve
+          _l_: Load         _f_: Next goal      _r_: Refine  _g_: Give       _s_: Solve         _u_: Arg
           _,_: Get context  _b_: Previous goal  _a_: Auto    _c_: Case split _e_: Eq. reasoning
         '';
         bindings = {
@@ -353,6 +353,7 @@
           "a" = "agda2-auto-maybe-all";
           "s" = "agda2-solve-maybe-all";
           "e" = "reasoning-block";
+          "u" = "universal-argument";
           "q" = {
             command = "nil";
             name = "cancel";
