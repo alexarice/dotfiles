@@ -17,8 +17,8 @@
     };
 
     agda-default = self: super: {
-      agdaPackages = self.agdaPackages-2_6_4;
-      agda = self.agda-2_6_4;
+      agdaPackages = self.agdaPackages-2_7_0;
+      agda = self.agda-2_7_0;
     };
     # discord = self: super: {
     #   discord =
