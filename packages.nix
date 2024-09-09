@@ -87,7 +87,7 @@
       (callPackage ./pkgs/textidote {})
 
       # Programming
-      (agda.withPackages (p: with p; [standard-library cubical]))
+      (agda.withPackages (p: with p; [standard-library]))
       cabal-install
       (haskellPackages.ghcWithPackages (self: [self.filemanip]))
       python3
