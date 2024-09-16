@@ -47,10 +47,6 @@ with lib; {
       '';
     };
 
-    boot.tmp.useTmpfs = true;
-
-    boot.supportedFilesystems = ["ntfs"];
-
     security.sudo.enable = true;
     security.sudo.extraConfig = "Defaults pwfeedback";
     programs.sway = {
@@ -71,6 +67,10 @@ with lib; {
       indicator = true;
     };
 
+    boot.tmp.useTmpfs = true;
+
+    boot.supportedFilesystems = ["ntfs"];
+
     boot.loader =
       if config.machine == "rpi"
       then {
@@ -79,8 +79,20 @@ with lib; {
       }
       else {
         # Use the systemd-boot EFI boot loader.
-        systemd-boot.enable = true;
-        systemd-boot.consoleMode = "max";
+        systemd-boot = {
+          enable = true;
+          consoleMode = "auto";
+          extraEntries = mkIf (config.machine == "desktop") {
+            "windows.conf" = ''
+              title Windows
+              efi /EFI/Microsoft/Boot/bootmgfw.efi
+              sort-key b_windows
+            '';
+          };
+          extraInstallCommands = ''
+            echo "auto-entries no" >> /boot/loader/loader.conf
+          '';
+        };
         efi.canTouchEfiVariables = true;
       };
 
