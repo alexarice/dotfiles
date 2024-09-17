@@ -6,7 +6,7 @@
   programs.emacs = {
     enable = true;
 
-    package = pkgs.emacs-unstable-pgtk;
+    package = pkgs.emacs-pgtk;
 
     config = {
       config,
@@ -65,6 +65,7 @@
               "r" = "eglot-rename";
               "g" = "magit-status-here";
               "y" = "jinx-correct";
+              "t" = "fold-map";
             };
             "xah-fly-command-map" = {
               "#" = "xah-comment-dwim";
@@ -133,6 +134,20 @@
         rainbow-delimiters = {
           enable = true;
           hook = "(prog-mode . rainbow-delimiters-mode)";
+        };
+
+        treesit-fold = {
+          enable = true;
+          hook = "(json-ts-mode . treesit-fold-mode)";
+        };
+
+        json-ts-mode = {
+          enable = true;
+          package = [];
+          mode = ''"\\.json\\'"'';
+          bind.json-ts-mode-map = {
+            "<tab>" = "treesit-fold-toggle";
+          };
         };
 
         vertico = {
