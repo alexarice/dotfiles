@@ -30,6 +30,7 @@
       zip
       pdftk
       lgogdownloader
+      heroic
       htop
       gitAndTools.git-extras
       numactl
