@@ -66,6 +66,7 @@
               "g" = "magit-status-here";
               "y" = "jinx-correct";
               "t" = "fold-map";
+              "w" = "delete-other-windows";
             };
             "xah-fly-command-map" = {
               "#" = "xah-comment-dwim";
