@@ -75,6 +75,7 @@
       libappindicator
       bitwarden-cli
       xdg-utils
+      baobab
 
       # Desktop environment
       (mate.caja-with-extensions.override {extensions = [mate.caja-extensions];})
@@ -100,10 +101,6 @@
       gdb
       lldb
       gurobi
-      ninja
-      cmake
-      clang
-      mold
 
       # Programs
       firefox-wayland

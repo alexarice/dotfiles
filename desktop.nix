@@ -30,6 +30,12 @@
           extraPackages32 = [pkgs.driversi686Linux.amdvlk];
         };
         services.ratbagd.enable = true;
+        virtualisation.libvirtd.enable = true;
+        programs.virt-manager.enable = true;
+        environment.systemPackages = with pkgs; [
+          qemu
+          quickemu
+        ];
       })
     ];
   };
