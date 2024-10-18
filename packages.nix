@@ -112,6 +112,7 @@
       spotify
       libreoffice
       vesktop
+      slack
       (zathuraPkgs.override {useMupdf = false;}).zathuraWrapper
       (zotero.overrideAttrs (attrs: attrs // {meta = attrs.meta // {knownVulnerabilities = [];};}))
       ripgrep
