@@ -38,13 +38,9 @@ with lib; {
       allowUnfree = true;
     };
 
-    # services.fwupd.enable = true;
-
     services.printing = {
       enable = true;
-      clientConf = ''
-        ServerName cups-serv.cl.cam.ac.uk
-      '';
+      cups-pdf.enable = true;
     };
 
     security.sudo.enable = true;
