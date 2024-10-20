@@ -36,6 +36,7 @@
       numactl
       piper
       linuxPackages_latest.perf
+      helix
 
       # Things in sway config
       networkmanager_dmenu
