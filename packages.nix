@@ -88,6 +88,8 @@
       texlive.combined.scheme-full
       (callPackage ./pkgs/textidote {})
       typst
+      tinymist
+      typstyle
 
       # Programming
       (agda.withPackages (p: with p; [standard-library]))

@@ -222,9 +222,6 @@
         typst-ts-mode = {
           enable = true;
           package = epkgs.callPackage ./pkgs/typst-ts-mode {};
-          external-packages = [
-            pkgs.typst-lsp
-          ];
           mode = ''"\\.typ\\'"'';
           hook = "(typst-ts-mode . eglot-ensure)";
           custom = {
@@ -241,11 +238,13 @@
             (add-to-list 'eglot-server-programs
               '(catt-mode . ("~/.cargo/bin/catt_strict" "--lsp")))
             (add-to-list 'eglot-server-programs
-              '(typst-ts-mode . ("typst-lsp")))
+              '(typst-ts-mode . ("tinymist")))
             (add-to-list 'eglot-server-programs
               '(mlir-mode . ("/home/alex/postdoc/mlir/llvm-project/build/bin/mlir-lsp-server")))
             (add-to-list 'eglot-server-programs
               '(tablegen-mode . ("/home/alex/postdoc/mlir/llvm-project/build/bin/tblgen-lsp-server" "--tablegen-compilation-database=/home/alex/postdoc/mlir/llvm-project/build/tablegen_compile_commands.yml")))
+            (setq-default eglot-workspace-configuration
+              '(:exportPdf "onSave"))
           '';
         };
 
