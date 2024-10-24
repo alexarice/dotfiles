@@ -219,6 +219,19 @@
           custom.auctex-latexmk-inherit-TeX-PDF-mode = true;
         };
 
+        typst-ts-mode = {
+          enable = true;
+          package = epkgs.callPackage ./pkgs/typst-ts-mode {};
+          external-packages = [
+            pkgs.typst-lsp
+          ];
+          mode = ''"\\.typ\\'"'';
+          hook = "(typst-ts-mode . eglot-ensure)";
+          custom = {
+            typst-ts-mode-indent-offset = 2;
+          };
+        };
+
         eglot = {
           enable = true;
           package = [];
@@ -227,6 +240,8 @@
             '((LaTeX-mode tex-mode context-mode texinfo-mode bibtex-mode) . ("texlab" :initializationOptions (:texlab (:chktex (:onOpenAndSave nil :onEdit nil))))))
             (add-to-list 'eglot-server-programs
               '(catt-mode . ("~/.cargo/bin/catt_strict" "--lsp")))
+            (add-to-list 'eglot-server-programs
+              '(typst-ts-mode . ("typst-lsp")))
             (add-to-list 'eglot-server-programs
               '(mlir-mode . ("/home/alex/postdoc/mlir/llvm-project/build/bin/mlir-lsp-server")))
             (add-to-list 'eglot-server-programs
@@ -348,8 +363,6 @@
 
         yasnippet.enable = true;
       };
-
-      tree-sitter.enable = true;
 
       hydra.hydra-agda = {
         hint = "nil";

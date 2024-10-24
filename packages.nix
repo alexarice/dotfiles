@@ -87,6 +87,7 @@
       # LaTeX
       texlive.combined.scheme-full
       (callPackage ./pkgs/textidote {})
+      typst
 
       # Programming
       (agda.withPackages (p: with p; [standard-library]))
@@ -101,6 +102,7 @@
       gdb
       lldb
       gurobi
+      clang
 
       # Programs
       firefox-wayland
