@@ -27,6 +27,7 @@ with lib; {
         ./systemd.nix
         ./sway.nix
         ./gpg.nix
+        ./helix.nix
       ];
 
       options = {
