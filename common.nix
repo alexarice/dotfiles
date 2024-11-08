@@ -145,6 +145,9 @@ with lib; {
           (pkgs.nerdfonts.override {fonts = ["Hack"];})
           symbola
           dejavu_fonts
+          fira
+          source-code-pro
+          source-sans
         ]
         ++ optional (config.machine != "rpi") noto-fonts;
       enableDefaultPackages = false;

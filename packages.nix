@@ -117,7 +117,9 @@
       libreoffice
       vesktop
       slack
-      (zathuraPkgs.override {useMupdf = false;}).zathuraWrapper
+      zathura
+      okular
+      evince
       (zotero.overrideAttrs (attrs: attrs // {meta = attrs.meta // {knownVulnerabilities = [];};}))
       ripgrep
       signal-desktop
