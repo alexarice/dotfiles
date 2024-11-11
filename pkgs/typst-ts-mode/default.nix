@@ -1,6 +1,4 @@
-{
-  melpaBuild,
-}:
+{melpaBuild}:
 melpaBuild {
   pname = "typst-ts-mode";
   version = "0-unstable-2024-10-23";

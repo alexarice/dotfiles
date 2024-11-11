@@ -1,7 +1,6 @@
 {
   melpaBuild,
   fetchFromGitHub,
-
   websocket,
 }:
 melpaBuild {
