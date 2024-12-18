@@ -131,6 +131,10 @@
       lutris
       wine
       runelite
+
+      # 3D print
+      blender
+      bambu-studio
     ]
     else [
       wldash
