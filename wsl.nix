@@ -54,7 +54,7 @@
     # Load fonts
     fonts = {
       fonts = with pkgs; [
-        (pkgs.nerdfonts.override {fonts = ["SourceCodePro"];})
+        nerd-fonts.SourceCodePro
         symbola
         dejavu_fonts
       ];

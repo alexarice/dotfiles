@@ -142,7 +142,7 @@ with lib; {
     fonts = {
       packages = with pkgs;
         [
-          (pkgs.nerdfonts.override {fonts = ["Hack"];})
+          nerd-fonts.hack
           symbola
           dejavu_fonts
           fira
