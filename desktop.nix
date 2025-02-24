@@ -19,16 +19,12 @@
         nixpkgs = {
           inherit (config) overlays;
         };
+        boot.kernelPackages = pkgs.linuxPackages_latest;
         nix.registry.nixpkgs.flake = inputs.nixpkgs;
         time.hardwareClockInLocalTime = true;
         machine = "desktop";
         networking.hostName = "Desktop_Nixos";
         system.configurationRevision = lib.mkIf (inputs.self ? rev) inputs.self.rev;
-        boot.initrd.kernelModules = ["amdgpu"];
-        hardware.graphics = {
-          extraPackages = [pkgs.amdvlk];
-          extraPackages32 = [pkgs.driversi686Linux.amdvlk];
-        };
         services.ratbagd.enable = true;
         virtualisation.libvirtd.enable = true;
         programs.virt-manager.enable = true;
