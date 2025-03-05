@@ -118,7 +118,7 @@
       vesktop
       slack
       zathura
-      okular
+      kdePackages.okular
       evince
       (zotero.overrideAttrs (attrs: attrs // {meta = attrs.meta // {knownVulnerabilities = [];};}))
       ripgrep
