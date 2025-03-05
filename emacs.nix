@@ -281,7 +281,7 @@
           '';
           config = ''
             (add-to-list 'TeX-view-program-selection
-              '(output-pdf "Zathura"))
+              '(output-pdf "Evince"))
             (auctex-latexmk-setup)
           '';
           custom = {

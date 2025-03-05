@@ -143,6 +143,7 @@ with lib; {
       packages = with pkgs;
         [
           nerd-fonts.hack
+          noto-fonts-emoji
           symbola
           dejavu_fonts
           fira

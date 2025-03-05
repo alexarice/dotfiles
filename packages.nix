@@ -112,7 +112,6 @@
       thunderbird
       vlc
       gimp
-      evince
       spotify
       libreoffice
       vesktop
