@@ -13,6 +13,7 @@
       extraConfig = {
         core.filemode = false;
         pull.rebase = true;
+        credential.helper = "store";
       };
     };
 
