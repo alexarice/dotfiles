@@ -9,7 +9,7 @@
 
   overlays = {
     emacs = inputs.emacs-overlay.overlay;
-    wayland = self: super: removeAttrs (inputs.nixpkgs-wayland.overlay self super) ["sway-unwrapped" "wlroots"];
+    # wayland = self: super: removeAttrs (inputs.nixpkgs-wayland.overlay self super) ["sway-unwrapped" "wlroots" "wldash"];
     agda = inputs.all-agda.overlay."x86_64-linux";
 
     texpresso = self: super: {

@@ -52,7 +52,7 @@ in {
       };
       inherit modifier;
       menu = "wldash";
-      terminal = "foot";
+      terminal = "alacritty";
       workspaceAutoBackAndForth = true;
       keybindings = lib.mkOptionDefault {
         "${modifier}+n" = "exec caja";

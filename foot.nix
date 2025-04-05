@@ -1,6 +1,6 @@
 {...}: {
   programs.foot = {
-    enable = true;
+    enable = false;
     settings = {
       main = {
         font = "monospace:size=10";
