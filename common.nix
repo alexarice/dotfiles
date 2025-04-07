@@ -143,14 +143,14 @@ with lib; {
       packages = with pkgs;
         [
           nerd-fonts.hack
-          noto-fonts-emoji
+          noto-fonts-color-emoji
+          noto-fonts-cjk-sans
           symbola
           dejavu_fonts
           fira
           source-code-pro
           source-sans
-        ]
-        ++ optional (config.machine != "rpi") noto-fonts;
+        ];
       enableDefaultPackages = false;
 
       fontconfig = {
