@@ -363,6 +363,8 @@
         yasnippet.enable = true;
       };
 
+      tree-sitter.enable = true;
+
       hydra.hydra-agda = {
         hint = "nil";
         docText = ''
@@ -476,11 +478,6 @@
           (let ((inhibit-message t))
           (recentf-save-list)))
         (run-at-time nil (* 2 60) 'save-recentf-no-output)
-
-        (defun copilot-tab ()
-          (interactive)
-          (or (copilot-accept-completion)
-              (indent-for-tab-command)))
 
         (defun reasoning-block (n)
           (interactive "nLines: ")
