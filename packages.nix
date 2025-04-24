@@ -130,6 +130,7 @@
       lutris
       wine
       runelite
+      osu-lazer-bin
 
       # 3D print
       blender
