@@ -49,6 +49,8 @@
       nix-info
       nix-index
       direnv
+      nix-du
+      graphviz
 
       # GTK
       hicolor-icon-theme
