@@ -131,6 +131,7 @@
       wine
       runelite
       osu-lazer-bin
+      prismlauncher
 
       # 3D print
       blender
