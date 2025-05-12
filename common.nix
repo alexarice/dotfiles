@@ -145,6 +145,7 @@ with lib; {
           nerd-fonts.hack
           noto-fonts-color-emoji
           noto-fonts-cjk-sans
+          freefont_ttf
           symbola
           dejavu_fonts
           fira
