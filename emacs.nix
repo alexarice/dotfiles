@@ -57,6 +57,7 @@
             "<end>" = "xah-fly-command-mode-activate";
             "<menu>" = "xah-fly-command-mode-activate";
             "<VoidSymbol>" = "xah-fly-command-mode-activate";
+            "C-g" = "crux-keyboard-quit-dwim";
             "xah-fly-leader-key-map" = {
               "u" = "consult-buffer";
               "h" = "eglot-code-actions";
