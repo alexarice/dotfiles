@@ -460,6 +460,7 @@
 
         global-hl-line-mode = true;
         global-display-line-numbers-mode = true;
+        column-number-mode = true;
         recentf-mode = true;
         smartparens-global-mode = true;
       };

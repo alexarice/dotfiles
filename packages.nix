@@ -97,7 +97,7 @@
       (agda.withPackages (p: with p; [standard-library]))
       cabal-install
       (haskellPackages.ghcWithPackages (self: [self.filemanip]))
-      python3
+      python313
       cargo
       rustc
       rustfmt
