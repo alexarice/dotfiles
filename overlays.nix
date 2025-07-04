@@ -16,6 +16,10 @@
       texpresso-mode = my-pkgs.emacsPackages.texpresso;
     };
 
+    ferrishot = self: super: {
+      ferrishot = inputs.ferrishot.packages."x86_64-linux".default;
+    };
+
     agda-default = self: super: {
       agdaPackages = self.agdaPackages-2_7_0;
       agda = self.agda-2_7_0;

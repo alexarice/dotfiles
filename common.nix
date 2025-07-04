@@ -58,6 +58,8 @@ with lib; {
       wrapperFeatures.gtk = true;
     };
 
+    programs.command-not-found.enable = true;
+
     programs.nm-applet = {
       enable = true;
       indicator = true;
