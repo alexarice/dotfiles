@@ -68,6 +68,7 @@
               "y" = "jinx-correct";
               "t" = "fold-map";
               "w" = "delete-other-windows";
+              "s" = "save-buffer";
             };
             "xah-fly-command-map" = {
               "#" = "xah-comment-dwim";
@@ -451,6 +452,7 @@
         tab-always-indent = "'complete";
         read-extended-command-predicate = "#'command-completion-default-include-p";
         delete-trailing-lines = false;
+        column-number-indicator-zero-based = false;
       };
 
       global-modes = {
