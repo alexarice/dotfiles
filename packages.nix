@@ -137,7 +137,6 @@
 
       # 3D print
       blender
-      bambu-studio
     ]
     else [
       wldash

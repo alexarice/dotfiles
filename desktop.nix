@@ -19,7 +19,6 @@
         nixpkgs = {
           inherit (config) overlays;
         };
-        boot.kernelPackages = pkgs.linuxPackages_latest;
         nix.registry.nixpkgs.flake = inputs.nixpkgs;
         time.hardwareClockInLocalTime = true;
         machine = "desktop";

@@ -80,7 +80,12 @@
               "b" = "consult-line";
               "'" = "eglot-format";
               "l" = "major-mode-bind";
+              "y" = "set-mark-command";
             };
+          };
+          custom = {
+            xah-fly-command-mode-cursor-color = null;
+            xah-fly-insert-mode-cursor-color = null;
           };
         };
 

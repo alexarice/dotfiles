@@ -13,14 +13,14 @@
       ./home.nix
       ./hardware/framework.nix
       ./cachix.nix
-      # ./kmonad.nix
       inputs.home-manager.nixosModules.home-manager
       inputs.fps.nixosModules.programs-sqlite
-      inputs.nixos-hardware.nixosModules.framework-11th-gen-intel
+      inputs.nixos-hardware.nixosModules.framework-13-7040-amd
       ({...}: {
         nixpkgs = {
           inherit (config) overlays;
         };
+        nix.registry.nixpkgs.flake = inputs.nixpkgs;
         boot.initrd.luks.devices = {
           cryptlvm = {
             device = "/dev/nvme0n1p1";
@@ -33,19 +33,12 @@
 
         networking.hostName = "Alex_fm"; # Define your hostname.
 
-        hardware = {
-          cpu.intel.updateMicrocode = true;
-        };
-
         services = {
+          fwupd.enable = true;
           upower.enable = true;
-          fprintd.enable = false;
-          tlp.enable = true;
           logind.lidSwitch = "ignore";
         };
         system.configurationRevision = lib.mkIf (inputs.self ? rev) inputs.self.rev;
-
-        services.ratbagd.enable = true;
       })
     ];
   };

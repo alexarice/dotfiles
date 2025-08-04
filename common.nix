@@ -69,6 +69,8 @@ with lib; {
 
     boot.supportedFilesystems = ["ntfs"];
 
+    boot.kernelPackages = pkgs.linuxPackages_latest;
+
     boot.loader =
       if config.machine == "rpi"
       then {
