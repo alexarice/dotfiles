@@ -10,7 +10,6 @@
       wl-clipboard
       cachix
       pinentry
-      zoom-us
       rmapi
       unetbootin
 
@@ -96,7 +95,6 @@
       # Programming
       (agda.withPackages (p: with p; [standard-library]))
       cabal-install
-      (haskellPackages.ghcWithPackages (self: [self.filemanip]))
       python313
       cargo
       rustc
@@ -121,7 +119,8 @@
       zathura
       kdePackages.okular
       evince
-      (zotero.overrideAttrs (attrs: attrs // {meta = attrs.meta // {knownVulnerabilities = [];};}))
+      zotero
+      # (zotero.overrideAttrs (attrs: attrs // {meta = attrs.meta // {knownVulnerabilities = [];};}))
       ripgrep
       signal-desktop
       zulip
