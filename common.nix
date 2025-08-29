@@ -144,18 +144,17 @@ with lib; {
 
     # Load fonts
     fonts = {
-      packages = with pkgs;
-        [
-          nerd-fonts.hack
-          noto-fonts-color-emoji
-          noto-fonts-cjk-sans
-          freefont_ttf
-          symbola
-          dejavu_fonts
-          fira
-          source-code-pro
-          source-sans
-        ];
+      packages = with pkgs; [
+        nerd-fonts.hack
+        noto-fonts-color-emoji
+        noto-fonts-cjk-sans
+        freefont_ttf
+        symbola
+        dejavu_fonts
+        fira
+        source-code-pro
+        source-sans
+      ];
       enableDefaultPackages = false;
 
       fontconfig = {
