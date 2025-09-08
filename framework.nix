@@ -36,7 +36,7 @@
         services = {
           fwupd.enable = true;
           upower.enable = true;
-          logind.lidSwitch = "ignore";
+          logind.settings.Login.HandleLidSwitch = "ignore";
         };
         system.configurationRevision = lib.mkIf (inputs.self ? rev) inputs.self.rev;
       })
