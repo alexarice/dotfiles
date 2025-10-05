@@ -58,6 +58,9 @@ with lib; {
           allowUnfree = true;
           allowUnsupportedSystem = true;
           oraclejdk.accept_license = true;
+          permittedInsecurePackages = [
+            "openssl-1.1.1w"
+          ];
         };
 
         services.kdeconnect = {

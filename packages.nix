@@ -76,7 +76,7 @@
       libappindicator
       bitwarden-cli
       xdg-utils
-      baobab
+      ncdu
 
       # Desktop environment
       (mate.caja-with-extensions.override {extensions = [mate.caja-extensions];})
@@ -120,7 +120,6 @@
       kdePackages.okular
       evince
       zotero
-      # (zotero.overrideAttrs (attrs: attrs // {meta = attrs.meta // {knownVulnerabilities = [];};}))
       ripgrep
       signal-desktop
       zulip
@@ -131,8 +130,10 @@
       lutris
       wine
       runelite
+      runescape
       osu-lazer-bin
       prismlauncher
+      ckan
 
       # 3D print
       blender
