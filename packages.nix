@@ -29,12 +29,11 @@
       zip
       pdftk
       lgogdownloader
-      heroic
       htop
       gitAndTools.git-extras
       numactl
       piper
-      linuxPackages_latest.perf
+      perf
 
       # Things in sway config
       networkmanager_dmenu
@@ -103,7 +102,6 @@
       gnumake
       gdb
       lldb
-      gurobi
       clang
 
       # Programs
@@ -126,7 +124,7 @@
       inkscape
 
       # Games
-      sgt-puzzles
+      # sgt-puzzles
       lutris
       wine
       runelite
@@ -134,6 +132,7 @@
       osu-lazer-bin
       prismlauncher
       ckan
+      heroic
 
       # 3D print
       blender
