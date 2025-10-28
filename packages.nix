@@ -76,6 +76,7 @@
       bitwarden-cli
       xdg-utils
       ncdu
+      protonvpn-gui
 
       # Desktop environment
       (mate.caja-with-extensions.override {extensions = [mate.caja-extensions];})
