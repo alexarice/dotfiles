@@ -9,7 +9,7 @@
       wldash
       wl-clipboard
       cachix
-      pinentry
+      pinentry-curses
       rmapi
       unetbootin
 
@@ -30,7 +30,7 @@
       pdftk
       lgogdownloader
       htop
-      gitAndTools.git-extras
+      git-extras
       numactl
       piper
       perf
@@ -95,7 +95,7 @@
       # Programming
       (agda.withPackages (p: with p; [standard-library]))
       cabal-install
-      python313
+      python314
       cargo
       rustc
       rustfmt
@@ -106,7 +106,7 @@
       clang
 
       # Programs
-      firefox-wayland
+      firefox
       chromium
       thunderbird
       vlc
@@ -144,7 +144,7 @@
       git
       emacs
       nixmacsrpi
-      pinentry
+      pinentry-curses
       (python37.withPackages (p: [p.discordpy p.gspread p.oauth2client]))
     ];
 }
