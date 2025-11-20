@@ -34,6 +34,8 @@
       numactl
       piper
       perf
+      calc
+      cloc
 
       # Things in sway config
       networkmanager_dmenu
