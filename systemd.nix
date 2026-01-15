@@ -20,20 +20,20 @@
         Restart = "always";
       };
     };
-    mako = {
-      Unit = {
-        Description = pkgs.mako.meta.description;
-        PartOf = ["graphical-session.target"];
-      };
-      Install = {
-        WantedBy = ["sway-session.target"];
-      };
-      Service = {
-        ExecStart = "${pkgs.mako}/bin/mako --default-timeout 10000";
-        RestartSec = 3;
-        Restart = "always";
-      };
-    };
+    # mako = {
+    #   Unit = {
+    #     Description = pkgs.mako.meta.description;
+    #     PartOf = ["graphical-session.target"];
+    #   };
+    #   Install = {
+    #     WantedBy = ["sway-session.target"];
+    #   };
+    #   Service = {
+    #     ExecStart = "${pkgs.mako}/bin/mako --default-timeout 10000";
+    #     RestartSec = 3;
+    #     Restart = "always";
+    #   };
+    # };
     udiskie = {
       Unit = {
         Description = pkgs.udiskie.meta.description;

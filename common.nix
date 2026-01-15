@@ -114,6 +114,9 @@ with lib; {
 
     networking.networkmanager = {
       enable = true;
+      plugins = with pkgs; [
+        networkmanager-l2tp
+      ];
     };
 
     i18n = {
