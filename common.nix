@@ -205,10 +205,6 @@ with lib; {
       wlr.enable = true;
     };
 
-    # services.gvfs.enable = mkIf (config.machine != "rpi") true;
-
-    # programs.dconf.enable = mkIf (config.machine != "rpi") true;
-    programs.adb.enable = mkIf (config.machine != "rpi") true;
     programs.steam = {
       enable = true;
     };
