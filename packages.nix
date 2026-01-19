@@ -127,7 +127,7 @@
       inkscape
 
       # Games
-      # sgt-puzzles
+      sgt-puzzles
       lutris
       wine
       runelite
