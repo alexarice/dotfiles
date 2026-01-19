@@ -60,7 +60,6 @@
       hunspellDicts.en_GB-ise
 
       # Wayland
-      mako
       grim
       slurp
       waybar

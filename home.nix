@@ -28,6 +28,7 @@ with lib; {
         ./sway.nix
         ./gpg.nix
         ./helix.nix
+        ./mako.nix
       ];
 
       options = {
