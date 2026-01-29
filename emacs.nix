@@ -340,6 +340,11 @@
           mode = ''"\\.l?agda\\'"'';
         };
 
+        nael = {
+          enable = true;
+          hook = "(nael-mode . eglot-ensure)";
+        };
+
         tuareg = {
           enable = true;
           external-packages = [pkgs.ocamlPackages.ocaml-lsp];

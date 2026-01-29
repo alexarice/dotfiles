@@ -95,6 +95,7 @@
 
       # Programming
       (agda.withPackages (p: with p; [standard-library]))
+      elan
       cabal-install
       python314
       cargo
