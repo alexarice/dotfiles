@@ -98,6 +98,7 @@
       elan
       cabal-install
       python314
+      python314Packages.jupyter-core
       cargo
       rustc
       rustfmt
@@ -131,7 +132,7 @@
       lutris
       wine
       runelite
-      runescape
+      # runescape TODO replace by bolt?
       osu-lazer-bin
       prismlauncher
       ckan

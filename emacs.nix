@@ -89,6 +89,10 @@
           };
         };
 
+        ein = {
+          enable = true;
+        };
+
         envrc = {
           enable = true;
           hook = "(after-init . envrc-global-mode)";
