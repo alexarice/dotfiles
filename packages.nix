@@ -14,7 +14,7 @@
       unetbootin
 
       # CLI Programs
-      neofetch
+      fastfetch
       tree
       wget
       gnupg
