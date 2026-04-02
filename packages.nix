@@ -133,7 +133,7 @@
       lutris
       wine
       runelite
-      # runescape TODO replace by bolt?
+      bolt-launcher
       osu-lazer-bin
       prismlauncher
       ckan
