@@ -77,10 +77,10 @@
       bitwarden-cli
       xdg-utils
       ncdu
-      protonvpn-gui
+      proton-vpn
 
       # Desktop environment
-      (mate.caja-with-extensions.override {extensions = [mate.caja-extensions];})
+      (caja-with-extensions.override {extensions = [caja-extensions];})
       nnn
       qview
       glib
@@ -116,6 +116,7 @@
       gimp
       spotify
       libreoffice
+      onlyoffice-documentserver
       vesktop
       slack
       zathura

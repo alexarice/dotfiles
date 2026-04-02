@@ -151,6 +151,8 @@ with lib; {
         nerd-fonts.hack
         noto-fonts-color-emoji
         noto-fonts-cjk-sans
+        roboto
+        font-awesome
         freefont_ttf
         symbola
         dejavu_fonts
