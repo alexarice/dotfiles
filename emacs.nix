@@ -375,8 +375,6 @@
           package = epkgs.callPackage ./pkgs/tablegen-mode {};
           hook = "(tablegen-mode . eglot-ensure)";
         };
-
-        yasnippet.enable = true;
       };
 
       tree-sitter.enable = true;
