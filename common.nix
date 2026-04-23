@@ -97,15 +97,6 @@ with lib; {
     # Set your time zone.
     time.timeZone = "Europe/London";
 
-    # System packages
-    environment = {
-      systemPackages = with pkgs; [
-        git
-        bup
-        adwaita-icon-theme
-      ];
-    };
-
     # Load fonts
     fonts = {
       packages = with pkgs; [

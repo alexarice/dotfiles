@@ -1,4 +1,4 @@
-{lib, ...}:
+{lib, pkgs, ...}:
 with lib; {
   options = {
     machine = mkOption {
@@ -9,7 +9,10 @@ with lib; {
       ];
     };
   };
-  config.system.stateVersion = "18.09";
+  config = {
+    environment.systemPackages = [ pkgs.git ];
+    system.stateVersion = "18.09";
+  };
   imports = [
     ./home.nix
     ./nix.nix
