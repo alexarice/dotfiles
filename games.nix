@@ -12,5 +12,6 @@
     prismlauncher
     ckan
     heroic
+    lgogdownloader
   ];
 }

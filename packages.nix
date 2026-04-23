@@ -17,7 +17,6 @@
     unzip
     zip
     pdftk
-    lgogdownloader
     htop
     git-extras
     piper
