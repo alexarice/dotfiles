@@ -30,18 +30,6 @@ with lib; {
 
     security.sudo.enable = true;
     security.sudo.extraConfig = "Defaults pwfeedback";
-    programs.sway = {
-      enable = true;
-      extraSessionCommands = ''
-        export _JAVA_AWT_WM_NONREPARENTING=1
-        export XDG_CURRENT_DESKTOP=sway
-        export XDG_SESSION_TYPE=wayland
-        export MOZ_ENABLE_WAYLAND=1
-        systemctl --user import-environment
-      '';
-      extraPackages = [];
-      wrapperFeatures.gtk = true;
-    };
 
     programs.nm-applet = {
       enable = true;
