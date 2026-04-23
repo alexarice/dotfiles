@@ -19,7 +19,6 @@
     pdftk
     htop
     git-extras
-    piper
     perf
     calc
     cloc
