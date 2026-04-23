@@ -1,60 +1,26 @@
-{
-  self,
-  config,
-  lib,
-  inputs,
-  ...
-}: {
-  flake.nixosModules.wsl = {pkgs, ...}: let
-    stateVersion = "22.11";
-  in {
-    imports = [
-      ./cachix.nix
-      inputs.home-manager.nixosModules.home-manager
-      inputs.nixos-wsl.nixosModules.wsl
-    ];
+{inputs, ...}: let
+  wsl-module = {pkgs, ...}: {
+    machine = "wsl";
 
-    system.stateVersion = stateVersion;
-    home-manager = {
-      extraSpecialArgs = inputs;
-      users.nixos = {lib, ...}: {
-        imports = [
-          ./git.nix
-          ./fish.nix
-          ./direnv.nix
-          ./emacs.nix
-          inputs.emacs-nix.nixosModules.emacs-nix
-        ];
-        nixpkgs = {
-          inherit (config) overlays;
-        };
-        programs.git.signing = lib.mkForce null;
-        home.stateVersion = stateVersion;
-      };
-    };
-
-    users.users.nixos.shell = pkgs.fish;
+    users.users.alex.shell = pkgs.fish;
 
     programs.fish.enable = true;
 
     wsl = {
       enable = true;
       wslConf.automount.root = "/mnt";
-      defaultUser = "nixos";
+      defaultUser = "alex";
       startMenuLaunchers = true;
     };
-    nix.package = pkgs.nixVersions.stable;
-    nix.extraOptions = ''
-      experimental-features = nix-command flakes
-    '';
+
     services.xserver.enable = true;
-    services.xserver.layout = "gb";
-    services.xserver.xkbVariant = "dvorak";
+    services.xserver.xkb.layout = "gb";
+    services.xserver.xkb.variant = "dvorak";
 
     # Load fonts
     fonts = {
-      fonts = with pkgs; [
-        nerd-fonts.SourceCodePro
+      packages = with pkgs; [
+        nerd-fonts.hack
         symbola
         dejavu_fonts
       ];
@@ -70,29 +36,29 @@
         };
       };
     };
-
-    nixpkgs = {
-      inherit (config) overlays;
-    };
-    nixpkgs.config = {
-      allowUnfree = true;
-    };
     environment.systemPackages = with pkgs; [
       git
       ripgrep
-      xorg.setxkbmap
+      setxkbmap
       docker
       # Dictionaries
       aspell
       aspellDicts.en
     ];
   };
-
+in {
   flake.nixosConfigurations.wsl = inputs.nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
-
+    specialArgs.inputs = inputs;
     modules = [
-      self.nixosModules.wsl
+      ./cachix.nix
+      ./core.nix
+      ./home.nix
+      ./nix.nix
+      ./git.nix
+      inputs.home-manager.nixosModules.home-manager
+      inputs.nixos-wsl.nixosModules.wsl
+      wsl-module
     ];
   };
 }
