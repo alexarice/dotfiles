@@ -29,6 +29,7 @@ with lib; {
     ./gtk.nix
     ./helix.nix
     ./systemd.nix
+    ./sway.nix
   ];
 
   config = {

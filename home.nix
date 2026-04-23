@@ -23,7 +23,6 @@ with lib; {
         ./git.nix
         ./direnv.nix
         ./fish.nix
-        ./sway.nix
       ];
 
       options = {

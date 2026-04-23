@@ -2,14 +2,12 @@
   config,
   lib,
   ...
-}: let
-  inherit (config) dots scripts modifier;
-in {
-  wayland.windowManager.sway = {
+}: {
+  hm.wayland.windowManager.sway = {
     enable = true;
     package = null;
 
-    config = {
+    config = rec {
       bars = [];
       colors = {
         focused = {
@@ -50,7 +48,7 @@ in {
         bottom = -6;
         smartBorders = "on";
       };
-      inherit modifier;
+      modifier = "Mod4";
       menu = "wldash";
       terminal = "alacritty";
       workspaceAutoBackAndForth = true;
@@ -61,8 +59,8 @@ in {
         "${modifier}+h" = lib.mkForce "splith";
         "${modifier}+tab" = "workspace back_and_forth";
         "${modifier}+c" = "exec firefox";
-        "${modifier}+p" = "exec ${scripts + "/take_screenshot"}";
-        "${modifier}+Shift+p" = "exec ${scripts + "/take_screenshot"} full";
+        "${modifier}+p" = "exec ${./scripts/take_screenshot}";
+        "${modifier}+Shift+p" = "exec ${./scripts/take_screenshot} full";
         "${modifier}+l" = "exec \"swaylock -f -c 000000\"";
         "XF86MonBrightnessUp" = "exec \"brillo -A 1\"";
         "XF86MonBrightnessDown" = "exec \"brillo -U 1\"";
@@ -129,7 +127,7 @@ in {
       output =
         {
           "*" = {
-            bg = "\"${dots + "/background-image.png"}\" fill";
+            bg = "\"${./background-image.png}\" fill";
           };
         }
         // (
