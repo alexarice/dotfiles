@@ -35,10 +35,7 @@
     hunspellDicts.en_GB-ise
 
     # Utilities
-    blueman
-    pavucontrol
     udiskie
-    playerctl
     libnotify
     libappindicator
     bitwarden-cli

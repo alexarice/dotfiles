@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   hardware.bluetooth.enable = true;
 
   services.pipewire = {
@@ -11,4 +11,10 @@
       };
     };
   };
+
+  hm.home.packages = with pkgs; [
+    blueman
+    pavucontrol
+    playerctl
+  ];
 }
