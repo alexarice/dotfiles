@@ -1,6 +1,4 @@
 {pkgs, ...}: {
-  users.users.alex.shell = pkgs.fish;
-
   programs.fish.enable = true;
 
   hm = {

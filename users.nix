@@ -21,7 +21,7 @@
     };
   };
 
-  getty.autologinUser = "alex";
+  services.getty.autologinUser = "alex";
 
   programs.fish = lib.mkIf (config.machine != "wsl") {
     loginShellInit = ''

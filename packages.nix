@@ -122,16 +122,6 @@
     zulip
     inkscape
 
-    # Games
-    sgt-puzzles
-    lutris
-    wine
-    (bolt-launcher.override {enableRS3 = true;})
-    osu-lazer-bin
-    prismlauncher
-    ckan
-    heroic
-
     # 3D print
     blender
   ];

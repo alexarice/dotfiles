@@ -13,6 +13,8 @@
     services.xserver.xkb.layout = "gb";
     services.xserver.xkb.variant = "dvorak";
 
+    users.users.alex.shell = pkgs.fish;
+
     # Load fonts
     fonts = {
       packages = with pkgs; [

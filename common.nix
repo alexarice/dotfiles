@@ -19,6 +19,7 @@ with lib; {
     ./sway.nix
     ./kdeconnect.nix
     ./users.nix
+    ./games.nix
   ];
 
   config = {
@@ -163,10 +164,6 @@ with lib; {
         xdg-desktop-portal-gtk
       ];
       wlr.enable = true;
-    };
-
-    programs.steam = {
-      enable = true;
     };
 
     programs.nix-ld = {
