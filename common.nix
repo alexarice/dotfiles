@@ -13,10 +13,22 @@ with lib; {
         "desktop"
       ];
     };
+    root = mkOption {
+      type = types.path;
+      default = ./.;
+    };
   };
 
   imports = [
     ./mako.nix
+    ./packages.nix
+    ./alacritty.nix
+    ./files.nix
+    ./gammastep.nix
+    ./gpg.nix
+    ./gtk.nix
+    ./helix.nix
+    ./systemd.nix
   ];
 
   config = {
@@ -38,6 +50,9 @@ with lib; {
 
     nixpkgs.config = {
       allowUnfree = true;
+      permittedInsecurePackages = [
+        "openssl-1.1.1w"
+      ];
     };
 
     services.printing = {

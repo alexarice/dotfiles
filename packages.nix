@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  home.packages = with pkgs; [
+  hm.home.packages = with pkgs; [
     wldash
     wl-clipboard
     cachix

@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  gtk = rec {
+  hm.gtk = rec {
     enable = true;
     font.name = "SauceCodePro Nerd Font Mono 10";
     iconTheme = {

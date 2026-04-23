@@ -1,4 +1,3 @@
-{lib, ...}:
-with lib; {
-  services.gpg-agent.enable = true;
+{
+  hm.services.gpg-agent.enable = true;
 }

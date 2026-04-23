@@ -20,19 +20,11 @@ with lib; {
         config.hm
         inputs.emacs-nix.nixosModules.emacs-nix
         ./emacs.nix
-        ./packages.nix
-        ./alacritty.nix
-        ./files.nix
         ./foot.nix
         ./git.nix
-        ./gtk.nix
         ./direnv.nix
         ./fish.nix
-        ./gammastep.nix
-        ./systemd.nix
         ./sway.nix
-        ./gpg.nix
-        ./helix.nix
       ];
 
       options = {
@@ -54,16 +46,11 @@ with lib; {
       };
 
       config = {
-        _module.args.setEnvironment = config.system.build.setEnvironment;
-
         nixpkgs.config = {
           allowBroken = true;
           allowUnfree = true;
           allowUnsupportedSystem = true;
           oraclejdk.accept_license = true;
-          permittedInsecurePackages = [
-            "openssl-1.1.1w"
-          ];
         };
 
         services.kdeconnect = {
