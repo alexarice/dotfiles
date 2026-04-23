@@ -22,7 +22,6 @@
     cloc
 
     # Nix
-    direnv
     graphviz
 
     # Dictionaries
