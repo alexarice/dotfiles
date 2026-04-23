@@ -132,7 +132,7 @@
       sgt-puzzles
       lutris
       wine
-      (bolt-launcher.override { enableRS3 = true; })
+      (bolt-launcher.override {enableRS3 = true;})
       osu-lazer-bin
       prismlauncher
       ckan
