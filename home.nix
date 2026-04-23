@@ -20,7 +20,6 @@ with lib; {
         config.hm
         inputs.emacs-nix.nixosModules.emacs-nix
         ./emacs.nix
-        ./foot.nix
         ./git.nix
         ./direnv.nix
         ./fish.nix
