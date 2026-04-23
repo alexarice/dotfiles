@@ -79,8 +79,6 @@
     };
     environment.systemPackages = with pkgs; [
       git
-      (inputs.nixmacs.fromConf ./wsl-nixmacs.nix)
-      emacs
       ripgrep
       xorg.setxkbmap
       docker
