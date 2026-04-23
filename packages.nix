@@ -81,7 +81,6 @@
     vesktop
     slack
     zathura
-    kdePackages.okular
     evince
     zotero
     ripgrep
