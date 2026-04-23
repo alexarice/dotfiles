@@ -52,7 +52,6 @@
 
     # LaTeX
     texlive.combined.scheme-full
-    (callPackage ./pkgs/textidote {})
     typst
     tinymist
     typstyle
@@ -80,7 +79,6 @@
     gimp
     spotify
     libreoffice
-    onlyoffice-documentserver
     vesktop
     slack
     zathura

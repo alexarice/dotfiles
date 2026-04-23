@@ -65,7 +65,7 @@
       inherit (config) overlays;
     };
 
-    hm.home.package = with pkgs; [
+    hm.home.packages = with pkgs; [
       cachix
       nix-du
       nixos-generators
