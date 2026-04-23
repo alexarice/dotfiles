@@ -1,11 +1,6 @@
 {pkgs, ...}: {
   hm.home.packages = with pkgs; [
-    wldash
-    wl-clipboard
     cachix
-    pinentry-curses
-    rmapi
-    unetbootin
 
     # CLI Programs
     fastfetch
@@ -53,14 +48,6 @@
     # Dictionaries
     hunspell
     hunspellDicts.en_GB-ise
-
-    # Wayland
-    grim
-    slurp
-    waybar
-    swaylock
-    wdisplays
-    wlprop
 
     # Utilities
     blueman

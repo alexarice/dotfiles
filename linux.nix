@@ -11,17 +11,16 @@ with lib; {
     ./files.nix
     ./fonts.nix
     ./games.nix
-    ./gammastep.nix
     ./gpg.nix
     ./gtk.nix
     ./helix.nix
     ./kdeconnect.nix
-    ./mako.nix
     ./packages.nix
-    ./sway.nix
+    ./sound.nix
     ./systemd.nix
     ./users.nix
     ./virtualisation.nix
+    ./wayland.nix
   ];
 
   config = {
@@ -42,44 +41,9 @@ with lib; {
       ];
     };
 
-    i18n = {
-      defaultLocale = "en_GB.UTF-8";
-    };
-
-    hardware = {
-      bluetooth = {
-        enable = true;
-      };
-      graphics = {
-        enable = true;
-      };
-      brillo.enable = true;
-    };
-
-    # Set your time zone.
+    i18n.defaultLocale = "en_GB.UTF-8";
     time.timeZone = "Europe/London";
 
-    services = {
-      pipewire = {
-        enable = true;
-        alsa.enable = true;
-        pulse.enable = true;
-        wireplumber.extraConfig."11-bluetooth-policy" = {
-          "wireplumber.settings" = {
-            "bluetooth.autoswitch-to-headset-profile" = false;
-          };
-        };
-      };
-
-      dbus.enable = true;
-    };
-
-    xdg.portal = {
-      enable = true;
-      extraPortals = with pkgs; [
-        xdg-desktop-portal-gtk
-      ];
-      wlr.enable = true;
-    };
+    services.dbus.enable = true;
   };
 }
