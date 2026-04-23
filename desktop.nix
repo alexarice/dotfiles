@@ -18,12 +18,6 @@
         networking.hostName = "Desktop_Nixos";
         system.configurationRevision = lib.mkIf (inputs.self ? rev) inputs.self.rev;
         services.ratbagd.enable = true;
-        virtualisation.libvirtd.enable = true;
-        programs.virt-manager.enable = true;
-        environment.systemPackages = with pkgs; [
-          qemu
-          quickemu
-        ];
       })
     ];
   };
