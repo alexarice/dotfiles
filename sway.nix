@@ -83,7 +83,6 @@
         "XF86AudioPause" = "exec \"playerctl pause\"";
         "XF86AudioNext" = "exec \"playerctl next\"";
         "XF86AudioPrev" = "exec \"playerctl previous\"";
-        "${modifier}+x" = "exec networkmanager_dmenu";
         "${modifier}+Ctrl+r" = "exec reboot";
         "${modifier}+Ctrl+k" = "exec \"shutdown -h now\"";
         "${modifier}+Ctrl+s" = "exec \"swaylock -f -c 000000 && systemctl suspend\"";

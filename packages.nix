@@ -21,11 +21,6 @@
     calc
     cloc
 
-    # Things in sway config
-    networkmanager_dmenu
-    networkmanagerapplet
-    dmenu
-
     # Nix
     direnv
     graphviz
@@ -41,7 +36,6 @@
     bitwarden-cli
     xdg-utils
     ncdu
-    proton-vpn
 
     # Desktop environment
     (caja-with-extensions.override {extensions = [caja-extensions];})
