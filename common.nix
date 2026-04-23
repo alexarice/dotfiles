@@ -13,10 +13,6 @@ with lib; {
         "desktop"
       ];
     };
-    root = mkOption {
-      type = types.path;
-      default = ./.;
-    };
   };
 
   imports = [
