@@ -3,12 +3,9 @@
     # CLI Programs
     fastfetch
     tree
-    wget
-    gnupg
     curl
     psmisc
     gparted
-    mkpasswd
     jq
     file
     imagemagick
@@ -17,7 +14,6 @@
     pdftk
     htop
     git-extras
-    perf
     calc
     cloc
 
