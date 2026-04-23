@@ -1,27 +1,26 @@
 {
-  config,
   pkgs,
   lib,
   ...
 }:
 with lib; {
   imports = [
-    ./mako.nix
-    ./core.nix
-    ./packages.nix
     ./alacritty.nix
+    ./boot.nix
+    ./core.nix
     ./files.nix
+    ./fonts.nix
+    ./games.nix
     ./gammastep.nix
     ./gpg.nix
     ./gtk.nix
     ./helix.nix
-    ./systemd.nix
-    ./sway.nix
     ./kdeconnect.nix
+    ./mako.nix
+    ./packages.nix
+    ./sway.nix
+    ./systemd.nix
     ./users.nix
-    ./games.nix
-    ./boot.nix
-    ./fonts.nix
   ];
 
   config = {

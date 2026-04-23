@@ -48,6 +48,7 @@
 
     # GTK
     hicolor-icon-theme
+    adwaita-icon-theme
 
     # Dictionaries
     hunspell
@@ -124,7 +125,5 @@
 
     # 3D print
     blender
-
-    adwaita-icon-theme
   ];
 }

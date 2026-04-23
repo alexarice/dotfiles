@@ -18,12 +18,12 @@ with lib; {
     system.stateVersion = "18.09";
   };
   imports = [
+    ./cachix.nix
+    ./direnv.nix
+    ./emacs.nix
+    ./fish.nix
+    ./git.nix
     ./home.nix
     ./nix.nix
-    ./git.nix
-    ./direnv.nix
-    ./fish.nix
-    ./cachix.nix
-    ./emacs.nix
   ];
 }

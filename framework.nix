@@ -8,7 +8,7 @@
     system = "x86_64-linux";
     specialArgs.inputs = inputs;
     modules = [
-      ./common.nix
+      ./linux.nix
       ./hardware/framework.nix
       inputs.home-manager.nixosModules.home-manager
       inputs.fps.nixosModules.programs-sqlite
