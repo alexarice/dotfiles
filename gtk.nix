@@ -12,4 +12,9 @@
     };
     gtk4.theme = theme;
   };
+
+  hm.home.packages = with pkgs; [
+    hicolor-icon-theme
+    adwaita-icon-theme
+  ];
 }

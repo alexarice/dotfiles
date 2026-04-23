@@ -30,10 +30,6 @@
     direnv
     graphviz
 
-    # GTK
-    hicolor-icon-theme
-    adwaita-icon-theme
-
     # Dictionaries
     hunspell
     hunspellDicts.en_GB-ise
