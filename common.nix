@@ -28,9 +28,6 @@ with lib; {
       cups-pdf.enable = true;
     };
 
-    security.sudo.enable = true;
-    security.sudo.extraConfig = "Defaults pwfeedback";
-
     programs.nm-applet = {
       enable = true;
       indicator = true;

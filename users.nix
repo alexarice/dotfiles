@@ -23,6 +23,11 @@
 
   services.getty.autologinUser = "alex";
 
+  security.sudo = {
+    enable = true;
+    extraConfig = "Defaults pwfeedback";
+  };
+
   programs.fish = lib.mkIf (config.machine != "wsl") {
     loginShellInit = ''
       if not set -q SWAYSTARTED
