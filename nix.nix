@@ -21,15 +21,6 @@
       fmt6overlay = self: super: {
         fmt_6 = super.fmt;
       };
-
-      gammastepOverlay = self: super: {
-        gammastep = super.gammastep.overrideAttrs (attr: {
-          postInstall = ''
-            ln $out/bin/gammastep $out/bin/redshift
-            ln $out/bin/gammastep-indicator $out/bin/redshift-gtk
-          '';
-        });
-      };
     };
 
     nix = {
