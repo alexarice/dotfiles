@@ -115,14 +115,6 @@ with lib; {
     };
 
     services = {
-      geoclue2 = {
-        enable = true;
-        appConfig.gammastep = {
-          isSystem = false;
-          isAllowed = true;
-        };
-      };
-
       pipewire = {
         enable = true;
         alsa.enable = true;
