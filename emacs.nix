@@ -8,6 +8,8 @@
     imports = [
       inputs.emacs-nix.nixosModules.emacs-nix
     ];
+
+    overlays = [inputs.emacs-overlay.overlay];
     programs.emacs = {
       enable = true;
 

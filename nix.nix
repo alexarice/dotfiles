@@ -11,7 +11,6 @@
 
   config = {
     overlays = builtins.attrValues {
-      emacs = inputs.emacs-overlay.overlay;
       agda = inputs.all-agda.overlay."x86_64-linux";
 
       ferrishot = self: super: {

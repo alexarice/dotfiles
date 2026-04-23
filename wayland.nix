@@ -6,17 +6,15 @@
   ];
   config = {
     hardware = {
-      graphics = {
-        enable = true;
-      };
+      graphics.enable = true;
       brillo.enable = true;
-      xdg.portal = {
-        enable = true;
-        extraPortals = with pkgs; [
-          xdg-desktop-portal-gtk
-        ];
-        wlr.enable = true;
-      };
+    };
+    xdg.portal = {
+      enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-gtk
+      ];
+      wlr.enable = true;
     };
     environment.systemPackages = with pkgs; [
       grim
