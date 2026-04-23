@@ -20,7 +20,6 @@
     lgogdownloader
     htop
     git-extras
-    numactl
     piper
     perf
     calc
