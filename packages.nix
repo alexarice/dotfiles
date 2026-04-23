@@ -61,7 +61,6 @@
     elan
     cabal-install
     python314
-    python314Packages.jupyter-core
     cargo
     rustc
     rustfmt
