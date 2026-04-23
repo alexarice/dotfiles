@@ -5,7 +5,11 @@
   ...
 }:
 with lib; {
-  home-manager = {
+  options.hm = mkOption {
+    type = types.deferredModule;
+  };
+
+  config.home-manager = {
     extraSpecialArgs = inputs;
     users.alex = {
       pkgs,
@@ -13,6 +17,7 @@ with lib; {
       ...
     }: {
       imports = [
+        config.hm
         inputs.emacs-nix.nixosModules.emacs-nix
         ./emacs.nix
         ./packages.nix
@@ -28,7 +33,6 @@ with lib; {
         ./sway.nix
         ./gpg.nix
         ./helix.nix
-        ./mako.nix
       ];
 
       options = {

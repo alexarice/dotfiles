@@ -1,5 +1,5 @@
-{...}: {
-  services.mako = {
+{
+  hm.services.mako = {
     enable = true;
     settings = {
       max-history = 3;

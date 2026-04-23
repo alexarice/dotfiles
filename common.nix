@@ -17,6 +17,10 @@ with lib; {
     };
   };
 
+  imports = [
+    ./mako.nix
+  ];
+
   config = {
     nix = {
       settings = {
