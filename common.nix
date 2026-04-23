@@ -20,6 +20,7 @@ with lib; {
     ./kdeconnect.nix
     ./users.nix
     ./games.nix
+    ./fonts.nix
   ];
 
   config = {
@@ -81,35 +82,6 @@ with lib; {
 
     # Set your time zone.
     time.timeZone = "Europe/London";
-
-    # Load fonts
-    fonts = {
-      packages = with pkgs; [
-        nerd-fonts.hack
-        noto-fonts-color-emoji
-        noto-fonts-cjk-sans
-        roboto
-        font-awesome
-        freefont_ttf
-        symbola
-        dejavu_fonts
-        fira
-        source-code-pro
-        source-sans
-      ];
-      enableDefaultPackages = false;
-
-      fontconfig = {
-        enable = true;
-        antialias = true;
-        cache32Bit = true;
-        defaultFonts = {
-          monospace = ["Hack Nerd Font"];
-          sansSerif = ["DejaVu Sans"];
-          serif = ["DejaVu Serif"];
-        };
-      };
-    };
 
     services = {
       pipewire = {
