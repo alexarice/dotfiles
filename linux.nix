@@ -12,6 +12,7 @@
     ./kdeconnect.nix
     ./networking.nix
     ./packages.nix
+    ./printing.nix
     ./sound.nix
     ./systemd.nix
     ./users.nix
@@ -20,11 +21,6 @@
   ];
 
   config = {
-    services.printing = {
-      enable = true;
-      cups-pdf.enable = true;
-    };
-
     i18n.defaultLocale = "en_GB.UTF-8";
     time.timeZone = "Europe/London";
 
