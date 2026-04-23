@@ -2,10 +2,6 @@
   wsl-module = {pkgs, ...}: {
     machine = "wsl";
 
-    users.users.alex.shell = pkgs.fish;
-
-    programs.fish.enable = true;
-
     wsl = {
       enable = true;
       wslConf.automount.root = "/mnt";

@@ -6,6 +6,10 @@
       ".config/waybar/style.css".source = ./waybar.css;
       ".config/zathura/zathurarc".source = ./zathurarc;
     };
-    sessionPath = ["~/.cabal/bin"];
+    sessionPath = [
+      "~/.cabal/bin"
+      "$HOME/.cargo/bin"
+      "$HOME/.cmake/bin"
+    ];
   };
 }

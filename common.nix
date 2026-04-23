@@ -42,8 +42,6 @@ with lib; {
       wrapperFeatures.gtk = true;
     };
 
-    programs.command-not-found.enable = true;
-
     programs.nm-applet = {
       enable = true;
       indicator = true;
@@ -72,22 +70,6 @@ with lib; {
         '';
       };
       efi.canTouchEfiVariables = true;
-    };
-
-    networking.firewall = {
-      enable = true;
-      allowedTCPPortRanges = [
-        {
-          from = 1714;
-          to = 1764;
-        } # KDE Connect
-      ];
-      allowedUDPPortRanges = [
-        {
-          from = 1714;
-          to = 1764;
-        } # KDE Connect
-      ];
     };
 
     networking.networkmanager = {
@@ -153,8 +135,6 @@ with lib; {
     };
 
     services = {
-      getty.autologinUser = "alex";
-
       geoclue2 = {
         enable = true;
         appConfig.gammastep = {
@@ -187,18 +167,6 @@ with lib; {
 
     programs.steam = {
       enable = true;
-    };
-
-    programs.fish = {
-      enable = true;
-      loginShellInit = ''
-        if not set -q SWAYSTARTED
-          if not set -q DISPLAY && test (tty) = /dev/tty1
-            set -g SWAYSTARTED 1
-            exec sway
-          end
-        end
-      '';
     };
 
     programs.nix-ld = {

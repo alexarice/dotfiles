@@ -62,6 +62,8 @@
       };
     };
 
+    programs.command-not-found.enable = true;
+
     hm.nixpkgs = {
       config = {
         allowBroken = true;

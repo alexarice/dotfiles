@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: {
   # Set up immutable users
@@ -18,5 +19,18 @@
       uid = 1000;
       hashedPassword = "$6$lY0U5C4WoOcmj.6$YLKJMkQVUJDbItcyHV7wZuvmzpvmOcPR9dgHWJYzUHBB7bSevyC4Vqpqm2IxoVqqhpz.KY7aQJnQI2HaSDsL1.";
     };
+  };
+
+  getty.autologinUser = "alex";
+
+  programs.fish = lib.mkIf (config.machine != "wsl") {
+    loginShellInit = ''
+      if not set -q SWAYSTARTED
+        if not set -q DISPLAY && test (tty) = /dev/tty1
+          set -g SWAYSTARTED 1
+          exec sway
+        end
+      end
+    '';
   };
 }

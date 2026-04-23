@@ -1,4 +1,8 @@
 {pkgs, ...}: {
+  users.users.alex.shell = pkgs.fish;
+
+  programs.fish.enable = true;
+
   hm = {
     programs.fish = {
       enable = true;
@@ -15,11 +19,6 @@
       EDITOR = "emacsclient -c";
       BROWSER = "firefox";
     };
-
-    home.sessionPath = [
-      "$HOME/.cargo/bin"
-      "$HOME/.cmake/bin"
-    ];
 
     xdg.configFile."fish/functions".source = pkgs.callPackage ./fish_prompt.nix {};
   };
