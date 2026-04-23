@@ -13,14 +13,11 @@
     overlays = builtins.attrValues {
       agda = inputs.all-agda.overlay."x86_64-linux";
 
-      ferrishot = self: super: {
-        ferrishot = inputs.ferrishot.packages."x86_64-linux".default;
-      };
-
       agda-default = self: super: {
         agdaPackages = self.agdaPackages-2_8_0;
         agda = self.agda-2_8_0;
       };
+
       fmt6overlay = self: super: {
         fmt_6 = super.fmt;
       };
