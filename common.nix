@@ -30,6 +30,7 @@ with lib; {
     ./helix.nix
     ./systemd.nix
     ./sway.nix
+    ./kdeconnect.nix
   ];
 
   config = {
