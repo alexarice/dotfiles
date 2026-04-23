@@ -27,32 +27,10 @@ with lib; {
     ./systemd.nix
     ./sway.nix
     ./kdeconnect.nix
+    ./nix.nix
   ];
 
   config = {
-    nix = {
-      settings = {
-        trusted-users = ["root" "alex"];
-
-        auto-optimise-store = true;
-      };
-
-      registry.nixpkgs.flake = inputs.nixpkgs;
-
-      extraOptions = ''
-        keep-outputs = true
-        keep-derivations = true
-        experimental-features = nix-command flakes
-      '';
-    };
-
-    nixpkgs.config = {
-      allowUnfree = true;
-      permittedInsecurePackages = [
-        "openssl-1.1.1w"
-      ];
-    };
-
     services.printing = {
       enable = true;
       cups-pdf.enable = true;

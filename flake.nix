@@ -44,7 +44,6 @@
         ./desktop.nix
         ./wsl.nix
         ./framework.nix
-        ./overlays.nix # Should probably move to per system
       ];
       systems = ["x86_64-linux"];
     };

@@ -17,10 +17,6 @@
       inputs.fps.nixosModules.programs-sqlite
       inputs.nixos-hardware.nixosModules.framework-13-7040-amd
       ({...}: {
-        nixpkgs = {
-          inherit (config) overlays;
-        };
-        nix.registry.nixpkgs.flake = inputs.nixpkgs;
         boot.initrd.luks.devices = {
           cryptlvm = {
             device = "/dev/nvme0n1p1";

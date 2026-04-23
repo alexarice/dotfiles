@@ -16,10 +16,6 @@
       inputs.home-manager.nixosModules.home-manager
       inputs.fps.nixosModules.programs-sqlite
       ({pkgs, ...}: {
-        nixpkgs = {
-          inherit (config) overlays;
-        };
-        nix.registry.nixpkgs.flake = inputs.nixpkgs;
         time.hardwareClockInLocalTime = true;
         machine = "desktop";
         networking.hostName = "Desktop_Nixos";

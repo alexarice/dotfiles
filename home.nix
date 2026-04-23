@@ -26,15 +26,6 @@ with lib; {
       ];
 
       config = {
-        nixpkgs.config = {
-          allowBroken = true;
-          allowUnfree = true;
-          allowUnsupportedSystem = true;
-          oraclejdk.accept_license = true;
-        };
-
-        nixpkgs.overlays = config.nixpkgs.overlays;
-
         home.stateVersion = "20.09";
       };
     };
