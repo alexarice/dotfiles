@@ -124,5 +124,7 @@
 
     # 3D print
     blender
+
+    adwaita-icon-theme
   ];
 }
