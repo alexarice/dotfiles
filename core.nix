@@ -15,7 +15,10 @@ with lib; {
   };
   config = {
     environment.systemPackages = [pkgs.git];
-    system.stateVersion = "18.09";
+    system = {
+      configurationRevision = lib.mkIf (inputs.self ? rev) inputs.self.rev;
+      stateVersion = "18.09";
+    };
   };
   imports = [
     ./cachix.nix

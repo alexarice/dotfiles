@@ -1,5 +1,4 @@
 {
-  config,
   lib,
   inputs,
   ...
@@ -15,7 +14,6 @@
       ({pkgs, ...}: {
         machine = "desktop";
         networking.hostName = "Desktop_Nixos";
-        system.configurationRevision = lib.mkIf (inputs.self ? rev) inputs.self.rev;
       })
     ];
   };
