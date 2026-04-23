@@ -9,10 +9,8 @@ with lib; {
   options = {
     machine = mkOption {
       type = types.enum [
-        "laptop"
         "framework"
         "desktop"
-        "rpi"
       ];
     };
   };
@@ -75,30 +73,24 @@ with lib; {
 
     boot.kernelPackages = pkgs.linuxPackages_latest;
 
-    boot.loader =
-      if config.machine == "rpi"
-      then {
-        grub.enable = false;
-        generic-extlinux-compatible.enable = true;
-      }
-      else {
-        # Use the systemd-boot EFI boot loader.
-        systemd-boot = {
-          enable = true;
-          consoleMode = "auto";
-          extraEntries = mkIf (config.machine == "desktop") {
-            "windows.conf" = ''
-              title Windows
-              efi /EFI/Microsoft/Boot/bootmgfw.efi
-              sort-key b_windows
-            '';
-          };
-          extraInstallCommands = ''
-            echo "auto-entries no" >> /boot/loader/loader.conf
+    boot.loader = {
+      # Use the systemd-boot EFI boot loader.
+      systemd-boot = {
+        enable = true;
+        consoleMode = "auto";
+        extraEntries = mkIf (config.machine == "desktop") {
+          "windows.conf" = ''
+            title Windows
+            efi /EFI/Microsoft/Boot/bootmgfw.efi
+            sort-key b_windows
           '';
         };
-        efi.canTouchEfiVariables = true;
+        extraInstallCommands = ''
+          echo "auto-entries no" >> /boot/loader/loader.conf
+        '';
       };
+      efi.canTouchEfiVariables = true;
+    };
 
     networking.firewall = {
       enable = true;

@@ -47,9 +47,7 @@ with lib; {
         };
         machine = mkOption {
           type = types.enum [
-            "laptop"
             "desktop"
-            "rpi"
             "framework"
           ];
         };

@@ -115,7 +115,7 @@ in {
           pointer_accel = "-0.4";
         };
         "*" =
-          if config.machine == "laptop" || config.machine == "framework"
+          if config.machine == "framework"
           then {
             xkb_layout = "gb,gb";
             xkb_variant = "dvorak,";
@@ -133,18 +133,7 @@ in {
           };
         }
         // (
-          if config.machine == "laptop"
-          then {
-            "DP-1" = {
-              pos = "0,0";
-              res = "3840x2160";
-            };
-            "eDP-1" = {
-              pos = "1120,2160";
-              res = "1600x900";
-            };
-          }
-          else if config.machine == "desktop"
+          if config.machine == "desktop"
           then {
             "DP-1" = {
               pos = "0,0";
