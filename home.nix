@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  inputs,
   ...
 }:
 with lib; {
@@ -10,7 +9,6 @@ with lib; {
   };
 
   config.home-manager = {
-    extraSpecialArgs = inputs;
     users.alex = {
       pkgs,
       lib,
