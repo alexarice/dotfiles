@@ -1,7 +1,5 @@
 {pkgs, ...}: {
   hm.home.packages = with pkgs; [
-    cachix
-
     # CLI Programs
     fastfetch
     tree
@@ -29,13 +27,7 @@
     dmenu
 
     # Nix
-    nixos-generators
-    alejandra
-    nixpkgs-review
-    nix-info
-    nix-index
     direnv
-    nix-du
     graphviz
 
     # GTK

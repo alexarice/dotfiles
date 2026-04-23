@@ -2,6 +2,7 @@
   config,
   inputs,
   lib,
+  pkgs,
   ...
 }: {
   options.overlays = lib.mkOption {
@@ -25,7 +26,10 @@
 
     nix = {
       settings = {
-        trusted-users = ["root" "alex"];
+        trusted-users = [
+          "root"
+          "alex"
+        ];
 
         auto-optimise-store = true;
       };
@@ -60,5 +64,15 @@
       };
       inherit (config) overlays;
     };
+
+    hm.home.package = with pkgs; [
+      cachix
+      nix-du
+      nixos-generators
+      alejandra
+      nixpkgs-review
+      nix-info
+      nix-index
+    ];
   };
 }
