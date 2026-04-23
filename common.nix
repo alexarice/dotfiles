@@ -105,9 +105,5 @@ with lib; {
       ];
       wlr.enable = true;
     };
-
-    programs.nix-ld = {
-      enable = true;
-    };
   };
 }
