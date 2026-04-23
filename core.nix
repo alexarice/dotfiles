@@ -10,4 +10,13 @@ with lib; {
     };
   };
   config.system.stateVersion = "18.09";
+  imports = [
+    ./home.nix
+    ./nix.nix
+    ./git.nix
+    ./direnv.nix
+    ./fish.nix
+    ./cachix.nix
+    ./emacs.nix
+  ];
 }

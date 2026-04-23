@@ -18,10 +18,6 @@ with lib; {
     }: {
       imports = [
         config.hm
-        inputs.emacs-nix.nixosModules.emacs-nix
-        ./emacs.nix
-        ./direnv.nix
-        ./fish.nix
       ];
 
       config = {

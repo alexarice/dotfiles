@@ -51,11 +51,7 @@ in {
     system = "x86_64-linux";
     specialArgs.inputs = inputs;
     modules = [
-      ./cachix.nix
       ./core.nix
-      ./home.nix
-      ./nix.nix
-      ./git.nix
       inputs.home-manager.nixosModules.home-manager
       inputs.nixos-wsl.nixosModules.wsl
       wsl-module

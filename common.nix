@@ -18,8 +18,7 @@ with lib; {
     ./systemd.nix
     ./sway.nix
     ./kdeconnect.nix
-    ./nix.nix
-    ./git.nix
+    ./users.nix
   ];
 
   config = {

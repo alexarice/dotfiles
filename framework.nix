@@ -9,10 +9,7 @@
     specialArgs.inputs = inputs;
     modules = [
       ./common.nix
-      ./users.nix
-      ./home.nix
       ./hardware/framework.nix
-      ./cachix.nix
       inputs.home-manager.nixosModules.home-manager
       inputs.fps.nixosModules.programs-sqlite
       inputs.nixos-hardware.nixosModules.framework-13-7040-amd
