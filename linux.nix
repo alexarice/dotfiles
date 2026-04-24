@@ -14,7 +14,7 @@
     ./packages.nix
     ./printing.nix
     ./sound.nix
-    ./systemd.nix
+    ./udiskie.nix
     ./users.nix
     ./virtualisation.nix
     ./wayland.nix

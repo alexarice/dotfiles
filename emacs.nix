@@ -1,4 +1,5 @@
 {
+  config,
   pkgs,
   lib,
   inputs,
@@ -9,6 +10,22 @@
     imports = [
       inputs.emacs-nix.nixosModules.emacs-nix
     ];
+
+    systemd.user.services.emacs = {
+      Unit = {
+        Description = "Emacs text editor";
+        After = ["graphical-session.target"];
+      };
+      Install = {
+        WantedBy = ["default.target"];
+      };
+      Service = {
+        Type = "forking";
+        ExecStart = "${pkgs.bash}/bin/bash -c 'source ${config.system.build.setEnvironment}; exec emacs --daemon'";
+        ExecStop = "${pkgs.emacs}/bin/emacsclient --eval \"(kill-emacs)\"";
+        Restart = "always";
+      };
+    };
 
     programs.emacs = {
       enable = true;

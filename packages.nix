@@ -17,20 +17,17 @@
     calc
     cloc
 
-    # Nix
-    graphviz
-
     # Dictionaries
     hunspell
     hunspellDicts.en_GB-ise
 
     # Utilities
-    udiskie
     libnotify
     libappindicator
     bitwarden-cli
     xdg-utils
     ncdu
+    graphviz
 
     # Desktop environment
     (caja-with-extensions.override {extensions = [caja-extensions];})
