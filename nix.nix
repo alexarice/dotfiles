@@ -55,6 +55,15 @@
 
     programs.command-not-found.enable = true;
 
+    programs.nix-ld = {
+      enable = true;
+      libraries = with pkgs; [
+        zlib
+        zstd
+        stdenv.cc.cc
+      ];
+    };
+
     hm.nixpkgs = {
       config = {
         allowBroken = true;
