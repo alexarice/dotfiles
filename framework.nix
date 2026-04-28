@@ -10,8 +10,6 @@
     modules = [
       ./linux.nix
       ./hardware/framework.nix
-      inputs.home-manager.nixosModules.home-manager
-      inputs.fps.nixosModules.programs-sqlite
       inputs.nixos-hardware.nixosModules.framework-13-7040-amd
       ({...}: {
         boot.initrd.luks.devices = {
