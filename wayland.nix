@@ -16,6 +16,7 @@
       xdg-desktop-portal-gtk
     ];
     wlr.enable = true;
+    xdgOpenUsePortal = true;
   };
 
   environment.systemPackages = with pkgs; [
