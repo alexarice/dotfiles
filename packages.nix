@@ -64,7 +64,7 @@
     gimp
     spotify
     libreoffice
-    vesktop
+    discord
     slack
     zathura
     evince
