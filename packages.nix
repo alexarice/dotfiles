@@ -54,7 +54,11 @@
     gnumake
     gdb
     lldb
+    lld
+    cmake
+    ccache
     clang
+    ninja
 
     # Programs
     firefox

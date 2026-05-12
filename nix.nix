@@ -60,9 +60,11 @@
       libraries = with pkgs; [
         zlib
         zstd
-        stdenv.cc.cc
+        stdenv.cc.cc.lib
       ];
     };
+
+    services.envfs.enable = true;
 
     hm.nixpkgs = {
       config = {
