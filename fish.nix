@@ -13,6 +13,11 @@
       };
     };
 
+    programs.nix-index = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+
     home.sessionVariables = {
       EDITOR = "emacsclient -c";
       BROWSER = "firefox";

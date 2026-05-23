@@ -14,16 +14,16 @@ with lib; {
   };
 
   config.home-manager.users.alex = {
-      pkgs,
-      lib,
-      ...
-    }: {
-      imports = [
-        config.hm
-      ];
+    pkgs,
+    lib,
+    ...
+  }: {
+    imports = [
+      config.hm
+    ];
 
-      config = {
-        home.stateVersion = "20.09";
-      };
+    config = {
+      home.stateVersion = "20.09";
     };
+  };
 }
