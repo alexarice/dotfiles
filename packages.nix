@@ -67,7 +67,7 @@
     vlc
     gimp
     spotify
-    libreoffice
+    onlyoffice-desktopeditors
     discord
     slack
     zathura
