@@ -294,9 +294,12 @@
           smartparens = {
             enable = true;
             package = epkgs.smartparens;
-            init = ''
+            hook = "(prog-mode text-mode)";
+            config = ''
               (require 'smartparens-config)
-              (eval-after-load 'LaTeX-mode '(require 'smartparens-latex))
+              (require 'smartparens-latex)
+              (sp-local-pair '(tex-mode plain-tex-mode latex-mode LaTeX-mode) "`" "'" :actions :rem)
+              (sp-local-pair '(tex-mode plain-tex-mode latex-mode LaTeX-mode) "``" "'''" :actions :rem)
             '';
           };
 
