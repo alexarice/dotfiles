@@ -13,6 +13,7 @@
     zip
     pdftk
     htop
+    btop
     git-extras
     calc
     cloc
