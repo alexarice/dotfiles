@@ -299,7 +299,7 @@
               (require 'smartparens-config)
               (require 'smartparens-latex)
               (sp-local-pair '(tex-mode plain-tex-mode latex-mode LaTeX-mode) "`" "'" :actions :rem)
-              (sp-local-pair '(tex-mode plain-tex-mode latex-mode LaTeX-mode) "``" "'''" :actions :rem)
+              ;; (sp-local-pair '(tex-mode plain-tex-mode latex-mode LaTeX-mode) "``" "'''" :actions :rem)
             '';
           };
 
