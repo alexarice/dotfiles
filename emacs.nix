@@ -150,7 +150,7 @@
             custom.nix-indent-function = "'nix-indent-line";
           };
 
-          python-mode = {
+          python = {
             enable = true;
             external-packages = [pkgs.pyright];
             hook = "(python-mode . eglot-ensure)";
