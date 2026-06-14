@@ -16,6 +16,17 @@
     wrapperFeatures.gtk = true;
   };
 
+  programs.fish = lib.mkIf (config.machine != "wsl") {
+    loginShellInit = ''
+      if not set -q SWAYSTARTED
+        if not set -q DISPLAY && test (tty) = /dev/tty1
+          set -g SWAYSTARTED 1
+          exec sway
+        end
+      end
+    '';
+  };
+
   hm.wayland.windowManager.sway = {
     enable = true;
     package = null;

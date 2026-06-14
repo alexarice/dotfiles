@@ -27,15 +27,4 @@
     enable = true;
     extraConfig = "Defaults pwfeedback";
   };
-
-  programs.fish = lib.mkIf (config.machine != "wsl") {
-    loginShellInit = ''
-      if not set -q SWAYSTARTED
-        if not set -q DISPLAY && test (tty) = /dev/tty1
-          set -g SWAYSTARTED 1
-          exec sway
-        end
-      end
-    '';
-  };
 }
