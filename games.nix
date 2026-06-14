@@ -9,6 +9,8 @@
     (bolt-launcher.override {enableRS3 = true;})
     osu-lazer-bin
     prismlauncher
+    gamescope
+    gamemode
     ckan
     heroic
     lgogdownloader
