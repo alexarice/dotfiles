@@ -15,7 +15,19 @@
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
     ];
-    wlr.enable = true;
+    config = {
+      common = {
+        default = "wlr";
+      };
+    };
+    wlr = {
+      enable = true;
+      settings.screencast = {
+        output_name = "eDP-1";
+        chooser_type = "simple";
+        chooser_cmd = "${pkgs.slurp}/bin/slurp -f 'Monitor: %o' -or";
+      };
+    };
     xdgOpenUsePortal = true;
   };
 

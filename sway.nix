@@ -10,7 +10,6 @@
       export XDG_CURRENT_DESKTOP=sway
       export XDG_SESSION_TYPE=wayland
       export MOZ_ENABLE_WAYLAND=1
-      systemctl --user import-environment
     '';
     extraPackages = [];
     wrapperFeatures.gtk = true;
@@ -18,18 +17,15 @@
 
   programs.fish = lib.mkIf (config.machine != "wsl") {
     loginShellInit = ''
-      if not set -q SWAYSTARTED
-        if not set -q DISPLAY && test (tty) = /dev/tty1
-          set -g SWAYSTARTED 1
-          exec sway
-        end
-      end
+      test (tty) = /dev/tty1 && exec sway
     '';
   };
 
   hm.wayland.windowManager.sway = {
     enable = true;
     package = null;
+
+    systemd.variables = ["--all"];
 
     config = rec {
       bars = [];
