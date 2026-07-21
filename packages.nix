@@ -48,6 +48,7 @@
     elan
     cabal-install
     python314
+    uv
     cargo
     rustc
     rustfmt
