@@ -38,7 +38,7 @@
     shared-mime-info
 
     # LaTeX
-    texlive.combined.scheme-full
+    texliveFull
     typst
     tinymist
     typstyle
