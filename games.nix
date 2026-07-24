@@ -14,5 +14,6 @@
     ckan
     heroic
     lgogdownloader
+    mangohud
   ];
 }
