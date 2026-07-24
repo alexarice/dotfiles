@@ -2,6 +2,7 @@
   fonts = {
     packages = with pkgs; [
       nerd-fonts.hack
+      nerd-fonts.sauce-code-pro
       noto-fonts-color-emoji
       noto-fonts-cjk-sans
       roboto
@@ -10,7 +11,6 @@
       symbola
       dejavu_fonts
       fira
-      source-code-pro
       source-sans
     ];
     enableDefaultPackages = false;

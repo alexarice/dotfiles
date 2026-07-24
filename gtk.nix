@@ -1,7 +1,10 @@
 {pkgs, ...}: {
   hm.gtk = rec {
     enable = true;
-    font.name = "Hack Nerd Font Mono 10";
+    font = {
+      name = "Hack Nerd Font Mono";
+      size = 10;
+    };
     iconTheme = {
       package = pkgs.dracula-theme;
       name = "Dracula-cursors";
