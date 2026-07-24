@@ -479,7 +479,6 @@
           coding-system-for-read = "'utf-8";
           coding-system-for-write = "'utf-8";
           sentence-end-double-space = false;
-          default-fill-column = 80;
           initial-scratch-message = "nil";
           gc-cons-threshold = 100000000;
           read-process-output-max = 1024 * 1024;
@@ -492,6 +491,10 @@
           read-extended-command-predicate = "#'command-completion-default-include-p";
           delete-trailing-lines = false;
           column-number-indicator-zero-based = false;
+        };
+
+        global-variable-defaults = {
+          fill-column = 88;
         };
 
         global-modes = {
