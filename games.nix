@@ -6,7 +6,7 @@
   hm.home.packages = with pkgs; [
     sgt-puzzles
     wine
-    (bolt-launcher.override {enableRS3 = true;})
+    bolt-launcher
     osu-lazer-bin
     prismlauncher
     gamescope

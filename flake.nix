@@ -26,6 +26,9 @@
       url = "github:alexarice/emacs-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    my-nixpkgs = {
+      url = "github:alexarice/nixpkgs";
+    };
   };
 
   outputs = inputs @ {flake-parts, ...}:
