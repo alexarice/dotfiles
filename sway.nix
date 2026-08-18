@@ -60,7 +60,7 @@
         };
       };
       fonts = {
-        names = ["SauceCodePro Nerd Font Mono 10"];
+        names = ["Hack Nerd Font Mono 10"];
       };
       gaps = {
         inner = 10;
@@ -69,7 +69,7 @@
         smartBorders = "on";
       };
       modifier = "Mod4";
-      menu = "wldash";
+      menu = "noctalia msg panel-toggle launcher";
       terminal = "alacritty";
       workspaceAutoBackAndForth = true;
       keybindings = lib.mkOptionDefault {
@@ -81,37 +81,31 @@
         "${modifier}+c" = "exec firefox";
         "${modifier}+p" = "exec ${./scripts/take_screenshot}";
         "${modifier}+Shift+p" = "exec ${./scripts/take_screenshot} full";
-        "${modifier}+l" = "exec \"swaylock -f -c 000000\"";
-        "XF86MonBrightnessUp" = "exec \"brillo -A 1\"";
-        "XF86MonBrightnessDown" = "exec \"brillo -U 1\"";
-        "XF86AudioLowerVolume" = "exec \"pactl set-sink-volume 0 -5%\"";
-        "XF86AudioRaiseVolume" = "exec \"pactl set-sink-volume 0 +5%\"";
+        "${modifier}+l" = "exec noctalia msg session lock";
+        "XF86MonBrightnessUp" = "exec noctalia msg brightness-up";
+        "XF86MonBrightnessDown" = "exec noctalia msg brightness-down";
+        "XF86AudioLowerVolume" = "exec noctalia msg volume-up";
+        "XF86AudioRaiseVolume" = "exec noctalia msg volume-down";
         "XF86AudioPlay" = "exec \"playerctl play\"";
         "XF86AudioPause" = "exec \"playerctl pause\"";
         "XF86AudioNext" = "exec \"playerctl next\"";
         "XF86AudioPrev" = "exec \"playerctl previous\"";
         "${modifier}+Ctrl+r" = "exec reboot";
         "${modifier}+Ctrl+k" = "exec \"shutdown -h now\"";
-        "${modifier}+Ctrl+s" = "exec \"swaylock -f -c 000000 && systemctl suspend\"";
-        "${modifier}+Shift+s" = "exec grim -g \"$(slurp -d)\" - | wl-copy -t image/png";
+        "${modifier}+Shift+s" = "exec noctalia msg screenshot-region";
         "${modifier}+Ctrl+Left" = "move workspace to output left";
         "${modifier}+Ctrl+Right" = "move workspace to output right";
         "${modifier}+Ctrl+Up" = "move workspace to output up";
         "${modifier}+Ctrl+Down" = "move workspace to output down";
         "${modifier}+0" = lib.mkForce null;
         "${modifier}+Shift+0" = lib.mkForce null;
+        "${modifier}+period" = "exec noctalia msg settings-toggle";
+        "${modifier}+comma" = "exec noctalia msg panel-toggle control-center";
+        "${modifier}+d" = "exec noctalia msg panel-toggle launcher";
       };
       window = {
         border = 2;
         titlebar = false;
-        commands = [
-          {
-            command = "resize set width 38";
-            criteria = {
-              title = "^TeXpresso.*$";
-            };
-          }
-        ];
       };
       input = {
         "2:7:SynPS/2_Synaptics_TouchPad" = {
@@ -163,7 +157,7 @@
           }
           else {
             "eDP-1" = {
-              pos = "0,0";
+              pos = "474,1440";
               res = "2256x1504";
               scale = "1.4";
             };
@@ -172,14 +166,14 @@
               res = "3840x2160";
               scale = "1.5";
             };
-            "DP-4" = {
-              pos = "0,0";
-              res = "3840x2160";
-            };
             "DP-3" = {
               pos = "0,0";
               res = "3840x2160";
               scale = "1.5";
+            };
+            "DP-4" = {
+              pos = "0,0";
+              res = "3840x2160";
             };
             "DP-1" = {
               pos = "0,0";
