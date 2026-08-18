@@ -18,6 +18,7 @@
     ./users.nix
     ./virtualisation.nix
     ./wayland.nix
+    ./minted.nix
   ];
 
   config = {
