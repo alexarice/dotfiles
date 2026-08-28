@@ -26,9 +26,6 @@
       url = "github:alexarice/emacs-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    my-nixpkgs = {
-      url = "github:alexarice/nixpkgs";
-    };
     noctalia = {
       url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";

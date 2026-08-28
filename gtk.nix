@@ -1,14 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
-  overlays = [
-    (self: super: {
-      dracula-theme = inputs.my-nixpkgs.legacyPackages."x86_64-linux".dracula-theme;
-    })
-  ];
-
+{pkgs, ...}: {
   hm.gtk = rec {
     enable = true;
     font = {
