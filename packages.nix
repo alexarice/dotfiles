@@ -51,6 +51,7 @@
     uv
     cargo
     rustc
+    wasm-pack
     rustfmt
     clippy
     gnumake
