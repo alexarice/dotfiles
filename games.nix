@@ -15,5 +15,6 @@
     heroic
     lgogdownloader
     mangohud
+    openmw
   ];
 }

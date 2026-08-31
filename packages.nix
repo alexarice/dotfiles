@@ -11,6 +11,8 @@
     imagemagick
     unzip
     zip
+    p7zip
+    unrar
     pdftk
     htop
     btop

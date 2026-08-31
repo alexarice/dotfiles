@@ -34,6 +34,4 @@
     wlprop
     wl-clipboard
   ];
-
-  programs.yazi.enable = true;
 }
