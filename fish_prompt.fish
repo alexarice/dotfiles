@@ -65,7 +65,7 @@ set -q glyph_status_private; or set -g glyph_status_private "⚙"
 # ===========================
 # General VCS settings
 
-set -q fish_vcs_branch_name_length; or set -g fish_vcs_branch_name_length 15
+set -q fish_vcs_branch_name_length; or set -g fish_vcs_branch_name_length 25
 
 # ===========================
 # Git settings

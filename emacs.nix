@@ -256,7 +256,6 @@
 
           typst-ts-mode = {
             enable = true;
-            package = epkgs.callPackage ./pkgs/typst-ts-mode {};
             mode = ''"\\.typ\\'"'';
             hook = "(typst-ts-mode . eglot-ensure)";
             custom = {
