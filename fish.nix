@@ -1,11 +1,4 @@
-{pkgs, ...}: let
-  theme-agnoster = pkgs.fetchFromGitHub {
-    owner = "oh-my-fish";
-    repo = "theme-agnoster";
-    rev = "4c5518c89ebcef393ef154c9f576a52651400d27";
-    sha256 = "sha256-OFESuesnfqhXM0aij+79kdxjp4xgCt28YwTrcwQhFMU=";
-  };
-in {
+{pkgs, ...}: {
   programs.fish.enable = true;
 
   hm = {
@@ -23,7 +16,7 @@ in {
       };
     };
 
-    xdg.configFile."fish/functions/fish_prompt.fish".source = "${theme-agnoster}/functions/fish_prompt.fish";
+    xdg.configFile."fish/functions/fish_prompt.fish".source = ./fish_prompt.fish;
 
     programs.nix-index = {
       enable = true;
