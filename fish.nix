@@ -38,6 +38,12 @@ in {
     programs.yazi = {
       enable = true;
       enableFishIntegration = true;
+      keymap.mgr.prepend_keymap = [
+        { on = "c"; run = "arrow prev"; }
+        { on = "t"; run = "arrow next"; }
+        { on = "h"; run = "leave"; }
+        { on = "n"; run = "enter"; }
+      ];
       shellWrapperName = "y";
       initLua = ''
         require("session"):setup {

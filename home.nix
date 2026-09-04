@@ -13,17 +13,17 @@ with lib; {
     type = types.deferredModule;
   };
 
-  config.home-manager.users.alex = {
-    pkgs,
-    lib,
-    ...
-  }: {
-    imports = [
-      config.hm
-    ];
+  config.home-manager = {
+    backupFileExtension = "hm-backup";
 
-    config = {
-      home.stateVersion = "20.09";
+    users.alex = { ... }: {
+      imports = [
+        config.hm
+      ];
+
+      config = {
+        home.stateVersion = "20.09";
+      };
     };
   };
 }

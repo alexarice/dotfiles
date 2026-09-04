@@ -1,5 +1,6 @@
 {
   hm.home = {
+    preferXdgDirectories = true;
     file = {
       ".ghc/ghci.conf".source = ./ghci.conf;
       ".config/zathura/zathurarc".source = ./zathurarc;
