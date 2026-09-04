@@ -92,20 +92,7 @@ set -g __fish_git_prompt_char_dirtystate '±'
 set -g __fish_git_prompt_char_cleanstate ''
 
 function shorten_branch_name -a branch_name
-  set new_branch_name $branch_name
-
-  if test (string length $branch_name) -gt $fish_vcs_branch_name_length
-    # Round up length before dot (+0.5)
-    # Remove half the length of dots (-1)
-    # -> Total offset: -0.5
-    set pre_dots_length (math -s0 $fish_vcs_branch_name_length / 2 - 0.5)
-    # Round down length after dot (-0.5)
-    # Remove half the length of dots (-1)
-    # -> Total offset: -1.5
-    set post_dots_length (math -s0 $fish_vcs_branch_name_length / 2 - 1.5)
-    set new_branch_name (string replace -r "(.{$pre_dots_length}).*(.{$post_dots_length})" '$1..$2' $branch_name)
-  end
-
+  set new_branch_name (string shorten -l --max $fish_vcs_branch_name_length $branch_name)
   echo $new_branch_name
 end
 
