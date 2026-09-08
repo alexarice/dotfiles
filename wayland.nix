@@ -33,5 +33,6 @@
     wdisplays
     wlprop
     wl-clipboard
+    wldash
   ];
 }

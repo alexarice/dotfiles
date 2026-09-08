@@ -101,7 +101,7 @@
         "${modifier}+Shift+0" = lib.mkForce null;
         "${modifier}+period" = "exec noctalia msg settings-toggle";
         "${modifier}+comma" = "exec noctalia msg panel-toggle control-center";
-        "${modifier}+d" = "exec noctalia msg panel-toggle launcher";
+        "${modifier}+d" = "exec wldash";
       };
       window = {
         border = 2;
