@@ -13,9 +13,6 @@
     exec noctalia
   '';
 
-  services.gnome.gnome-keyring.enable = true;
-  security.pam.services.alex.enableGnomeKeyring = true;
-
   hm.programs.noctalia = {
     enable = true;
     settings = {
