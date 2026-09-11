@@ -30,6 +30,9 @@
       url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    my-nixpkgs = {
+      url = "github:alexarice/nixpkgs";
+    };
   };
 
   outputs = inputs @ {flake-parts, ...}:
