@@ -16,7 +16,7 @@ with lib; {
   config.home-manager = {
     backupFileExtension = "hm-backup";
 
-    users.alex = { ... }: {
+    users.alex = {...}: {
       imports = [
         config.hm
       ];

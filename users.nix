@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   # Set up immutable users
   users = {
     mutableUsers = false;
