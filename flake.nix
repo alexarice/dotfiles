@@ -33,6 +33,7 @@
     my-nixpkgs = {
       url = "github:alexarice/nixpkgs";
     };
+    make-shell.url = "github:nicknovitski/make-shell";
   };
 
   outputs = inputs @ {flake-parts, ...}:
@@ -41,6 +42,7 @@
         ./desktop.nix
         ./wsl.nix
         ./framework.nix
+        ./shell.nix
       ];
       systems = ["x86_64-linux"];
     };

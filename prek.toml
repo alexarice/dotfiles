@@ -1,0 +1,18 @@
+[[repos]]
+repo = "builtin"
+hooks = [
+    { id = "trailing-whitespace" },
+    { id = "end-of-file-fixer" },
+    { id = "check-added-large-files" },
+]
+
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "format-nix"
+name = "format nix code"
+language = "system"
+pass_filenames = true
+entry = "alejandra"
+types = ["nix"]
