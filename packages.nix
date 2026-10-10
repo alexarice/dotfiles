@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   hm.home.packages = with pkgs; [
     # CLI Programs
     fastfetch
@@ -77,7 +81,7 @@
     slack
     zathura
     evince
-    zotero
+    (inputs.nixpkgs-zotero.legacyPackages."x86_64-linux".zotero)
     ripgrep
     signal-desktop
     zulip
