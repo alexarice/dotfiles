@@ -15,6 +15,8 @@
       zip
       p7zip
       unrar
+      ncdu
+      xdg-utils
 
       # Utilities
       curl
@@ -27,6 +29,7 @@
       imagemagick
       git-extras
       calc
+      libnotify
     ];
 
     programs.fish = {

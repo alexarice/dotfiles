@@ -11,7 +11,6 @@
     ./helix.nix
     ./kdeconnect.nix
     ./networking.nix
-    ./packages.nix
     ./printing.nix
     ./sound.nix
     ./udiskie.nix

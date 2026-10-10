@@ -22,8 +22,10 @@ with lib; {
     };
   };
   imports = [
+    ./apps.nix
     ./cachix.nix
     ./direnv.nix
+    ./documents.nix
     ./emacs
     ./git.nix
     ./home.nix
