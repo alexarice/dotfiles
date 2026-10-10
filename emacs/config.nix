@@ -8,7 +8,7 @@
   overlays = [inputs.emacs-overlay.overlay];
   hm = {
     imports = [
-      ./emacs-nix/module.nix
+      ./module.nix
     ];
 
     systemd.user.services.emacs = {
@@ -374,13 +374,13 @@
 
           mlir-mode = {
             enable = true;
-            package = epkgs.callPackage ./pkgs/mlir-mode {};
+            package = epkgs.callPackage ../pkgs/mlir-mode {};
             hook = "(mlir-mode . eglot-ensure)";
           };
 
           tablegen-mode = {
             enable = true;
-            package = epkgs.callPackage ./pkgs/tablegen-mode {};
+            package = epkgs.callPackage ../pkgs/tablegen-mode {};
             hook = "(tablegen-mode . eglot-ensure)";
           };
         };

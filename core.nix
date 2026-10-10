@@ -24,7 +24,7 @@ with lib; {
   imports = [
     ./cachix.nix
     ./direnv.nix
-    ./emacs.nix
+    ./emacs/config.nix
     ./fish.nix
     ./git.nix
     ./home.nix
