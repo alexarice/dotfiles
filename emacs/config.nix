@@ -7,10 +7,6 @@
 }: {
   overlays = [inputs.emacs-overlay.overlay];
   hm = {
-    imports = [
-      ./module.nix
-    ];
-
     systemd.user.services.emacs = {
       Unit = {
         Description = "Emacs text editor";
