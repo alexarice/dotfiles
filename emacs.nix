@@ -274,9 +274,9 @@
               (add-to-list 'eglot-server-programs
                 '(typst-ts-mode . ("tinymist")))
               (add-to-list 'eglot-server-programs
-                '(mlir-mode . ("/home/alex/postdoc/mlir/llvm-project/build/bin/mlir-lsp-server")))
+                '(mlir-mode . ("${pkgs.llvmPackages_22.mlir}/bin/mlir-lsp-server")))
               (add-to-list 'eglot-server-programs
-                '(tablegen-mode . ("/home/alex/postdoc/mlir/llvm-project/build/bin/tblgen-lsp-server" "--tablegen-compilation-database=/home/alex/postdoc/mlir/llvm-project/build/tablegen_compile_commands.yml")))
+                '(tablegen-mode . ("${pkgs.llvmPackages_22.mlir}/bin/tblgen-lsp-server")))
               (setq-default eglot-workspace-configuration
                 '(:exportPdf "onSave"))
             '';
