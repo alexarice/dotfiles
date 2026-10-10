@@ -55,14 +55,6 @@ with lib; let
         '';
       };
 
-      defer = mkOption {
-        type = types.bool;
-        default = false;
-        description = ''
-          Boolean to be passed to the <option>:defer</option> keyword of use-package.
-        '';
-      };
-
       init = mkOption {
         type = types.lines;
         default = "";
@@ -90,17 +82,8 @@ with lib; let
       bind = mkOption {
         type = types.bindType;
         default = {};
-        #TODO better description
         description = ''
           Attribute set of bindings to be passed to <option>:bind</option> keyword of use-package.
-        '';
-      };
-
-      bind-keymap = mkOption {
-        type = types.bindType;
-        default = {};
-        description = ''
-          List of bindings to be passed to <option>:bind-keymap</option> keyword of use-package.
         '';
       };
 
@@ -109,30 +92,6 @@ with lib; let
         default = "";
         description = ''
           String to be passed to the <option>:mode</option> keyword of use-package.
-        '';
-      };
-
-      interpreter = mkOption {
-        type = types.str;
-        default = "";
-        description = ''
-          String to be passed to the <option>:interpreter</option> keyword of use-package.
-        '';
-      };
-
-      magic = mkOption {
-        type = types.lines;
-        default = "";
-        description = ''
-          String to be passed to the <option>:magic</option> keyword of use-package.
-        '';
-      };
-
-      magic-fallback = mkOption {
-        type = types.lines;
-        default = "";
-        description = ''
-          String to be passed to the <option>:magic-fallback</option> keyword of use-package.
         '';
       };
 
@@ -168,75 +127,11 @@ with lib; let
         '';
       };
 
-      if-keyword = mkOption {
-        type = types.lines;
-        default = "";
-        description = ''
-          String to be passed to the <option>:if</option> keyword of use-package.
-        '';
-      };
-
-      when = mkOption {
-        type = types.lines;
-        default = "";
-        description = ''
-          String to be passed to the <option>:when</option> keyword of use-package.
-        '';
-      };
-
-      unless = mkOption {
-        type = types.lines;
-        default = "";
-        description = ''
-          String to be passed to the <option>:unless</option> keyword of use-package.
-        '';
-      };
-
       after = mkOption {
         type = with types; either (listOf str) str;
         default = [];
         description = ''
           String to be passed to the <option>:after</option> keyword of use-package.
-        '';
-      };
-
-      defines = mkOption {
-        type = types.lines;
-        default = "";
-        description = ''
-          String to be passed to the <option>:defines</option> keyword of use-package.
-        '';
-      };
-
-      functions = mkOption {
-        type = types.lines;
-        default = "";
-        description = ''
-          String to be passed to the <option>:functions</option> keyword of use-package.
-        '';
-      };
-
-      diminish = mkOption {
-        type = with types; nullOr str;
-        default = null;
-        description = ''
-          String to be passed to the <option>:diminish</option> keyword of use-package.
-        '';
-      };
-
-      delight = mkOption {
-        type = with types; nullOr str;
-        default = null;
-        description = ''
-          String to be passed to the <option>:delight</option> keyword of use-package.
-        '';
-      };
-
-      chords = mkOption {
-        type = types.bindType;
-        default = {};
-        description = ''
-          Attribute set to be passed to the <option>:chords</option> keyword of use-package.
         '';
       };
     };
@@ -250,11 +145,6 @@ with lib; let
   packageToConfig = p:
     removeNonEmptyLines ''
       (use-package ${p.name}
-      ${
-        if p.defer
-        then ":defer t"
-        else ""
-      }
       ${
         if p.init != ""
         then ":init\n${p.init}"
@@ -276,28 +166,8 @@ with lib; let
         else ""
       }
       ${
-        if p.bind-keymap != {}
-        then ":bind-keymap\n${printBinding (p.bind-keymap)}"
-        else ""
-      }
-      ${
         if p.mode != ""
         then ":mode ${p.mode}"
-        else ""
-      }
-      ${
-        if p.interpreter != ""
-        then ":interpreter\n${p.interpreter}"
-        else ""
-      }
-      ${
-        if p.magic != ""
-        then ":magic\n${p.magic}"
-        else ""
-      }
-      ${
-        if p.magic-fallback != ""
-        then ":magic-fallback\n${p.magic-fallback}"
         else ""
       }
       ${
@@ -321,59 +191,14 @@ with lib; let
         else ""
       }
       ${
-        if p.if-keyword != ""
-        then ":if\n${p.if-keyword}"
-        else ""
-      }
-      ${
-        if p.when != ""
-        then ":when\n${p.when}"
-        else ""
-      }
-      ${
-        if p.unless != ""
-        then ":unless\n${p.unless}"
-        else ""
-      }
-      ${
         if p.after != []
         then ":after (${builtins.concatStringsSep " " p.after})"
-        else ""
-      }
-      ${
-        if p.defines != ""
-        then ":defines\n${p.defines}"
-        else ""
-      }
-      ${
-        if p.functions != ""
-        then ":functions\n${p.functions}"
-        else ""
-      }
-      ${
-        if p.diminish != null
-        then ":diminish\n${p.diminish}"
-        else ""
-      }
-      ${
-        if p.delight != null
-        then ":delight\n${p.delight}"
-        else ""
-      }
-      ${
-        if p.chords != {}
-        then ":chords\n${printBinding p.chords}"
         else ""
       }
       )
     '';
 
   comparator = fst: snd: fst.priority < snd.priority || (fst.priority == snd.priority && fst.name < snd.name);
-
-  packages = attrValues config.package;
-  useDiminish = any (x: x.diminish != null) packages;
-  useDelight = any (x: x.delight != null) packages;
-  useChords = any (x: x.chords != {}) packages;
 in {
   options = {
     package = mkOption {
@@ -395,21 +220,6 @@ in {
         then p.package
         else singleton p.package) (filter (p: p.enable) (builtins.attrValues (config.package)))
       ++ singleton epkgs.use-package;
-
-    package = {
-      use-package-chords = {
-        enable = mkIf useChords true;
-        priority = mkDefault 400;
-      };
-      diminish = {
-        enable = mkIf useDiminish true;
-        priority = mkDefault 400;
-      };
-      delight = {
-        enable = mkIf useDelight true;
-        priority = mkDefault 400;
-      };
-    };
 
     externalPackageList = builtins.concatMap (p: p.external-packages) (filter (p: p.enable) (builtins.attrValues (config.package)));
 
