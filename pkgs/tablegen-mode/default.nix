@@ -1,12 +1,12 @@
 {
-  llvm_18,
+  llvmPackages_22,
   melpaBuild,
 }:
 melpaBuild {
   pname = "tablegen-mode";
   version = "0-unstable-2024-07-15";
 
-  inherit (llvm_18) src;
+  inherit (llvmPackages_22.llvm) src;
 
   files = ''("llvm/utils/emacs/tablegen-mode.el")'';
 }
