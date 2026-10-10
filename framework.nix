@@ -29,7 +29,6 @@
           upower.enable = true;
           logind.settings.Login.HandleLidSwitch = "ignore";
         };
-        system.configurationRevision = lib.mkIf (inputs.self ? rev) inputs.self.rev;
       })
     ];
   };
