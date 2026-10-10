@@ -368,21 +368,6 @@
         "type": "github"
       }
     },
-    "my-nixpkgs": {
-      "locked": {
-        "lastModified": 1789116502,
-        "narHash": "sha256-xtmz1HdXNBhvVrSW+JRRs5DbulCfGEQURfG/09kr8V0=",
-        "owner": "alexarice",
-        "repo": "nixpkgs",
-        "rev": "b42ff57af0d556eb86795558ebd7c871444d214f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "alexarice",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixos-hardware": {
       "inputs": {
         "nixpkgs": "nixpkgs_8"
@@ -664,7 +649,6 @@
         "flake-parts": "flake-parts_3",
         "home-manager": "home-manager",
         "make-shell": "make-shell",
-        "my-nixpkgs": "my-nixpkgs",
         "nixos-hardware": "nixos-hardware",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs_9",

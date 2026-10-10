@@ -1,14 +1,10 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   programs.steam = {
     enable = true;
   };
 
   hm.home.packages = with pkgs; [
-    inputs.my-nixpkgs.legacyPackages."x86_64-linux".sgt-puzzles
+    sgt-puzzles
     wine
     bolt-launcher
     osu-lazer-bin
