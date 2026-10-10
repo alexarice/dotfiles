@@ -112,9 +112,7 @@
             };
           };
 
-          ein = {
-            enable = true;
-          };
+          ein.enable = true;
 
           envrc = {
             enable = true;
@@ -228,13 +226,9 @@
             init = "(marginalia-mode)";
           };
 
-          consult = {
-            enable = true;
-          };
+          consult.enable = true;
 
-          embark = {
-            enable = true;
-          };
+          embark.enable = true;
 
           embark-consult.enable = true;
 
@@ -376,9 +370,7 @@
             hook = "(text-mode . jinx-mode)";
           };
 
-          llvm-ts-mode = {
-            enable = true;
-          };
+          llvm-ts-mode.enable = true;
 
           mlir-mode = {
             enable = true;
