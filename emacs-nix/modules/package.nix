@@ -414,6 +414,8 @@ in {
     externalPackageList = builtins.concatMap (p: p.external-packages) (filter (p: p.enable) (builtins.attrValues (config.package)));
 
     preamble = mkBefore ''
+      (setq user-init-file (or load-file-name (buffer-file-name)))
+
       (require 'use-package)
       (package-initialize)
       (require 'bind-key)
