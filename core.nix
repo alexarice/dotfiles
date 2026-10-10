@@ -25,9 +25,9 @@ with lib; {
     ./cachix.nix
     ./direnv.nix
     ./emacs
-    ./fish.nix
     ./git.nix
     ./home.nix
     ./nix.nix
+    ./terminal.nix
   ];
 }

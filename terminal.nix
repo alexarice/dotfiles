@@ -2,6 +2,33 @@
   programs.fish.enable = true;
 
   hm = {
+    home.packages = with pkgs; [
+      # System monitoring
+      fastfetch
+      htop
+      btop
+
+      # File tools
+      tree
+      file
+      unzip
+      zip
+      p7zip
+      unrar
+
+      # Utilities
+      curl
+      jq
+      ripgrep
+      cloc
+      psmisc
+      gparted
+      pdftk
+      imagemagick
+      git-extras
+      calc
+    ];
+
     programs.fish = {
       enable = true;
       shellAliases = {

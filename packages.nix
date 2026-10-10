@@ -4,27 +4,6 @@
   ...
 }: {
   hm.home.packages = with pkgs; [
-    # CLI Programs
-    fastfetch
-    tree
-    curl
-    psmisc
-    gparted
-    jq
-    file
-    imagemagick
-    unzip
-    zip
-    p7zip
-    unrar
-    pdftk
-    htop
-    btop
-    git-extras
-    calc
-    cloc
-    ripgrep
-
     # Dictionaries
     hunspell
     hunspellDicts.en_GB-ise
