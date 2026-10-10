@@ -464,7 +464,6 @@
           tool-bar-mode = false;
           menu-bar-mode = false;
           scroll-bar-mode = false;
-
           global-hl-line-mode = true;
           global-display-line-numbers-mode = true;
           column-number-mode = true;
@@ -504,6 +503,9 @@
         '';
 
         postSetup = ''
+          (add-hook 'emacs-startup-hook
+                    (lambda () (setq gc-cons-threshold 800000)))
+
           (defun stop-using-minibuffer ()
             "kill the minibuffer"
             (when (and (>= (recursion-depth) 1) (active-minibuffer-window))
