@@ -422,34 +422,8 @@
           };
         };
 
-        hydra.hydra-latex = {
-          hint = "nil";
-          docText = ''
-
-            _l_: Build         _c_: Move to cursor
-            _h_: Previous page _t_: texpresso      _n_: Next Page
-          '';
-          bindings = {
-            "l" = {
-              command = "TeX-command-master";
-              colour = "blue";
-            };
-            "h" = "texpresso-previous-page";
-            "n" = "texpresso-next-page";
-            "c" = {
-              command = "texpresso-move-to-cursor";
-              colour = "blue";
-            };
-            "t" = {
-              command = "texpresso";
-              colour = "blue";
-            };
-            "q" = {
-              command = "nil";
-              name = "cancel";
-              colour = "blue";
-            };
-          };
+        keymap.my-latex-map = {
+          "l" = "TeX-command-master";
         };
 
         keymap.my-rust-map = {
@@ -498,12 +472,9 @@
           smartparens-global-mode = true;
         };
 
-        environment = {
-          DISPLAY = "\":0\"";
-        };
-
         preamble = ''
-          (add-hook 'before-save-hook 'delete-trailing-whitespace)
+          (add-hook 'text-mode-hook #'delete-trailing-whitespace)
+          (add-hook 'prog-mode-hook #'delete-trailing-whitespace)
           (setq-default pgtk-wait-for-event-timeout 0)
           (add-to-list 'default-frame-alist '(alpha-background . 80))
 
@@ -517,24 +488,25 @@
           (defun reasoning-block (n)
             (interactive "nLines: ")
             (let ((indent (current-indentation)))
-                 (progn (defun go (n)
-               (if (> n 0) (progn
-                      (insert (make-string (+ 2 indent) ?\s))
-                      (insert "?\n")
-                      (insert (make-string (+ 4 indent) ?\s))
-                      (insert "≈⟨ ? ⟩\n")
-                      (go (- n 1)))))
-                  (insert "begin\n")
-                  (go n)
-                  (insert (make-string (+ 2 indent) ?\s))
-                  (insert "? ∎"))))
+              (cl-labels ((go (n)
+                              (if (> n 0)
+                                  (progn
+                                    (insert (make-string (+ 2 indent) ?\s))
+                                    (insert "?\n")
+                                    (insert (make-string (+ 4 indent) ?\s))
+                                    (insert "≈⟨ ? ⟩\n")
+                                    (go (- n 1))))))
+                (insert "begin\n")
+                (go n)
+                (insert (make-string (+ 2 indent) ?\s))
+                (insert "? ∎"))))
 
           (defun major-mode-bind ()
             "bind key for major mode"
             (interactive)
             (pcase major-mode
               (`agda2-mode (hydra-agda/body))
-              (`LaTeX-mode (hydra-latex/body))
+              (`LaTeX-mode (set-transient-map my-latex-map))
               (`rustic-mode (set-transient-map my-rust-map))
               ))
         '';
