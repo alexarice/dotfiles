@@ -18,7 +18,7 @@ with lib; {
     environment.systemPackages = [pkgs.git];
     system = {
       configurationRevision = lib.mkIf (inputs.self ? rev) inputs.self.rev;
-      stateVersion = "18.09";
+      stateVersion = "26.11";
     };
   };
   imports = [

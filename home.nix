@@ -22,7 +22,7 @@ with lib; {
       ];
 
       config = {
-        home.stateVersion = "20.09";
+        home.stateVersion = "26.11";
       };
     };
   };
