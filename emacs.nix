@@ -8,7 +8,7 @@
   overlays = [inputs.emacs-overlay.overlay];
   hm = {
     imports = [
-      inputs.emacs-nix.nixosModules.emacs-nix
+      ./emacs-nix/module.nix
     ];
 
     systemd.user.services.emacs = {
@@ -90,7 +90,6 @@
                 "r" = "eglot-rename";
                 "g" = "magit-status-here";
                 "y" = "jinx-correct";
-                "t" = "fold-map";
                 "w" = "delete-other-windows";
                 "s" = "save-buffer";
               };
@@ -477,13 +476,6 @@
           (add-hook 'prog-mode-hook #'delete-trailing-whitespace)
           (setq-default pgtk-wait-for-event-timeout 0)
           (add-to-list 'default-frame-alist '(alpha-background . 80))
-
-          (defun save-recentf-no-output ()
-            "recentf-save-list without output"
-            (interactive)
-            (let ((inhibit-message t))
-            (recentf-save-list)))
-          (run-at-time nil (* 2 60) 'save-recentf-no-output)
 
           (defun reasoning-block (n)
             (interactive "nLines: ")

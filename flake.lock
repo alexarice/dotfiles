@@ -145,26 +145,6 @@
         "type": "github"
       }
     },
-    "emacs-nix": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1784801676,
-        "narHash": "sha256-xwCxrRDSX9KzW+NWhwwWc1BXVSjLROtdYcs5LZSo50g=",
-        "owner": "alexarice",
-        "repo": "emacs-nix",
-        "rev": "7392f1efdca6efcd4525163161403f1927616aef",
-        "type": "github"
-      },
-      "original": {
-        "owner": "alexarice",
-        "repo": "emacs-nix",
-        "type": "github"
-      }
-    },
     "emacs-overlay": {
       "inputs": {
         "nixpkgs": [
@@ -769,7 +749,6 @@
     "root": {
       "inputs": {
         "all-agda": "all-agda",
-        "emacs-nix": "emacs-nix",
         "emacs-overlay": "emacs-overlay",
         "flake-parts": "flake-parts_3",
         "home-manager": "home-manager",
