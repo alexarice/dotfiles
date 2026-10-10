@@ -79,8 +79,6 @@
         "${modifier}+h" = lib.mkForce "splith";
         "${modifier}+tab" = "workspace back_and_forth";
         "${modifier}+c" = "exec firefox";
-        "${modifier}+p" = "exec ${./scripts/take_screenshot}";
-        "${modifier}+Shift+p" = "exec ${./scripts/take_screenshot} full";
         "${modifier}+l" = "exec noctalia msg session lock";
         "XF86MonBrightnessUp" = "exec noctalia msg brightness-up";
         "XF86MonBrightnessDown" = "exec noctalia msg brightness-down";
