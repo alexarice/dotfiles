@@ -288,6 +288,7 @@
               (require 'smartparens-latex)
               (sp-local-pair '(tex-mode plain-tex-mode latex-mode LaTeX-mode) "`" "'" :actions :rem)
               ;; (sp-local-pair '(tex-mode plain-tex-mode latex-mode LaTeX-mode) "``" "'''" :actions :rem)
+              (smartparens-global-mode 1)
             '';
           };
 
@@ -468,7 +469,6 @@
           global-display-line-numbers-mode = true;
           column-number-mode = true;
           recentf-mode = true;
-          smartparens-global-mode = true;
         };
 
         preamble = ''
