@@ -175,7 +175,10 @@ in {
   };
 
   config = mkIf (cfg != {}) {
-    package.hydra.enable = true;
+    package.hydra = {
+      enable = true;
+      demand = true;
+    };
     postSetup = concatStringsSep "\n\n" (map (x: x.hydra-text) (attrValues cfg));
   };
 }
