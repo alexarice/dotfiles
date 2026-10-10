@@ -27,26 +27,6 @@
     tinymist
     typstyle
 
-    # Programming
-    (agda.withPackages (p: with p; [standard-library]))
-    elan
-    cabal-install
-    python314
-    uv
-    cargo
-    rustc
-    wasm-pack
-    rustfmt
-    clippy
-    gnumake
-    gdb
-    lldb
-    lld
-    cmake
-    ccache
-    clang
-    ninja
-
     # Programs
     firefox
     chromium

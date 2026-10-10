@@ -28,6 +28,7 @@ with lib; {
     ./git.nix
     ./home.nix
     ./nix.nix
+    ./programming.nix
     ./terminal.nix
   ];
 }
