@@ -23,6 +23,7 @@
     git-extras
     calc
     cloc
+    ripgrep
 
     # Dictionaries
     hunspell
@@ -37,8 +38,6 @@
     graphviz
 
     # Desktop environment
-    (caja-with-extensions.override {extensions = [caja-extensions];})
-    nnn
     qview
     glib
     shared-mime-info
@@ -82,12 +81,9 @@
     zathura
     evince
     (inputs.nixpkgs-zotero.legacyPackages."x86_64-linux".zotero)
-    ripgrep
     signal-desktop
     zulip
     inkscape
-
-    # 3D print
     blender
   ];
 }
