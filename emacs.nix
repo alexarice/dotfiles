@@ -270,8 +270,6 @@
               (add-to-list 'eglot-server-programs
               '((LaTeX-mode tex-mode context-mode texinfo-mode bibtex-mode) . ("texlab" :initializationOptions (:texlab (:chktex (:onOpenAndSave nil :onEdit nil))))))
               (add-to-list 'eglot-server-programs
-                '(catt-mode . ("~/.cargo/bin/catt_strict" "--lsp")))
-              (add-to-list 'eglot-server-programs
                 '(typst-ts-mode . ("tinymist")))
               (add-to-list 'eglot-server-programs
                 '(mlir-mode . ("${pkgs.llvmPackages_22.mlir}/bin/mlir-lsp-server")))
@@ -279,14 +277,6 @@
                 '(tablegen-mode . ("${pkgs.llvmPackages_22.mlir}/bin/tblgen-lsp-server")))
               (setq-default eglot-workspace-configuration
                 '(:exportPdf "onSave"))
-            '';
-          };
-
-          catt-mode = {
-            enable = true;
-            package = epkgs.callPackage ./pkgs/catt/catt-mode.nix {};
-            init = ''
-              (add-hook 'catt-mode-hook 'eglot-ensure)
             '';
           };
 
