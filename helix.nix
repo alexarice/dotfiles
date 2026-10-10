@@ -51,6 +51,6 @@
       ];
     };
 
-    home.file."~/.config/helix/themes/dracula.toml".source = ./dracula.toml;
+    xdg.configFile."helix/themes/dracula.toml".source = ./dracula.toml;
   };
 }

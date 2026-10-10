@@ -6,7 +6,7 @@
       ".config/zathura/zathurarc".source = ./zathurarc;
     };
     sessionPath = [
-      "~/.cabal/bin"
+      "$HOME/.cabal/bin"
       "$HOME/.cargo/bin"
       "$HOME/.cmake/bin"
     ];
