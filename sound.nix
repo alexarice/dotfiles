@@ -17,6 +17,13 @@
       extraConfig."11-bluetooth-policy" = {
         "wireplumber.settings" = {
           "bluetooth.autoswitch-to-headset-profile" = false;
+          "bluetooth.headset-profile" = "off";
+        };
+      };
+      # Disable HSP/HFP headset mode entirely - only allow A2DP
+      extraConfig."bluez5-config" = {
+        "monitor.bluez5" = {
+          "headset-profile" = "off";
         };
       };
     };
