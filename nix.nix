@@ -32,6 +32,7 @@
         ];
 
         auto-optimise-store = true;
+        warn-dirty = false;
       };
 
       registry.nixpkgs.flake = inputs.nixpkgs;
