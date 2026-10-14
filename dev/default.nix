@@ -4,12 +4,14 @@
   ...
 }: let
   files = builtins.readDir ./.;
-  nixFiles =
+  importable =
     lib.filterAttrs (
-      name: type: type == "regular" && lib.hasSuffix ".nix" name && name != "default.nix"
+      name: type:
+        (type == "regular" && lib.hasSuffix ".nix" name && name != "default.nix")
+        || (type == "directory")
     )
     files;
-  importList = lib.mapAttrsToList (name: _: ./${name}) nixFiles;
+  importList = lib.mapAttrsToList (name: _: ./${name}) importable;
 in {
   imports = importList;
 }
