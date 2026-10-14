@@ -35,6 +35,7 @@
         ./wsl.nix
         ./framework.nix
         ./shell.nix
+        ./pi-container.nix
       ];
       systems = ["x86_64-linux"];
     };
