@@ -1,21 +1,22 @@
 {
   lib,
-  pkgs,
   inputs,
   ...
-}:
-with lib; {
-  imports = [
-    ./nix.nix
-    ./fish.nix
-    ./git.nix
-    ./home.nix
-    ./users.nix
-  ];
+}: let
+  # Discover all .nix files in this directory (except default.nix)
+  files = builtins.readDir ./.;
+  nixFiles =
+    lib.filterAttrs (
+      name: type: type == "regular" && lib.hasSuffix ".nix" name && name != "default.nix"
+    )
+    files;
+  importList = lib.mapAttrsToList (name: _: ./${name}) nixFiles;
+in {
+  imports = importList;
 
   options = {
-    machine = mkOption {
-      type = types.enum [
+    machine = lib.mkOption {
+      type = lib.types.enum [
         "framework"
         "desktop"
         "wsl"
