@@ -4,16 +4,36 @@
   ...
 }: {
   virtualisation.libvirtd.enable = true;
-  virtualisation.containers.enable = true;
   programs.virt-manager.enable = true;
   environment.systemPackages = with pkgs; [
     qemu
     quickemu
   ];
 
+  virtualisation.containers.enable = true;
+
   containers.pi-sandbox = {
+    specialArgs.inputs = inputs;
     config = {pkgs, ...}: {
-      imports = [inputs.self.nixosModules.pi-container];
+      imports = [
+        ./core
+      ];
+
+      machine = "pi-container";
+
+      environment.systemPackages = with pkgs; [
+        bash
+        ripgrep
+        curl
+        pi-coding-agent
+        nodejs
+        git
+        python314
+        ddgr
+      ];
+
+      programs.direnv.enable = true;
+      programs.direnv.nix-direnv.enable = true;
     };
 
     bindMounts = {

@@ -4,27 +4,23 @@
     ./apps.nix
     ./boot.nix
     ./cachix.nix
-    ./core.nix
+    ./core
     ./direnv.nix
     ./documents.nix
     ./emacs
     ./files.nix
     ./fonts.nix
     ./games.nix
-    ./git.nix
     ./gpg.nix
     ./gtk.nix
     ./helix.nix
-    ./home.nix
     ./kdeconnect.nix
     ./networking.nix
-    ./nix.nix
     ./printing.nix
     ./programming.nix
     ./sound.nix
     ./terminal.nix
     ./udiskie.nix
-    ./users.nix
     ./virtualisation.nix
     ./wayland.nix
     ./minted.nix

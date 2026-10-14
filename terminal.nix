@@ -30,22 +30,6 @@
       libnotify
     ];
 
-    programs.fish = {
-      enable = true;
-      shellAliases = {
-        gp = "git push";
-        gc = "git commit";
-        ga = "git add";
-        gst = "git status";
-        gd = "git diff";
-      };
-      functions = {
-        fish_mode_prompt = "";
-      };
-    };
-
-    xdg.configFile."fish/functions/fish_prompt.fish".source = ./fish_prompt.fish;
-
     programs.nix-index = {
       enable = true;
       enableFishIntegration = true;

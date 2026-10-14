@@ -1,5 +1,9 @@
 {inputs, ...}: let
-  wsl-module = {pkgs, ...}: {
+  wsl-module = {
+    pkgs,
+    lib,
+    ...
+  }: {
     machine = "wsl";
 
     wsl = {
@@ -13,27 +17,8 @@
     services.xserver.xkb.layout = "gb";
     services.xserver.xkb.variant = "dvorak";
 
-    users.users.alex.shell = pkgs.fish;
+    users.users.alex.shell = lib.mkForce pkgs.fish;
 
-    # Load fonts
-    fonts = {
-      packages = with pkgs; [
-        nerd-fonts.hack
-        symbola
-        dejavu_fonts
-      ];
-
-      fontconfig = {
-        enable = true;
-        antialias = true;
-        cache32Bit = true;
-        defaultFonts = {
-          monospace = ["SauceCodePro Nerd Font Mono"];
-          sansSerif = ["DejaVu Sans"];
-          serif = ["DejaVu Serif"];
-        };
-      };
-    };
     environment.systemPackages = with pkgs; [
       ripgrep
       setxkbmap
@@ -48,14 +33,13 @@ in {
     system = "x86_64-linux";
     specialArgs.inputs = inputs;
     modules = [
-      ./core.nix
+      ./core
       ./cachix.nix
       ./direnv.nix
       ./documents.nix
       ./emacs
-      ./git.nix
-      ./home.nix
-      ./nix.nix
+      ./fonts.nix
+      ./helix.nix
       ./programming.nix
       ./terminal.nix
       inputs.home-manager.nixosModules.home-manager
