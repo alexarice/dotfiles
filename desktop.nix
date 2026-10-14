@@ -7,7 +7,10 @@
     system = "x86_64-linux";
     specialArgs.inputs = inputs;
     modules = [
-      ./linux.nix
+      ./core
+      ./dev
+      ./gui
+      ./system
       ./hardware/desktop.nix
       ({pkgs, ...}: {
         machine = "desktop";

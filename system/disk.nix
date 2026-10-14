@@ -1,4 +1,8 @@
 {pkgs, ...}: {
+  # Disk trim maintenance
+  services.fstrim.enable = true;
+
+  # Removable media automount
   hm.home.packages = with pkgs; [
     udiskie
   ];

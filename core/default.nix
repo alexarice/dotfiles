@@ -31,5 +31,8 @@ in {
       configurationRevision = lib.mkIf (inputs.self ? rev) inputs.self.rev;
       stateVersion = "26.11";
     };
+
+    i18n.defaultLocale = "en_GB.UTF-8";
+    time.timeZone = "Europe/London";
   };
 }

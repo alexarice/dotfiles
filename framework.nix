@@ -8,7 +8,10 @@
     system = "x86_64-linux";
     specialArgs.inputs = inputs;
     modules = [
-      ./linux.nix
+      ./core
+      ./dev
+      ./gui
+      ./system
       ./hardware/framework.nix
       inputs.nixos-hardware.nixosModules.framework-13-7040-amd
       ({...}: {
@@ -22,7 +25,7 @@
 
         machine = "framework";
 
-        networking.hostName = "Alex_fm"; # Define your hostname.
+        networking.hostName = "Alex_fm";
 
         services = {
           fwupd.enable = true;

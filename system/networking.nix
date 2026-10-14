@@ -1,4 +1,6 @@
 {pkgs, ...}: {
+  services.timesyncd.enable = true;
+
   networking.networkmanager = {
     enable = true;
     plugins = with pkgs; [

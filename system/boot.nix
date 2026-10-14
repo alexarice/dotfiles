@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}: {
+{pkgs, ...}: {
   boot.tmp.useTmpfs = true;
 
   boot.supportedFilesystems = ["ntfs"];
@@ -18,4 +13,6 @@
     };
     efi.canTouchEfiVariables = true;
   };
+
+  console.useXkbConfig = true;
 }
