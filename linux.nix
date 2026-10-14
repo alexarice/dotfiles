@@ -1,15 +1,9 @@
 {
   imports = [
-    ./boot.nix
     ./core
     ./dev
     ./gui
-    ./kdeconnect.nix
-    ./networking.nix
-    ./printing.nix
-    ./sound.nix
-    ./udiskie.nix
-    ./virtualisation.nix
+    ./system
   ];
 
   config = {
