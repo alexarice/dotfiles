@@ -35,7 +35,7 @@ in {
     modules = [
       ./core
       ./dev
-      ./fonts.nix
+      ./gui/fonts.nix
       inputs.home-manager.nixosModules.home-manager
       inputs.nixos-wsl.nixosModules.wsl
       wsl-module

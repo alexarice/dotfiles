@@ -1,21 +1,15 @@
 {
   imports = [
-    ./alacritty.nix
-    ./apps.nix
     ./boot.nix
     ./core
     ./dev
-    ./fonts.nix
-    ./games.nix
-    ./gtk.nix
+    ./gui
     ./kdeconnect.nix
     ./networking.nix
     ./printing.nix
     ./sound.nix
     ./udiskie.nix
-    ./udiskie.nix
     ./virtualisation.nix
-    ./wayland.nix
   ];
 
   config = {
