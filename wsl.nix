@@ -34,14 +34,8 @@ in {
     specialArgs.inputs = inputs;
     modules = [
       ./core
-      ./cachix.nix
-      ./direnv.nix
-      ./documents.nix
-      ./emacs
+      ./dev
       ./fonts.nix
-      ./helix.nix
-      ./programming.nix
-      ./terminal.nix
       inputs.home-manager.nixosModules.home-manager
       inputs.nixos-wsl.nixosModules.wsl
       wsl-module

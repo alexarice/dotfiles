@@ -3,23 +3,16 @@
     ./alacritty.nix
     ./apps.nix
     ./boot.nix
-    ./cachix.nix
     ./core
-    ./direnv.nix
-    ./documents.nix
-    ./emacs
-    ./files.nix
+    ./dev
     ./fonts.nix
     ./games.nix
-    ./gpg.nix
     ./gtk.nix
-    ./helix.nix
     ./kdeconnect.nix
     ./networking.nix
     ./printing.nix
-    ./programming.nix
     ./sound.nix
-    ./terminal.nix
+    ./udiskie.nix
     ./udiskie.nix
     ./virtualisation.nix
     ./wayland.nix
