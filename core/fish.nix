@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{config, ...}: {
   hm.programs.fish = {
     enable = true;
     shellAliases = {
@@ -15,15 +11,13 @@
     functions = {
       fish_mode_prompt = "";
       nix-rebuild = ''
-        sudo unbuffer nixos-rebuild switch --flake $HOME/dotfiles#${config.machine} --keep-going $argv |& nom
+        sudo nixos-rebuild switch --flake $HOME/dotfiles#${config.machine} --keep-going $argv
+      '';
+      nix-clean = ''
+        sudo nix-collect-garbage -d && nix-collect-garbage -d && sudo nixos-rebuild boot --flake $HOME/dotfiles#${config.machine}
       '';
     };
   };
-
-  hm.home.packages = with pkgs; [
-    nix-output-monitor
-    expect
-  ];
 
   hm.xdg.configFile."fish/functions/fish_prompt.fish".source = ./fish_prompt.fish;
 }
