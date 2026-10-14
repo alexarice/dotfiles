@@ -11,19 +11,6 @@
   };
 
   config = {
-    overlays = builtins.attrValues {
-      agda = inputs.all-agda.overlay."x86_64-linux";
-
-      agda-default = self: super: {
-        agdaPackages = self.agdaPackages-2_8_0;
-        agda = self.agda-2_8_0;
-      };
-
-      fmt6overlay = self: super: {
-        fmt_6 = super.fmt;
-      };
-    };
-
     nix = {
       settings = {
         trusted-users = [
@@ -62,9 +49,9 @@
       ];
     };
 
-    services.envfs.enable = true;
+    services.envfs.enable = lib.mkIf (config.machine != "pi-container") true;
 
-    hm.nixpkgs = {
+    hm.nixpkgs = lib.mkIf (config.machine != "pi-container") {
       config = {
         allowBroken = true;
         allowUnfree = true;
@@ -74,7 +61,7 @@
       inherit (config) overlays;
     };
 
-    hm.home.packages = with pkgs; [
+    hm.home.packages = lib.mkIf (config.machine != "pi-container") (with pkgs; [
       cachix
       nix-du
       nixos-generators
@@ -82,6 +69,6 @@
       nixpkgs-review
       nix-info
       nix-index
-    ];
+    ]);
   };
 }

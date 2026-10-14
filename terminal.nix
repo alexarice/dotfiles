@@ -1,6 +1,4 @@
 {pkgs, ...}: {
-  programs.fish.enable = true;
-
   hm = {
     home.packages = with pkgs; [
       # System monitoring
