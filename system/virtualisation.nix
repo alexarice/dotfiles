@@ -16,7 +16,7 @@
     specialArgs.inputs = inputs;
     config = {pkgs, ...}: {
       imports = [
-        ./core
+        ../core
       ];
 
       machine = "pi-container";
