@@ -63,6 +63,26 @@ set -q color_status_private_str; or set -g color_status_private_str purple
 set -q glyph_status_private; or set -g glyph_status_private "⚙"
 
 # ===========================
+# Container detection (NixOS containers)
+# ===========================
+
+set -q color_container_bg; or set -g color_container_bg white
+set -q color_container_str; or set -g color_container_str black
+set -q glyph_container; or set -g glyph_container "📦"
+
+function is_container
+  # Detect NixOS containers using systemd-detect-virt
+  # Returns 0 (true) if in a container, 1 (false) otherwise
+  systemd-detect-virt -c >/dev/null 2>&1
+end
+
+function prompt_container -d "Display indicator when in a NixOS container"
+  if is_container
+    prompt_segment $color_container_bg $color_container_str "$glyph_container CONTAINER"
+  end
+end
+
+# ===========================
 # General VCS settings
 
 set -q fish_vcs_branch_name_length; or set -g fish_vcs_branch_name_length 25
@@ -290,6 +310,7 @@ end
 function fish_prompt
   set -g RETVAL $status
   prompt_status
+  prompt_container
   prompt_dir
   prompt_virtual_env
   if [ (cwd_in_scm_blacklist | wc -c) -eq 0 ]
