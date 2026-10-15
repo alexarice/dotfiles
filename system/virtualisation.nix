@@ -25,7 +25,6 @@
         bash
         ripgrep
         curl
-        pi-coding-agent
         nodejs
         git
         python314
@@ -34,6 +33,31 @@
 
       programs.direnv.enable = true;
       programs.direnv.nix-direnv.enable = true;
+
+      hm = {
+        imports = [
+          ../modules/pi.nix
+        ];
+
+        programs.pi = {
+          enable = true;
+          settings = {
+            packages = [
+              "npm:pi-elm-models"
+              "npm:pi-subagents"
+              "npm:@juicesharp/rpiv-ask-user-question"
+              "npm:@juicesharp/rpiv-todo"
+              ../pkgs/pi/pi-builtin
+              ../pkgs/pi/pi-date
+            ];
+            editorPaddingX = 1;
+            terminal.hyperlinks = true;
+          };
+          skills = [
+            ../pkgs/pi/web-search
+          ];
+        };
+      };
     };
 
     bindMounts = {
