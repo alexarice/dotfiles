@@ -22,17 +22,22 @@
       machine = "pi-container";
 
       environment.systemPackages = with pkgs; [
-        bash
-        ripgrep
-        curl
-        nodejs
         git
-        python314
-        ddgr
       ];
 
       programs.direnv.enable = true;
       programs.direnv.nix-direnv.enable = true;
+
+      hm.home.packages = with pkgs; [
+        bash
+        ripgrep
+        curl
+        nodejs
+        python314
+        ddgr
+        opencode
+        basedpyright
+      ];
 
       hm = {
         imports = [
