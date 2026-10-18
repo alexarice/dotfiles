@@ -35,6 +35,9 @@
       inherit (config) overlays;
       config = {
         allowUnfree = true;
+        permittedInsecurePackages = [
+          "firefox-esr-140-bin-unwrapped-140.17.0esr"
+        ];
       };
     };
 
@@ -51,13 +54,7 @@
 
     services.envfs.enable = lib.mkIf (config.machine != "container") true;
 
-    hm.nixpkgs = lib.mkIf (config.machine != "container") {
-      config = {
-        allowBroken = true;
-        allowUnfree = true;
-        allowUnsupportedSystem = true;
-        oraclejdk.accept_license = true;
-      };
+    hm.nixpkgs = {
       inherit (config) overlays;
     };
 

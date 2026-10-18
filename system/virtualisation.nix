@@ -35,8 +35,8 @@
         nodejs
         python314
         ddgr
-        opencode
         basedpyright
+        (inputs.nixpkgs-opencode.legacyPackages."x86_64-linux".opencode)
       ];
     };
 

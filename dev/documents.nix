@@ -66,6 +66,6 @@ in {
     evince
 
     # Reference management
-    (inputs.nixpkgs-zotero.legacyPackages."x86_64-linux".zotero)
+    zotero
   ];
 }
