@@ -49,9 +49,9 @@
       ];
     };
 
-    services.envfs.enable = lib.mkIf (config.machine != "pi-container") true;
+    services.envfs.enable = lib.mkIf (config.machine != "container") true;
 
-    hm.nixpkgs = lib.mkIf (config.machine != "pi-container") {
+    hm.nixpkgs = lib.mkIf (config.machine != "container") {
       config = {
         allowBroken = true;
         allowUnfree = true;
@@ -61,7 +61,7 @@
       inherit (config) overlays;
     };
 
-    hm.home.packages = lib.mkIf (config.machine != "pi-container") (with pkgs; [
+    hm.home.packages = lib.mkIf (config.machine != "container") (with pkgs; [
       cachix
       nix-du
       nixos-generators

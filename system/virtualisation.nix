@@ -12,14 +12,14 @@
 
   virtualisation.containers.enable = true;
 
-  containers.pi-sandbox = {
+  containers.container = {
     specialArgs.inputs = inputs;
     config = {pkgs, ...}: {
       imports = [
         ../core
       ];
 
-      machine = "pi-container";
+      machine = "container";
 
       environment.systemPackages = with pkgs; [
         git
@@ -38,31 +38,6 @@
         opencode
         basedpyright
       ];
-
-      hm = {
-        imports = [
-          ../modules/pi.nix
-        ];
-
-        programs.pi = {
-          enable = true;
-          settings = {
-            packages = [
-              "npm:pi-elm-models"
-              "npm:pi-subagents"
-              "npm:@juicesharp/rpiv-ask-user-question"
-              "npm:@juicesharp/rpiv-todo"
-              ../pkgs/pi/pi-builtin
-              ../pkgs/pi/pi-date
-            ];
-            editorPaddingX = 1;
-            terminal.hyperlinks = true;
-          };
-          skills = [
-            ../pkgs/pi/web-search
-          ];
-        };
-      };
     };
 
     bindMounts = {

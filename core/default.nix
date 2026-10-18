@@ -11,7 +11,7 @@
         "framework"
         "desktop"
         "wsl"
-        "pi-container"
+        "container"
       ];
     };
   };

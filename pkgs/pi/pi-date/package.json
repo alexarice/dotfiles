@@ -1,9 +1,0 @@
-{
-  "name": "pi-date",
-  "version": "1.0.0",
-  "description": "Pi extension that injects current date into every agent turn",
-  "type": "module",
-  "main": "index.ts",
-  "keywords": ["pi", "extension", "date"],
-  "license": "MIT"
-}
