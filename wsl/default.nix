@@ -28,17 +28,16 @@
       aspellDicts.en
     ];
   };
-in {
-  flake.nixosConfigurations.wsl = inputs.nixpkgs.lib.nixosSystem {
+in
+  inputs.nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
     specialArgs.inputs = inputs;
     modules = [
-      ./core
-      ./dev
-      ./gui/fonts.nix
+      ../core
+      ../dev
+      ../gui/fonts.nix
       inputs.home-manager.nixosModules.home-manager
       inputs.nixos-wsl.nixosModules.wsl
       wsl-module
     ];
-  };
-}
+  }

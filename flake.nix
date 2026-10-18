@@ -19,22 +19,28 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    flake-parts.url = "github:hercules-ci/flake-parts";
     noctalia = {
       url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    make-shell.url = "github:nicknovitski/make-shell";
   };
 
-  outputs = inputs @ {flake-parts, ...}:
-    flake-parts.lib.mkFlake {inherit inputs;} {
-      imports = [
-        ./desktop.nix
-        ./wsl.nix
-        ./framework.nix
-        ./shell.nix
-      ];
-      systems = ["x86_64-linux"];
+  outputs = {
+    self,
+    nixpkgs,
+    ...
+  } @ inputs: {
+    nixosConfigurations = {
+      desktop = import ./desktop {inherit inputs;};
+      wsl = import ./wsl {inherit inputs;};
+      framework = import ./framework {inherit inputs;};
     };
+
+    devShells.x86_64-linux.default = nixpkgs.legacyPackages.x86_64-linux.mkShell {
+      packages = with nixpkgs.legacyPackages.x86_64-linux; [
+        prek
+        alejandra
+      ];
+    };
+  };
 }
