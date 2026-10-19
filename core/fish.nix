@@ -11,7 +11,7 @@
     functions = {
       fish_mode_prompt = "";
       nix-rebuild = ''
-        sudo nixos-rebuild switch --flake $HOME/dotfiles#${config.machine} --keep-going $argv
+        sudo nixos-rebuild switch --flake $HOME/dotfiles#${config.machine} --keep-going --print-build-logs $argv
       '';
       nix-clean = ''
         sudo nix-collect-garbage -d && nix-collect-garbage -d && sudo nixos-rebuild boot --flake $HOME/dotfiles#${config.machine}
