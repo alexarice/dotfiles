@@ -36,8 +36,9 @@
         python314
         ddgr
         basedpyright
-        (inputs.nixpkgs-opencode.legacyPackages."x86_64-linux".opencode)
       ];
+
+      hm.programs.opencode.enable = true;
     };
 
     bindMounts = {
