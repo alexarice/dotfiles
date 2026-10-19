@@ -12,6 +12,42 @@
 
   virtualisation.containers.enable = true;
 
+  hm.programs.fish.functions.copen = ''
+    # Find -- separator index
+    set sep_idx (contains -i -- "--" $argv)
+
+    # Split args at separator
+    if test -n "$sep_idx"
+        set copen_args $argv[1..(math $sep_idx - 1)]
+        set opencode_args $argv[(math $sep_idx + 1)..-1]
+    else
+        set copen_args $argv
+        set opencode_args
+    end
+
+    # Parse copen flags with argparse
+    argparse --min-args=1 --max-args=1 r/restart -- $copen_args || return 1
+
+    set path $argv[1]
+
+    # Container logic
+    if test -n "$_flag_restart"
+        echo "Restarting container..."
+        sudo nixos-container restart container
+    else if not sudo nixos-container status container | grep -q "up"
+        echo "Starting container..."
+        sudo nixos-container start container
+    end
+
+    # Run opencode
+    if test -n "$opencode_args"
+        set escaped (string escape -- $opencode_args)
+        sudo nixos-container run container -- sh -c "cd $path && su alex -c 'opencode $escaped'"
+    else
+        sudo nixos-container run container -- sh -c "cd $path && su alex -c 'opencode'"
+    end
+  '';
+
   containers.container = {
     specialArgs.inputs = inputs;
     config = {pkgs, ...}: {
