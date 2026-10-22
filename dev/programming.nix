@@ -26,7 +26,7 @@
         elan
 
         # Python
-        python314
+        python315
         uv
 
         # Rust
