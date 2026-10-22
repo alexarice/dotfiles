@@ -26,7 +26,7 @@
     end
 
     # Parse copen flags with argparse
-    argparse --min-args=1 --max-args=1 r/restart -- $copen_args || return 1
+    argparse --min-args=1 --max-args=1 r/restart a/allow -- $copen_args || return 1
 
     set path $argv[1]
 
@@ -39,12 +39,18 @@
         sudo nixos-container start container
     end
 
+    # Run direnv allow
+    if test -n "$_flag_allow"
+        sudo nixos-container run container -- sh -c "cd $path && su alex -c 'direnv allow'"
+        return 0
+    end
+
     # Run opencode
     if test -n "$opencode_args"
         set escaped (string escape -- $opencode_args)
-        sudo nixos-container run container -- sh -c "cd $path && su alex -c 'opencode $escaped'"
+        sudo nixos-container run container -- sh -c "cd $path && su alex -c 'direnv exec . opencode $escaped'"
     else
-        sudo nixos-container run container -- sh -c "cd $path && su alex -c 'opencode'"
+        sudo nixos-container run container -- sh -c "cd $path && su alex -c 'direnv exec . opencode'"
     end
   '';
 
@@ -72,6 +78,7 @@
         python314
         ddgr
         basedpyright
+        texliveFull
       ];
 
       hm.programs.opencode.enable = true;
@@ -89,6 +96,10 @@
       "/home/alex/research" = {
         hostPath = "/home/alex/research";
         isReadOnly = true;
+      };
+      "/home/alex/scratch" = {
+        hostPath = "/home/alex/scratch";
+        isReadOnly = false;
       };
     };
   };
