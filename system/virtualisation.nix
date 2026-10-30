@@ -79,7 +79,7 @@
         ripgrep
         curl
         nodejs
-        python314
+        python315
         ddgr
         basedpyright
         texliveFull

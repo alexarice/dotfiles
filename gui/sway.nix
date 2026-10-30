@@ -82,8 +82,8 @@
         "${modifier}+l" = "exec noctalia msg session lock";
         "XF86MonBrightnessUp" = "exec noctalia msg brightness-up";
         "XF86MonBrightnessDown" = "exec noctalia msg brightness-down";
-        "XF86AudioLowerVolume" = "exec noctalia msg volume-up";
-        "XF86AudioRaiseVolume" = "exec noctalia msg volume-down";
+        "XF86AudioLowerVolume" = "exec noctalia msg volume-down";
+        "XF86AudioRaiseVolume" = "exec noctalia msg volume-up";
         "XF86AudioPlay" = "exec \"playerctl play\"";
         "XF86AudioPause" = "exec \"playerctl pause\"";
         "XF86AudioNext" = "exec \"playerctl next\"";
