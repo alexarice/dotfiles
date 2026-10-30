@@ -3,8 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # Opencode v2 (tracks PR #569770 branch)
-    nixpkgs-opencode.url = "github:shamil2/nixpkgs/opencode-2.0.22";
+    opencode.url = "github:anomalyco/opencode";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";

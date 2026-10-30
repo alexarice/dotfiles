@@ -14,7 +14,6 @@ inputs.nixpkgs.lib.nixosSystem {
         cryptlvm = {
           device = "/dev/nvme0n1p1";
           allowDiscards = true;
-          preLVM = true;
         };
       };
 

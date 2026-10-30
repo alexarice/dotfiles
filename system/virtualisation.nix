@@ -10,6 +10,10 @@
     quickemu
   ];
 
+  nixpkgs.overlays = [
+    inputs.opencode.overlays.default
+  ];
+
   virtualisation.containers.enable = true;
 
   hm.programs.fish.functions.copen = ''
@@ -81,7 +85,43 @@
         texliveFull
       ];
 
-      hm.programs.opencode.enable = true;
+      hm.programs.opencode = {
+        enable = true;
+        settings = {
+          model = "elm/Qwen/Qwen3.5-397B-A17B-FP8";
+          providers.elm = {
+            name = "University of Edinburgh ELM";
+            package = "@opencode/ai/providers/openai-compatible";
+            settings.baseURL = "https://elm.edina.ac.uk/api/v1";
+            models = {
+              "Qwen/Qwen3.5-397B-A17B-FP8" = {
+                name = "Qwen 3.5 397B";
+                capabilities = {
+                  tools = true;
+                  input = ["text" "image"];
+                  output = ["text"];
+                };
+                limit = {
+                  context = 262144;
+                  output = 81920;
+                };
+              };
+            };
+          };
+        };
+        cli = {
+          theme.name = "dracula";
+          diffs.wrap = "word";
+          session.sidebar = "hide";
+          session.scrollbar = false;
+          session.thinking = "hide";
+          animations = true;
+          keybinds = {
+            "agent.cycle" = "tab";
+            "agent.cycle.reverse" = "shift+tab";
+          };
+        };
+      };
     };
 
     bindMounts = {
