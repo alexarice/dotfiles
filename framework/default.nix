@@ -26,6 +26,7 @@ inputs.nixpkgs.lib.nixosSystem {
         fwupd.enable = true;
         upower.enable = true;
         logind.settings.Login.HandleLidSwitch = "ignore";
+        fprintd.enable = true;
       };
     })
   ];

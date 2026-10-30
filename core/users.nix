@@ -22,7 +22,7 @@
         shell = pkgs.fish;
         isNormalUser = true;
         home = "/home/alex";
-        extraGroups = ["wheel" "networkmanager" "video" "audio"];
+        extraGroups = ["wheel" "networkmanager" "video" "audio" "uaccess"];
         uid = 1000;
         hashedPassword = "$6$lY0U5C4WoOcmj.6$YLKJMkQVUJDbItcyHV7wZuvmzpvmOcPR9dgHWJYzUHBB7bSevyC4Vqpqm2IxoVqqhpz.KY7aQJnQI2HaSDsL1.";
       };
