@@ -233,7 +233,10 @@
             init = "(amx-mode)";
           };
 
-          magit.enable = true;
+          magit = {
+            enable = true;
+            custom.magit-diff-visit-prefer-worktree = true;
+          };
 
           crux.enable = true;
 
