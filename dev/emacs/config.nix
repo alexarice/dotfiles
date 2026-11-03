@@ -238,6 +238,11 @@
             custom.magit-diff-visit-prefer-worktree = true;
           };
 
+          agent-shell = {
+            enable = true;
+            custom.agent-shell-opencode-acp-command = '''("opencode-acp")'';
+          };
+
           crux.enable = true;
 
           auctex-latexmk = {

@@ -5,16 +5,29 @@
 }: {
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
-  environment.systemPackages = with pkgs; [
-    qemu
-    quickemu
-  ];
-
   nixpkgs.overlays = [
     inputs.opencode.overlays.default
   ];
 
   virtualisation.containers.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    qemu
+    quickemu
+    (pkgs.writeShellScriptBin "opencode-acp" (builtins.readFile ../bin/opencode-acp))
+  ];
+
+  security.sudo.extraRules = [
+    {
+      users = ["alex"];
+      commands = [
+        {
+          command = "/run/current-system/sw/bin/nixos-container";
+          options = ["NOPASSWD"];
+        }
+      ];
+    }
+  ];
 
   hm.programs.fish.functions.copen = ''
     # Find -- separator index

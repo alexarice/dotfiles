@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Wrapper to run opencode in ACP mode inside the container
+
+# Get the working directory (passed by agent-shell)
+WORKDIR="${PWD}"
+
+# Run opencode acp in the container
+sudo /run/current-system/sw/bin/nixos-container run container -- sh -c "cd '$WORKDIR' && su alex -c 'direnv exec . opencode acp'"
