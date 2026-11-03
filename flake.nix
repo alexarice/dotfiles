@@ -22,6 +22,11 @@
       url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # TODO: Check if onlyoffice fix from PR #582158 (merged Nov 2, 2026, commit acff9c0) has reached nixos-unstable.
+    # If yes, remove this pin and use upstream nixpkgs directly.
+    my-nixpkgs = {
+      url = "github:alexarice/nixpkgs/alexarice/onlyoffice";
+    };
   };
 
   outputs = {

@@ -55,7 +55,7 @@ in {
     typstyle
 
     # Office
-    onlyoffice-desktopeditors
+    inputs.my-nixpkgs.legacyPackages."x86_64-linux".onlyoffice-desktopeditors
 
     # Spell checking
     hunspell

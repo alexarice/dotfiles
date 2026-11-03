@@ -153,11 +153,11 @@
         "nixpkgs-stable": "nixpkgs-stable"
       },
       "locked": {
-        "lastModified": 1793391852,
-        "narHash": "sha256-kiTTgnZnuKoXP3YMCcI48cFW60L2/WrxiCaJ9QHuj50=",
+        "lastModified": 1793596370,
+        "narHash": "sha256-AlMzvHIikcdd7QgEaPE5t8z1IDZibPHQq+4Eu2caVFA=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "897604a3c63feb755fdbe9a73898b044e0a3e587",
+        "rev": "fa4b32e9d0b8f72c25bc5925f07bbddb78d5ed72",
         "type": "github"
       },
       "original": {
@@ -316,6 +316,22 @@
         "type": "github"
       }
     },
+    "my-nixpkgs": {
+      "locked": {
+        "lastModified": 1793611946,
+        "narHash": "sha256-eYnzE8W3Y3/GeouyZJS8Dlxp/2/LeTwIee8ULlslxwk=",
+        "owner": "alexarice",
+        "repo": "nixpkgs",
+        "rev": "133a1659efd605e1ebd4a4ba0d84d565d47df285",
+        "type": "github"
+      },
+      "original": {
+        "owner": "alexarice",
+        "ref": "alexarice/onlyoffice",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixos-hardware": {
       "inputs": {
         "nixpkgs": "nixpkgs_8"
@@ -408,11 +424,11 @@
     },
     "nixpkgs-stable": {
       "locked": {
-        "lastModified": 1793294725,
-        "narHash": "sha256-loLMnbbS4KhmG2ln9EY6f0YMNCA273Yx02oWYQ9IMeE=",
+        "lastModified": 1793410479,
+        "narHash": "sha256-HzgjxrLY4AEc0044ZuM5CHbLSWLZgDlay1idmzvvpJs=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "6f06d204d8f2d8761d9da78778745974a3216381",
+        "rev": "fa1373130d5a21c040a47c5dbe1913d59ed91808",
         "type": "github"
       },
       "original": {
@@ -541,11 +557,11 @@
     },
     "nixpkgs_9": {
       "locked": {
-        "lastModified": 1793341285,
-        "narHash": "sha256-Y1CiZ4SoBUjLQyQM/pY+rS2dXD3CHLPstF0lmOc73D4=",
+        "lastModified": 1793540411,
+        "narHash": "sha256-fiPJ88izTVucjeo2EQ3jk4aWmLg03I1D4vxnX2QjEgE=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "1c89083e451e891152365b799595cf7790a43325",
+        "rev": "0bb2eedc20e4739f29e8045034f2828ad7054f8f",
         "type": "github"
       },
       "original": {
@@ -562,11 +578,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793393673,
-        "narHash": "sha256-z+HlqYVhSokpPiSvMpLbpQWffGs0XJViGwN0D6GMf5M=",
+        "lastModified": 1793595591,
+        "narHash": "sha256-JzRkpXAxvR8/fFM0aV63W13wWOHSkhQOymdr6RiQGmU=",
         "owner": "noctalia-dev",
         "repo": "noctalia",
-        "rev": "e35286e02cd0277aa979299a8e96ad3644aaae5b",
+        "rev": "cece614d286fd0c22e432213735b3ee451472342",
         "type": "github"
       },
       "original": {
@@ -580,11 +596,11 @@
         "nixpkgs": "nixpkgs_10"
       },
       "locked": {
-        "lastModified": 1793392856,
-        "narHash": "sha256-OJwnhef6Z2EztRF+vlfrI6Zhx17Y0SfyXjds5nrL9oM=",
+        "lastModified": 1793600693,
+        "narHash": "sha256-6AMC/ApU1Ii/CJlofyo2bTwLEK7qL/X0fJj/CDRt1Iw=",
         "owner": "anomalyco",
         "repo": "opencode",
-        "rev": "208ea0e0f7bfcaa9a3da411c558d5c1564fc8937",
+        "rev": "ff90ed91607cabf420a369e9009539c1aa0932af",
         "type": "github"
       },
       "original": {
@@ -598,6 +614,7 @@
         "all-agda": "all-agda",
         "emacs-overlay": "emacs-overlay",
         "home-manager": "home-manager",
+        "my-nixpkgs": "my-nixpkgs",
         "nixos-hardware": "nixos-hardware",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs_9",
