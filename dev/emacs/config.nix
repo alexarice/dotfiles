@@ -88,6 +88,7 @@
                 "y" = "jinx-correct";
                 "w" = "delete-other-windows";
                 "s" = "save-buffer";
+                "i" = "agent-shell-opencode-start-agent";
               };
               "xah-fly-command-map" = {
                 "#" = "xah-comment-dwim";
@@ -240,7 +241,13 @@
 
           agent-shell = {
             enable = true;
-            custom.agent-shell-opencode-acp-command = '''("opencode-acp")'';
+            bind.agent-shell-mode-map."<tab>" = "agent-shell-cycle-session-mode";
+            custom = {
+              agent-shell-opencode-acp-command = '''("opencode-acp")'';
+              agent-shell-chat-mode-enabled = false;
+              agent-shell-show-welcome-message = false;
+              agent-shell-header-style = "'text";
+            };
           };
 
           crux.enable = true;
