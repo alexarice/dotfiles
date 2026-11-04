@@ -81,7 +81,6 @@
               "xah-fly-leader-key-map" = {
                 "u" = "consult-buffer";
                 "h" = "eglot-code-actions";
-                "e" = "pp-eval-expression";
                 "." = "major-mode-bind";
                 "r" = "eglot-rename";
                 "g" = "magit-status-here";
@@ -89,6 +88,7 @@
                 "w" = "delete-other-windows";
                 "s" = "save-buffer";
                 "i" = "agent-shell-opencode-start-agent";
+                "e" = "eca";
               };
               "xah-fly-command-map" = {
                 "#" = "xah-comment-dwim";
@@ -247,6 +247,19 @@
               agent-shell-chat-mode-enabled = false;
               agent-shell-show-welcome-message = false;
               agent-shell-header-style = "'text";
+            };
+          };
+
+          eca = {
+            enable = true;
+            bind.eca-chat-mode-map."<tab>" = "eca-chat-cycle-agent";
+            custom = {
+              eca-custom-command = '''("eca-server-wrapper")'';
+              eca-send-process-id = false;
+              eca-chat-window-side = "'right";
+              eca-chat-window-width = 80;
+              eca-chat-auto-revert-changed-files = true;
+              eca-chat-hide-markdown-markup = true;
             };
           };
 

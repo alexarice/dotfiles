@@ -15,6 +15,7 @@
     qemu
     quickemu
     (pkgs.writeShellScriptBin "opencode-acp" (builtins.readFile ../bin/opencode-acp))
+    (pkgs.writeShellScriptBin "eca-server-wrapper" (builtins.readFile ../bin/eca-server-wrapper))
   ];
 
   security.sudo.extraRules = [
@@ -96,7 +97,28 @@
         ddgr
         basedpyright
         texliveFull
+        inputs.eca.packages."x86_64-linux".eca
       ];
+
+      hm.xdg.configFile."eca/config.json".text = builtins.toJSON {
+        providers = {
+          elm = {
+            api = "openai-chat";
+            url = "https://elm.edina.ac.uk/api/v1";
+            key = "\${file:/home/alex/.elm-key}";
+            models = {
+              "Qwen" = {
+                modelName = "Qwen/Qwen3.5-397B-A17B-FP8";
+                limit = {
+                  context = 262144;
+                  output = 81920;
+                };
+              };
+            };
+          };
+        };
+        defaultModel = "elm/Qwen";
+      };
 
       hm.programs.opencode = {
         enable = true;

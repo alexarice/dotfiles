@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Wrapper to run eca-server inside the container
+
+# Get the working directory (passed by eca-emacs)
+WORKDIR="${PWD}"
+
+# Start container if not running
+if ! sudo /run/current-system/sw/bin/nixos-container status container | grep -q "up"; then
+    echo "Starting container..."
+    sudo /run/current-system/sw/bin/nixos-container start container
+fi
+
+# Run eca server in the container
+sudo /run/current-system/sw/bin/nixos-container run container -- sh -c "cd '$WORKDIR' && su alex -c 'direnv exec . eca server'"
