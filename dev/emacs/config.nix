@@ -256,10 +256,9 @@
             custom = {
               eca-custom-command = '''("eca-server-wrapper")'';
               eca-send-process-id = false;
-              eca-chat-window-side = "'right";
-              eca-chat-window-width = 80;
+              eca-chat-window-side = false;
               eca-chat-auto-revert-changed-files = true;
-              eca-chat-hide-markdown-markup = true;
+              eca-chat-hide-markdown-markup = false;
             };
           };
 
@@ -530,6 +529,9 @@
           (add-hook 'mouse-leave-buffer-hook 'stop-using-minibuffer)
 
           (define-key key-translation-map (kbd "<escape>") (kbd "C-g"))
+
+          ;; Mark eglot's flymake backend as safe - it doesn't execute code, just sends text to LSP
+          (put 'eglot-flymake-backend 'flymake-always-safe t)
         '';
       };
     };
