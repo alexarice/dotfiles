@@ -1,8 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: let
+{pkgs, ...}: let
   # Minted workaround: https://github.com/NixOS/nixpkgs/issues/542483
   # Delete this overlay once nixpkgs ships minted >= 3.8.0
   minted-overlay = final: prev: let
@@ -55,7 +51,7 @@ in {
     typstyle
 
     # Office
-    inputs.my-nixpkgs.legacyPackages."x86_64-linux".onlyoffice-desktopeditors
+    onlyoffice-desktopeditors
 
     # Spell checking
     hunspell
