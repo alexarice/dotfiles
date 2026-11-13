@@ -13,16 +13,13 @@
     audio.enable = true;
     wireplumber = {
       enable = true;
-      extraConfig."11-bluetooth-policy" = {
+      # WirePlumber 0.5.x configuration - disable headset mode autoswitch
+      # See: https://pipewire.pages.freedesktop.org/wireplumber/daemon/configuration/bluetooth.html
+      extraConfig."99-bluetooth-headset" = {
         "wireplumber.settings" = {
           "bluetooth.autoswitch-to-headset-profile" = false;
-          "bluetooth.headset-profile" = "off";
-        };
-      };
-      # Disable HSP/HFP headset mode entirely - only allow A2DP
-      extraConfig."bluez5-config" = {
-        "monitor.bluez5" = {
-          "headset-profile" = "off";
+          "bluetooth.use-persistent-storage" = false;
+          "bluetooth.profile-preference" = "quality";
         };
       };
     };
