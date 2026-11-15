@@ -15,7 +15,7 @@
     qemu
     quickemu
     (pkgs.writeShellScriptBin "opencode-acp" (builtins.readFile ../bin/opencode-acp))
-    (pkgs.writeShellScriptBin "eca-server-wrapper" (builtins.readFile ../bin/eca-server-wrapper))
+    (pkgs.writeShellScriptBin "eca-server-wrapper" (builtins.readFile ./eca/bin/eca-server-wrapper))
   ];
 
   security.sudo.extraRules = [
@@ -90,6 +90,7 @@
 
       hm.home.packages = with pkgs; [
         bash
+        uv
         ripgrep
         curl
         nodejs
@@ -118,7 +119,55 @@
           };
         };
         defaultModel = "elm/Qwen";
+        mcpServers = {
+          arxiv = {
+            command = "uvx";
+            args = ["arxiv-mcp-server"];
+          };
+        };
+        customTools = {
+          elm-websearch = {
+            description = ''
+              Search the public web via University of Edinburgh ELM API.
+              Returns ranked sources with URLs and content for citation-backed answers.
+              Use for recent facts, news, changing documentation, verification, and requests for sources.
+            '';
+            command = ''
+              curl -s -X POST 'https://elm.edina.ac.uk/api/v1/search' \
+                -H 'Authorization: Bearer ''${file:/home/alex/.elm-key}' \
+                -H 'Content-Type: application/json' \
+                -d '{"q":"{{query}}","depth":"{{depth}}","maxResults":{{max_results}},"outputType":"searchResults"}'
+            '';
+            schema = {
+              properties = {
+                query = {
+                  type = "string";
+                  description = "Focused natural-language web search query";
+                };
+                depth = {
+                  type = "string";
+                  enum = ["fast" "standard" "deep"];
+                  description = ''
+                    Search depth; defaults to standard.
+                    Use fast for short keyword lookups, deep for complex multi-step research.
+                  '';
+                };
+                max_results = {
+                  type = "integer";
+                  minimum = 1;
+                  maximum = 100;
+                  description = "Maximum number of results to return; defaults to 10";
+                };
+              };
+              required = ["query"];
+            };
+          };
+        };
       };
+
+      # ECA skill for elm-websearch
+      hm.xdg.configFile."eca/skills/elm-websearch/SKILL.md".source =
+        ./eca/skills/elm-websearch/SKILL.md;
 
       hm.programs.opencode = {
         enable = true;

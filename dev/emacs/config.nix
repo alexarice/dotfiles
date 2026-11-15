@@ -258,7 +258,7 @@
               eca-send-process-id = false;
               eca-chat-window-side = false;
               eca-chat-auto-revert-changed-files = true;
-              eca-chat-hide-markdown-markup = false;
+              eca-chat-hide-markdown-markup = true;
             };
           };
 
