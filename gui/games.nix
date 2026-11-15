@@ -1,6 +1,9 @@
 {pkgs, ...}: {
   programs.steam = {
     enable = true;
+    extraCompatPackages = [
+      pkgs.proton-ge-bin
+    ];
   };
 
   hm.home.packages = with pkgs; [
