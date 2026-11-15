@@ -93,6 +93,15 @@
         "mdj2812/thunderbird-companion"
         "ismay/sway-mode"
       ];
+
+      lockscreen = {
+        blur_intensity = 0.79999998211860657;
+        blurred_desktop = true;
+        edge_smoothness = 0.69999998435378075;
+        tint_intensity = 0.59999998658895493;
+        transition = ["fade"];
+        transition_duration = 500;
+      };
     };
   };
 }
