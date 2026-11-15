@@ -87,7 +87,6 @@
         ];
         end = [
           "media"
-          "mail"
           "tray"
           "notifications"
           "clipboard"
@@ -100,10 +99,6 @@
 
       widget.media.hide_when_no_media = true;
 
-      widget.mail = {
-        type = "mdj2812/thunderbird-companion:mail";
-      };
-
       widget.sway-mode = {
         type = "ismay/sway-mode:sway-mode";
         capsule_fill = "primary";
@@ -113,15 +108,8 @@
       };
 
       plugins.enabled = [
-        "mdj2812/thunderbird-companion"
         "ismay/sway-mode"
       ];
-
-      plugin_settings."mdj2812/thunderbird-companion" = {
-        inbox_placement = "floating";
-        inbox_position = "auto";
-        inbox_open_near_click = true;
-      };
 
       lockscreen = {
         blur_intensity = 0.79999998211860657;
