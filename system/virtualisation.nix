@@ -119,6 +119,22 @@
           };
         };
         defaultModel = "elm/Qwen";
+        chat = {
+          defaultTrust = true;
+        };
+        toolCall = {
+          approval = {
+            ask = {
+              git = {};
+              eca__git = {};
+              shell_command = {
+                argsMatchers = {
+                  command = ["^.*\\bgit\\b.*"];
+                };
+              };
+            };
+          };
+        };
         mcpServers = {
           arxiv = {
             command = "uvx";

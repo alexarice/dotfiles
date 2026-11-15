@@ -31,6 +31,8 @@
         screenshot.save_to_file = false;
       };
 
+      location.auto_locate = true;
+
       bar.default = {
         position = "bottom";
         margin_ends = 0;
@@ -54,6 +56,7 @@
         start = [
           "group:g1"
           "workspaces"
+          "sway-mode"
         ];
 
         center = [
@@ -61,6 +64,7 @@
         ];
         end = [
           "media"
+          "mail"
           "tray"
           "notifications"
           "clipboard"
@@ -73,8 +77,21 @@
 
       widget.media.hide_when_no_media = true;
 
+      widget.mail = {
+        type = "mdj2812/thunderbird-companion:mail";
+      };
+
+      widget.sway-mode = {
+        type = "ismay/sway-mode:sway-mode";
+        capsule_fill = "primary";
+        color = "on_primary";
+        glyph = "";
+        icon_color = "on_primary";
+      };
+
       plugins.enabled = [
-        "noctalia/bitwarden"
+        "mdj2812/thunderbird-companion"
+        "ismay/sway-mode"
       ];
     };
   };
