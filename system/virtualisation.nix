@@ -175,7 +175,7 @@
                   description = "Maximum number of results to return; defaults to 10";
                 };
               };
-              required = ["query"];
+              required = ["query" "depth" "max_results"];
             };
           };
         };
