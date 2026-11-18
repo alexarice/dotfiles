@@ -7,7 +7,7 @@
 }:
 lib.mkIf (lib.elem config.machine ["desktop" "framework"]) {
   environment.systemPackages = [
-    (pkgs.writeShellScriptBin "eca-server-wrapper" (builtins.readFile ./eca/bin/eca-server-wrapper))
+    (pkgs.writeShellScriptBin "eca-server-wrapper" (builtins.readFile ./bin/eca-server-wrapper))
   ];
 
   containers.container = {
@@ -121,7 +121,7 @@ lib.mkIf (lib.elem config.machine ["desktop" "framework"]) {
 
       # ECA skill for elm-websearch
       hm.xdg.configFile."eca/skills/elm-websearch/SKILL.md".source =
-        ./eca/skills/elm-websearch/SKILL.md;
+        ./skills/elm-websearch/SKILL.md;
     };
 
     bindMounts = {
