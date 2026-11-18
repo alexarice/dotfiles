@@ -11,6 +11,7 @@
       core.filemode = false;
       pull.rebase = true;
       credential.helper = "store";
+      init.defaultBranch = "main";
     };
   };
 
