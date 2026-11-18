@@ -6,10 +6,6 @@
   ...
 }:
 lib.mkIf (lib.elem config.machine ["desktop" "framework"]) {
-  environment.systemPackages = [
-    (pkgs.writeShellScriptBin "eca-server-wrapper" (builtins.readFile ./bin/eca-server-wrapper))
-  ];
-
   containers.container = {
     specialArgs.inputs = inputs;
     config = {pkgs, ...}: {
