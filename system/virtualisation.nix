@@ -78,7 +78,7 @@
         };
         toolCall = {
           approval = {
-            ask = {
+            deny = {
               git = {};
               eca__git = {};
               shell_command = {
