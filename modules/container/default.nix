@@ -19,13 +19,6 @@ lib.mkIf (lib.elem config.machine ["desktop" "framework"]) {
 
       machine = "container";
 
-      environment.systemPackages = with pkgs; [
-        git
-      ];
-
-      programs.direnv.enable = true;
-      programs.direnv.nix-direnv.enable = true;
-
       hm.home.packages = with pkgs; [
         bash
         uv
