@@ -1,4 +1,10 @@
-{pkgs, ...}: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+lib.mkIf (lib.elem config.machine ["desktop" "framework" "wsl"]) {
   hm = {
     programs.helix = {
       enable = true;

@@ -1,4 +1,10 @@
-{pkgs, ...}: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+lib.mkIf (lib.elem config.machine ["desktop" "framework"]) {
   services.timesyncd.enable = true;
 
   networking.networkmanager = {

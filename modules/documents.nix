@@ -1,4 +1,9 @@
-{pkgs, ...}: let
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
   # Minted workaround: https://github.com/NixOS/nixpkgs/issues/542483
   # Delete this overlay once nixpkgs ships minted >= 3.8.0
   minted-overlay = final: prev: let
@@ -40,28 +45,29 @@
           };
       };
   };
-in {
-  overlays = [minted-overlay];
+in
+  lib.mkIf (lib.elem config.machine ["desktop" "framework" "wsl"]) {
+    overlays = [minted-overlay];
 
-  hm.home.packages = with pkgs; [
-    # Typesetting
-    texliveFull
-    typst
-    tinymist
-    typstyle
+    hm.home.packages = with pkgs; [
+      # Typesetting
+      texliveFull
+      typst
+      tinymist
+      typstyle
 
-    # Office
-    onlyoffice-desktopeditors
+      # Office
+      onlyoffice-desktopeditors
 
-    # Spell checking
-    hunspell
-    hunspellDicts.en_GB-ise
+      # Spell checking
+      hunspell
+      hunspellDicts.en_GB-ise
 
-    # PDF viewers
-    zathura
-    evince
+      # PDF viewers
+      zathura
+      evince
 
-    # Reference management
-    zotero
-  ];
-}
+      # Reference management
+      zotero
+    ];
+  }

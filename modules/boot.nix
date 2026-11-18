@@ -1,4 +1,10 @@
-{pkgs, ...}: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+lib.mkIf (lib.elem config.machine ["desktop" "framework"]) {
   boot.tmp.useTmpfs = true;
 
   boot.supportedFilesystems = ["ntfs"];

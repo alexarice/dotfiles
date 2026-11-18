@@ -3,8 +3,6 @@
   inputs,
   ...
 }: {
-  imports = (import ../lib {inherit lib;}).importFiles ./.;
-
   options = {
     machine = lib.mkOption {
       type = lib.types.enum [

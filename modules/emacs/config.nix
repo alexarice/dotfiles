@@ -4,7 +4,8 @@
   lib,
   inputs,
   ...
-}: {
+}:
+lib.mkIf (lib.elem config.machine ["desktop" "framework" "wsl"]) {
   overlays = [inputs.emacs-overlay.overlay];
   hm = {
     systemd.user.services.emacs = {

@@ -1,4 +1,10 @@
-{pkgs, ...}: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+lib.mkIf (lib.elem config.machine ["desktop" "framework"]) {
   hm.home.packages = with pkgs; [
     # Web browsers
     firefox

@@ -1,4 +1,10 @@
-{inputs, ...}: {
+{
+  config,
+  lib,
+  inputs,
+  ...
+}:
+lib.mkIf (lib.elem config.machine ["desktop" "framework"]) {
   hm.imports = [
     inputs.noctalia.homeModules.default
   ];

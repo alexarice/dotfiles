@@ -3,10 +3,7 @@ inputs.nixpkgs.lib.nixosSystem {
   system = "x86_64-linux";
   specialArgs.inputs = inputs;
   modules = [
-    ../core
-    ../dev
-    ../gui
-    ../system
+    ../modules
     ./hardware.nix
     inputs.nixos-hardware.nixosModules.framework-13-7040-amd
     ({...}: {

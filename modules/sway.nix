@@ -2,7 +2,8 @@
   config,
   lib,
   ...
-}: {
+}:
+lib.mkIf (lib.elem config.machine ["desktop" "framework"]) {
   programs.sway = {
     enable = true;
     extraSessionCommands = ''

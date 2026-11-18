@@ -1,8 +1,11 @@
 {
-  pkgs,
+  config,
   inputs,
+  lib,
+  pkgs,
   ...
-}: {
+}:
+lib.mkIf (lib.elem config.machine ["desktop" "framework"]) {
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
 
@@ -30,7 +33,7 @@
     specialArgs.inputs = inputs;
     config = {pkgs, ...}: {
       imports = [
-        ../core
+        ./.
       ];
 
       machine = "container";

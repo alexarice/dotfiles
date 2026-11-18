@@ -33,9 +33,7 @@ in
     system = "x86_64-linux";
     specialArgs.inputs = inputs;
     modules = [
-      ../core
-      ../dev
-      ../gui/fonts.nix
+      ../modules
       inputs.home-manager.nixosModules.home-manager
       inputs.nixos-wsl.nixosModules.wsl
       wsl-module

@@ -1,4 +1,10 @@
-{pkgs, ...}: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+lib.mkIf (lib.elem config.machine ["desktop" "framework" "wsl"]) {
   hm = {
     home.packages = with pkgs; [
       # System monitoring

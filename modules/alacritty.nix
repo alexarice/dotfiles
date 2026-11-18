@@ -1,4 +1,9 @@
 {
+  config,
+  lib,
+  ...
+}:
+lib.mkIf (lib.elem config.machine ["desktop" "framework"]) {
   hm.programs.alacritty = {
     enable = true;
     settings = {
