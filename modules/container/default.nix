@@ -14,7 +14,7 @@ lib.mkIf (lib.elem config.machine ["desktop" "framework"]) {
     specialArgs.inputs = inputs;
     config = {pkgs, ...}: {
       imports = [
-        ./.
+        ../.
       ];
 
       machine = "container";
