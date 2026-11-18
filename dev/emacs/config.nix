@@ -87,8 +87,8 @@
                 "y" = "jinx-correct";
                 "w" = "delete-other-windows";
                 "s" = "save-buffer";
-                "i" = "agent-shell-opencode-start-agent";
-                "e" = "eca";
+                "i" = "eca";
+                "e" = "pp-eval-expression";
               };
               "xah-fly-command-map" = {
                 "#" = "xah-comment-dwim";
@@ -239,20 +239,8 @@
             custom.magit-diff-visit-prefer-worktree = true;
           };
 
-          agent-shell = {
-            enable = true;
-            bind.agent-shell-mode-map."<tab>" = "agent-shell-cycle-session-mode";
-            custom = {
-              agent-shell-opencode-acp-command = '''("opencode-acp")'';
-              agent-shell-chat-mode-enabled = false;
-              agent-shell-show-welcome-message = false;
-              agent-shell-header-style = "'text";
-            };
-          };
-
           eca = {
             enable = true;
-            bind.eca-chat-mode-map."<tab>" = "eca-chat-cycle-agent";
             custom = {
               eca-custom-command = '''("eca-server-wrapper")'';
               eca-send-process-id = false;
