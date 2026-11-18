@@ -110,7 +110,7 @@ lib.mkIf (lib.elem config.machine ["desktop" "framework"]) {
 
       # ECA skill for elm-websearch
       hm.xdg.configFile."eca/skills/elm-websearch/SKILL.md".source =
-        ./skills/elm-websearch/SKILL.md;
+        ./elm-websearch/SKILL.md;
     };
 
     bindMounts = {
